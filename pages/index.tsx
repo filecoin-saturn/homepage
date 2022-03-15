@@ -1,10 +1,15 @@
 import type { NextPage } from 'next'
+import NavBar from '../components/NavBar/NavBar'
 
 const Home: NextPage = () => {
   return (
-    <div className=' text-red-500'>
-        dfsdfdsfsd
-    </div>
+    <>
+      <NavBar/>
+      <div className=''>
+          
+      </div>
+    </>
+    
   )
 }
 
