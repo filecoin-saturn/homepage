@@ -14,13 +14,13 @@ const Home: NextPage = () => {
     <>
       <NavBar/>
         <div className='h-full w-full -z-50 relative'>
-          <div className=' h-full w-full sticky -top-[17rem] sm:-top-[26rem] md:-top-[26rem] lg:-top-[30rem] xl:-top-[40rem] -z-20 -ml-72 -mt-10 sm:-ml-52 -mb-[23rem] sm:-mb-[90vh] lg:-mb-[100vh] xl:-mb-[110vh]'>
-            <div className='relative md:w-[100%] min-w-[40rem] h-[25rem] sm:h-[90vh] lg:h-[100vh] xl:h-[110vh] -ml-16 md:mt-14 lg:mt-20 lg:-ml-28 xl:-ml-60      '>
+          <div className=' h-full w-full sticky -top-[17rem] sm:-top-[26rem] md:-top-[26rem] lg:-top-[30rem] xl:-top-[40rem] -z-20 -ml-72 -mt-20 sm:-ml-52 -mb-[28rem] sm:-mb-[90vh] lg:-mb-[100vh] xl:-mb-[110vh]'>
+            <div className='relative md:w-[100%] min-w-[42rem] h-[28rem] sm:h-[90vh] lg:h-[100vh] xl:h-[110vh] -ml-16 md:mt-14 lg:mt-20 lg:-ml-28 xl:-ml-60      '>
                   <Image src={saturn} width={10} height={10} layout={"fill"} objectFit={"contain"} objectPosition="" alt={"Saturn Network"} />        
             </div>
           </div>
-          <div className=' flex items-end sm:items-center w-full h-[28rem] sm:h-[90vh] lg:h-[100vh] mt-14 sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-center  '>
-            <div className='mx-auto pr-8 pl-4 sm:px-12 text-left max-w-xs lg:max-w-sm z-50 sm:right-0 sm:mr-4 sm:-translate-y-1/3 md:-translate-y-1/2 '>
+          <div className=' flex items-end sm:items-center w-full h-[32.5rem] mt-8 sm:h-[90vh] lg:h-[100vh] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-center  '>
+            <div className='mx-auto pr-10 pl-8  sm:px-12 text-left max-w-xs lg:max-w-sm z-50 sm:right-0 sm:mr-1 sm:-translate-y-1/3 md:-translate-y-1/2 '>
               <div className='font-inter font-semibold text-[1.7rem] antialiased md:text-3xl lg:text-4xl'>
                 {title}
               </div>
@@ -39,10 +39,10 @@ const Home: NextPage = () => {
                   {download}
                 </button>
               </div>
-              <div className='flex sm:flex-col space-x-6 sm:space-x-0 sm:space-y-4 mt-8 sm:mt-0 sm:absolute sm:right-0 sm:top-0 sm:translate-y-full sm:mr-2 xl:mr-0'>
-                <div className='bg-filecoin-logo w-5 h-5 bg-no-repeat bg-center bg-contain'>
+              <div className='flex sm:flex-col space-x-8 sm:space-x-0 sm:space-y-4 mt-10 sm:mt-0 sm:absolute sm:right-0 sm:top-0 sm:translate-y-full sm:mr-2 xl:mr-0'>
+                <div className='bg-filecoin-logo w-6 h-6 bg-no-repeat bg-center bg-contain'>
                 </div>
-                <div className='bg-protocol-labs-logo w-5 h-5 bg-no-repeat bg-center bg-contain'>
+                <div className='bg-protocol-labs-logo w-6 h-6 bg-no-repeat bg-center bg-contain'>
                 </div>
               </div>
             </div>
