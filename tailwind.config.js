@@ -7,7 +7,13 @@ module.exports = {
     extend: {
       backgroundImage: {
         'nav-logo': "url('/nav-logo.svg')",
-        'nav-menu': "url('/nav-menu.svg')",
+        'nav-menu': "url('/nav-open-menu.svg')",
+        'menu-cross': "url('/menu-cross.svg')",
+        'filecoin-logo': "url('/filecoin-logo.svg')",
+        'protocol-labs-logo': "url('/protocol-labs.svg')",
+
+
+
       },
     fontFamily: {
       "roboto": ['"Roboto"', 'Arial', 'sans-serif'],
