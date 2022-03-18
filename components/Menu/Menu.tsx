@@ -29,10 +29,10 @@ export default function Menu({setIsOpen}: MenuProps){
                             <Link href={link.href}>
                                 <a  onClick={() => {setIsOpen(false)}}>
                                     <div className="relative text-base">
-                                        <div className={`font-roboto font-bold antialiased ${path.asPath === link.href ? ``: `invisible`}` }>
+                                        <div className={`font-roboto font-bold antialiased tracking-wide ${path.asPath === link.href ? ``: `invisible`}` }>
                                             {link.title}
                                         </div>
-                                        <div className={`absolute font-roboto font-normal inset-0 antialised ${path.asPath === link.href ? `invisible`: ``}` }>
+                                        <div className={`absolute font-roboto font-normal inset-0 antialised tracking-wide ${path.asPath === link.href ? `invisible`: ``}` }>
                                             {link.title}
                                         </div>
                                     </div>   
@@ -45,7 +45,7 @@ export default function Menu({setIsOpen}: MenuProps){
             <div className="mb-4">
                 <button disabled className="disabled:opacity-40">
                     <div className="relative text-base">
-                            <div className=" font-roboto font-normal antialiased inset-0">
+                            <div className=" font-roboto font-normal antialiased inset-0 tracking-wide">
                                 ENG
                             </div>
                         </div>
