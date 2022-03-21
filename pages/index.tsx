@@ -6,6 +6,8 @@ import saturn from "../public/saturn.png"
 import desktopApp from "../public/desktop-app.png"
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Footer from '../components/Footer/Footer'
+import DownloadCard from '../components/DownloadCard/DownloadCard'
 
 const Home: NextPage = () => {
     const title = "Filecoin Saturn"
@@ -22,6 +24,7 @@ const Home: NextPage = () => {
     const earnDescription = "Serve content to the network and earn filecoin."
     const titleDownload = "Download"
     const descriptionDownload = "You can either be a gateway operator or a station operator, depending on your resources."
+    const downloadHere = "Download the app here"
 
 
     const [firstInView, setFirstInView] = useState(true)
@@ -58,16 +61,44 @@ const Home: NextPage = () => {
       const element = document.getElementById("second-item")
       element?.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
     }
+
+    const card1 = {
+      bgImage: "bg-card-logo-gateway",
+      title: "Gateway Operator",
+      subTitle: "VPS / DC / Office Server",
+      requirements: "Requirements",
+      requirementsContent: ["Static IP", "Docker", "Very good bandwidth", "TLS Cert"],
+      downloadButton: "Instructions",
+      marginTopButton: "mt-8 sm:mt-9",
+      id: "first-item",
+      disabled: false,
+      idDownloadButton: "1"
+
+    }
+
+    const card2 = {
+      bgImage: "bg-card-logo-station",
+      title: "Station Operator",
+      subTitle: "Desktop Computer",
+      requirements: "Requirements",
+      requirementsContent: ["Static IP","Linux/Mac/Windows", "Good bandwidth", "200+ GB Storage"],
+      downloadButton: "Download",
+      marginTopButton: "mt-2",
+      id: "second-item",
+      disabled: true,
+      idDownloadButton: "2"
+
+    }
   return (
     <>
       <NavBar/>
-        <div className='w-full relative overflow-visible'>
-          <div className=' h-full w-full sticky -top-[14rem] sm:-top-[24rem] md:-top-[24rem] lg:-top-[28rem] xl:-top-[38rem] -z-20 -ml-72 -mt-20 sm:-ml-52 -mb-[28rem] sm:-mb-[90vh] lg:-mb-[100vh] xl:-mb-[110vh]'>
+        <div id='intro' className='w-full relative overflow-visible'>
+          <div className=' h-full w-full sticky -top-[14rem] sm:-top-[24rem] md:-top-[24rem] lg:-top-[28rem] xl:-top-[38rem] -z-20 -ml-72 -mt-20 sm:-ml-52 -mb-[26rem] sm:-mb-[90vh] lg:-mb-[100vh] xl:-mb-[110vh]'>
             <div className='relative md:w-[100%] min-w-[42rem] h-[28rem] sm:h-[90vh] lg:h-[100vh] xl:h-[110vh] -ml-16 md:mt-14 lg:mt-20 lg:-ml-28 xl:-ml-60      '>
                   <Image src={saturn} width={10} height={10} layout="fill" objectFit="contain" objectPosition="" alt="Saturn Network" />        
             </div>
           </div>
-          <div className=' flex items-end sm:items-center w-full h-[32.5rem] mt-8 sm:h-[90vh] lg:h-[100vh] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-center  '>
+          <div  className=' flex items-end sm:items-center w-full h-[32.5rem] mt-8 sm:h-[90vh] lg:h-[100vh] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-center  '>
             <div className='mx-auto pr-10 pl-8  sm:px-12 text-left max-w-xs lg:max-w-sm sm:right-0 sm:mr-1 sm:-translate-y-1/3 md:-translate-y-1/2 '>
               <div className='font-inter font-semibold text-[1.7rem] antialiased md:text-3xl lg:text-4xl'>
                 {title}
@@ -79,28 +110,32 @@ const Home: NextPage = () => {
                 <Link href="#howitworks">
                     <a className='outline-none group group-active:scale-90 '>
                       <div className='group-focus-visible:bg-gradient-background-learn bg-contain bg-no-repeat bg-center active:scale-90  rounded-3xl p-0.5'>
-                        <div className='font-inter bg-white group-focus-visible:bg-transparent py-1.5 focus-visible:outline-none px-2.5 text-sm md:text-xs antialiased underline underline-offset-1 italic hover:text-light-blue disabled:opacity-25 active:scale-90'>
+                        <div className='font-inter bg-white group-focus-visible:bg-transparent py-1.5 focus-visible:outline-none px-2.5 text-xs md:text-sm antialiased underline underline-offset-1 italic hover:text-light-blue disabled:opacity-25 active:scale-90'>
                           {learnMore}
                         </div>
                       </div>
                     </a>
                   </Link>
               </div>
-              <div className='hidden sm:flex text-center relative mt-4 bg-gradient-to-r from-gradient-turqouise to-gradient-blue p-0.5 py-0.5 px-0.5 rounded-3xl mr-4 group active:scale-90'>
+              <div className='hidden sm:flex text-center relative mt-4 '>
                 <Link href="/#download">
-                  <a className='w-full text-sm rounded-full py-1 font-roboto font-normal bg-white md:py-1.5 tracking-widest antialiased hover:bg-transparent hover:text-white disabled:opacity-30 focus-visible:bg-transparent focus:outline-none focus-visible:border-2 focus-visible:rounded-3xl focus-visible:text-white  '>
-                    {download}
+                  <a className='outline-none w-full group rounded-3xl'>
+                    <div className='bg-gradient-to-r from-gradient-turqouise to-gradient-blue p-0.5 py-0.5 px-0.5 rounded-3xl active:scale-90'>
+                      <div className='w-full text-sm rounded-full py-1 font-roboto font-normal bg-white md:py-1.5 tracking-widest antialiased group-hover:bg-transparent group-hover:text-white disabled:opacity-30 group-focus-visible:bg-transparent outline-none border-2 border-transparent group-focus-visible:border-[#D1ECFC] group-focus-visible:rounded-3xl group-focus-visible:text-white  '>
+                        {download}
+                      </div>
+                    </div>
                   </a>
                 </Link>
               </div>
-              <div className='flex sm:flex-col space-x-8 sm:space-x-0 sm:space-y-4 mt-10 sm:mt-2 sm:absolute sm:right-0 sm:top-0 sm:translate-y-1/2  sm:mr-2 xl:mr-0'>
+              <div className='flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4 mt-10 sm:mt-2 sm:absolute sm:right-0 sm:top-0 sm:translate-y-1/2  sm:mr-2 xl:mr-0'>
                   <a className='group outline-none active:scale-90 disabled:opacity-50 hover:opacity-80'
                     target="_blank" 
                     rel='noreferrer' 
                     href="https://filecoin.io" 
                   >
                     <div className="group-focus-visible:bg-icon-border bg-contain bg-no-repeat bg-center p-1">
-                        <div className="bg-filecoin-logo w-6 h-6 bg-no-repeat bg-center bg-contain ">
+                        <div className="bg-filecoin-logo w-5 h-5 sm:w-6 sm:h-6 bg-no-repeat bg-center bg-contain ">
                         </div> 
                     </div> 
                   </a>
@@ -110,14 +145,14 @@ const Home: NextPage = () => {
                     href="https://protocol-labs.io" 
                   >
                     <div className="group-focus-visible:bg-icon-border bg-contain bg-no-repeat bg-center p-1">
-                        <div className="bg-protocol-labs-logo mt-0.5 w-6 h-6 bg-no-repeat bg-center bg-contain ">
+                        <div className="bg-protocol-labs-logo mt-0.5 w-5 h-5 sm:w-6 sm:h-6 bg-no-repeat bg-center bg-contain ">
                         </div> 
                     </div> 
                   </a>
               </div>
             </div>
           </div>
-          <div id="howitworks" className='md: pt-36 lg:pt-48 sm:mt-4 '>
+          <div id="howitworks" className='pt-32 md:pt-36 lg:pt-48 sm:mt-4 '>
             <div className='mx-auto pr-10 pl-8 text-left justify-center max-w-xs sm:flex sm:space-x-4 sm:max-w-xl md:max-w-3xl lg:max-w-4xl md:space-x-16 '>
               <div className='flex-none font-inter font-semibold text-[1.7rem] antialiased md:text-3xl lg:text-4xl'>
                 {titleHIW}
@@ -136,9 +171,9 @@ const Home: NextPage = () => {
                 <div className='mx-auto mt-14 sm:mt-8 max-w-xs md:max-w-md px-4 sm:px-0 '>
                   <div className='flex space-x-4 text-left '>
                     <div className='flex flex-col  '>
-                        <div className='bg-regular-blue outline-2 outline outline-regular-blue/20 rounded-full min-w-[0.75rem] min-h-[0.75rem] '>
+                        <div className='bg-regular-blue outline-2 outline outline-regular-blue/30 rounded-full min-w-[0.75rem] min-h-[0.75rem] '>
                         </div>
-                        <div className='flex-grow my-1 w-1 border-r-regular-blue opacity-50 border-r-[2px] pl-[0.3rem]'>
+                        <div className='flex-grow my-1 w-1 border-r-regular-blue opacity-30 border-r-[2px] pl-[0.3rem]'>
                         </div>
                     </div>
                     <div className='px-4 mb-8 -mt-2'>
@@ -148,21 +183,28 @@ const Home: NextPage = () => {
                       <div className='font-source-serif-pro font-normal antialiased max-w-md lg:max-w-lg sm:mt-2 leading-tight text-lg md:mt-2 md:leading-tight'>
                         {downloadDescription}
                       </div>
-                      <div>
+                      <div className='w-fit -ml-3'>
                         <Link href="/#download">
-                          <a className='underline font-inter italic underline-offset-[0.18rem] text-sm antialiased '>
-                            Download the app here
-                          </a>
+                          <a className="group outline-none active:scale-90 disabled:opacity-50 hover:text-light-blue group-focus-visible:bg-filecoin-saturn-border bg-contain bg-no-repeat bg-center">
+                            <div className="group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-3xl p-0.5 group-active:scale-90">
+                                <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-3xl px-3 py-1.5  ">
+                                    <div className="underline font-inter italic underline-offset-[0.18rem] text-sm antialiased ">
+                                      {downloadHere}
+                                    </div>
+                                </div>
+                            </div>
+                          </a>  
                         </Link>
                       </div>
+                      
                       
                     </div>
                   </div>
                   <div className='flex space-x-4 text-left '>
                     <div className='flex flex-col '>
-                        <div className='bg-regular-blue outline-2 outline outline-regular-blue/20 rounded-full min-w-[0.75rem] min-h-[0.75rem] '>
+                        <div className='bg-regular-blue outline-2 outline outline-regular-blue/30 rounded-full min-w-[0.75rem] min-h-[0.75rem] '>
                         </div>
-                        <div className='flex-grow my-1 w-1 border-r-regular-blue opacity-50 border-r-[2px] pl-[0.3rem]'>
+                        <div className='flex-grow my-1 w-1 border-r-regular-blue opacity-30 border-r-[2px] pl-[0.3rem]'>
                         </div>
                     </div>
                     <div className='px-4 mb-8 -mt-2'>
@@ -176,7 +218,7 @@ const Home: NextPage = () => {
                   </div>
                   <div className='flex space-x-4 text-left '>
                     <div className='w-3'>
-                      <div className='bg-regular-blue outline-2 outline outline-regular-blue/20 rounded-full w-3 h-3 '>
+                      <div className='bg-regular-blue outline-2 outline outline-regular-blue/30 rounded-full w-3 h-3 '>
                       </div>
                     </div>
                     <div className='px-4 -mt-2'>
@@ -191,17 +233,23 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <div className='mx-auto max-w-[11rem] mt-14'>
-                <div className=' mx-auto w-full hidden sm:flex text-center relative mt-4 bg-gradient-to-r from-gradient-turqouise to-gradient-blue p-0.5 rounded-3xl mr-4'>
-                  <button className=' text-sm w-full rounded-2xl py-1 font-roboto font-normal bg-white md:py-1.5 tracking-widest antialiased  '>
-                    {getStarted}
-                  </button>
+                <div className=' mx-auto w-full hidden sm:block text-center relative mt-4 mr-4'>
+                  <Link href="/#download">
+                    <a className='outline-none w-full group'>
+                      <div className='w-full bg-gradient-to-r from-gradient-turqouise to-gradient-blue p-0.5 py-0.5 px-0.5 rounded-3xl mr-4 active:scale-90'>
+                        <div className='w-full text-sm rounded-full py-1 font-roboto font-normal bg-white md:py-1.5 tracking-widest antialiased group-hover:bg-transparent group-hover:text-white disabled:opacity-30 group-focus-visible:bg-transparent outline-none border-2 border-transparent group-focus-visible:border-[#D1ECFC] group-focus-visible:rounded-3xl group-focus-visible:text-white  '>
+                          {getStarted}
+                        </div>
+                      </div>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className='pt-32 mt-10 pb-24 md:mx-auto md:max-w-3xl overflow-visible  '>
+          <div className='sm:mt-4 mt-10 pb-24 md:mx-auto md:max-w-3xl overflow-visible  '>
             <div className='md:mx-auto px-4 md:px-4 text-left md:text-center max-w-md  '>
-              <div id="download" className='flex-none font-inter font-semibold text-[1.7rem] antialiased md:text-3xl lg:text-4xl'>
+              <div id="download" className='pt-32 md:pt-36 lg:pt-48  flex-none font-inter font-semibold text-[1.7rem] antialiased md:text-3xl lg:text-4xl'>
                 {titleDownload}
               </div>
               <div className='font-source-serif-pro lg:text-center lg:mx-auto font-normal antialiased max-w-md lg:max-w-lg sm:mt-4 leading-tight text-lg md:leading-tight'>
@@ -209,134 +257,31 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className='flex my-10 md:min-w-[30rem] overflow-scroll space-x-10 mx-4 no-scrollbar snap-x snap-mandatory  '>
-              <div id="first-item" className=' snap-center bg-gradient-to-r max-w-xs md:max-w-sm  min-w-[18rem] from-gradient-turqouise to-gradient-blue mx-auto p-0.5 rounded-xl'>
-                <div className='mx-auto h-full text-center bg-white py-1 rounded-[0.6rem]'>
-                  <div className='mx-auto py-6 '>
-                    <div className='bg-card-logo-station bg-contain bg-center bg-no-repeat w-10 h-10 z-10 mx-auto'>
-                    </div>
-                  </div>
-                  <div className='mx-auto text-center font-inter font-semibold text-2xl antialised'>
-                    Station operator
-                  </div>
-                  <div className='mx-auto text-center font-roboto text-base antialiased'>
-                    Desktop Computer
-                  </div>
-                  <div className='mx-auto text-center font-inter font-semibold text-lg antialiased mt-8'>
-                    Requirements
-                  </div>
-                  <div className='flex flex-wrap px-4 space-x-4 text-center max-w-sm justify-center '> 
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                      Static IP
-                      </div>
-                    </div>
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                        Linux/Mac/Windows
-                      </div>
-                    </div>
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                        Good bandwidth
-                      </div>
-                    </div>
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                        200+ GB Storage
-                      </div>
-                    </div>
-                  </div>
-                  <div className='mx-auto py-4 mt-2'>
-                    <button className='bg-dark-blue rounded-2xl'>
-                      <div className='font-roboto tracking-widest antialiased text-sm font-normal text-white px-20 py-1.5'>
-                        Download
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div id="second-item" className=' snap-center opacity-50 bg-gradient-to-r max-w-xs md:max-w-sm min-w-[18rem]  from-gradient-turqouise to-gradient-blue mx-auto p-0.5 rounded-xl'>
-                <div className='mx-auto h-full text-center bg-white py-1 rounded-[0.6rem]'>
-                  <div className='mx-auto py-6 '>
-                    <div className='bg-card-logo-gateway bg-contain bg-center bg-no-repeat w-10 h-10 z-10 mx-auto'>
-                    </div>
-                  </div>
-                  <div className='mx-auto text-center font-inter font-semibold text-2xl antialised'>
-                    Gateway operator
-                  </div>
-                  <div className='mx-auto text-center font-roboto text-base antialiased'>
-                    VPS / DC / Office Server
-                  </div>
-                  <div className='mx-auto text-center font-inter font-semibold text-lg antialiased mt-8'>
-                    Requirements
-                  </div>
-                  <div className='flex flex-wrap px-7 space-x-4 text-center max-w-sm justify-center '> 
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                      Static IP
-                      </div>
-                    </div>
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                        Docker
-                      </div>
-                    </div>
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                        Very good bandwidth
-                      </div>
-                    </div>
-                    <div className='flex items-center space-x-2'>
-                      <div className='w-[0.3rem] h-[0.3rem] bg-regular-blue rounded-full'>
-                      </div>
-                      <div className='font-source-serif-pro font-normal text-lg antialiased'>
-                        TLS cert
-                      </div>
-                    </div>
-                  </div>
-                  <div className='mx-auto py-4 mt-8 sm:mt-2'>
-                    <button className='bg-dark-blue rounded-2xl '>
-                      <div className='font-roboto tracking-widest antialiased text-sm font-normal text-white px-20 py-1.5'>
-                        Coming soon
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <DownloadCard cardContent={card1} />
+              <DownloadCard cardContent={card2}/>
             </div>
             <div className='w-full -mt-8 block sm:hidden '>
               <div className='items-center justify-center space-x-3 flex'>
-                <button className=''  onClick={() => { firstElementInView()
-                }}>
-                  <div  className={`w-2 h-2 rounded-full border-[1px] border-gradient-blue ${firstInView ? `bg-gradient-blue` :`bg-white `}`}>
+                <button className='active:scale-90 disabled:opacity-50 hover:opacity-70 group outline-none'  onClick={() => {firstElementInView()}}>
+                  <div className='w-4 h-4 bg-transparent group-focus-within:bg-transparent rounded-full border-[1px] border-transparent group-focus-within:border-transparent relative'>
+                    <div  className={`w-2 h-2 absolute right-0 -translate-x-[37%] translate-y-[39%] rounded-full border-[1px] border-gradient-blue ${firstInView ? `bg-gradient-blue` :`bg-white `}`}>
+                    </div>
                   </div>
                 </button>
-                <button className='' onClick={() => { secondElementInView()
-                }} >
-                  <div  className={`w-2 h-2 rounded-full border-[1px] border-gradient-blue ${firstInView ? `bg-white` :`bg-gradient-blue `}`}>
+                <button className='active:scale-90 disabled:opacity-50 hover:opacity-70 group outline-none'  onClick={() => {firstElementInView()}}>
+                  <div className='w-4 h-4 bg-transparent group-focus-within:bg-transparent rounded-full border-[1px] border-transparent group-focus-within:border-transparent relative'>
+                    <div  className={`w-2 h-2 absolute right-0 -translate-x-[37%] translate-y-[39%] rounded-full border-[1px] border-gradient-blue ${firstInView ? `bg-white` :`bg-gradient-blue `}`}>
+                    </div>
                   </div>
                 </button>
               </div>
             </div>
           </div>
         </div>
+        <Footer/>
     </>
   )
 }
-
+// [#A8D8FF]
 export default Home
     
