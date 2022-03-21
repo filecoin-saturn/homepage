@@ -18,21 +18,25 @@ module.exports = {
         'filecoin-saturn-border': "url('/filecoin-saturn-border.svg')",
         'icon-border': "url('/icon-border.svg')",
         'nav-link-background': "url('/nav-link-background.svg')",
-
-
-
-
+        'protocol-labs-footer': "url('/protocol-labs-footer.svg')",
+        'filecoin-saturn-footer': "url('/filecoin-saturn-footer.svg')",
+        'footer-bg-filecoin-saturn': "url('/footer-bg-filecoin-saturn.svg')",
+        'nav-button-focus': "url('/nav-button-focus.svg')",
 
       },
-
       colors: {
         'gradient-turqouise': '#39C0CC',
         'gradient-blue': '#078FFF',
         'regular-blue': '#0E67FF',
         'dark-blue': '#194FCA',
+        'dark-blue-2': '#0B275B',
         'light-blue': '#0090FF',
+        'light-blue-2': '#E7F0FF',
+        'light-grey': '#888A93',
 
-      },
+
+      }, 
+
       fontFamily: {
         "roboto": ['"Roboto"', 'Arial', 'sans-serif'],
         "inter": ['"Inter"', 'Arial', 'sans-serif'],
