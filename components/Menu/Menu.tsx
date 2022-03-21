@@ -19,7 +19,7 @@ export default function Menu({setIsOpen}: MenuProps){
                 className="h-10 w-10 mx-auto mt-4 "
                 onClick={() => {setIsOpen(false)}}
             >
-                <div className="bg-menu-cross bg-center p-1 bg-contain bg-no-repeat w-full h-full">
+                <div className="bg-menu-cross bg-center p-1 bg-contain bg-no-repeat w-full h-full hover:opacity-80 outline-none disabled:opacity-50 active:scale-90 ">
                 </div>
             </button>
             <div className="flex flex-col space-y-6">

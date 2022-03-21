@@ -44,35 +44,39 @@ export default function NavBar() {
             <div id="navbar" className={`fixed inset-x-0 z-10 bg-white ${isScrolled ? `bg-opacity-70 backdrop-blur-md` : ``}`}>
                 <div className="flex justify-between mx-4 md:mx-6 my-2 items-center">
                     <Link href={"/"}>
-                        <a className="group outline-none active:scale-90 disabled:opacity-50 hover:opacity-80 ">
-                            <div className="group-focus-visible:bg-filecoin-saturn-border bg-contain bg-no-repeat bg-center p-4">
-                               <div className="w-20 h-12 bg-nav-logo bg-contain bg-center bg-no-repeat ">
+                        <a className="group outline-none active:scale-90 disabled:opacity-50 hover:opacity-70 ">
+                            <div className="group-focus-visible:bg-filecoin-saturn-border bg-opacity-80 bg-contain bg-no-repeat bg-center p-1 sm:p-4">
+                               <div className="w-16 h-10 md:w-20 md:h-12 bg-nav-logo bg-contain bg-center bg-no-repeat ">
                                 </div> 
                             </div> 
                         </a>
                     </Link>
-                    <button className="md:hidden h-7 w-7 " onClick={() => {setIsOpen(true)}}>
-                        <div className="bg-nav-menu bg-contain w-full h-full bg-center bg-no-repeat hover:opacity-80 outline-none disabled:opacity-50">
-                        </div>
-                    </button>
+                        <button className="active:scale-90 outline-none group-focus-visible:hidden md:hidden h-7 w-7 " onClick={() => {setIsOpen(true)}}>
+                            <div className="bg-nav-menu bg-contain w-full h-full bg-center bg-no-repeat hover:opacity-80 outline-none disabled:opacity-50">
+                            </div>
+                        </button>
                         <div className="hidden md:flex space-x-16 mr-10">
                             <div className="flex space-x-12">
                             {linkArray.map((link, index) => {
                             return (
-                                <>
-                                    <Link href={link.href} key={index}>
-                                        <a className="group outline-none active:scale-90 disabled:opacity-50 hover:opacity-70 group-focus-visible:bg-filecoin-saturn-border bg-contain bg-no-repeat bg-center">
-                                            <div className="relative text-sm ">
-                                                <div className={`font-roboto font-bold tracking-wide ${path.asPath === link.href ? ``: `invisible`}` }>
-                                                    {link.title}
-                                                </div>
-                                                <div className={`absolute font-roboto font-normal tracking-wide inset-0 ${path.asPath === link.href ? `invisible`: ``}` }>
-                                                    {link.title}
+                                <div key={index} className="rounded-3xl overflow-hidden">
+                                    <Link href={link.href}>
+                                        <a className="group rounded-3xl outline-none active:scale-90 disabled:opacity-50 hover:text-light-blue">
+                                            <div className="w-full rounded-3-xl group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-3xl p-0.5 group-active:scale-90">
+                                                <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-3xl px-3 py-1.5  ">
+                                                    <div className="relative text-sm ">
+                                                        <div className={`font-roboto font-bold tracking-wide ${path.asPath === link.href ? ``: `invisible`}` }>
+                                                            {link.title}
+                                                        </div>
+                                                        <div className={`absolute font-roboto font-normal tracking-wide inset-0 ${path.asPath === link.href ? `invisible`: ``}` }>
+                                                            {link.title}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </a>
                                     </Link>
-                                </>
+                                </div>
                             )
                             })}
                             </div>
@@ -86,7 +90,7 @@ export default function NavBar() {
                         </div>
                 </div>
             </div>
-            <div id="navbar-area" className="bg-transparent w-full h-[4.1rem]"></div>     
+            <div id="navbar-area" className="bg-transparent w-full h-[3rem] md:h-[4.1rem]"></div>     
         </>
     )
 }
