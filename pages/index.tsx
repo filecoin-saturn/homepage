@@ -95,7 +95,7 @@ const Home: NextPage = () => {
         <div id='intro' className='w-full relative overflow-visible'>
           <div className=' h-full w-full sticky -top-[14rem] sm:-top-[24rem] md:-top-[24rem] lg:-top-[28rem] xl:-top-[38rem] -z-20 -ml-72 -mt-20 sm:-ml-52 -mb-[26rem] sm:-mb-[90vh] lg:-mb-[100vh] xl:-mb-[110vh]'>
             <div className='relative md:w-[100%] min-w-[42rem] h-[28rem] sm:h-[90vh] lg:h-[100vh] xl:h-[110vh] -ml-16 md:mt-14 lg:mt-20 lg:-ml-28 xl:-ml-60      '>
-                  <Image src={saturn} width={10} height={10} layout="fill" objectFit="contain" objectPosition="" alt="Saturn Network" />        
+                  <Image src={saturn} layout="fill" objectFit="contain" objectPosition="" alt="Saturn Network" />        
             </div>
           </div>
           <div  className=' flex items-end sm:items-center w-full h-[32.5rem] mt-8 sm:h-[90vh] lg:h-[100vh] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-center  '>

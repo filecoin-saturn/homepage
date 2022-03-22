@@ -26,7 +26,7 @@ export default function Menu({setIsOpen}: MenuProps){
                 {linkArray.map((link, index) => {
                     return (
                         <>
-                            <Link href={link.href}>
+                            <Link href={link.href} key={index}>
                                 <a  onClick={() => {setIsOpen(false)}}>
                                     <div className="relative text-base">
                                         <div className={`font-roboto font-bold antialiased tracking-wide ${path.asPath === link.href ? ``: `invisible`}` }>
