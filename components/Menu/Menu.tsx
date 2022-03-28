@@ -29,7 +29,7 @@ export default function Menu({setIsOpen}: MenuProps){
                     return (
                         <>
                             <Link href={link.href} key={index}>
-                                <a className="group outline-none relative" onClick={() => {setIsOpen(false)}}>
+                                <a className="group outline-none active:scale-90 disabled:opacity-50 hover:text-light-blue" onClick={() => {setIsOpen(false)}}>
                                     <div className="relative group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-3xl p-0.5 group-active:scale-90">
                                         <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-3xl px-2 py-1.5  ">
                                             <div className="relative text-base">
