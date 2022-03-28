@@ -27,40 +27,6 @@ const Home: NextPage = () => {
     const downloadHere = "Download the app here"
 
 
-    const [firstInView, setFirstInView] = useState(true)
-
-    useEffect(() => {
-      const options = {
-          root: null,
-          rootMargin: '0px',
-          threshold: 1
-      }
-      const callback = (entries: IntersectionObserverEntry[]) => {
-          entries.forEach((entry) => {
-              if(entry.intersectionRatio === 1) {
-                  setFirstInView(true)
-              }
-              else {setFirstInView(false)
-              }
-          });
-        };
-      const observer = new IntersectionObserver(callback, options);
-      const target = document.querySelector('#first-item');
-      if(target) observer.observe(target);
-      return () => {
-          if(target) observer.unobserve(target)
-      }
-  }, [])
-
-    function firstElementInView(){
-      const element = document.getElementById("first-item")
-      element?.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
-    }
-
-    function secondElementInView(){
-      const element = document.getElementById("second-item")
-      element?.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
-    }
 
     const card1 = {
       bgImage: "bg-card-logo-gateway",
@@ -69,24 +35,10 @@ const Home: NextPage = () => {
       requirements: "Requirements",
       requirementsContent: ["Static IP", "Docker", "Very good bandwidth", "TLS Cert"],
       downloadButton: "Instructions",
-      marginTopButton: "mt-8 sm:mt-9",
+      marginTopDownloadButton: "mt-8 sm:mt-9",
       id: "first-item",
       disabled: false,
       idDownloadButton: "1"
-
-    }
-
-    const card2 = {
-      bgImage: "bg-card-logo-station",
-      title: "Station Operator",
-      subTitle: "Desktop Computer",
-      requirements: "Requirements",
-      requirementsContent: ["Static IP","Linux/Mac/Windows", "Good bandwidth", "200+ GB Storage"],
-      downloadButton: "Download",
-      marginTopButton: "mt-2",
-      id: "second-item",
-      disabled: true,
-      idDownloadButton: "2"
 
     }
   return (
@@ -129,7 +81,7 @@ const Home: NextPage = () => {
                 </Link>
               </div>
               <div className='flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4 mt-10 sm:mt-2 sm:absolute sm:right-0 sm:top-0 sm:translate-y-1/2  sm:mr-2 xl:mr-0'>
-                  <a className='group outline-none active:scale-90 disabled:opacity-50 hover:opacity-80'
+                  <a className='group outline-none md:w-full md:h-full active:scale-90 disabled:opacity-50 hover:opacity-80'
                     target="_blank" 
                     rel='noreferrer' 
                     href="https://filecoin.io" 
@@ -139,10 +91,10 @@ const Home: NextPage = () => {
                         </div> 
                     </div> 
                   </a>
-                  <a className='group outline-none active:scale-90 disabled:opacity-50 hover:opacity-80'
+                  <a className='group md:w-full md:h-full outline-none active:scale-90 disabled:opacity-50 hover:opacity-80'
                     target="_blank" 
                     rel='noreferrer' 
-                    href="https://protocol-labs.io" 
+                    href="https://protocol.ai/" 
                   >
                     <div className="group-focus-visible:bg-icon-border bg-contain bg-no-repeat bg-center p-1">
                         <div className="bg-protocol-labs-logo mt-0.5 w-5 h-5 sm:w-6 sm:h-6 bg-no-repeat bg-center bg-contain ">
@@ -196,8 +148,6 @@ const Home: NextPage = () => {
                           </a>  
                         </Link>
                       </div>
-                      
-                      
                     </div>
                   </div>
                   <div className='flex space-x-4 text-left '>
@@ -258,23 +208,6 @@ const Home: NextPage = () => {
             </div>
             <div className='flex my-10 md:min-w-[30rem] overflow-scroll space-x-10 mx-4 no-scrollbar snap-x snap-mandatory  '>
               <DownloadCard cardContent={card1} />
-              <DownloadCard cardContent={card2}/>
-            </div>
-            <div className='w-full -mt-8 block sm:hidden '>
-              <div className='items-center justify-center space-x-3 flex'>
-                <button className='active:scale-90 disabled:opacity-50 hover:opacity-70 group outline-none'  onClick={() => {firstElementInView()}}>
-                  <div className='w-4 h-4 bg-transparent group-focus-within:bg-transparent rounded-full border-[1px] border-transparent group-focus-within:border-transparent relative'>
-                    <div  className={`w-2 h-2 absolute right-0 -translate-x-[37%] translate-y-[39%] rounded-full border-[1px] border-gradient-blue ${firstInView ? `bg-gradient-blue` :`bg-white `}`}>
-                    </div>
-                  </div>
-                </button>
-                <button className='active:scale-90 disabled:opacity-50 hover:opacity-70 group outline-none'  onClick={() => {firstElementInView()}}>
-                  <div className='w-4 h-4 bg-transparent group-focus-within:bg-transparent rounded-full border-[1px] border-transparent group-focus-within:border-transparent relative'>
-                    <div  className={`w-2 h-2 absolute right-0 -translate-x-[37%] translate-y-[39%] rounded-full border-[1px] border-gradient-blue ${firstInView ? `bg-white` :`bg-gradient-blue `}`}>
-                    </div>
-                  </div>
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -282,6 +215,5 @@ const Home: NextPage = () => {
     </>
   )
 }
-// [#A8D8FF]
 export default Home
     

@@ -14,28 +14,34 @@ export default function Menu({setIsOpen}: MenuProps){
         {title: "Download", href: "/#download" }
     ]
     return (
-        <div className="flex flex-col justify-between h-full text-center">
-            <button 
-                className="h-10 w-10 mx-auto mt-4 "
-                onClick={() => {setIsOpen(false)}}
-            >
-                <div className="bg-menu-cross bg-center p-1 bg-contain bg-no-repeat w-full h-full hover:opacity-80 outline-none disabled:opacity-50 active:scale-90 ">
+        <div className="flex flex-col justify-between h-full text-center py-3">
+            <div className="relative my-2 flex justify-center items-center">
+                <button className="relative active:scale-90 outline-none group md:hidden h-7 w-7 " onClick={() => {setIsOpen(false)}}>
+                    <div className="hidden group-focus-visible:flex bg-focus-menu-button w-full h-full bg-center bg-no-repeat bg-contain">
+                    </div>
+                    <div className="absolute hover:opacity-80 top-0 group-focus-visible:hidden group-focus-visible:bg-opacity-0 bg-nav-menu bg-contain w-full h-full bg-center bg-no-repeat outline-none disabled:opacity-50">
+                    </div>
+                </button>
                 </div>
-            </button>
-            <div className="flex flex-col space-y-6">
+
+            <div className="flex flex-col space-y-6 mx-auto">
                 {linkArray.map((link, index) => {
                     return (
                         <>
                             <Link href={link.href} key={index}>
-                                <a  onClick={() => {setIsOpen(false)}}>
-                                    <div className="relative text-base">
-                                        <div className={`font-roboto font-bold antialiased tracking-wide ${path.asPath === link.href ? ``: `invisible`}` }>
-                                            {link.title}
+                                <a className="group outline-none relative" onClick={() => {setIsOpen(false)}}>
+                                    <div className="relative group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-3xl p-0.5 group-active:scale-90">
+                                        <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-3xl px-2 py-1.5  ">
+                                            <div className="relative text-base">
+                                                <div className={`font-roboto font-bold antialiased tracking-wide ${path.asPath === link.href ? ``: `invisible`}` }>
+                                                    {link.title}
+                                                </div>
+                                                <div className={`absolute font-roboto font-normal inset-0 antialised tracking-wide ${path.asPath === link.href ? `invisible`: ``}` }>
+                                                    {link.title}
+                                                </div>
+                                            </div> 
                                         </div>
-                                        <div className={`absolute font-roboto font-normal inset-0 antialised tracking-wide ${path.asPath === link.href ? `invisible`: ``}` }>
-                                            {link.title}
-                                        </div>
-                                    </div>   
+                                    </div>  
                                 </a>
                             </Link>
                         </>

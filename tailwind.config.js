@@ -17,11 +17,9 @@ module.exports = {
         'learn-more-button': "url('/learn-more-button.svg')",
         'filecoin-saturn-border': "url('/filecoin-saturn-border.svg')",
         'icon-border': "url('/icon-border.svg')",
-        'nav-link-background': "url('/nav-link-background.svg')",
         'protocol-labs-footer': "url('/protocol-labs-footer.svg')",
         'filecoin-saturn-footer': "url('/filecoin-saturn-footer.svg')",
-        'footer-bg-filecoin-saturn': "url('/footer-bg-filecoin-saturn.svg')",
-        'nav-button-focus': "url('/nav-button-focus.svg')",
+        'focus-menu-button': "url('/focus-menu-button.svg')",
 
       },
       colors: {

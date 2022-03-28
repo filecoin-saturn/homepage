@@ -7,7 +7,7 @@ type DownloadCardProps = {
         requirements: string 
         requirementsContent: string[]
         downloadButton: string
-        marginTopButton?: string
+        marginTopDownloadButton?: string
         id: string
         idDownloadButton: string
         disabled: boolean
@@ -46,8 +46,8 @@ export default function DownloadCard({cardContent}: DownloadCardProps) {
                         )
                     })}  
                 </div>
-                <div className={`mx-auto py-4 ${cardContent.marginTopButton} `}>
-                    <button id={cardContent.idDownloadButton} className='bg-dark-blue rounded-3xl w-3/4 active:scale-90 hover:opacity-80 group '>
+                <div className={`mx-auto py-4 outline-none ${cardContent.marginTopDownloadButton} `}>
+                    <button id={cardContent.idDownloadButton} className='bg-dark-blue rounded-3xl w-3/4 active:scale-90 hover:opacity-80 group outline-none '>
                         <div className='font-roboto tracking-widest antialiased text-sm font-normal text-white py-0.5 border-2 group-focus-visible:border-light-blue-2 outline outline-1 outline-transparent border-transparent group-focus-visible:outline-dark-blue rounded-3xl '>
                             {cardContent.downloadButton}
                         </div>
