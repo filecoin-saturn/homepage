@@ -1,7 +1,8 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",,
+    "./content/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -20,7 +21,6 @@ module.exports = {
         'protocol-labs-footer': "url('/protocol-labs-footer.svg')",
         'filecoin-saturn-footer': "url('/filecoin-saturn-footer.svg')",
         'focus-menu-button': "url('/focus-menu-button.svg')",
-
       },
       colors: {
         'gradient-turqouise': '#39C0CC',
@@ -31,19 +31,39 @@ module.exports = {
         'light-blue': '#0090FF',
         'light-blue-2': '#E7F0FF',
         'light-grey': '#888A93',
-
-
       }, 
-
       fontFamily: {
         "roboto": ['"Roboto"', 'Arial', 'sans-serif'],
         "inter": ['"Inter"', 'Arial', 'sans-serif'],
         "source-serif-pro": ['"Source Serif Pro"', 'Arial', 'sans-serif'],
-
-
-
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            small: {
+              p: {
+                fontSize: '1rem !important'
+              }
+            },
+            '.description': {
+              p: {
+                color: 'black',
+                fontFamily: 'Roboto, Arial, sans-serif',
+                fontSize: '0.875rem',
+                lineHeight: '1.25rem',
+                margin: '0',
+                '@media (min-width: theme("screens.sm"))': {
+                  fontSize: '1rem',
+                  lineHeight: '1.5rem'
+                }
+              }  
+            }
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
