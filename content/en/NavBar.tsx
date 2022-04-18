@@ -1,4 +1,4 @@
-import NavBarTemplate from "../../../components/NavBar/NavBar";
+import NavBarTemplate from "../../components/NavBar/NavBar";
 
 const navLinkArray = [
     {title: "How it works", href: "/#howitworks" },

@@ -1,4 +1,4 @@
-import FooterTemplate from "../../../components/Footer/Footer";
+import FooterTemplate from "../../components/Footer/Footer";
 
 const links = [
     {
