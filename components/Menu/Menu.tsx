@@ -17,11 +17,11 @@ type Props = {
 export default function Menu({isOpen, setIsOpen, linkArray, languages}: Props){
     const path = useRouter()
     return (
-        <div className="flex flex-col justify-between h-full text-center py-3">
-            <div className="relative my-2 flex justify-center items-center">
+        <div className="flex flex-col justify-between h-full text-center py-10">
+            <div className="relative flex justify-center items-center">
                 <Button6 isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
-            <div className="flex flex-col space-y-6 mx-auto">
+            <div className="flex flex-col space-y-4 mx-auto">
                 {linkArray.map((link, index) => {
                     return (
                         <Button7 
@@ -35,7 +35,7 @@ export default function Menu({isOpen, setIsOpen, linkArray, languages}: Props){
                     )
                 })}
             </div>  
-            <div className="mb-4">
+            <div className="">
                 <Button7 type="button" text={languages.text} onClick={() => {}} disabled />
             </div>
         </div>

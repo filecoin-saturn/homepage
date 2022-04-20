@@ -10,7 +10,7 @@ const languages = {
 }
 
 const menuLinkArray = [
-    {title: "Intro", href: "/#intro" },
+    {title: "Start", href: "/#start" },
     {title: "How it works", href: "/#howitworks" },
     {title: "Download", href: "/#download" }
 ]

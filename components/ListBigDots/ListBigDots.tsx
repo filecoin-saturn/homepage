@@ -7,7 +7,7 @@ export default function ListBigDots({children}: Props) {
         <>
             {children.map((child, i, array) => {
                 return (
-                    <div key={i} className='flex space-x-4'>
+                    <div key={i} className='flex space-x-1'>
                         <div className='flex flex-col'>
                             <div className='bg-regular-blue outline-2 outline outline-regular-blue/30 rounded-full min-w-[0.75rem] min-h-[0.75rem] '/>
                             {i === array.length - 1 ? null : (

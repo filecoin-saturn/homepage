@@ -27,7 +27,7 @@ export default function Button7({type, text, onClick, ...all}: Props) {
             <a className="group outline-none active:scale-90 disabled:opacity-50 hover:text-light-blue" onClick={onClick} >
                 <div className="relative group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-full p-0.5 group-active:scale-90">
                     <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-full px-2 py-1.5  ">
-                        <div className="relative md:text-sm text-base">
+                        <div className="relative md:text-sm text-xl">
                             <div className={`font-roboto font-bold antialiased tracking-wide ${rest.isActive ? ``: `invisible`}` }>
                                 {text}
                             </div>
@@ -41,7 +41,7 @@ export default function Button7({type, text, onClick, ...all}: Props) {
         </Link>
     ) : (
         <button disabled={rest.disabled} className="disabled:opacity-40">
-            <div className="relative md:text-sm text-base">
+            <div className="relative text-xl">
                 <div className="font-roboto font-normal antialiased inset-0 tracking-wide">
                     {text}
                 </div>

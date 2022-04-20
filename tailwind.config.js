@@ -47,9 +47,9 @@ module.exports = {
             },
             '.description': {
               p: {
-                color: 'black',
+                color: '#4f4f4f',
                 fontFamily: 'Roboto, Arial, sans-serif',
-                fontSize: '0.875rem',
+                fontSize: '1rem',
                 lineHeight: '1.25rem',
                 margin: '0',
                 '@media (min-width: theme("screens.sm"))': {
