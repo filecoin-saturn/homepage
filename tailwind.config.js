@@ -42,18 +42,22 @@ module.exports = {
           css: {
             small: {
               p: {
-                fontSize: '1rem !important'
+                fontSize: '1.125rem !important',
+                lineHeight: '1.25rem',
+                '@media (min-width: theme("screens.xl"))': {
+                  fontSize: '1.25rem !important',
+                  lineHeight: '1.5rem'
+                }
               }
             },
             '.description': {
               p: {
                 color: '#4f4f4f',
                 fontFamily: 'Roboto, Arial, sans-serif',
-                fontSize: '1rem',
+                fontSize: '1rem !important',
                 lineHeight: '1.25rem',
-                margin: '0',
-                '@media (min-width: theme("screens.sm"))': {
-                  fontSize: '1rem',
+                '@media (min-width: theme("screens.md"))': {
+                  fontSize: '1.125rem !important',
                   lineHeight: '1.5rem'
                 }
               }  

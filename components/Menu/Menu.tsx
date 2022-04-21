@@ -31,12 +31,13 @@ export default function Menu({isOpen, setIsOpen, linkArray, languages}: Props){
                             text={link.title} 
                             onClick={(e) => {setIsOpen(false)}} 
                             isActive={path.asPath === link.href} 
+                            size={"xl"}
                         />
                     )
                 })}
             </div>  
             <div className="">
-                <Button7 type="button" text={languages.text} onClick={() => {}} disabled />
+                <Button7 type="button" text={languages.text} size={"xl"} onClick={() => {}} disabled />
             </div>
         </div>
     )

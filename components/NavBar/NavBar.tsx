@@ -53,7 +53,7 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
             </div>
             <div id="navbar" className={`fixed inset-x-0 z-10 bg-white ${isScrolled ? `bg-opacity-70 backdrop-blur-md` : ``}`}>
                 <div className="flex justify-between mx-4 md:mx-6 my-1.5 md:my-2 items-center">
-                    <div className=" md:p-4">
+                    <div className=" md:p-1">
                         <Button5 colorMode="light" link="/" />
                     </div>
                     <Button6 isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -68,11 +68,12 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
                                         text={link.title} 
                                         onClick={(e) => {setIsOpen(false)}} 
                                         isActive={path.asPath === link.href} 
+                                        size={"lg"}
                                     />
                                 )
                             })}
                         </div>
-                        <Button7 type="button" text={languages.text} onClick={() => {}} disabled />
+                        <Button7 type="button" text={languages.text} size={"lg"} onClick={() => {}} disabled />
                     </div>
                 </div>
             </div>

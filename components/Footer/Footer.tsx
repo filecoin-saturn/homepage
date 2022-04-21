@@ -19,7 +19,7 @@ export default function Footer({links, credits}: Props){
             <div className=" bg-black mx-auto w-full py-10">
                 <div className=" mx-auto text-white w-full flex items-center justify-center ">
                     <div className="flex text-left justify-start mx-auto flex-wrap max-w-[14rem] sm:max-w-md md:max-w-2xl lg:max-w-none lg:space-x-16 xl:space-x-24 antialiased">
-                        <div className="text-left -ml-3 md:text-center md:w-fit justify-start px-2 mb-16 sm:mb-20 sm:-ml-2 md:-ml-4 md:mr-12 md:-mt-2 xl:mr-14 ">
+                        <div className="text-left -ml-4 md:text-center md:w-fit justify-start px-2 mb-16 sm:mb-20 sm:-ml-2 md:-ml-4 md:mr-12 md:-mt-2 xl:mr-14 ">
                             <Button5 colorMode="dark" link="/" />
                         </div>
                         <div className="flex flex-wrap text-left justify-between md:justify-center mx-auto font-inter text-sm sm:text-base text-light-grey sm:space-x-16 md:space-x-16 lg:space-x-16 xl:space-x-32 ">

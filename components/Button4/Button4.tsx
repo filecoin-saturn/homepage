@@ -14,8 +14,8 @@ export default function Button4({imgUrl, link}: Props) {
                     href={link}
                   >
                     <div className="group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-full p-0.5 group-active:scale-90 ">
-                        <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-full p-1.5 ">
-                            <div className=" w-[1.5rem] h-[1.5rem] sm:w-8 sm:h-8 bg-no-repeat bg-center bg-contain group-hover:opacity-70" style={{backgroundImage: `url('${imgUrl}')`}}>
+                        <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-full p-1 md:p-1.5 ">
+                            <div className=" w-[1.5rem] h-[1.5rem] bg-no-repeat bg-center bg-contain group-hover:opacity-70" style={{backgroundImage: `url('${imgUrl}')`}}>
                             </div> 
                         </div>
                     </div> 

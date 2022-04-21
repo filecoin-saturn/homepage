@@ -7,10 +7,10 @@ import Button1 from "../../../components/Button1/Button1"
 export function MainLinks() {
     return (
         <>
-            <div className="-mt-1 md:mt-0">
+            <div className="-mt-1 md:-mt-2">
                 <Button3 link='#howitworks' text="Learn more"/>
             </div>
-            <div className="mt-4 hidden sm:block">
+            <div className="mt-4 lg:mt-6 hidden sm:block">
                 <Button1 text="Download" link="#download"/>
             </div>
         </>
