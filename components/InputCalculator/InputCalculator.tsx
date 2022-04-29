@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 type CalculatorProps = {
@@ -95,15 +94,15 @@ export default function InputCalculator({label, minValue, maxValue, id, startVal
                     } } 
                 >{startValue}</output>
                   <div className='absolute flex top-1/4 right-0 items-center md:-translate-y-[31.5%] '>
-                    <div className={`w-[0.10rem] h-[0.6rem] md:w-[0.125rem] md:h-[0.8rem] z-10 bg-gradient-blue  z-5  `}>
+                    <div onClick={() => {setCurrentValue(maxValue)}} className={`cursor-pointer w-[0.10rem] h-[0.6rem] md:w-[0.125rem] md:h-[0.8rem] z-10 bg-gradient-blue  z-5  `}>
                     </div>
-                    <div className=' rounded-r-lg w-[0.625rem] h-[0.2rem] md:w-[0.75rem] md:h-[0.25rem] bg-light-blue-3'>
+                    <div onClick={() => {setCurrentValue(maxValue)}}  className='cursor-pointer rounded-r-lg w-[0.625rem] h-[0.2rem] md:w-[0.75rem] md:h-[0.25rem] bg-light-blue-3'>
                     </div>
                 </div>
                 <div className='absolute flex top-1/4 left-0 items-center md:-translate-y-[31.5%] '>
-                    <div className=' rounded-l-lg w-[0.625rem] h-[0.2rem] md:w-[0.75rem] md:h-[0.25rem] bg-light-blue-3'>
+                    <div onClick={() => {setCurrentValue(minValue)}}  className='cursor-pointer rounded-l-lg w-[0.625rem] h-[0.2rem] md:w-[0.75rem] md:h-[0.25rem] bg-light-blue-3'>
                     </div>
-                    <div className={`w-[0.10rem] h-[0.6rem] md:w-[0.125rem] md:h-[0.8rem] z-10 bg-gradient-blue z-5  `}>
+                    <div onClick={() => {setCurrentValue(minValue)}}  className={`cursor-pointer w-[0.10rem] h-[0.6rem] md:w-[0.125rem] md:h-[0.8rem] z-10 bg-gradient-blue z-5  `}>
                     </div>
                 </div>
                 <div className='flex justify-between mt-1.5  '>
@@ -115,14 +114,3 @@ export default function InputCalculator({label, minValue, maxValue, id, startVal
         </>
     )
 }
-
-
-
-{/* <div className={`w-[0.10rem] h-[0.6rem] -translate-x-[calc(0.625rem-0.0625rem)] md:h-3 z-10 bg-gradient-blue absolute top-1/4 right-0  md:-translate-y-1/2 z-5  `}>
-                </div>
-                <div className='absolute overflow-hidden rounded-r-lg w-[0.625rem] h-[0.193rem] top-1/3 -translate-y-[16%] right-0 bg-light-blue-3'>
-                </div>
-                <div className={`w-[0.10rem] h-[0.6rem] translate-x-[calc(0.625rem-0.0625rem)] md:h-3 z-10 bg-gradient-blue absolute top-1/4 left-[0%]  md:-translate-y-1/2 z-5  `}>
-                </div>
-                <div className='absolute overflow-hidden rounded-l-lg w-[0.625rem] inline-block h-[0.1997rem] outline outline-transparent top-1/3 -translate-y-[16%] left-0 bg-light-blue-3'>
-                </div> */}
