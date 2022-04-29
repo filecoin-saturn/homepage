@@ -17,6 +17,12 @@ import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { CallToAction as HowItWorksCallToAction, imageDescription as howItWorksImageDescription} from '../content/en/index/howItWorks'
 import Download from '../content/en/index/download.mdx'
 import DownloadsGatewaySection from '../content/en/index/downloads-gateway-section.mdx'
+import EarnIntroSection from "../content/en/index/earn-intro-section.mdx"
+import coinStacks from "../public/coinStacks.png"
+import { imageDescription as earnImageDescription } from "../content/en/index/earn"
+import EarnCalculatorSection from '../content/en/index/earn-calculator-section.mdx'
+import { TotalEarningsButtonLanguage } from '../content/en/index/earn'
+import { InputCalculatorLanguage } from '../content/en/index/earn'
 
 const Home: NextPage = () => {
 
@@ -30,13 +36,40 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div  className=' flex items-end sm:items-center w-full h-[32.5rem] mt-12 sm:h-[90vh] lg:h-[100vh] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-center  '>
-            <div className='mx-auto px-8 sm:px-14 sm:mr-8 text-left max-w-xs lg:max-w-[26rem] sm:right-0 -translate-y-1/3 md:-translate-y-1/2 lg:-translate-y-1/2 xl:translate-x-1/4 '>
+            <div className='mx-auto px-8 sm:px-14 sm:mr-8 text-left max-w-xs lg:max-w-[26rem] sm:right-0 sm:-translate-y-1/3 md:-translate-y-1/2 lg:-translate-y-1/2 xl:translate-x-1/4 '>
               <CustomProse>
                 <Intro />
               </CustomProse>
               <IntroMainLinks />
               <div className='not-prose -ml-3 sm:ml-0 flex sm:flex-col mt-5 space-x-2 sm:space-x-0 sm:-space-y-1 my-5 sm:mt-3 lg:mt-5 sm:absolute sm:right-0 sm:top-0 sm:translate-y-1/3 sm:translate-x-1/3  sm:mr-2 xl:mr-0'>
                 <IntroSideLinks />
+              </div>
+            </div>
+          </div>
+          <div className=' sm:mt-4 mx-auto md:max-w-3xl lg:max-w-5xl overflow-visible pt-20 md:pt-40 lg:pt-52'>
+            <div className='mx-auto px-8 max-w-sm md:px-4 text-left md:text-center md:max-w-md lg:max-w-5xl  '>
+              <div className='lg:flex lg:space-y-12 md:max-w-xl md:mx-auto'>
+                <CustomProse>
+                  <EarnIntroSection />
+                </CustomProse>
+              </div>
+              <div className='lg:flex lg:space-x-16 items-center md:text-left justify-center'>
+                <div>
+                  <div className='mt-12'>
+                    <CustomProse>
+                      <EarnCalculatorSection/>
+                    </CustomProse>
+                  </div>
+                  <div className='mt-12'>
+                    <InputCalculatorLanguage />
+                  </div>
+                </div>
+                  <TotalEarningsButtonLanguage />
+                <div className=' md:min-w-[30rem] hidden lg:block space-x-10 mx-4 overflow-hidden'>
+                  <div className='overflow-hidden my-2 md:my-0 max-w-md lg:max-w-2xl mx-auto'>
+                    <Image src={coinStacks} layout="responsive" objectFit="contain" alt={earnImageDescription.alt}/>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

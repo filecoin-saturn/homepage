@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xxs': '340px',
+        'xs': '400px',
+
+      },
       backgroundImage: {
         'nav-logo': "url('/nav-logo.svg')",
         'nav-menu': "url('/nav-open-menu.svg')",
@@ -30,6 +35,7 @@ module.exports = {
         'dark-blue-2': '#0B275B',
         'light-blue': '#0090FF',
         'light-blue-2': '#E7F0FF',
+        'light-blue-3': '#B7D1FF',
         'light-grey': '#888A93',
       }, 
       fontFamily: {
@@ -59,8 +65,20 @@ module.exports = {
                 '@media (min-width: theme("screens.md"))': {
                   fontSize: '1.125rem !important',
                   lineHeight: '1.5rem'
-                }
+                },
               }  
+            },
+            '.note': {
+              p: {
+                color: '#767676',
+                fontFamily: 'Source Serif Pro, Arial, sans-serif',
+                fontSize: '0.8rem !important',
+                lineHeight: '1.25rem',
+                '@media (min-width: theme("screens.md"))': {
+                  fontSize: '1rem !important',
+                  lineHeight: '1.5rem'
+                }
+              }
             }
           },
         },
