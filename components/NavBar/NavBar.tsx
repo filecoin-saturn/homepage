@@ -54,7 +54,7 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
                 <div className="flex justify-between my-1 items-center">
                     <div className={`-ml-2 ${isScrolled ? ``:`translate-x-1/4 lg:translate-x-1/2`}`}>
-                        <Button3 link="/start" />
+                        <Button3 link="/#start" />
                     </div>
                     <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
                     <div className={`hidden md:flex space-x-16 mr-2 ${isScrolled ? `` : `-translate-x-1/4`}`}>

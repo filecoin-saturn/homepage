@@ -11,9 +11,9 @@ import NavBar from '../content/en/index/NavBar'
 
 const Home: NextPage = () => {
   return (
-    <div id='start' className='mx-auto text-center w-full min-h-[200rem] bg-fixed inset-0 overflow-hidden lg:bg-desktop-background bg-mobile-background bg-no-repeat bg-cover bg-center'>
+    <div className='mx-auto text-center w-full min-h-[200rem] bg-fixed inset-0 overflow-hidden lg:bg-desktop-background bg-mobile-background bg-no-repeat bg-cover bg-center'>
       <NavBar />
-        <div className='mx-auto px-9 text-left max-w-xs md:max-w-sm lg:max-w-[30rem] flex flex-col h-[100vh] justify-end lg:py-24 lg:mx-20 '>
+        <div id='start' className='mx-auto px-9 text-left max-w-xs md:max-w-sm lg:max-w-[30rem] flex flex-col h-[100vh] justify-end lg:py-24 lg:mx-20 '>
           <CustomProse>
             <Intro />
           </CustomProse>
