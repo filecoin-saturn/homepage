@@ -1,4 +1,3 @@
-import Link from "next/link"
 
 type Props = {
     text: string,
@@ -7,14 +6,12 @@ type Props = {
 
 export default function Button1({text, link}: Props) {
     return (
-        <Link href={link}>
-            <a className='outline-none w-full group rounded-full inline-block no-underline text-center'>
-                <div className='bg-gradient-to-r from-gradient-turqouise to-gradient-blue p-0.5 py-0.5 px-0.5 rounded-full active:scale-90'>
-                    <div className='w-full text-sm md:text-base rounded-full py-1 md:py-1 font-roboto font-normal bg-white tracking-widest antialiased group-hover:bg-transparent group-hover:text-white disabled:opacity-30 group-focus-visible:bg-transparent outline-none border-2 border-transparent group-focus-visible:border-[#D1ECFC] group-focus-visible:rounded-full group-focus-visible:text-white  '>
+            <a href={link} className=' active:scale-90 outline-none group rounded-full no-underline text-center text-white bg-sat-blue-1 hover:bg-gradient-to-r hover:from-sat-green-1 hover:to-sat-blue-1  shadow-colored'>
+                <div className='rounded-full border-2 border-transparent group-focus-visible:border-white  '>
+                    <div className='font-inter font-black text-xs md:text-sm lg:text-lg tracking-wide px-4 lg:px-12 py-1 antialiased'>
                         {text}
                     </div>
                 </div>
             </a>
-        </Link>
     )
 }

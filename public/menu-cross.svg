@@ -1,8 +1,8 @@
-<svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="19.0919" cy="19.0919" r="13" transform="rotate(-45 19.0919 19.0919)" stroke="#078FFF"/>
-<circle cx="19.0919" cy="19.0919" r="9.5" transform="rotate(-45 19.0919 19.0919)" fill="#078FFF"/>
-<rect x="16.2634" y="16.9705" width="1" height="7" transform="rotate(-45 16.2634 16.9705)" fill="white"/>
-<rect x="16.2634" y="16.9705" width="1" height="7" transform="rotate(-45 16.2634 16.9705)" fill="white"/>
-<rect x="21.2133" y="16.2634" width="1" height="7" transform="rotate(45 21.2133 16.2634)" fill="white"/>
-<rect x="21.2133" y="16.2634" width="1" height="7" transform="rotate(45 21.2133 16.2634)" fill="white"/>
+<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13.5" cy="13.5" r="13" stroke="#078FFF"/>
+<circle cx="13.5" cy="13.5" r="9.5" fill="#078FFF"/>
+<rect x="13" y="10" width="1" height="7" fill="white"/>
+<rect x="13" y="10" width="1" height="7" fill="white"/>
+<rect x="17" y="13" width="1" height="7" transform="rotate(90 17 13)" fill="white"/>
+<rect x="17" y="13" width="1" height="7" transform="rotate(90 17 13)" fill="white"/>
 </svg>

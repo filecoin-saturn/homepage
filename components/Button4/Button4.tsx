@@ -1,28 +1,15 @@
-import Link from "next/link"
-
 type Props = {
-    imgUrl: string,
-    link: string
+    isOpen: boolean,
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Button4({imgUrl, link}: Props) {
+export default function Button4({isOpen, setIsOpen}: Props) {
     return (
-        <Link href={link}>
-            <a className='group outline-none md:w-full md:h-full active:scale-90 disabled:opacity-50 hover:opacity-80 p-1'
-                    target="_blank" 
-                    rel='noreferrer' 
-                    href={link}
-                  >
-                    <div className="group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-full p-0.5 group-active:scale-90 ">
-                        <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-full p-1 md:p-1.5 ">
-                            <div className=" w-[1.5rem] h-[1.5rem] bg-no-repeat bg-center bg-contain group-hover:opacity-70" style={{backgroundImage: `url('${imgUrl}')`}}>
-                            </div> 
-                        </div>
-                    </div> 
-                  </a>
-        </Link>
+        <button className={`mx-1 relative active:scale-90 outline-none group md:hidden h-7 w-7 ${isOpen ? "rotate-45" : ""}`} onClick={() => {setIsOpen(!isOpen)}}>
+            <div className="invisible group-focus-visible:visible bg-focus-menu-button w-full h-full bg-center bg-no-repeat bg-contain">
+            </div>
+            <div className="absolute hover:opacity-80 top-0 group-focus-visible:hidden group-focus-visible:bg-opacity-0 bg-nav-menu bg-contain w-full h-full  bg-center bg-no-repeat outline-none disabled:opacity-50">
+            </div>
+        </button>
     )
 }
-
-
-
