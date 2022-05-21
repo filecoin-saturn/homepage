@@ -5,10 +5,14 @@ type Props = {
 
 export default function Button4({isOpen, setIsOpen}: Props) {
     return (
-        <button className={`mx-1 relative active:scale-90 outline-none group md:hidden h-7 w-7 ${isOpen ? "rotate-45" : ""}`} onClick={() => {setIsOpen(!isOpen)}}>
-            <div className="invisible group-focus-visible:visible bg-focus-menu-button w-full h-full bg-center bg-no-repeat bg-contain">
+        <button 
+            onClick={() => setIsOpen(true)}
+            className={`flex items-center justify-center outline-none group relative ${isOpen ? `rotate-45` : ``} `}>
+            <div className="relative group-active:scale-125 scale-110 bg-outer-menu-button group-hover:bg-outer-menu-button-hover group-active:bg-outer-menu-button group-focus-visible:bg-outer-menu-button-focus bg-contain bg-no-repeat bg-center h-7 w-7">              
             </div>
-            <div className="absolute hover:opacity-80 top-0 group-focus-visible:hidden group-focus-visible:bg-opacity-0 bg-nav-menu bg-contain w-full h-full  bg-center bg-no-repeat outline-none disabled:opacity-50">
+            <div className=" absolute bg-inner-menu-button group-hover:bg-inner-menu-button-hover group-active:bg-inner-menu-button bg-contain bg-no-repeat bg-center w-7 h-7 scale-75">
+            </div>
+            <div className="shadow-colored absolute group-hover:bg-white/20 group-active:bg-white/20 w-full h-full group-active:p-4 rounded-full -z-20 backdrop-blur-[40px]">
             </div>
         </button>
     )

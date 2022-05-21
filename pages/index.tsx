@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           <CustomProse>
             <Intro />
           </CustomProse>
-          <div className='flex w-full space-x-3 lg:space-x-6 mb-8 '>
+          <div className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-8 '>
             <CallToActionButtons/>
           </div>
         </div> 
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
             <WhatIsIt />
           </CustomProse>
         </div> 
-        <div id='whysaturn' className='mx-auto px-9 text-left max-w-xs md:max-w-sm lg:max-w-2xl h-[100vh] py-24 flex flex-col items-end justify-end md:justify-center md:items-center'>
+        <div id='why' className='mx-auto px-9 text-left max-w-xs md:max-w-sm lg:max-w-2xl h-[100vh] py-24 flex flex-col items-end justify-end md:justify-center md:items-center'>
           <CustomProse>
             <WhySaturn />
           </CustomProse>

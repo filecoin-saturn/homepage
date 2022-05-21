@@ -52,13 +52,15 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} linkArray={menuLinkArray} languages={languages} />
             </div> */}
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
-                <div className="flex justify-between my-1 items-center">
-                    <div className={`-ml-2 ${isScrolled ? ``:`translate-x-1/4 lg:translate-x-1/2`}`}>
-                        <Button3 link="/#start" />
+                <div className="flex justify-between items-center">
+                    <div className={` ${isScrolled ? `` : `translate-x-[10%] lg:translate-x-1/2 `}`}>
+                        <Button3 link="/" />
                     </div>
-                    <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
-                    <div className={`hidden md:flex space-x-16 mr-2 ${isScrolled ? `` : `-translate-x-1/4`}`}>
-                        <div className="flex space-x-12">
+                    <div className={`flex items-center md:hidden mr-2 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
+                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
+                    </div>
+                    <div className={`hidden md:flex space-x-4 lg:space-x-16 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
+                        <div className="flex space-x-0 md:space-x-4">
                             {navLinkArray.map((link, index) => {
                                 return (
                                     <Button5 
@@ -68,11 +70,12 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
                                         text={link.title} 
                                         onClick={(e) => {setIsOpen(false)}} 
                                         isActive={path.asPath === link.href} 
+                                        isScrolled={isScrolled}
                                     />
                                 )
                             })}
                         </div>
-                        <Button5 type="button" text={languages.text} onClick={() => {}} disabled />
+                        <Button5 type="button" text={languages.text} onClick={() => {}} disabled isScrolled={isScrolled} />
                     </div>
                 </div>
             </div>

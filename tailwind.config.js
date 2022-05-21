@@ -24,7 +24,12 @@ module.exports = {
         'saturn-logo': "url('/saturn-logo.svg')",
         'mobile-background': "url('/mobile-background.png')",
         'desktop-background': "url('/desktop-background.png')",
-        'menu-cross': "url('/menu-cross.svg')",
+        'inner-menu-button': "url('/inner-menu-button.svg')",
+        'outer-menu-button': "url('/outer-menu-button.svg')",
+        'inner-menu-button-hover': "url('/inner-menu-button-hover.svg')",
+        'outer-menu-button-hover': "url('/outer-menu-button-hover.svg')",
+        'outer-menu-button-focus': "url('/outer-menu-button-focus.svg')",
+
 
       }, 
       boxShadow: {
