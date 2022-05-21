@@ -7,6 +7,7 @@ import CustomProse from '../components/CustomProse/CustomProse'
 import CallToActionButtons from '../content/en/index/intro'
 import CallToActionButtonDownload from '../content/en/index/get-started'
 import NavBar from '../content/en/index/NavBar'
+import Footer from '../content/en/index/Footer'
 
 
 const Home: NextPage = () => {
@@ -40,6 +41,7 @@ const Home: NextPage = () => {
             <CallToActionButtonDownload/>
           </div>
         </div>  
+        <Footer/>
     </div>
   )
 }

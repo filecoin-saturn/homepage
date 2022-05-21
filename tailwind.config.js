@@ -29,6 +29,10 @@ module.exports = {
         'inner-menu-button-hover': "url('/inner-menu-button-hover.svg')",
         'outer-menu-button-hover': "url('/outer-menu-button-hover.svg')",
         'outer-menu-button-focus': "url('/outer-menu-button-focus.svg')",
+        'notion-logo': "url('/notion-logo.svg')",
+        'github-logo': "url('/github-logo.svg')",
+        'slack-logo': "url('/slack-logo.svg')",
+        'heart-logo': "url('/heart-logo.svg')",
 
 
       }, 
