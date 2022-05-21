@@ -6,7 +6,7 @@ type Props = {
 export default function Button4({isOpen, setIsOpen}: Props) {
     return (
         <button 
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsOpen(!isOpen)}
             className={`flex items-center justify-center outline-none group relative ${isOpen ? `rotate-45` : ``} `}>
             <div className="relative group-active:scale-125 scale-110 bg-outer-menu-button group-hover:bg-outer-menu-button-hover group-active:bg-outer-menu-button group-focus-visible:bg-outer-menu-button-focus bg-contain bg-no-repeat bg-center h-7 w-7">              
             </div>

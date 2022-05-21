@@ -45,12 +45,11 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
             if(target) observer.unobserve(target)
         }
     }, [])
-    
     return (
         <>
-            {/* <div className={`md:hidden fixed inset-0 bg-white z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-full`}`}>
+            <div className={`md:hidden fixed inset-0 rounded-2xl m-1 bg-white/5 backdrop-blur-[200px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-full`}`}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} linkArray={menuLinkArray} languages={languages} />
-            </div> */}
+            </div>
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
                 <div className="flex justify-between items-center">
                     <div className={` ${isScrolled ? `` : `translate-x-[10%] lg:translate-x-1/2 `}`}>
