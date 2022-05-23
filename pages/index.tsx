@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
-import Intro from  '../content/en/index/intro.mdx'
-import WhatIsIt from '../content/en/index/what-is-it.mdx'
-import WhySaturn from '../content/en/index/why-saturn.mdx'
-import GetStarted from '../content/en/index/get-started.mdx'
+import Intro from  '../content/en/index/intro-section.mdx'
+import WhatIsIt from '../content/en/index/what-is-it-section.mdx'
+import WhySaturn from '../content/en/index/why-saturn-section.mdx'
+import GetStarted from '../content/en/index/get-started-section.mdx'
 import CustomProse from '../components/CustomProse/CustomProse'
-import CallToActionButtons from '../content/en/index/intro'
+import CallToActionButtons from '../content/en/index/Intro'
 import CallToActionButtonDownload from '../content/en/index/get-started'
 import NavBar from '../content/en/index/NavBar'
 import Footer from '../content/en/index/Footer'
+import FeaturesIntro from '../content/en/index/features-intro.mdx'
+import Features from '../content/en/index/Features'
 
 
 const Home: NextPage = () => {
@@ -28,6 +30,18 @@ const Home: NextPage = () => {
             <WhatIsIt />
           </CustomProse>
         </div> 
+        <div id="features" className='py-32 md:py-20 w-full mx-auto flex flex-col justify-center items-center lg:max-w-5xl'>
+          <div className='max-w-xl w-full flex justify-center sm:justify-start md:justify-center md:px-0 sm:px-14 md:mr-32 lg:mr-0 md:max-w-6xl lg:justify-start lg:mx-6 lg:max-w-4xl'>
+            <div className='flex justify-center px-9 sm:px-0  max-w-[20rem] sm:max-w-[16rem] md:max-w-xs lg:max-w-sm text-left '>
+              <CustomProse>
+                <FeaturesIntro />
+              </CustomProse>
+            </div>
+          </div>
+          <div className='px-9 lg:px-0 mt-8 flex justify-center'>
+            <Features/>
+          </div>
+        </div>
         <div id='why' className='mx-auto px-9 text-left max-w-xs md:max-w-sm lg:max-w-2xl h-[100vh] py-24 flex flex-col items-end justify-end md:justify-center md:items-center'>
           <CustomProse>
             <WhySaturn />

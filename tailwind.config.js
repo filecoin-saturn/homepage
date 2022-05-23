@@ -33,6 +33,15 @@ module.exports = {
         'github-logo': "url('/github-logo.svg')",
         'slack-logo': "url('/slack-logo.svg')",
         'heart-logo': "url('/heart-logo.svg')",
+        'lightning-logo': "url('/lightning-logo.svg')",
+        'multi-peer-logo': "url('/multi-peer-logo.svg')",
+        'permissionless-logo': "url('/permissionless-logo.svg')",
+        'deduplication-logo': "url('/deduplication-logo.svg')",
+        'data-logo': "url('/data-logo.svg')",
+        'crypto-logo': "url('/crypto-logo.svg')",
+        'content-addressed-logo': "url('/content-addressed-logo.svg')",
+
+
 
 
       }, 
