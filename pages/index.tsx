@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     <div className='mx-auto text-center w-full min-h-[200rem] overflow-hidden'>
       <div className='fixed inset-0 lg:bg-desktop-background bg-mobile-background bg-no-repeat bg-cover bg-center -z-10'></div>
       <NavBar />
-        <div id='start' className='mx-auto px-9 pb-8 md:pb-12 text-left max-w-xs md:max-w-sm lg:max-w-[30rem] flex flex-col h-[100vh] justify-end lg:py-24 lg:mx-20 '>
+        <div id='start' className='mx-auto px-6 pb-8 md:pb-12 text-left max-w-xs md:max-w-sm lg:max-w-[30rem] flex flex-col h-[100vh] justify-end lg:py-24 lg:mx-20 '>
           <CustomProse>
             <Intro />
           </CustomProse>
@@ -25,12 +25,12 @@ const Home: NextPage = () => {
             <CallToActionButtons/>
           </div>
         </div> 
-        <div id='whatisit' className='mx-auto pl-9 pr-7 text-left max-w-md md:max-w-sm lg:max-w-[40rem] h-[100vh] py-24 flex flex-col items-end justify-end lg:bottom-0 lg:my-20 lg:translate-x-1/4 '>
+        <div id='whatisit' className='mx-auto pl-9 pr-7 text-left max-w-md md:max-w-sm lg:max-w-[40rem] py-24 flex flex-col items-end justify-end lg:bottom-0 lg:my-20 lg:translate-x-1/4 '>
           <CustomProse>
             <WhatIsIt />
           </CustomProse>
         </div> 
-        <div id="features" className='py-32 md:py-20 w-full mx-auto flex flex-col justify-center items-center lg:max-w-5xl'>
+        <div id="features" className='py-0 md:py-20 w-full mx-auto flex flex-col justify-center items-center lg:max-w-5xl'>
           <div className='max-w-xl w-full flex justify-center sm:justify-start md:justify-center md:px-0 sm:px-14 md:mr-32 lg:mr-0 md:max-w-6xl lg:justify-start lg:mx-6 lg:max-w-4xl'>
             <div className='flex justify-center px-9 sm:px-0  max-w-[20rem] sm:max-w-[16rem] md:max-w-xs lg:max-w-sm text-left '>
               <CustomProse>
