@@ -47,7 +47,7 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
     }, [])
     return (
         <>
-            <div className={`md:hidden fixed inset-0 rounded-2xl m-1 bg-white/5 backdrop-blur-[200px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-full`}`}>
+            <div className={`md:hidden fixed inset-0 rounded-2xl m-1 bg-white/5 backdrop-blur-[200px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} linkArray={menuLinkArray} languages={languages} />
             </div>
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
@@ -58,7 +58,7 @@ export default function NavBar({menuLinkArray, navLinkArray, languages}: Props) 
                     <div className={`flex items-center md:hidden mr-2 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
                         <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
                     </div>
-                    <div className={`hidden md:flex space-x-4 lg:space-x-16 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
+                    <div className={`hidden md:flex space-x-4 lg:space-x-16 mr-2 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
                         <div className="flex space-x-0 md:space-x-4">
                             {navLinkArray.map((link, index) => {
                                 return (
