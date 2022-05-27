@@ -1,17 +1,19 @@
 import Link from "next/link"
 
 type Props = {
-    text: string,
-    link: string
+    link: string,
 }
 
-export default function Button3({text, link}: Props) {
-    return (
+export default function Button3({link}: Props) {
+    return  (
         <Link href={link}>
-            <a className='no-underline -mx-2.5 inline-block outline-none group group-active:scale-90'>
-                <div className='group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-full p-0.5 group-active:scale-90 '>
-                    <div className='font-inter bg-white rounded-3xl group-focus-visible:bg-light-blue-2 py-1.5 md:py-1 focus-visible:outline-none px-2.5 text-sm xl:text-base antialiased underline underline-offset-1 italic group-hover:text-light-blue disabled:opacity-25 active:scale-90'>
-                        {text}
+            <a 
+                className="group outline-none relative" >
+                <div className="group-hover:bg-white/10 group-focus-visible:bg-white/10 rounded-full group-active:scale-90 ">
+                    <div className=" bg-transparent rounded-full ">
+                        <div className="relative bg-saturn-logo w-32 h-10 md:w-40 md:h-12 bg-no-repeat bg-contain bg-center">
+                        <div className="absolute w-full h-full border-2 border-transparent bg-transparent top-0 group-focus-visible:border-white rounded-full"></div>
+                        </div>
                     </div>
                 </div>
             </a>

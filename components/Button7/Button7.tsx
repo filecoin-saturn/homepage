@@ -1,5 +1,16 @@
 import Link from "next/link"
-import { serialize } from "v8"
+import { text } from "stream/consumers"
+
+type NextLinkProps = {
+    link: string,
+    text: string,
+    onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void,
+    isActive: boolean,
+    disabled?: never
+    isScrolled?: boolean
+    type: "next-link",
+
+}
 
 type ButtonProps = {
     type: "button",
@@ -8,48 +19,35 @@ type ButtonProps = {
     onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void,
     isActive?: never,
     disabled: boolean,
-    size: string
+    isScrolled?: boolean
 
 }
 
-type NextLinkProps = {
-    type: "next-link",
-    link: string,
-    text: string,
-    onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void,
-    isActive: boolean,
-    disabled?: never
-    size: string
-}
+type AllProps = ButtonProps | NextLinkProps
 
-type Props = ButtonProps | NextLinkProps
-
-export default function Button7({type, text, onClick, ...all}: Props) {
-    const rest: Partial<Props> = all
-    return type === "next-link" ? (
-        <Link href={rest.link ?? ""}>
-            <a className="group outline-none disabled:opacity-50 hover:text-light-blue" onClick={onClick} >
-                <div className="group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-full p-0.5 group-active:scale-90 relative">
-                    <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-full px-2 py-1 md:px-3 md:py-1.5  ">
-                        <div className={`relative md:text-sm ${rest.size === "xl" ? `text-xl` : `text-base` }`}>
-                            <div className={`font-roboto font-bold antialiased tracking-wide ${rest.isActive ? ``: `invisible`}` }>
-                                {text}
-                            </div>
-                            <div className={`absolute font-roboto font-normal inset-0 antialised tracking-wide ${rest.isActive ? `invisible`: ``}` }>
-                                {text}
-                            </div>
-                        </div> 
+export default function Button7({...all}: AllProps) {
+    const rest: Partial<AllProps> = all
+    return rest.type === "next-link" ? (
+        <Link href={rest.link?? ""}>
+            <a 
+                className="group outline-none relative flex-none  "
+                onClick={rest.onClick}
+            >
+                <div className={`border-2 border-transparent group-active:bg-white/25 group-active:scale-90 group-focus-visible:border-white hover:bg-white/10 hover:backdrop-blur-[20px] rounded-full p-0.5 px-4 relative text-sat-grey-1 group-focus-visible:bg-white/10 group-focus-visible:backdrop-blur-[20px] group-focus-visible:text-white`}>
+                    <div className={`text-base sm:text-lg font-inter font-semibold antialiased tracking-wide ${rest.isActive ? `text-white`: ``}` }>
+                        {rest.text}
                     </div>
-                </div>  
+                </div> 
             </a>
         </Link>
     ) : (
-        <button disabled={rest.disabled} className="disabled:opacity-40">
-            <div className={`relative ${rest.size === "xl" ? `text-xl` : `text-base` }`}>
-                <div className="font-roboto font-normal antialiased inset-0 tracking-wide">
-                    {text}
+        <button disabled={rest.disabled} className={`disabled:opacity-30 disabled:pointer-events-none group outline-none`}>
+            <div className={`justify-center relative text-sat-grey-1 w-full h-full border-2 border-transparent group-active:bg-white/25 group-active:scale-90 group-focus-visible:border-white group-focus-visible:bg-white/10 group-focus-visible:backdrop-blur-[20px] group-focus-visible:text-white hover:bg-white/10 hover:backdrop-blur-[20px] rounded-full p-1 px-1.5`}>
+                <div className="font-inter text-base sm:text-lg font-semibold inset-0 tracking-wide antialiased">
+                    {rest.text}
                 </div>
             </div>
         </button>
+
     )
 }

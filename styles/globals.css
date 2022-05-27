@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .no-scrollbar {
-      -ms-overflow-style: none; /* for Internet Explorer, Edge */
-      scrollbar-width: none; /* for Firefox */
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none; /* for Chrome, Safari, and Opera */
-  }
-  
-}
-
-
 @layer base {
     @font-face {
         font-family: 'Inter';
@@ -42,31 +30,14 @@
     }
 
     @font-face {
-        font-family: 'Roboto';
-        src: url('/Roboto-Bold.woff2') format('woff2'),
-            url('/Roboto-Bold.woff') format('woff');
-        font-weight: 700;
+        font-family: 'Inter';
+        src: url('/Inter-Black.woff2') format('woff2'),
+            url('/Inter-Black.woff') format('woff');
+        font-weight: 900;
         font-style: normal;
         font-display: swap;
     }
 
-    @font-face {
-        font-family: 'Roboto';
-        src: url('/Roboto-Medium.woff2') format('woff2'),
-            url('/Roboto-Medium.woff') format('woff');
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: 'Roboto';
-        src: url('/Roboto-Regular.woff2') format('woff2'),
-            url('/Roboto-Regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
 
     @font-face {
         font-family: 'Source Serif Pro';
@@ -81,5 +52,4 @@
     -webkit-tap-highlight-color: transparent;
   }
 }
-
 

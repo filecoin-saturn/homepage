@@ -1,6 +1,6 @@
+import Button3 from "../Button3/Button3";
 import Button5 from "../Button5/Button5"
 import Button8 from "../Button8/Button8"
-import Button9 from "../Button9/Button9"
 
 type Props = {
     links: {
@@ -8,31 +8,37 @@ type Props = {
         links: {
             text: string;
             link: string;
+            backgroundImage: string
+
         }[];
     }[],
-    credits: string
+    credits: {
+        text: string
+        text2: string
+        logo: string
+    }
 }
 
 export default function Footer({links, credits}: Props){
     return (
         <>
-            <div className=" bg-black mx-auto w-full py-10">
+            <div className=" mx-auto w-full py-16">
                 <div className=" mx-auto text-white w-full flex items-center justify-center ">
-                    <div className="flex text-left justify-start mx-auto flex-wrap max-w-[14rem] sm:max-w-md md:max-w-2xl lg:max-w-none lg:space-x-16 xl:space-x-24 antialiased">
-                        <div className="text-left -ml-4 md:text-center md:w-fit justify-start px-2 mb-16 sm:mb-20 sm:-ml-2 md:-ml-4 md:mr-12 md:-mt-2 xl:mr-14 ">
-                            <Button5 colorMode="dark" link="/" />
+                    <div className="flex text-left justify-start sm:justify-center mx-auto flex-wrap max-w-[17rem] sm:max-w-md sm:space-x-11 md:max-w-none md:space-x-16 lg:space-x-20 xl:space-x-36 antialiased">
+                        <div className="hidden sm:block text-left md:text-center md:w-fit justify-start -mt-2 md:-mt-2 ">
+                            <Button3 link="/" />
                         </div>
-                        <div className="flex flex-wrap text-left justify-between md:justify-center mx-auto font-inter text-sm sm:text-base text-light-grey sm:space-x-16 md:space-x-16 lg:space-x-16 xl:space-x-32 ">
+                        <div className="flex text-left justify-between md:justify-center mx-auto font-inter text-sm sm:text-base text-light-grey space-x-8 sm:space-x-11 md:space-x-12 lg:space-x-16 xl:space-x-40 ">
                             {links.map((e, i) => {
                                 return (
-                                    <div key={i} className="px-2 last:mt-8 sm:last:mt-0 flex flex-col items-start">
-                                        <div className="font-semibold text-white">
+                                    <div key={i} className="px-2 flex flex-col space-y-4 items-start">
+                                        <div className="font-black text-base md:text-lg text-white">
                                             {e.title}
                                         </div>
                                         {e.links.map((e2, i2) => {
                                             return (
-                                                <div key={i2} className="-ml-[0.9rem]">
-                                                    <Button8 link={e2.link} text={e2.text} />
+                                                <div key={i2}>
+                                                    <Button8 link={e2.link} text={e2.text} backgroundImage={e2.backgroundImage} />
                                                 </div>
                                             )
                                         })}
@@ -40,12 +46,20 @@ export default function Footer({links, credits}: Props){
                                 )
                             })}
                         </div>
-                        <div className="text-left sm:text-left md:mx-auto sm:flex sm:items-center sm:space-x-2 mt-16 sm:mt-20 w-full lg:w-fit px-2 justify-start md:justify-center lg:flex-col lg:mt-1 lg:items-center lg:justify-start lg:space-y-2 ">
-                            <div className="font-inter font-semibold text-white text-xs sm:ml-2 md:ml-0 lg:ml-2">
-                                {credits}
+                        <div className="mt-10 md:mt-0 flex space-x-8 sm:-space-x-0 space-y-0 md:space-y-1  sm:items-stretch sm:flex-1  justify-center ">
+                            <div className="sm:hidden">
+                                <Button3 link="/" />
                             </div>
-                            <div className="w-fit -ml-[0.9rem]">
-                                <Button9 link="https://protocol.ai/" />
+                            <div className="mx-auto w-full max-w-[8rem] md:max-w-[18rem] lg:flex  lg:space-x-1 ">
+                                <div className="flex space-x-1">
+                                    <div className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
+                                    {credits.text}
+                                    </div>
+                                    <div className="bg-contain bg-center bg-no-repeat h-4 w-4 md:h-5 md:w-5" style={{backgroundImage: credits.logo}}></div>
+                                    </div>
+                                <div className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
+                                    {credits.text2}
+                                </div>
                             </div>
                         </div>
                     </div>

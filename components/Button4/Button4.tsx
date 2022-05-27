@@ -1,28 +1,19 @@
-import Link from "next/link"
-
 type Props = {
-    imgUrl: string,
-    link: string
+    isOpen: boolean,
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Button4({imgUrl, link}: Props) {
+export default function Button4({isOpen, setIsOpen}: Props) {
     return (
-        <Link href={link}>
-            <a className='group outline-none md:w-full md:h-full active:scale-90 disabled:opacity-50 hover:opacity-80 p-1'
-                    target="_blank" 
-                    rel='noreferrer' 
-                    href={link}
-                  >
-                    <div className="group-focus-visible:bg-gradient-to-r bg-transparent from-gradient-turqouise to-gradient-blue rounded-full p-0.5 group-active:scale-90 ">
-                        <div className="group-focus-visible:bg-light-blue-2 bg-transparent rounded-full p-1 md:p-1.5 ">
-                            <div className=" w-[1.5rem] h-[1.5rem] bg-no-repeat bg-center bg-contain group-hover:opacity-70" style={{backgroundImage: `url('${imgUrl}')`}}>
-                            </div> 
-                        </div>
-                    </div> 
-                  </a>
-        </Link>
+        <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className={`flex items-center justify-center outline-none group relative ${isOpen ? `rotate-45` : ``} `}>
+            <div className="relative group-active:scale-125 scale-110 bg-outer-menu-button group-hover:bg-outer-menu-button-hover group-active:bg-outer-menu-button group-focus-visible:bg-outer-menu-button-focus bg-contain bg-no-repeat bg-center h-7 w-7">              
+            </div>
+            <div className=" absolute bg-inner-menu-button group-hover:bg-inner-menu-button-hover group-active:bg-inner-menu-button bg-contain bg-no-repeat bg-center w-7 h-7 scale-75">
+            </div>
+            <div className="shadow-colored absolute group-hover:bg-white/20 group-active:bg-white/20 w-full h-full group-active:p-4 rounded-full -z-20 backdrop-blur-[40px]">
+            </div>
+        </button>
     )
 }
-
-
-

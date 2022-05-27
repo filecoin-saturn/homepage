@@ -1,15 +1,25 @@
+import Link from "next/link"
+
 type Props = {
-    isOpen: boolean,
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    link: string,
+    isOpen: boolean
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export default function Button6({isOpen, setIsOpen}: Props) {
-    return (
-        <button className={`mx-1 relative active:scale-90 outline-none group md:hidden h-7 w-7 ${isOpen ? "rotate-45" : ""}`} onClick={() => {setIsOpen(!isOpen)}}>
-            <div className="invisible group-focus-visible:visible bg-focus-menu-button w-full h-full bg-center bg-no-repeat bg-contain">
-            </div>
-            <div className="absolute hover:opacity-80 top-0 group-focus-visible:hidden group-focus-visible:bg-opacity-0 bg-nav-menu bg-contain w-full h-full  bg-center bg-no-repeat outline-none disabled:opacity-50">
-            </div>
-        </button>
+export default function Button6({link, isOpen, setIsOpen} : Props) {
+    return  (
+        <Link href={link}>
+            <a 
+                onClick={() => setIsOpen(false)}
+                className="group outline-none relative" >
+                <div className="group-hover:bg-white/10 group-focus-visible:bg-white/10 rounded-full group-active:scale-90 ">
+                    <div className=" bg-transparent rounded-full ">
+                        <div className="relative bg-saturn-logo w-28 h-8 md:w-40 md:h-12 bg-no-repeat bg-contain bg-center">
+                        <div className="absolute w-full h-full border-2 border-transparent bg-transparent top-0 group-focus-visible:border-white rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </Link>
     )
 }
