@@ -9,7 +9,7 @@ type NextLinkProps = {
     disabled?: never
     isScrolled?: boolean
     type: "next-link",
-
+    replace?: boolean
 }
 
 type ButtonProps = {
@@ -20,7 +20,7 @@ type ButtonProps = {
     isActive?: never,
     disabled: boolean,
     isScrolled?: boolean
-
+    replace?: never
 }
 
 type AllProps = ButtonProps | NextLinkProps
@@ -28,7 +28,7 @@ type AllProps = ButtonProps | NextLinkProps
 export default function Button7({...all}: AllProps) {
     const rest: Partial<AllProps> = all
     return rest.type === "next-link" ? (
-        <Link href={rest.link?? ""}>
+        <Link href={rest.link ?? ""} replace={rest.replace}>
             <a 
                 className="group outline-none relative flex-none  "
                 onClick={rest.onClick}

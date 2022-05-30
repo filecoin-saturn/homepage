@@ -15,4 +15,8 @@ module.exports = withMDX({
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   trailingSlash: true,
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  }
 })

@@ -1,4 +1,6 @@
 import Link from "next/link"
+import dynamic from "next/dynamic";
+
 
 type Props = {
     text: string,
@@ -6,7 +8,7 @@ type Props = {
     backgroundImage: string
 }
 
-export default function Button8({text, link, backgroundImage}: Props) {
+function Button8({text, link, backgroundImage}: Props) {
     return (
         <Link href={link}>
             <a href="" target="_blank" className="outline-none group " >
@@ -22,3 +24,7 @@ export default function Button8({text, link, backgroundImage}: Props) {
         </Link>
     )
 }
+
+export default dynamic(() => Promise.resolve(Button8), {
+    ssr: false
+})

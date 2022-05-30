@@ -1,4 +1,5 @@
 import CustomProse from "../CustomProse/CustomProse"
+import dynamic from "next/dynamic";
 
 type FeaturesContent = {
     content : Array<{
@@ -10,7 +11,7 @@ type FeaturesContent = {
     }>
 }
 
-export default function Features({content}: FeaturesContent) {
+function Features({content}: FeaturesContent) {
     return (
         <div className="flex flex-col lg:flex-row lg:flex-wrap lg:gap-4 xl:gap-10 ">
             {content.map((postContent ,key) => {
@@ -41,4 +42,6 @@ export default function Features({content}: FeaturesContent) {
     )
 }
 
-   
+export default dynamic(() => Promise.resolve(Features), {
+    ssr: false
+})

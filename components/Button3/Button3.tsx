@@ -2,11 +2,12 @@ import Link from "next/link"
 
 type Props = {
     link: string,
+    replace?: boolean
 }
 
-export default function Button3({link}: Props) {
+export default function Button3({link, replace}: Props) {
     return  (
-        <Link href={link}>
+        <Link href={link} replace={replace}>
             <a 
                 className="group outline-none relative" >
                 <div className="group-hover:bg-white/10 group-focus-visible:bg-white/10 rounded-full group-active:scale-90 ">

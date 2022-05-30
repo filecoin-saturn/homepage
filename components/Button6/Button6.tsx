@@ -4,11 +4,12 @@ type Props = {
     link: string,
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    replace?: boolean
 }
 
-export default function Button6({link, isOpen, setIsOpen} : Props) {
+export default function Button6({link, isOpen, setIsOpen, replace} : Props) {
     return  (
-        <Link href={link}>
+        <Link href={link} replace={replace}>
             <a 
                 onClick={() => setIsOpen(false)}
                 className="group outline-none relative" >

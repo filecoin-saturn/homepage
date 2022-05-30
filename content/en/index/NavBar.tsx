@@ -19,5 +19,5 @@ const menuLinkArray = [
 ]
 
 export default function NavBar() {
-    return <NavBarTemplate navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} />
+    return <NavBarTemplate navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatisit", "features", "why", "getstarted"]} />
 }

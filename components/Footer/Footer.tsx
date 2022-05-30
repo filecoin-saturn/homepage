@@ -1,6 +1,6 @@
 import Button3 from "../Button3/Button3";
-import Button5 from "../Button5/Button5"
 import Button8 from "../Button8/Button8"
+import dynamic from "next/dynamic";
 
 type Props = {
     links: {
@@ -19,7 +19,7 @@ type Props = {
     }
 }
 
-export default function Footer({links, credits}: Props){
+function Footer({links, credits}: Props){
     return (
         <>
             <div className=" mx-auto w-full py-16">
@@ -69,3 +69,6 @@ export default function Footer({links, credits}: Props){
     )
 }
 
+export default dynamic(() => Promise.resolve(Footer), {
+    ssr: false
+})
