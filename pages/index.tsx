@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             </CustomProse>
           </div> 
         <div id='features' className='w-full h-0'></div>
-          <div className='py-0 md:py-20 w-full mx-auto flex flex-col justify-center items-center lg:max-w-5xl'>
+          <div className='py-20 w-full mx-auto flex flex-col justify-center items-center lg:max-w-5xl'>
             <div className='max-w-xl w-full flex justify-center sm:justify-start md:justify-center md:px-0 sm:px-14 md:mr-32 lg:mr-0 md:max-w-6xl lg:justify-start lg:mx-6 lg:max-w-4xl'>
               <div className='flex justify-center px-6 sm:px-0  max-w-[20rem] sm:max-w-[16rem] md:max-w-xs lg:max-w-sm text-left '>
                 <CustomProse>
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         <div id='why' className='w-full h-0'></div>
-          <div className='mx-auto px-6 text-left max-w-xs md:max-w-sm lg:max-w-2xl h-[100vh] py-24 flex flex-col items-end justify-end md:justify-center md:items-center'>
+          <div className='mx-auto px-6 py-4 text-left max-w-xs md:max-w-sm lg:max-w-2xl h-[100vh] md:py-24 flex flex-col items-end justify-end md:justify-center md:items-center'>
             <CustomProse>
               <WhySaturn />
             </CustomProse>

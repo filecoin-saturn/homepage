@@ -110,13 +110,13 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                 </div>
                 <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
                     <div className="flex justify-between items-center p-1 md:pr-3">
-                        <div className={` ${isScrolled ? `` : `translate-x-[10%] lg:translate-x-1/2 `}`}>
+                        <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[10%] lg:translate-x-1/2 `}`}>
                             <Button3 link="/" replace={true} />
                         </div>
-                        <div className={`flex items-center md:hidden mr-1.5 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
+                        <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
                             <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
                         </div>
-                        <div className={`hidden md:flex space-x-4 md:items-center lg:space-x-16 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
+                        <div className={`hidden md:flex space-x-4 md:items-center lg:space-x-16 transition-transform duration-300 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
                             <div className="flex space-x-0 md:space-x-4">
                                 {navLinkArray.map((link, index) => {
                                     const hash = link.href.split("#")[1]
