@@ -29,21 +29,19 @@ const Home: NextPage = () => {
             </div>
           </div> 
         <div id='whatisit' className='w-full h-0'></div>
-          <div className='mx-auto px-6 text-left max-w-xs md:max-w-sm lg:max-w-[40rem] py-24 flex flex-col items-end justify-end lg:bottom-0 lg:my-20 lg:translate-x-1/4 '>
+          <div className='mx-auto px-6 text-left max-w-xs md:max-w-sm lg:max-w-[40rem] h-[90vh] flex flex-col items-end justify-end lg:bottom-0 lg:py-12 lg:translate-x-1/4 '>
             <CustomProse>
               <WhatIsIt />
             </CustomProse>
           </div> 
         <div id='features' className='w-full h-0'></div>
-          <div className='py-20 w-full mx-auto flex flex-col justify-center items-center lg:max-w-5xl'>
-            <div className='max-w-xl w-full flex justify-center sm:justify-start md:justify-center md:px-0 sm:px-14 md:mr-32 lg:mr-0 md:max-w-6xl lg:justify-start lg:mx-6 lg:max-w-4xl'>
-              <div className='flex justify-center px-6 sm:px-0  max-w-[20rem] sm:max-w-[16rem] md:max-w-xs lg:max-w-sm text-left '>
+          <div className='py-24 lg:py-52 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto flex flex-col items-center lg:justify-center'>
+              <div className='text-left w-full '>
                 <CustomProse>
                   <FeaturesIntro />
                 </CustomProse>
               </div>
-            </div>
-            <div className='px-2 lg:px-0 mt-8 flex justify-center'>
+            <div className='px-2 w-full lg:px-0 mt-8 flex justify-center'>
               <Features/>
             </div>
           </div>
