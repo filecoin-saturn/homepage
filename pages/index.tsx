@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           </div> 
         <div id='features' className='w-full h-0'></div>
           <div className='py-24 lg:py-52 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto flex flex-col items-center lg:justify-center'>
-              <div className='text-left w-full '>
+              <div className='text-left w-full my-8 '>
                 <CustomProse>
                   <FeaturesIntro />
                 </CustomProse>
