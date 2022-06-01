@@ -90,7 +90,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                     targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                     threshold={[0, 1]}
                 >
-                <div className={`md:hidden fixed inset-0 rounded-2xl m-2 bg-white/5 backdrop-blur-[40px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
+                <div className={`md:hidden fixed inset-0 rounded-2xl m-2 bg-white/5 backdrop-blur-[100px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
                     <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} >
                         {menuLinkArray.map((link, index) => {
                             const hash = link.href.split("#")[1]

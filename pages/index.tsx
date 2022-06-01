@@ -20,12 +20,12 @@ const Home: NextPage = () => {
         <div className='fixed inset-0 lg:bg-desktop-background bg-mobile-background bg-no-repeat bg-cover bg-center -z-10'></div>
         <NavBar />
         <div id='start' className='w-full h-0'></div>
-        <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem]'>
-            <div className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mt-60 sm:mt-96 mr-auto  '>
+        <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end'>
+            <div className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto  '>
               <CustomProse>
                 <Intro />
               </CustomProse>
-              <div className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-8 '>
+              <div className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12 lg:mb-24 '>
                 <CallToActionButtons/>
               </div>
             </div> 
@@ -33,14 +33,14 @@ const Home: NextPage = () => {
 
         <div id='whatisit' className='w-full h-0'></div>
         <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem]'>
-          <div className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mt-32 md:mt-60 ml-auto  '>
+          <div className='mt-24 lg:mt-32 max-w-xs md:max-w-sm lg:max-w-[30rem] ml-auto  '>
             <CustomProse>
               <WhatIsIt />
             </CustomProse>
           </div> 
         </div> 
         <div id='features' className='w-full h-0'></div>
-          <div className='mt-20 md:mt-32 lg:mt-52 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
               <div className='text-left w-full my-8 '>
                 <CustomProse>
                   <FeaturesIntro />
