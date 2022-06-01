@@ -10,22 +10,23 @@ import NavBar from '../content/en/index/NavBar'
 import Footer from '../content/en/index/Footer'
 import FeaturesIntro from '../content/en/index/features-intro.mdx'
 import Features from '../content/en/index/Features'
-import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
-import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import Experience from '../threejs/components/Experience/Experience'
 
 const Home: NextPage = () => {
+  
   return (
       <div  className='mx-auto text-center w-full overflow-hidden'>
-        <div className='fixed inset-0 lg:bg-desktop-background bg-mobile-background bg-no-repeat bg-cover bg-center -z-10'></div>
+		<div className='fixed -z-10 inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
+      <Experience />
+		</div>
         <NavBar />
         <div id='start' className='w-full h-0'></div>
-        <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end'>
+        <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end lg:ml-20'>
             <div className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto  '>
               <CustomProse>
                 <Intro />
               </CustomProse>
-              <div className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12 lg:mb-24 '>
+              <div className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12'>
                 <CallToActionButtons/>
               </div>
             </div> 
