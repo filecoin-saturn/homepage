@@ -90,7 +90,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                     targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                     threshold={[0, 1]}
                 >
-                <div className={`md:hidden fixed inset-0 rounded-2xl m-1 bg-white/5 backdrop-blur-[200px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
+                <div className={`md:hidden fixed inset-0 rounded-2xl m-2 bg-white/5 backdrop-blur-[200px] z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
                     <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} >
                         {menuLinkArray.map((link, index) => {
                             const hash = link.href.split("#")[1]
@@ -110,7 +110,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                 </div>
                 <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
                     <div className="flex justify-between items-center p-1 md:pr-3">
-                        <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[10%] lg:translate-x-1/2 `}`}>
+                        <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
                             <Button3 link="/" replace={true} />
                         </div>
                         <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
