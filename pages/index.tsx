@@ -31,7 +31,6 @@ const Home: NextPage = () => {
               </div>
             </div> 
           </div>
-
         <div id='whatisit' className='w-full h-0'></div>
         <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem]'>
           <div className='mt-24 lg:mt-32 max-w-xs md:max-w-sm lg:max-w-[30rem] ml-auto  '>

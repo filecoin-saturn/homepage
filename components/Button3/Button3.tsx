@@ -8,8 +8,7 @@ type Props = {
 export default function Button3({link, replace}: Props) {
     return  (
         <Link href={link} replace={replace}>
-            <a 
-                className="group outline-none relative" >
+            <a className="group outline-none relative" >
                 <div className="group-hover:bg-white/10 group-focus-visible:bg-white/10 rounded-full group-active:scale-90 ">
                     <div className=" bg-transparent rounded-full ">
                         <div className="relative bg-saturn-logo w-32 h-10 md:w-40 md:h-12 bg-no-repeat bg-contain bg-center">

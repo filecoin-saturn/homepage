@@ -108,7 +108,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                         })}
                     </Menu>
                 </div>
-                <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-[40px]` : ``}`}>
+                <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-2xl` : ``}`}>
                     <div className="flex justify-between items-center p-1 md:pr-3">
                         <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
                             <Button3 link="/" replace={true} />
