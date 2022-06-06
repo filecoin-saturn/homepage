@@ -1,28 +1,23 @@
 
-import { useCallback, useMemo } from 'react'
-import MeshFiller from '../../Utils/MeshFiller'
-import { AdditiveBlending, FloatType, SphereGeometry } from 'three'
+import { useCallback, useMemo, useRef } from 'react'
+import { AdditiveBlending } from 'three'
 import {useSpring} from 'react-spring'
-import { Canvas, useThree } from '@react-three/fiber'
+import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import {MoveGesture} from '@use-gesture/vanilla'
 import { AdaptiveDpr, Points } from '@react-three/drei'
 import GeometryFactory from '../../Utils/GeometryFactory'
 
 function WithinCanvas() {
     const { invalidate, camera, gl } = useThree()
-    const meshFiller = useMemo(() => new MeshFiller(0.2), [])
     const geometryFactory = useMemo(() => new GeometryFactory(), [])
     const [globePos, globeCol, globeSiz] = useMemo(() => {
         return geometryFactory.hollowSphere(10000, 0.2, 1, 3, 1, 0.5, 1)
     }, [])
     const [ringPos, ringCol, ringSiz] = useMemo(() => {
-        return geometryFactory.ring(20000, 3, 1, 5, 1, 0.5, 1, 0.1)
+        return geometryFactory.ring(8000, 4, 1, 5, 1, 0.5, 1, 0.1)
     }, [])
-	const globeGeometry = useMemo(() => {
-        const sphereGeom = new SphereGeometry(3)
-        return meshFiller.fillWithPoints(sphereGeom, 10000)
-    }, [])
-    const springCallback = useCallback(() => ({
+
+    const cameraDisplacementSpring = useCallback(() => ({
         x: 0,
         y: 0,
         onChange: ({value}: {value: {x:number, y:number}}) => {
@@ -40,7 +35,7 @@ function WithinCanvas() {
         })
     }, [])
 
-    const [cameraDisplacement, cameraDisplacementApi] = useSpring(springCallback)
+    const [cameraDisplacement, cameraDisplacementApi] = useSpring(cameraDisplacementSpring)
 
     return (
         <>
@@ -48,7 +43,7 @@ function WithinCanvas() {
                 positions={globePos}
                 sizes={globeSiz}
                 colors={globeCol}
-                position={[6,2,0]}
+                position={[7,2,0]}
             >
                 <shaderMaterial
                     vertexShader={`
@@ -81,8 +76,8 @@ function WithinCanvas() {
                 positions={ringPos}
                 sizes={ringSiz}
                 colors={ringCol}
-                position={[6,2,0]}
-                rotation={[-Math.PI / 3,-Math.PI / 8,0]}
+                position={[7,2,0]}
+                rotation={[-Math.PI / 11 * 4,-Math.PI / 9,0]}
             >
                 <shaderMaterial
                     vertexShader={`

@@ -67,7 +67,6 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                 }
             })
             if(isHighest) {
-                console.log(entry.target.id)
                 setActiveHash(entry.target.id)
                 history.replaceState(null, "", `#${entry.target.id}`)
                 path.events.emit("hashChangeComplete")
@@ -84,63 +83,60 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
             <IntersectionObserverWrapper
                 targetCallbacks={new Map([["navbar-area", (entry) => setIsScrolled(!entry.isIntersecting)]])}
                 threshold={0.99}
-            >
-                
-                <IntersectionObserverWrapper
-                    targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
-                    threshold={[0, 1]}
-                >
-                <div className={`md:hidden fixed inset-0 rounded-2xl m-2 bg-sat-blue-3/90 backdrop-blur-md z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
-                    <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} >
-                        {menuLinkArray.map((link, index) => {
-                            const hash = link.href.split("#")[1]
-                            return (
-                                <Button7 
-                                    key={index} 
-                                    link={link.href}
-                                    text={link.title} 
-                                    onClick={(e) => {setIsOpen(false)}} 
-                                    isActive={activeHash.includes(hash)} 
-                                    type="next-link"
-                                    replace={true}
-                                />
-                            )
-                        })}
-                    </Menu>
-                </div>
-                <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-md` : ``}`}>
-                    <div className="flex justify-between items-center p-1 md:pr-3">
-                        <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
-                            <Button3 link="/" replace={true} />
+            />  
+            <IntersectionObserverWrapper
+                targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
+                threshold={[0, 1]}
+            />
+            <div className={`md:hidden fixed inset-0 rounded-2xl m-2 bg-sat-blue-3/90 backdrop-blur-md z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
+                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} >
+                    {menuLinkArray.map((link, index) => {
+                        const hash = link.href.split("#")[1]
+                        return (
+                            <Button7 
+                                key={index} 
+                                link={link.href}
+                                text={link.title} 
+                                onClick={(e) => {setIsOpen(false)}} 
+                                isActive={activeHash.includes(hash)} 
+                                type="next-link"
+                                replace={true}
+                            />
+                        )
+                    })}
+                </Menu>
+            </div>
+            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-md` : ``}`}>
+                <div className="flex justify-between items-center p-1 md:pr-3">
+                    <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
+                        <Button3 link="/" replace={true} />
+                    </div>
+                    <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
+                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
+                    </div>
+                    <div className={`hidden md:flex space-x-4 md:items-center lg:space-x-16 transition-transform duration-300 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
+                        <div className="flex space-x-0 md:space-x-4">
+                            {navLinkArray.map((link, index) => {
+                                const hash = link.href.split("#")[1]
+                                return (
+                                    <Button5 
+                                        key={index} 
+                                        type="next-link"
+                                        link={link.href} 
+                                        text={link.title} 
+                                        onClick={(e) => {setIsOpen(false)}} 
+                                        isActive={activeHash.includes(hash)} 
+                                        isScrolled={isScrolled}
+                                        replace={true}
+                                    />
+                                )
+                            })}
                         </div>
-                        <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
-                            <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
-                        </div>
-                        <div className={`hidden md:flex space-x-4 md:items-center lg:space-x-16 transition-transform duration-300 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
-                            <div className="flex space-x-0 md:space-x-4">
-                                {navLinkArray.map((link, index) => {
-                                    const hash = link.href.split("#")[1]
-                                    return (
-                                        <Button5 
-                                            key={index} 
-                                            type="next-link"
-                                            link={link.href} 
-                                            text={link.title} 
-                                            onClick={(e) => {setIsOpen(false)}} 
-                                            isActive={activeHash.includes(hash)} 
-                                            isScrolled={isScrolled}
-                                            replace={true}
-                                        />
-                                    )
-                                })}
-                            </div>
-                            <Button5 type="button" text={languages.text} onClick={() => {}} disabled isScrolled={isScrolled} />
-                        </div>
+                        <Button5 type="button" text={languages.text} onClick={() => {}} disabled isScrolled={isScrolled} />
                     </div>
                 </div>
-                <div id="navbar-area" className="bg-transparent w-full h-2"></div>
-                </IntersectionObserverWrapper>
-            </IntersectionObserverWrapper>     
+            </div>
+            <div data-io="navbar-area" id="navbar-area" className="bg-transparent w-full h-2"></div>  
         </>
     )
 }

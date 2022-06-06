@@ -3,10 +3,10 @@ import { useEffect } from "react";
 type ComponentProps = {
     targetCallbacks: Map<string, (entry: IntersectionObserverEntry, observer?: IntersectionObserver) => void>,
     threshold: number | number[],
-    children: React.ReactNode
+    selectByClass?: boolean
 }
 
-export default function IntersectionObserverWrapper({targetCallbacks, threshold, children}: ComponentProps) {
+export default function IntersectionObserverWrapper({targetCallbacks, threshold, selectByClass}: ComponentProps) {
     useEffect(() => {
         const options = {
             root: null,
@@ -15,25 +15,26 @@ export default function IntersectionObserverWrapper({targetCallbacks, threshold,
         }
         const callback = (entries: IntersectionObserverEntry[], observer?: IntersectionObserver) => {
             entries.forEach((entry) => {
-                const f = targetCallbacks.get(entry.target.id)
+                const attribute = entry.target.getAttribute("data-io")
+                const f = attribute ? targetCallbacks.get(attribute) : undefined
                 if(f) f(entry, observer)
             });
           };
         const observer = new IntersectionObserver(callback, options);
         targetCallbacks.forEach((value, key) => {
-            const target = document.querySelector(`#${key}`);
-            if(target) observer.observe(target);
+            const targets = document.querySelectorAll(`[data-io="${key}"]`)
+            targets.forEach((target) => {
+                observer.observe(target);
+            })
         });
         return () => {
             targetCallbacks.forEach((value, key) => {
-                const target = document.querySelector(`#${key}`);
-                if(target) observer.unobserve(target);
+                const targets = document.querySelectorAll(`[data-io="${key}"]`)
+                targets.forEach((target) => {
+                    observer.unobserve(target);
+                })
             });
         }
     }, [targetCallbacks])
-    return (
-        <>
-            {children}
-        </>
-    )
+    return null
 }
