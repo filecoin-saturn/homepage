@@ -31,7 +31,7 @@ export default function Button5({type, text, onClick, replace, ...all}: Props) {
         <div className="relative ">
             <div className="flex items-center border-2 border-transparent space-x-2 px-2 md:px-3 invisible">
                 <div className={` h-[0.35rem] w-[0.35rem] rounded-full bg-transparent `}></div>
-                <div className=" text-transparent ">
+                <div className=" text-transparent relative md:text-sm md:leading-tight font-inter font-semibold antialiased tracking-wide ">
                     {text}
                 </div>
             </div>
