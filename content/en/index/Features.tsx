@@ -38,7 +38,8 @@ import FeaturesTemplate from "../../../components/Features/Features"
   ]
 
 
+
 export default function Features({animation}: {animation?: () => () => void}) {
-    return <FeaturesTemplate content={content} animation={animation} />
+    return <FeaturesTemplate content={content} animation={animation}  />
 }
 

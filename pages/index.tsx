@@ -11,11 +11,23 @@ import Footer from '../content/en/index/Footer'
 import FeaturesIntro from '../content/en/index/features-intro.mdx'
 import Features from '../content/en/index/Features'
 import Experience from '../threejs/components/Experience/Experience'
-import { useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
+import { getGPUTier } from 'detect-gpu';
+
 
 import { mainContentScrollAnimations, footerScrollAnimations } from '../animations/scroll'
 
 const Home: NextPage = () => {
+
+  const [tierState , setTierState] = useState(0)
+  useEffect(() => {
+    (async () => {
+      const gpuTier = await getGPUTier();
+      setTierState(gpuTier.tier)
+    })();
+  })
+  const backdropBlur = tierState >= 2 ? true : false
+
   useLayoutEffect(() => {
     const cleanup = mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)
     return () => {
@@ -36,7 +48,7 @@ const Home: NextPage = () => {
             <Intro />
           </CustomProse>
           <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12'>
-            <CallToActionButtons/>
+            <CallToActionButtons backdropBlur={backdropBlur}/>
           </div>
         </div> 
       </div>

@@ -1,9 +1,11 @@
 type Props = {
     isOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    backdropBlur: boolean
+
 }
 
-export default function Button4({isOpen, setIsOpen}: Props) {
+export default function Button4({isOpen, setIsOpen, backdropBlur}: Props) {
     return (
         <button 
             onClick={() => setIsOpen(!isOpen)}
@@ -13,7 +15,7 @@ export default function Button4({isOpen, setIsOpen}: Props) {
             </div>
             <div className="absolute bg-inner-menu-button group-hover:bg-inner-menu-button-hover group-active:bg-inner-menu-button bg-contain bg-no-repeat bg-center w-8 h-8 scale-75">
             </div>
-            <div className="shadow-colored absolute group-active:scale-[120%] group-focus-visible:bg-white/30 group-hover:bg-white/20 group-active:bg-white/30 w-full h-full group-active:p-4 rounded-full bg-sat-blue-4/70 -z-20 backdrop-blur-md">
+            <div className={`shadow-colored absolute group-active:scale-[120%] w-full h-full group-active:p-4 rounded-full -z-20  ${backdropBlur === true ? `backdrop-blur-md bg-sat-blue-4/70 group-focus-visible:bg-white/30 group-hover:bg-white/20 group-active:bg-white/30` : `bg-sat-blue-4/90 group-focus-visible:bg-white/40 group-hover:bg-white/30 group-active:bg-white/40`}`}>
             </div>
         </button>
     )

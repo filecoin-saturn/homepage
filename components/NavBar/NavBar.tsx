@@ -22,9 +22,10 @@ type Props = {
         text: string
     },
     sections: string[]
+    backdropBlur: boolean
 }
 
-function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
+function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}: Props) {
     const [isOpen, setIsOpen] = useState(false)
     const path = useRouter()
     const [isScrolled, setIsScrolled] = useState(false)
@@ -88,8 +89,8 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
             />
-            <div className={`md:hidden fixed inset-0 rounded-2xl m-2 bg-sat-blue-3/90 backdrop-blur-md z-20 transition-transform duration-300  ${isOpen ? `` : `translate-x-[110%]`}`}>
-                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} >
+            <div className={`md:hidden fixed inset-0 rounded-2xl m-2  z-20 transition-transform duration-300 ${backdropBlur === true ? `backdrop-blur-md bg-sat-blue-3/90 ` : `bg-sat-blue-3`}  ${isOpen ? `` : `translate-x-[110%]`}`}>
+                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} >
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
                         return (
@@ -112,7 +113,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                         <Button3 link="/" replace={true} />
                     </div>
                     <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
-                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} />
+                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur}/>
                     </div>
                     <div className={`hidden md:flex space-x-4 md:items-center lg:space-x-16 transition-transform duration-300 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
                         <div className="flex space-x-0 md:space-x-4">
@@ -128,11 +129,12 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                                         isActive={activeHash.includes(hash)} 
                                         isScrolled={isScrolled}
                                         replace={true}
+                                        backdropBlur={backdropBlur}
                                     />
                                 )
                             })}
                         </div>
-                        <Button5 type="button" text={languages.text} disabled isScrolled={isScrolled} />
+                        <Button5 type="button" text={languages.text} disabled isScrolled={isScrolled} backdropBlur={backdropBlur} />
                     </div>
                 </div>
             </div>

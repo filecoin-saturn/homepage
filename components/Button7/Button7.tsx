@@ -21,6 +21,8 @@ type ButtonProps = {
     disabled: boolean,
     isScrolled?: boolean
     replace?: never
+    backdropBlur: boolean
+
 }
 
 type AllProps = ButtonProps | NextLinkProps
