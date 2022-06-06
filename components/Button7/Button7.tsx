@@ -16,7 +16,7 @@ type ButtonProps = {
     type: "button",
     link?: never,
     text: string,
-    onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void,
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void,
     isActive?: never,
     disabled: boolean,
     isScrolled?: boolean

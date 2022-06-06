@@ -23,7 +23,7 @@ export default function Menu({isOpen, setIsOpen, languages, children}: Props){
                     {children}
                 </div>  
                 <div className="">
-                    <Button7 type="button" text={languages.text} onClick={() => {}} disabled={true} />
+                    <Button7 type="button" text={languages.text} disabled={true} />
                 </div>
             </div>
             <div className="mx-auto">

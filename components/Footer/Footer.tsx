@@ -18,7 +18,7 @@ type Props = {
         text2: string
         logo: string
     },
-    animation?: () => Function
+    animation?: () => () => void
 }
 
 

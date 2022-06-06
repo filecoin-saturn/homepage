@@ -8,7 +8,7 @@ type FeaturesContent = {
         title: string, 
         text: string,
     }>,
-    animation?: () => Function
+    animation?: () => () => void
 }
 
 

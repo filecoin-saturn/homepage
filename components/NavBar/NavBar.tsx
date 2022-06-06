@@ -56,7 +56,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
     const scrollCallback = useCallback((entry: IntersectionObserverEntry, observer?: IntersectionObserver) => {
         const index = intersecting.indexOf(entry.target.id)
         if(entry.isIntersecting) {
-            let isHighest: boolean = true
+            let isHighest = true
             if(index === -1 ) {
                 setIntersecting(intersecting.concat([entry.target.id]))
             }
@@ -132,7 +132,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections}: Props) {
                                 )
                             })}
                         </div>
-                        <Button5 type="button" text={languages.text} onClick={() => {}} disabled isScrolled={isScrolled} />
+                        <Button5 type="button" text={languages.text} disabled isScrolled={isScrolled} />
                     </div>
                 </div>
             </div>
