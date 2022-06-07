@@ -1,6 +1,7 @@
 import Button4 from "../Button4/Button4";
 import Button6 from "../Button6/Button6";
 import Button7 from "../Button7/Button7";
+import {memo} from "react"
 
 type Props = {
     isOpen: boolean,
@@ -12,7 +13,7 @@ type Props = {
     backdropBlur: boolean
 
 }
-export default function Menu({isOpen, setIsOpen, languages, children, backdropBlur}: Props){
+export default memo(function Menu({isOpen, setIsOpen, languages, children, backdropBlur}: Props){
     return (
         <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10">
             <div className="relative flex justify-center items-center">
@@ -31,4 +32,4 @@ export default function Menu({isOpen, setIsOpen, languages, children, backdropBl
             </div>
         </div>
     )
-}
+})

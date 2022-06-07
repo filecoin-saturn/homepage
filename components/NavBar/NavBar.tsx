@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState, memo } from "react"
 import { useRouter } from "next/router"
 import Menu from "../Menu/Menu"
 import { useEffect } from "react"
@@ -144,6 +144,6 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
     )
 }
 
-export default dynamic(() => Promise.resolve(NavBar), {
+export default dynamic(() => Promise.resolve(memo(NavBar)), {
     ssr: false
 })
