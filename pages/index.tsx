@@ -41,7 +41,7 @@ const Home: NextPage = () => {
   return (
 <>
     <Head>
-      <title>Saturn Network</title>
+      <title>Filecoin Saturn</title>
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
       <meta name="msapplication-TileColor" content="#ffffff"/>
       <meta name="theme-color" content="#ffffff"/>
     </Head>
-    <div  className='mx-auto text-center w-full overflow-hidden'>
+    <div className='mx-auto text-center w-full overflow-hidden'>
       <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
       </div>
       <div className='fixed -z-10 inset-0'>
