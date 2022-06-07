@@ -10,58 +10,88 @@ import NavBar from '../content/en/index/NavBar'
 import Footer from '../content/en/index/Footer'
 import FeaturesIntro from '../content/en/index/features-intro.mdx'
 import Features from '../content/en/index/Features'
-import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
-import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import Experience from '../threejs/components/Experience/Experience'
+import { useEffect, useLayoutEffect, useState } from 'react'
+import { getGPUTier } from 'detect-gpu';
+
+
+import { mainContentScrollAnimations, footerScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
 
 const Home: NextPage = () => {
+
+  const [tierState , setTierState] = useState(0)
+  useEffect(() => {
+    (async () => {
+      const gpuTier = await getGPUTier();
+      setTierState(gpuTier.tier)
+    })();
+  })
+  const backdropBlur = tierState >= 2 ? true : false
+
+  useLayoutEffect(() => {
+    const cleanup1 = mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)
+    const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
+    return () => {
+      cleanup1()
+      cleanup2()
+    }
+  }, [])
+  
   return (
-      <div  className='mx-auto text-center w-full min-h-[200rem] overflow-hidden'>
-        <div className='fixed inset-0 lg:bg-desktop-background bg-mobile-background bg-no-repeat bg-cover bg-center -z-10'></div>
-        <NavBar />
-        <div id='start' className='w-full h-0'></div>
-          <div className='mx-auto px-6 pb-8 md:pb-12 text-left max-w-xs md:max-w-sm lg:max-w-[30rem] flex flex-col h-[100vh] justify-end lg:py-24 lg:mx-20 '>
-            <CustomProse>
-              <Intro />
-            </CustomProse>
-            <div className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-8 '>
-              <CallToActionButtons/>
-            </div>
-          </div> 
-        <div id='whatisit' className='w-full h-0'></div>
-          <div className='mx-auto px-6 text-left max-w-xs md:max-w-sm lg:max-w-[40rem] h-[90vh] flex flex-col items-end justify-end lg:bottom-0 lg:py-12 lg:translate-x-1/4 '>
-            <CustomProse>
-              <WhatIsIt />
-            </CustomProse>
-          </div> 
-        <div id='features' className='w-full h-0'></div>
-          <div className='py-24 lg:py-52 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto flex flex-col items-center lg:justify-center'>
-              <div className='text-left w-full my-8 '>
-                <CustomProse>
-                  <FeaturesIntro />
-                </CustomProse>
-              </div>
-            <div className='px-2 w-full lg:px-0 mt-8 flex justify-center'>
-              <Features/>
-            </div>
-          </div>
-        <div id='why' className='w-full h-0'></div>
-          <div className='mx-auto px-6 py-4 text-left max-w-xs md:max-w-sm lg:max-w-2xl h-[100vh] md:py-24 flex flex-col items-end justify-end md:justify-center md:items-center'>
-            <CustomProse>
-              <WhySaturn />
-            </CustomProse>
-          </div> 
-        <div id='getstarted' className='w-full h-0'></div>
-          <div className='mx-auto px-6 text-center max-w-[17rem] md:max-w-sm lg:max-w-[34rem] h-[100vh] py-24 flex flex-col justify-center items-center'>
-            <CustomProse>
-              <GetStarted />
-            </CustomProse>
-            <div className='flex items-stretch mx-auto mb-8 '>
-              <CallToActionButtonDownload/>
-            </div>
-          </div>  
-          <Footer/>
+    <div  className='mx-auto text-center w-full overflow-hidden'>
+      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
       </div>
+      <div className='fixed -z-10 inset-0'>
+        <Experience />
+      </div>
+      <NavBar backdropBlur={backdropBlur} />
+      <div data-io="start" id="start" className='w-full h-0'></div>
+      <div data-io="track-saturn" className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end lg:ml-20'>
+        <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto'>
+          <CustomProse>
+            <Intro />
+          </CustomProse>
+          <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12'>
+            <CallToActionButtons backdropBlur={backdropBlur}/>
+          </div>
+        </div> 
+      </div>
+      <div data-io="whatisit" id="whatisit" className='w-full h-0'></div>
+      <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem]'>
+        <div data-gsap="animate-children" className='mt-24 lg:mt-32 max-w-xs md:max-w-sm lg:max-w-[30rem] ml-auto  '>
+          <CustomProse>
+            <WhatIsIt />
+          </CustomProse>
+        </div> 
+      </div> 
+      <div data-io="features" id="features" className='w-full h-0'></div>
+      <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 '>
+            <CustomProse>
+              <FeaturesIntro />
+            </CustomProse>
+          </div>
+        <div className='px-2 w-full lg:px-0 mt-8'>
+          <Features animation={() => {return mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}} backdropBlur={backdropBlur}/>
+        </div>
+      </div>
+      <div data-io="why" id="why" className='w-full h-0'></div>
+      <div data-gsap="animate-children" className='mx-auto px-6 text-left max-w-xs md:max-w-sm lg:max-w-2xl mt-24 md:mt-56 flex flex-col items-end justify-end md:justify-center md:items-center'>
+        <CustomProse>
+          <WhySaturn />
+        </CustomProse>
+      </div> 
+      <div data-io="getstarted" id="getstarted" className='w-full h-0'></div>
+      <div data-gsap="animate-children" className='mx-auto px-6 text-center max-w-[17rem] md:max-w-sm lg:max-w-[34rem] mt-36 md:my-52 flex flex-col justify-center items-center'>
+        <CustomProse>
+          <GetStarted />
+        </CustomProse>
+        <div data-gsap="animate" className='flex items-stretch mx-auto mb-8 '>
+          <CallToActionButtonDownload/>
+        </div>
+      </div>
+      <Footer backdropBlur={backdropBlur} animation={() => {return footerScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}}/>
+    </div>
   )
 }
 
