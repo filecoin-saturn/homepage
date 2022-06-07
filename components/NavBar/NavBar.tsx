@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState, memo } from "react"
 import { useRouter } from "next/router"
 import Menu from "../Menu/Menu"
 import { useEffect } from "react"
@@ -89,7 +89,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
             />
-            <div className={`md:hidden fixed inset-0 rounded-2xl m-2  z-20 transition-transform duration-300 will-change-transform ${backdropBlur ? `backdrop-blur-2xl bg-white/5 ` : `bg-sat-fallback-blue-3`}  ${isOpen ? `` : `translate-x-[110%]`}`}>
+            <div className={`md:hidden fixed inset-0 rounded-2xl m-2  z-20 transition-transform duration-300 will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-fallback-blue-3` : `bg-sat-fallback-blue-3`}  ${isOpen ? `` : `translate-x-[110%]`}`}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} >
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
@@ -108,7 +108,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                     })}
                 </Menu>
             </div>
-            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-md` : ``}`}>
+            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled && backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-fallback-blue-5` : isScrolled ?  `bg-sat-fallback-blue-5` : ``}`}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
                     <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
                         <Button3 link="/" replace={true} backdropBlur={backdropBlur} />
@@ -144,6 +144,6 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
     )
 }
 
-export default dynamic(() => Promise.resolve(NavBar), {
+export default dynamic(() => Promise.resolve(memo(NavBar)), {
     ssr: false
 })
