@@ -3,10 +3,9 @@ import { useEffect } from "react";
 type ComponentProps = {
     targetCallbacks: Map<string, (entry: IntersectionObserverEntry, observer?: IntersectionObserver) => void>,
     threshold: number | number[],
-    selectByClass?: boolean
 }
 
-export default function IntersectionObserverWrapper({targetCallbacks, threshold, selectByClass}: ComponentProps) {
+export default function IntersectionObserverWrapper({targetCallbacks, threshold}: ComponentProps) {
     useEffect(() => {
         const options = {
             root: null,
@@ -35,6 +34,6 @@ export default function IntersectionObserverWrapper({targetCallbacks, threshold,
                 })
             });
         }
-    }, [targetCallbacks])
+    }, [targetCallbacks, threshold])
     return null
 }

@@ -18,6 +18,12 @@ const links = [
 
 const credits = {text: "Made with ", logo: "url(heart-logo.svg)", text2: "by protocol labs"}
 
-export default function Footer({animation}: {animation?: () => () => void}) {
-    return <FooterTemplate links={links} credits={credits} animation={animation} />
+type FooterContent = {
+    animation?: () => () => void
+    backdropBlur: boolean
+}
+
+
+export default function Footer({animation, backdropBlur}: FooterContent) {
+    return <FooterTemplate backdropBlur={backdropBlur} links={links} credits={credits} animation={animation} />
 }

@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import Button4 from "../Button4/Button4";
 import Button6 from "../Button6/Button6";
 import Button7 from "../Button7/Button7";
@@ -14,7 +13,6 @@ type Props = {
 
 }
 export default function Menu({isOpen, setIsOpen, languages, children, backdropBlur}: Props){
-    const path = useRouter()
     return (
         <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10">
             <div className="relative flex justify-center items-center">
@@ -29,7 +27,7 @@ export default function Menu({isOpen, setIsOpen, languages, children, backdropBl
                 </div>
             </div>
             <div className="mx-auto">
-                <Button6 isOpen={isOpen} setIsOpen={setIsOpen} link="/" replace={true} />
+                <Button6 setIsOpen={setIsOpen} link="/" replace={true} />
             </div>
         </div>
     )

@@ -39,7 +39,12 @@ import FeaturesTemplate from "../../../components/Features/Features"
 
 
 
-export default function Features({animation}: {animation?: () => () => void}) {
-    return <FeaturesTemplate content={content} animation={animation}  />
+type FeaturesContent = {
+    animation?: () => () => void
+    backdropBlur: boolean
+}
+
+export default function Features({animation, backdropBlur}: FeaturesContent) {
+    return <FeaturesTemplate backdropBlur={backdropBlur} content={content} animation={animation}  />
 }
 

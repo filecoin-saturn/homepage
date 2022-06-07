@@ -18,6 +18,10 @@ const menuLinkArray = [
     {title: "Get Started", href: "/#getstarted" }
 ]
 
-export default function NavBar() {
-    return <NavBarTemplate navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatisit", "features", "why", "getstarted"]} />
+type NavBarContent ={
+    backdropBlur : boolean
+}
+
+export default function NavBar({backdropBlur}: NavBarContent) {
+    return <NavBarTemplate backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatisit", "features", "why", "getstarted"]} />
 }

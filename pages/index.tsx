@@ -40,7 +40,7 @@ const Home: NextPage = () => {
       <div className='fixed -z-10 inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
         <Experience />
       </div>
-      <NavBar />
+      <NavBar backdropBlur={backdropBlur} />
       <div data-io="start" id="start" className='w-full h-0'></div>
       <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end lg:ml-20'>
         <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto'>
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
         <div className='px-2 w-full lg:px-0 mt-8'>
-          <Features animation={() => {return mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}}/>
+          <Features animation={() => {return mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}} backdropBlur={backdropBlur}/>
         </div>
       </div>
       <div data-io="why" id="why" className='w-full h-0'></div>
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
           <CallToActionButtonDownload/>
         </div>
       </div>
-      <Footer animation={() => {return footerScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}}/>
+      <Footer backdropBlur={backdropBlur} animation={() => {return footerScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}}/>
     </div>
   )
 }

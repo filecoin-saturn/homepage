@@ -2,12 +2,11 @@ import Link from "next/link"
 
 type Props = {
     link: string,
-    isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
     replace?: boolean
 }
 
-export default function Button6({link, isOpen, setIsOpen, replace} : Props) {
+export default function Button6({link, setIsOpen, replace} : Props) {
     return  (
         <Link href={link} replace={replace}>
             <a 

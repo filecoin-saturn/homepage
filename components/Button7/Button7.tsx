@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { text } from "stream/consumers"
 
 type NextLinkProps = {
     link: string,
@@ -10,6 +9,7 @@ type NextLinkProps = {
     isScrolled?: boolean
     type: "next-link",
     replace?: boolean
+    backdropBlur: boolean
 }
 
 type ButtonProps = {

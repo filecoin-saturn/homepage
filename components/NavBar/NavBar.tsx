@@ -54,7 +54,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
         }
     }, [router])
 
-    const scrollCallback = useCallback((entry: IntersectionObserverEntry, observer?: IntersectionObserver) => {
+    const scrollCallback = useCallback((entry: IntersectionObserverEntry) => {
         const index = intersecting.indexOf(entry.target.id)
         if(entry.isIntersecting) {
             let isHighest = true
@@ -77,7 +77,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                 setIntersecting(intersecting.filter(value => value !== entry.target.id))
             }
         }
-    }, [intersecting])
+    }, [intersecting, path.events])
 
     return (
         <>
@@ -89,7 +89,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
             />
-            <div className={`md:hidden fixed inset-0 rounded-2xl m-2  z-20 transition-transform duration-300 ${backdropBlur === true ? `backdrop-blur-md bg-sat-blue-3/90 ` : `bg-sat-blue-3`}  ${isOpen ? `` : `translate-x-[110%]`}`}>
+            <div className={`md:hidden fixed inset-0 rounded-2xl m-2  z-20 transition-transform duration-300 will-change-transform ${backdropBlur ? `backdrop-blur-2xl bg-white/5 ` : `bg-sat-fallback-blue-3`}  ${isOpen ? `` : `translate-x-[110%]`}`}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} >
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
@@ -98,10 +98,11 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                                 key={index} 
                                 link={link.href}
                                 text={link.title} 
-                                onClick={(e) => {setIsOpen(false)}} 
+                                onClick={() => {setIsOpen(false)}} 
                                 isActive={activeHash.includes(hash)} 
                                 type="next-link"
                                 replace={true}
+                                backdropBlur={backdropBlur}
                             />
                         )
                     })}
@@ -110,7 +111,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled ? `bg-white/5 backdrop-blur-md` : ``}`}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
                     <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
-                        <Button3 link="/" replace={true} />
+                        <Button3 link="/" replace={true} backdropBlur={backdropBlur} />
                     </div>
                     <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
                         <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur}/>
@@ -125,7 +126,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                                         type="next-link"
                                         link={link.href} 
                                         text={link.title} 
-                                        onClick={(e) => {setIsOpen(false)}} 
+                                        onClick={() => {setIsOpen(false)}} 
                                         isActive={activeHash.includes(hash)} 
                                         isScrolled={isScrolled}
                                         replace={true}
