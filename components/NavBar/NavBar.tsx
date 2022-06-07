@@ -139,7 +139,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                     </div>
                 </div>
             </div>
-            <div data-io="navbar-area" id="navbar-area" className="bg-transparent w-full h-2"></div>  
+            <div data-io="navbar-area" id="navbar-area" className="bg-transparent w-full h-0"></div>  
         </>
     )
 }

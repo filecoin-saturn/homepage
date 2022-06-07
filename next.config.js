@@ -10,13 +10,26 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-module.exports = withMDX({
+const withPlugins = require('next-compose-plugins');
+const withTM = require('next-transpile-modules')(['three'])
+
+module.exports = withPlugins([withTM, withMDX],{
   // Append the default value with md extensions
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  trailingSlash: true,
-  compiler: {
-    // Enables the styled-components SWC transform
-    styledComponents: true
+  webpack: (config, options) => {
+    config.module.rules.push(
+      // Shaders
+      {
+          test: /\.(glsl|vs|fs|vert|frag)$/,
+          type: 'asset/source',
+          generator:
+          {
+              filename: 'assets/images/[hash][ext]'
+          }
+      }
+    )
+
+    return config
   }
 })

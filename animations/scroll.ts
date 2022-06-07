@@ -3,6 +3,35 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+export function backgroundScrollAnimations(selectors: string) {
+    const elements = document.querySelectorAll(selectors)
+    const animations = Array.from(elements).map(e => {
+        return [
+            gsap.fromTo(e,
+                {
+                    yPercent: 0
+                },{
+                    yPercent: -30,
+                    scrollTrigger: {
+                        trigger: e,
+                        start: 0,
+                        end: "max",
+                        scrub: 0
+                    }
+                }
+            )
+        ]
+    })
+    return () => {
+        animations.forEach(e => {
+            e.forEach(a => {
+                a.kill()
+                a.scrollTrigger?.kill()
+            })
+        })
+    }
+}
+
 export function mainContentScrollAnimations(selectors: string) {
     const elements = document.querySelectorAll(selectors)
     const animations = Array.from(elements).map(e => {

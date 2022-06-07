@@ -15,7 +15,7 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { getGPUTier } from 'detect-gpu';
 
 
-import { mainContentScrollAnimations, footerScrollAnimations } from '../animations/scroll'
+import { mainContentScrollAnimations, footerScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
 
 const Home: NextPage = () => {
 
@@ -29,20 +29,24 @@ const Home: NextPage = () => {
   const backdropBlur = tierState >= 2 ? true : false
 
   useLayoutEffect(() => {
-    const cleanup = mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)
+    const cleanup1 = mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)
+    const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
     return () => {
-      cleanup()
+      cleanup1()
+      cleanup2()
     }
   }, [])
   
   return (
     <div  className='mx-auto text-center w-full overflow-hidden'>
-      <div className='fixed -z-10 inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
+      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
+      </div>
+      <div className='fixed -z-10 inset-0'>
         <Experience />
       </div>
       <NavBar backdropBlur={backdropBlur} />
       <div data-io="start" id="start" className='w-full h-0'></div>
-      <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end lg:ml-20'>
+      <div data-io="track-saturn" className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end lg:ml-20'>
         <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto'>
           <CustomProse>
             <Intro />
