@@ -28,7 +28,6 @@ type Props = {
 function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}: Props) {
     const [isOpen, setIsOpen] = useState(false)
     const path = useRouter()
-    const [isScrolled, setIsScrolled] = useState(false)
     const [activeHash, setActiveHash] = useState("")
     const [intersecting, setIntersecting] = useState<string[]>([])
 
@@ -82,10 +81,6 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
     return (
         <>
             <IntersectionObserverWrapper
-                targetCallbacks={new Map([["navbar-area", (entry) => setIsScrolled(!entry.isIntersecting)]])}
-                threshold={0.99}
-            />  
-            <IntersectionObserverWrapper
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
             />
@@ -108,15 +103,13 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                     })}
                 </Menu>
             </div>
-            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${isScrolled && backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-fallback-blue-5` : isScrolled ?  `bg-sat-fallback-blue-5` : ``}`}>
+            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-fallback-blue-5` : `bg-sat-fallback-blue-5`}`}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
-                    <div className={` transition-transform duration-300 ${isScrolled ? `` : `translate-x-[5%] lg:translate-x-1/2 `}`}>
                         <Button3 link="/" replace={true} backdropBlur={backdropBlur} />
-                    </div>
-                    <div className={`flex items-center md:hidden mr-1.5 transition-transform duration-300 ${isScrolled ? `` : `-translate-x-[10%]`}`}>
+                    <div className={`flex items-center md:hidden mr-1.5 `}>
                         <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur}/>
                     </div>
-                    <div className={`hidden md:flex space-x-4 md:items-center lg:space-x-16 transition-transform duration-300 ${isScrolled ? `space-x-2 ` : `-translate-x-[5%] lg:-translate-x-[10%] `}`}>
+                    <div className={`hidden md:flex md:items-center lg:space-x-16 space-x-4`}>
                         <div className="flex space-x-0 md:space-x-4">
                             {navLinkArray.map((link, index) => {
                                 const hash = link.href.split("#")[1]
@@ -128,14 +121,13 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                                         text={link.title} 
                                         onClick={() => {setIsOpen(false)}} 
                                         isActive={activeHash.includes(hash)} 
-                                        isScrolled={isScrolled}
                                         replace={true}
                                         backdropBlur={backdropBlur}
                                     />
                                 )
                             })}
                         </div>
-                        <Button5 type="button" text={languages.text} disabled isScrolled={isScrolled} backdropBlur={backdropBlur} />
+                        <Button5 type="button" text={languages.text} disabled backdropBlur={backdropBlur} />
                     </div>
                 </div>
             </div>

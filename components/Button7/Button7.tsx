@@ -6,7 +6,6 @@ type NextLinkProps = {
     onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void,
     isActive: boolean,
     disabled?: never
-    isScrolled?: boolean
     type: "next-link",
     replace?: boolean
     backdropBlur: boolean
@@ -19,7 +18,6 @@ type ButtonProps = {
     onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void,
     isActive?: never,
     disabled: boolean,
-    isScrolled?: boolean
     replace?: never
     backdropBlur: boolean
 

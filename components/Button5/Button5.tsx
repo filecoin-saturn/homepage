@@ -8,7 +8,6 @@ type ButtonProps = {
     replace?: boolean,
     isActive?: never,
     disabled: boolean,
-    isScrolled?: boolean
     backdropBlur: boolean
 
 
@@ -22,7 +21,6 @@ type NextLinkProps = {
     isActive: boolean,
     replace: boolean,
     disabled?: never,
-    isScrolled?: boolean
     backdropBlur: boolean
 
 }
@@ -42,9 +40,9 @@ export default function Button5({type, text, onClick, replace, ...all}: Props) {
             <div className="absolute inset-y-0 right-0 ">
                 <Link href={rest.link ?? ""} replace={replace} >
                     <a  onClick={onClick}
-                        className={`group outline-none relative z-20 group disabled:opacity-30 ${rest.isScrolled ? `` : ``} `} 
+                        className={`group outline-none relative z-20 group disabled:opacity-30 `} 
                         >
-                        <div className={`flex group-active:scale-90 items-center ${rest.isActive ? `space-x-2`: ``} px-2 py-1 md:px-3 border-2 border-transparent text-sat-grey-1 group-focus-visible:border-white group-focus-visible:text-white rounded-full group-hover:text-white will-change-transform ${rest.isScrolled && rest.backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/25 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90` : rest.backdropBlur ? `supports-blur:group-focus-visible:bg-white/10 supports-blur:backdrop-blur-md supports-blur:bg-white/10 supports-blur:group-hover:bg-white/25 supports-blur:group-active:bg-white/40 bg-sat-fallback-blue-2 group-hover:bg-sat-fallback-grey-1/90 group-active:bg-sat-fallback-grey-2/90 group-focus-visible:bg-sat-fallback-grey-1/90 ` : rest.isScrolled ? `group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90` : `bg-sat-fallback-blue-2 group-hover:bg-sat-fallback-grey-1/90 group-active:bg-sat-fallback-grey-2/90 group-focus-visible:bg-sat-fallback-grey-1/90`}`}>
+                        <div className={`flex group-active:scale-90 items-center ${rest.isActive ? `space-x-2`: ``} px-2 py-1 md:px-3 border-2 border-transparent text-sat-grey-1 group-focus-visible:border-white group-focus-visible:text-white rounded-full group-hover:text-white will-change-transform ${rest.backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/25 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90` : `group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90`}`}>
                             <div className={` ${rest.isActive? `` : `hidden `} h-[0.35rem] w-[0.35rem] rounded-full bg-white`}></div>
                             <div className={`relative md:text-sm md:leading-tight font-inter font-semibold antialiased tracking-wide ${rest.isActive ? `text-white`: ``}` }>
                                 {text}
@@ -56,7 +54,7 @@ export default function Button5({type, text, onClick, replace, ...all}: Props) {
         </div>
     ) : (
         <button disabled={rest.disabled} className={`disabled:opacity-30 disabled:pointer-events-none group outline-none`}>
-            <div className={`justify-center relative text-sat-grey-1 flex group-active:scale-90 items-center p-1 border-2 border-transparent group-focus-visible:border-white group-focus-visible:text-white rounded-full group-hover:text-white will-change-transform ${rest.isScrolled && rest.backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/25 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90` : rest.backdropBlur ? `supports-blur:group-focus-visible:bg-white/10 supports-blur:backdrop-blur-md supports-blur:bg-white/10 supports-blur:group-hover:bg-white/25 supports-blur:group-active:bg-white/40 bg-sat-fallback-blue-2 group-hover:bg-sat-fallback-grey-1/90 group-active:bg-sat-fallback-grey-2/90 group-focus-visible:bg-sat-fallback-grey-1/90 ` : rest.isScrolled ? `group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90` : `bg-sat-fallback-blue-2 group-hover:bg-sat-fallback-grey-1/90 group-active:bg-sat-fallback-grey-2/90 group-focus-visible:bg-sat-fallback-grey-1/90`}`}>
+            <div className={`justify-center relative text-sat-grey-1 flex group-active:scale-90 items-center p-1 border-2 border-transparent group-focus-visible:border-white group-focus-visible:text-white rounded-full group-hover:text-white will-change-transform ${rest.backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/25 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90` : `group-hover:bg-sat-fallback-grey-1/70 group-active:bg-sat-fallback-grey-2/70 group-focus-visible:bg-sat-fallback-grey-1/90`}`}>
                 <div className="font-inter font-semibold antialiased inset-0 tracking-wide">
                     {text}
                 </div>
