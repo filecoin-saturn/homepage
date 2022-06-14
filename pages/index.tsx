@@ -59,7 +59,7 @@ const Home: NextPage = () => {
       </div>
       <NavBar backdropBlur={backdropBlur} />
       <div data-io="start" id="start" className='w-full h-0'></div>
-      <div data-io="track-saturn" className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[100vh] flex flex-col justify-end lg:ml-20'>
+      <div data-io="track-saturn" className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-[calc(var(--vh,_1vh)*100)] flex flex-col justify-end lg:ml-20'>
         <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto'>
             <CustomProse>
               <Intro />

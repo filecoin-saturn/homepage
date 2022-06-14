@@ -19,7 +19,6 @@
     "@use-gesture/react": "^10.2.15",
     "detect-gpu": "^4.0.25",
     "gsap": "^3.10.4",
-    "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
     "next": "12.1.6",
     "next-compose-plugins": "^2.2.1",
