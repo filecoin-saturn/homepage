@@ -31,9 +31,11 @@ module.exports = {
         'sat-fallback-grey-2': '#7D83A2',
       },
 
+      //  #12255E
+
       backgroundImage: {
         'saturn-logo': "url('/saturn-logo.svg')",
-        'star-background-plain': "url('/star-background-plain.png')",
+        'star-background-plain': "url('/arthur-volkers-GX542ehZwSk-unsplash-turned.webp')",
         'mobile-background': "url('/mobile-background.png')",
         'desktop-background': "url('/desktop-background.png')",
         'inner-menu-button': "url('/inner-menu-button.svg')",
