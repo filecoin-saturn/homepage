@@ -16,7 +16,6 @@
     "@react-three/fiber": "^8.0.19",
     "@tailwindcss/typography": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@use-gesture/react": "^10.2.15",
     "detect-gpu": "^4.0.25",
     "gsap": "^3.10.4",
     "lodash": "^4.17.21",

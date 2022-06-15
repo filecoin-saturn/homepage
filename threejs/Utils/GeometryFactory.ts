@@ -1,12 +1,10 @@
 import { Color, Vector3, Spherical } from "three";
 
 export default class GeometryFactory {
-    constructor() {
-    }
 
     genStar(r:number) {
         return new Vector3().setFromSpherical(new Spherical(r, Math.acos(1 - Math.random() * 2), Math.random() * 2 * Math.PI));
-    };
+    }
 
     genRingStar(r:number, h:number) {
         const angle = Math.random() * 2 * Math.PI
@@ -22,7 +20,7 @@ export default class GeometryFactory {
             length: count
         }, () => (0.5 + 0.5 * Math.random()) * factor);
         const color = new Color();
-        let r = radius + depth;
+        const r = radius + depth;
         const increment = depth / count;
     
         for (let i = 0; i < count; i++) {
@@ -42,7 +40,7 @@ export default class GeometryFactory {
             length: count
         }, () => (0.5 + 0.5 * Math.random()) * factor);
         const color = new Color();
-        let r = radius + depth;
+        const r = radius + depth;
         const increment = depth / count;
         const h = (Math.random() - 0.5) * height
  
