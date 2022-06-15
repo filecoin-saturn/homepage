@@ -4,8 +4,8 @@ import { Group, Vector3 } from "three"
 
 export function saturnStartPosition(size: {width: number, height:number}) {
     const x = 3.6 * (size.width / size.height)
-    const maxYY = 4.2
-    const minYY = 1.5
+    const maxYY = 5
+    const minYY = 3.1
     const maxYX = 300
     const minYX = 1200
     const y = (minYY - maxYY) / (minYX - maxYX) * size.width + maxYY - maxYX * (minYY - maxYY) / (minYX - maxYX)
