@@ -1,21 +1,18 @@
 
 import { useMemo, useRef } from 'react'
-import { AdditiveBlending, Euler, Group, SphereBufferGeometry, Vector3 } from 'three'
+import { AdditiveBlending, Euler, Group, Vector3 } from 'three'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { AdaptiveDpr, Points } from '@react-three/drei'
 import GeometryFactory from '../../Utils/GeometryFactory'
 import { saturnStartPosition } from '../../animations/springs'
 import lightDotVertexShader from '../../shaders/light-dot/vertex.glsl'
 import lightDotFragmentShader from '../../shaders/light-dot/fragment.glsl'
-import MeshFiller from '../../Utils/MeshFiller'
 
 function WithinCanvas() {
     const { size } = useThree()
     const saturnStartP = saturnStartPosition(size)
     const saturn = useRef<Group>(null)
     const geometryFactory = useMemo(() => new GeometryFactory(), [])
-    const meshFiller = useMemo(() => new MeshFiller(10), [])
-    const l1Positions = useMemo(() => meshFiller.fillWithPoints(new SphereBufferGeometry(2), 1000), [meshFiller])
     const [globePos, globeCol, globeSiz] = useMemo(() => {
         return geometryFactory.hollowSphere(10000, 0.2, 1, 3, 1, 0.5, 1)
     }, [])
@@ -85,29 +82,11 @@ function WithinCanvas() {
                     />
                 </Points>
             </group>
-            {/* <group
-                position={[0, 0, 0]}
-            >
-                <Points 
-                    positions={l1Positions}
-                >
-                    <shaderMaterial
-                        uniforms={{
-                            uSizeFactor: {value: lightDotSize}
-                        }}
-                        vertexShader={lightDotVertexShader}
-                        fragmentShader={lightDotFragmentShader} 
-                        depthWrite={false}
-                        blending={AdditiveBlending}
-                        transparent={true}
-                    />
-                </Points>
-            </group> */}
         </>
     )
 }
 
-export default function Experience() {
+export default function Saturn() {
     return (
         <Canvas camera={{position: [0,0,15], fov:30}}>
             <WithinCanvas />
