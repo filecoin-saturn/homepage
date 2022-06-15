@@ -16,7 +16,6 @@
     "@react-three/fiber": "^8.0.19",
     "@tailwindcss/typography": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@use-gesture/react": "^10.2.15",
     "detect-gpu": "^4.0.25",
     "gsap": "^3.10.4",
     "lodash": "^4.17.21",
@@ -25,7 +24,6 @@
     "next-transpile-modules": "^9.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-spring": "^9.4.5",
     "three": "^0.141.0",
     "three-mesh-bvh": "^0.5.11"
   },

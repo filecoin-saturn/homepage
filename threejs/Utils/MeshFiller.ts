@@ -24,27 +24,27 @@ export default class MeshFiller {
         // add temporary mesh to scene
         this.scene.add(mesh)
 
-        var ray = new THREE.Raycaster();
+        const ray = new THREE.Raycaster();
         ray.firstHitOnly = false;
       
-        let meshInvMatrix = new THREE.Matrix4();
+        const meshInvMatrix = new THREE.Matrix4();
         meshInvMatrix.copy(mesh.matrixWorld).invert();
-        let localRay = new THREE.Ray();
+        const localRay = new THREE.Ray();
       
         mesh.geometry.computeBoundingBox();
-        let bbox = mesh.geometry.boundingBox;
-        let center = new THREE.Vector3();
+        const bbox = mesh.geometry.boundingBox;
+        const center = new THREE.Vector3();
         bbox?.getCenter(center);
-        let bsize = new THREE.Vector3();
+        const bsize = new THREE.Vector3();
         bbox?.getSize(bsize);
       
-        let points = [];
-        let pointsStart = [];
-        let pointsDelay = []; //[0..1]
+        const points = [];
+        const pointsStart = [];
+        const pointsDelay = []; //[0..1]
       
-        var dir = new THREE.Vector3();
-        var v = new THREE.Vector3();
-        var vps = new THREE.Vector3();
+        const dir = new THREE.Vector3();
+        const v = new THREE.Vector3();
+        const vps = new THREE.Vector3();
         let intersects = [];
         let counter = 0;
         while (counter < count) {
@@ -64,7 +64,7 @@ export default class MeshFiller {
 					pointsStart.push(vps.x, vps.y, vps.z);
 					pointsDelay.push((v.y - bbox.min.y) / bsize.y);
 				
-					points.push(v.clone());
+					points.push(...v.clone().toArray());
 					counter++;
 				}
 			}
@@ -84,7 +84,7 @@ export default class MeshFiller {
 			return false;
         }
       
-        let rg = new THREE.BufferGeometry().setFromPoints(points);
+        /* const rg = new THREE.BufferGeometry().setFromPoints(points);
         rg.setAttribute(
 			"positionStart",
 			new THREE.Float32BufferAttribute(pointsStart, 3)
@@ -93,7 +93,10 @@ export default class MeshFiller {
 			"positionDelay",
 			new THREE.Float32BufferAttribute(pointsDelay, 1)
         );
+        console.log(rg)
         this.scene.remove(mesh)
-        return rg;
+        return rg; */
+
+        return new Float32Array(points)
       }
 }

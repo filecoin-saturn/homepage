@@ -22,6 +22,7 @@ module.exports = {
         'sat-fallback-blue-4': '#2F5086',
         'sat-fallback-blue-5': '#263061',
         'sat-blue-3': '#153A73',
+        'sat-blue-4': '#7198FF',
         'sat-green-1': '#39C1CB',
         'sat-gradient-green-1': ' rgb(57, 193, 203, 0.3)',
         'sat-red-1': '#FF0000',
@@ -31,9 +32,10 @@ module.exports = {
         'sat-fallback-grey-2': '#7D83A2',
       },
 
+
       backgroundImage: {
         'saturn-logo': "url('/saturn-logo.svg')",
-        'star-background-plain': "url('/star-background-plain.png')",
+        'star-background-plain': "url('/arthur-volkers-GX542ehZwSk-unsplash-turned.webp')",
         'mobile-background': "url('/mobile-background.png')",
         'desktop-background': "url('/desktop-background.png')",
         'inner-menu-button': "url('/inner-menu-button.svg')",

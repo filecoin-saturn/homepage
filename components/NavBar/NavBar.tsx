@@ -1,4 +1,4 @@
-import { useCallback, useState, memo } from "react"
+import { useCallback, useState, memo, useLayoutEffect } from "react"
 import { useRouter } from "next/router"
 import Menu from "../Menu/Menu"
 import { useEffect } from "react"
@@ -8,7 +8,7 @@ import Button5 from "../Button5/Button5"
 import Button7 from "../Button7/Button7"
 import IntersectionObserverWrapper from "../IntersectionObserverWrapper/IntersectionObserverWrapper"
 import dynamic from "next/dynamic";
-
+import { gsap } from "gsap";
 type Props = {
     menuLinkArray: {
         title: string,
@@ -30,6 +30,10 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
     const path = useRouter()
     const [activeHash, setActiveHash] = useState("")
     const [intersecting, setIntersecting] = useState<string[]>([])
+
+    useLayoutEffect(() => {
+        isOpen ? gsap.to("[data-gsap='animate-menu']", {duration: 0.25, x: 0}) : gsap.to("[data-gsap='animate-menu']", {duration: 0.25, x: "110%"});
+    },[isOpen])
 
     const router = useRouter()
 
@@ -84,7 +88,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
             />
-            <div className={`md:hidden fixed inset-0 rounded-2xl m-2  z-20 transition-transform duration-300 will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-fallback-blue-3` : `bg-sat-fallback-blue-3`}  ${isOpen ? `` : `translate-x-[110%]`}`}>
+            <div data-gsap="animate-menu" className={`md:hidden fixed inset-0 rounded-2xl m-2 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-fallback-blue-3` : `bg-sat-fallback-blue-3`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} >
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
