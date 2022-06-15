@@ -1,14 +1,12 @@
 
 import { useMemo, useRef } from 'react'
 import { AdditiveBlending, Euler, Group, SphereBufferGeometry, Vector3 } from 'three'
-import {useSpring} from 'react-spring'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { AdaptiveDpr, Points } from '@react-three/drei'
 import GeometryFactory from '../../Utils/GeometryFactory'
-import { objectPositionSpring, saturnStartPosition } from '../../animations/springs'
+import { saturnStartPosition } from '../../animations/springs'
 import lightDotVertexShader from '../../shaders/light-dot/vertex.glsl'
 import lightDotFragmentShader from '../../shaders/light-dot/fragment.glsl'
-import IntersectionObserverWrapper from '../../../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 import MeshFiller from '../../Utils/MeshFiller'
 
 function WithinCanvas() {
@@ -46,19 +44,8 @@ function WithinCanvas() {
         return size.width > 1000 ? 1.3 : 1.0
     }, [size])
 
-    const [saturnPosition, saturnPositionApi] = useSpring(() => objectPositionSpring({object: saturn, size:size}))
-
     return (
         <>
-            <IntersectionObserverWrapper 
-                targetCallbacks={new Map([["track-saturn", (entry) => {
-                    const scaleX = 12
-                    const scaleY = 10
-                    const ratio = (entry.intersectionRatio - 1) * -1
-                    saturnPositionApi.start({x: saturnStartP.x + ratio * scaleX, y: saturnStartP.y + ratio * scaleY, z: saturnStartP.z})
-                }]])}
-                threshold={Array.from({length: 100}, (_, i) => i + 1).map(i => i / 100)}
-            />
             <group 
                 ref={saturn} 
                 position={[saturnStartP.x, saturnStartP.y, saturnStartP.z]}
