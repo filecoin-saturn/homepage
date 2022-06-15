@@ -49,7 +49,10 @@
     }
 
     html {
-    -webkit-tap-highlight-color: transparent;
-  }
+        -webkit-tap-highlight-color: transparent;
+        overflow: auto;
+        overscroll-behavior: none;
+    }
+
 }
 
