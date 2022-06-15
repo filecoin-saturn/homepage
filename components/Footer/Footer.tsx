@@ -50,6 +50,7 @@ function Footer({links, credits, animation, backdropBlur}: Props){
                                             {e.title}
                                         </div>
                                         {e.links.map((e2, i2) => {
+                                            console.log(e2.link)
                                             return (
                                                 <div data-gsap="animate" key={i2}>
                                                     <Button8 backdropBlur={backdropBlur} link={e2.link} text={e2.text} backgroundImage={e2.backgroundImage} />
