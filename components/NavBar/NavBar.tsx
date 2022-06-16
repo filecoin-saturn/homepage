@@ -5,6 +5,7 @@ import Button3 from "../Button3/Button3"
 import Button4 from "../Button4/Button4"
 import Button5 from "../Button5/Button5"
 import Button7 from "../Button7/Button7"
+import Button9 from "../Button9/Button9"
 import IntersectionObserverWrapper from "../IntersectionObserverWrapper/IntersectionObserverWrapper"
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
@@ -23,9 +24,10 @@ type Props = {
     },
     sections: string[]
     backdropBlur: boolean
+    languageSwitcher: boolean
 }
 
-function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}: Props) {
+function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur, languageSwitcher}: Props) {
     const [isOpen, setIsOpen] = useState(false)
     const path = useRouter()
     const [activeHash, setActiveHash] = useState("")
@@ -120,7 +122,10 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                                 )
                             })}
                         </div>
-                        <Button5 type="button" text={languages.text} disabled backdropBlur={backdropBlur} />
+                        <div className={`${languageSwitcher ? `` : `hidden`} `}>
+                            <Button9 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
+                        </div>
+
                     </div>
                 </div>
             </div>
