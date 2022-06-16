@@ -1,7 +1,6 @@
-import { useCallback, useState, memo, useLayoutEffect } from "react"
+import { useCallback, useState, memo, useLayoutEffect, useEffect } from "react"
 import { useRouter } from "next/router"
 import Menu from "../Menu/Menu"
-import { useEffect } from "react"
 import Button3 from "../Button3/Button3"
 import Button4 from "../Button4/Button4"
 import Button5 from "../Button5/Button5"
@@ -9,6 +8,7 @@ import Button7 from "../Button7/Button7"
 import IntersectionObserverWrapper from "../IntersectionObserverWrapper/IntersectionObserverWrapper"
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
+
 type Props = {
     menuLinkArray: {
         title: string,
@@ -30,57 +30,46 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
     const path = useRouter()
     const [activeHash, setActiveHash] = useState("")
     const [intersecting, setIntersecting] = useState<string[]>([])
+    const [scrollToHash, setScrollToHash] = useState("")
+
+    useEffect(() => {
+        path.events.on("hashChangeStart", (e) => {
+            setScrollToHash(e.split("#")[1] ?? "")
+        })
+    }, [path.events])
 
     useLayoutEffect(() => {
         isOpen ? gsap.to("[data-gsap='animate-menu']", {duration: 0.25, x: 0}) : gsap.to("[data-gsap='animate-menu']", {duration: 0.25, x: "110%"});
     },[isOpen])
 
-    const router = useRouter()
-
-    const setSmoothScroll = (isSmooth: boolean) => {
-        document.documentElement.style.scrollBehavior = isSmooth ? 'smooth' : 'auto'
-      }
-
-    useEffect(() => {
-        setSmoothScroll(true)
-        const handleStart = () => setSmoothScroll(false)
-        const handleStop = () => setSmoothScroll(true)
-
-        router.events.on('routeChangeStart', handleStart)
-        router.events.on('routeChangeComplete', handleStop)
-        router.events.on('routeChangeError', handleStop)
-
-        return () => {
-            router.events.off('routeChangeStart', handleStart)
-            router.events.off('routeChangeComplete', handleStop)
-            router.events.off('routeChangeError', handleStop)
-        }
-    }, [router])
-
     const scrollCallback = useCallback((entry: IntersectionObserverEntry) => {
         const index = intersecting.indexOf(entry.target.id)
         if(entry.isIntersecting) {
             let isHighest = true
+            // Add entry to intersecting if not there already
             if(index === -1 ) {
                 setIntersecting(intersecting.concat([entry.target.id]))
             }
+            // set isHighest to false if there are other intersecting elements that are higher
             intersecting.forEach((id) => {
                 const element = document.getElementById(id)
                 if(element && id !== entry.target.id && element.getBoundingClientRect().top < entry.boundingClientRect.top) {
                     isHighest = false
                 }
             })
-            if(isHighest) {
+            // set the hash to the highest element (only when scrollToHash (is "" or equal to entry.target.id))
+            if(isHighest && (scrollToHash === "" || scrollToHash === entry.target.id)) {
+                setScrollToHash("")
                 setActiveHash(entry.target.id)
                 history.replaceState(null, "", `#${entry.target.id}`)
-                path.events.emit("hashChangeComplete")
             }
         } else {
+            // remove elements from intersecting that are not intersecting
             if(index > -1) {
                 setIntersecting(intersecting.filter(value => value !== entry.target.id))
             }
         }
-    }, [intersecting, path.events])
+    }, [intersecting, scrollToHash])
 
     return (
         <>
@@ -93,14 +82,14 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
                         return (
-                            <Button7 
+                            <Button7
                                 key={index} 
-                                link={link.href}
-                                text={link.title} 
-                                onClick={() => {setIsOpen(false)}} 
-                                isActive={activeHash.includes(hash)} 
-                                type="next-link"
+                                text={link.title}
+                                link={link.href} 
+                                onClick={() => {setIsOpen(false)}}
                                 replace={true}
+                                isActive={activeHash.includes(hash)}
+                                type="next-link"
                                 backdropBlur={backdropBlur}
                             />
                         )
@@ -118,14 +107,14 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                             {navLinkArray.map((link, index) => {
                                 const hash = link.href.split("#")[1]
                                 return (
-                                    <Button5 
+                                    <Button5
                                         key={index} 
+                                        link={link.href}
                                         type="next-link"
-                                        link={link.href} 
                                         text={link.title} 
                                         onClick={() => {setIsOpen(false)}} 
-                                        isActive={activeHash.includes(hash)} 
                                         replace={true}
+                                        isActive={activeHash.includes(hash)} 
                                         backdropBlur={backdropBlur}
                                     />
                                 )
