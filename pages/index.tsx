@@ -10,13 +10,14 @@ import NavBar from '../content/en/index/NavBar'
 import Footer from '../content/en/index/Footer'
 import FeaturesIntro from '../content/en/index/features-intro.mdx'
 import Features from '../content/en/index/Features'
-import Experience from '../threejs/components/Experience/Experience'
+import Saturn from '../threejs/components/Saturn/Saturn'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import { getGPUTier } from 'detect-gpu';
 import Head from 'next/head'
 
 
 import { mainContentScrollAnimations, footerScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
+import Network from '../threejs/components/Network/Network'
 
 const Home: NextPage = () => {
 
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
       <meta name="theme-color" content="#ffffff"/>
     </Head>
     <div className='mx-auto text-center w-full overflow-hidden'>
-      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
+      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-cover bg-no-repeat bg-center'>
         <div className='bg-gradient-to-b from-transparent to-black w-full h-full'>
           <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
         </div>
@@ -70,17 +71,22 @@ const Home: NextPage = () => {
             </div> 
           </div>
           <div className='absolute -z-10 inset-0 -bottom-[10%]'>
-            <Experience />
+            <Saturn />
           </div>
         </div>
         <div data-io="whatisit" id="whatisit" className='w-full h-0'></div>
-        <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem]'>
-          <div data-gsap="animate-children" className='mt-24 lg:mt-32 max-w-xs md:max-w-sm lg:max-w-[30rem] ml-auto  '>
-            <CustomProse>
-              <WhatIsIt />
-            </CustomProse>
+        <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative flex items-center'>
+          <div className='w-full mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[70rem] '>
+            <div data-gsap="animate-children" className='mt-24 lg:mt-32 max-w-xs md:max-w-sm lg:max-w-[30rem] ml-auto  '>
+              <CustomProse>
+                <WhatIsIt />
+              </CustomProse>
+            </div> 
           </div> 
-        </div> 
+          <div className='absolute -z-10 inset-0 -bottom-[10%]'>
+            <Network />
+          </div>
+        </div>
         <div data-io="features" id="features" className='w-full h-0'></div>
         <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 '>

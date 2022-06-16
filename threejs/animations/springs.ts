@@ -12,6 +12,11 @@ export function saturnStartPosition(size: {width: number, height:number}) {
     return {x:x, y:y, z:0}
 }
 
+export function networkStartPosition(size: {width: number, height:number}) {
+    const x = -1.2 * (size.width / size.height)
+    return {x:x, y:0, z:0}
+}
+
 export function cameraDisplacementSpring(camera: Camera) {
     return {
         x: 0,

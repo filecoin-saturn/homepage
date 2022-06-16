@@ -23,5 +23,5 @@ type NavBarContent ={
 }
 
 export default function NavBar({backdropBlur}: NavBarContent) {
-    return <NavBarTemplate backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatisit", "features", "why", "getstarted"]} />
+    return <NavBarTemplate languageSwitcher={false} backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatisit", "features", "why", "getstarted"]} />
 }
