@@ -23,9 +23,10 @@ type Props = {
     },
     sections: string[]
     backdropBlur: boolean
+    languageSwitcher: boolean
 }
 
-function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}: Props) {
+function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur, languageSwitcher}: Props) {
     const [isOpen, setIsOpen] = useState(false)
     const path = useRouter()
     const [activeHash, setActiveHash] = useState("")
@@ -131,7 +132,10 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur}
                                 )
                             })}
                         </div>
-                        <Button5 type="button" text={languages.text} disabled backdropBlur={backdropBlur} />
+                        <div className={`${languageSwitcher ? `` : `hidden`} `}>
+                            <Button5 type="button" text={languages.text} disabled backdropBlur={backdropBlur} />
+                        </div>
+
                     </div>
                 </div>
             </div>
