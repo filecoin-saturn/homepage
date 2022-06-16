@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       <meta name="theme-color" content="#ffffff"/>
     </Head>
     <div className='mx-auto text-center w-full overflow-hidden'>
-      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-no-repeat bg-cover bg-center'>
+      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-cover bg-no-repeat bg-center'>
         <div className='bg-gradient-to-b from-transparent to-black w-full h-full'>
           <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
         </div>
