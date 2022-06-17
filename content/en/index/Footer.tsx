@@ -11,7 +11,7 @@ const links = [
     {
         title: "Reach Out",
         links: [
-            {text: "Slack", link: "https://filecoinproject.slack.com/archives/C03DH0BL02E", backgroundImage: "url(slack-logo.svg)"}
+            {text: "Slack", link: "https://filecoin.io/slack", backgroundImage: "url(slack-logo.svg)"}
         ]
     }
 ]
