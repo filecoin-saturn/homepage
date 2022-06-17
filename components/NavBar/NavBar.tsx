@@ -80,7 +80,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                 threshold={[0, 1]}
             />
             <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 rounded-2xl m-2 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-fallback-blue-3` : `bg-sat-fallback-blue-3`}  `}>
-                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} >
+                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
                         return (

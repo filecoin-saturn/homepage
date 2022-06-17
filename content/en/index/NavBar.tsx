@@ -3,9 +3,9 @@ import NavBarTemplate from "../../../components/NavBar/NavBar"
 const navLinkArray = [
     {title: "What is Saturn?", href: "/#whatissaturn" },
     {title: "Goals", href: "/#goals" },
-    {title: "How it works?", href: "/#howitworks" },
+    {title: "How it works", href: "/#howitworks" },
     {title: "Roadmap", href: "/#roadmap" },
-    {title: "Get Started", href: "/#getstarted" }
+    {title: "Get Involved", href: "/#getinvolved" }
 ]
 
 const languages = {
@@ -15,9 +15,9 @@ const languages = {
 const menuLinkArray = [
     {title: "What is Saturn?", href: "/#whatissaturn" },
     {title: "Goals", href: "/#goals" },
-    {title: "How it works?", href: "/#howitworks" },
+    {title: "How it works", href: "/#howitworks" },
     {title: "Roadmap", href: "/#roadmap" },
-    {title: "Get Started", href: "/#getstarted" }
+    {title: "Get Involved", href: "/#getinvolved" }
 ]
 
 type NavBarContent ={
@@ -25,6 +25,6 @@ type NavBarContent ={
 }
 
 export default function NavBar({backdropBlur}: NavBarContent) {
-    return <NavBarTemplate languageSwitcher={false} backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getstarted"]} />
+    return <NavBarTemplate languageSwitcher={false} backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved"]} />
 }
 
