@@ -31,9 +31,8 @@ module.exports = {
         'sat-fallback-grey-1': '#525B7F',
         'sat-fallback-grey-2': '#7D83A2',
       },
-
-
       backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'saturn-logo': "url('/saturn-logo.svg')",
         'star-background-plain': "url('/arthur-volkers-GX542ehZwSk-unsplash-turned.jpg')",
         'mobile-background': "url('/mobile-background.png')",
