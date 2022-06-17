@@ -3,7 +3,7 @@ import { RefObject } from "react"
 import { Group, Vector3 } from "three"
 
 export function saturnStartPosition(size: {width: number, height:number}) {
-    const x = 3.6 * (size.width / size.height)
+    const x = 4.3 * (size.width / size.height)
     const maxYY = 5
     const minYY = 3.1
     const maxYX = 300
