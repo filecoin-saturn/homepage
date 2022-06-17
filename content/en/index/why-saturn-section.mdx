@@ -2,6 +2,11 @@ Websites use Saturn by adding a `<script>` tag and a Service Worker to pages. On
 
 Saturn nodes don't respond with files but instead IPLD [CAR files](https://ipld.io/specs/transport/car/) that are incrementally verified by Saturn's Service Worker. This prevents abuse and allows for a trustless network.
 
+
+
+
+
+      
 Saturn's network is comprised of three node types:
 
 * Network edge nodes (L1): High bandwidth servers with large caches close to users.
@@ -12,6 +17,8 @@ Saturn's network is comprised of three node types:
 
 Amongst these, the network flow of a Saturn request is:
 
- Browser requests a CID from the nearest L1 ↔ L1 cache misses to surrounding L2 swarm ↔ L2s cache miss to SPs
+ 1. Browser requests a CID from the nearest L1 
+ 2. L1 cache misses to surrounding L2 swarm 
+ 3. L2s cache miss to SPs
 
 After a request is fulfilled -- completely or partially -- the website pays the network in Filecoin for fulfilling the retrieval. And every L1, L2, and SP node that participated in the retrieval is remunerated for their contribution in fulfilling that request.
