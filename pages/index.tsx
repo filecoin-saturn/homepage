@@ -30,14 +30,6 @@ import { useFeatureContext } from '../context/featureContext'
 
 const Home: NextPage = () => {
   const features = useFeatureContext()
-  const [tierState , setTierState] = useState(0)
-  useEffect(() => {
-    (async () => {
-      const gpuTier = await getGPUTier();
-      setTierState(gpuTier.tier)
-    })();
-  })
-
   useLayoutEffect(() => {
     const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
     return () => {
