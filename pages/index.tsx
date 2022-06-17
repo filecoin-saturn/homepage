@@ -25,7 +25,6 @@ import WhatIsIt from '../content/en/index/what-is-it-section.mdx'
 
 
 import { backgroundScrollAnimations } from '../animations/scroll'
-import Network from '../threejs/components/Network/Network'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
 
@@ -138,8 +137,8 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
         </div>
-        <div data-io="getstarted" id="getstarted" className='w-full h-0'></div>
-        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div data-io="getinvolved" id="getinvolved" className='w-full h-0'></div>
+        <div className='my-24 md:my-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -154,7 +153,6 @@ const Home: NextPage = () => {
                 <CallToActionButtonDownload/>
               </div>
             </div>
-
           </div>
         </div> 
         <Footer backdropBlur={features.backdropBlur}/>
