@@ -71,12 +71,13 @@ const Home: NextPage = () => {
               <CustomProse overrides='prose-h1:lg:text-[3.5rem]'>
                 <Intro />
               </CustomProse>
-              <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-32 mt-6'>
+              <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 lg:mb-32 mb-12 mt-6'>
                 <CallToActionButtons backdropBlur={features.backdropBlur} />
               </div>
             </div> 
           </div>
-          <div className='absolute -z-10 inset-0 -bottom-[20%]'>
+          <div className='absolute -z-10 md:-left-[50vw] md:-bottom-[20%] md:h-[60vw] h-[100vh] md:w-[160vw] -left-[30vw] -bottom-[50vh] w-[150vw] opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'></div>
+          <div className='absolute -z-20 inset-0 -bottom-[20%]'>
             <Saturn />
           </div>
         </div>
