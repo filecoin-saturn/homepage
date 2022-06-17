@@ -29,7 +29,7 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
                 </div>
             </div>
             <div className="mx-auto">
-                <Button6 setIsOpen={setIsOpen} link="/" replace={true} />
+                <Button6 setIsOpen={setIsOpen} link="/" replace={true} backropBlur={backdropBlur}/>
             </div>
         </div>
     )
