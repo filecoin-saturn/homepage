@@ -9,7 +9,7 @@ type CallToActionButtonsContent ={
 export default function CallToActionButtons({backdropBlur}: CallToActionButtonsContent) {
     return (
         <>
-            <Button1 text="Coming soon" link='#getstarted' />
+            <Button1 text="Get Involved" link='#getstarted' />
             <Button2 text="Learn more" link='#whatissaturn' backdropBlur={backdropBlur} />
         </>
     )
