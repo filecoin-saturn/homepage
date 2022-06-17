@@ -11,9 +11,10 @@ type Props = {
     },
     children: React.ReactNode
     backdropBlur: boolean
+    languageSwitcher: boolean
 
 }
-export default memo(function Menu({isOpen, setIsOpen, languages, children, backdropBlur}: Props){
+export default memo(function Menu({isOpen, setIsOpen, languages, children, backdropBlur, languageSwitcher}: Props){
     return (
         <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10">
             <div className="relative flex justify-center items-center">
@@ -23,8 +24,8 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
                 <div className="flex flex-col space-y-2 sm:space-y-4 mx-auto text-center">
                     {children}
                 </div>  
-                <div className="">
-                    <Button9 text={languages.text} disabled={true} backdropBlur={backdropBlur} />
+                <div className={`${languageSwitcher ? `` : `hidden`}`}>
+                    <Button9 text={languages.text} disabled={true} backdropBlur={backdropBlur}  />
                 </div>
             </div>
             <div className="mx-auto">
