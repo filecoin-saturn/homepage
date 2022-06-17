@@ -21,12 +21,13 @@ import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
 import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
 
 
-import { mainContentScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
+import { backgroundScrollAnimations } from '../animations/scroll'
 import Network from '../threejs/components/Network/Network'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
+import { useFeatureContext } from '../context/featureContext'
 
 const Home: NextPage = () => {
-
+  const features = useFeatureContext()
   const [tierState , setTierState] = useState(0)
   useEffect(() => {
     (async () => {
@@ -34,7 +35,6 @@ const Home: NextPage = () => {
       setTierState(gpuTier.tier)
     })();
   })
-  const backdropBlur = tierState >= 2 ? true : false
 
   useLayoutEffect(() => {
     const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
           <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
         </div>
         </div>
-        <NavBar backdropBlur={backdropBlur} />
+        <NavBar backdropBlur={features.backdropBlur} />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-full flex flex-col justify-end lg:ml-20'>
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
                 <Intro />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12'>
-                <CallToActionButtons backdropBlur={backdropBlur}/>
+                <CallToActionButtons backdropBlur={features.backdropBlur} />
               </div>
             </div> 
           </div>
@@ -99,7 +99,7 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
           <div className='px-2 w-full lg:px-0 mt-8'>
-            <Features backdropBlur={backdropBlur}/>
+            <Features backdropBlur={features.backdropBlur} />
           </div>
         </div>
         <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
@@ -133,7 +133,7 @@ const Home: NextPage = () => {
             <CallToActionButtonDownload/>
           </div>
         </div>
-        <Footer backdropBlur={backdropBlur}/>
+        <Footer backdropBlur={features.backdropBlur}/>
       </div>
     </>
   )
