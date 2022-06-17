@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Intro from  '../content/en/index/intro-section.mdx'
 import WhatIsItIntro from '../content/en/index/what-is-it-intro-section.mdx'
 import WhySaturn from '../content/en/index/why-saturn-section.mdx'
+import GetStartedIntro from '../content/en/index/get-started-intro-section.mdx'
 import GetStarted from '../content/en/index/get-started-section.mdx'
 import CustomProse from '../components/CustomProse/CustomProse'
 import CallToActionButtons from '../content/en/index/Intro'
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
       <meta name="theme-color" content="#ffffff"/>
     </Head>
     <div className='mx-auto text-center w-full overflow-hidden relative'>
-      <div data-gsap="bg" className='fixed -z-20 inset-x-0 top-0 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-cover bg-no-repeat bg-center'>
+      <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-cover bg-no-repeat bg-center'>
         <div className='bg-gradient-to-b from-transparent to-black w-full h-full'>
           <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
         </div>
@@ -81,7 +82,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="whatissaturn" id="whatissaturn" className='w-full h-0'></div>
-        <div className='mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-20 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -94,7 +95,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="goals" id="goals" className='w-full h-0'></div>
-        <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-28 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 '>
             <CustomProse>
               <FeaturesIntro />
@@ -105,7 +106,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
-        <div className='mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -118,7 +119,7 @@ const Home: NextPage = () => {
           </div>
         </div> 
         <div data-io="roadmap" id="roadmap" className='w-full h-0'></div>
-        <div className='mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-16 '>
             <div className=' lg:text-right lg:max-w-sm'>
               <CustomProse >
@@ -138,14 +139,24 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="getstarted" id="getstarted" className='w-full h-0'></div>
-        <div data-gsap="animate-children" className='mx-auto px-6 text-center max-w-xs md:max-w-sm lg:max-w-[34rem] mt-36 md:my-52 flex flex-col justify-center items-center'>
-          <CustomProse overrides='prose-p:my-4 prose-p:lg:my-6'>
-            <GetStarted />
-          </CustomProse>
-          <div data-gsap="animate" className='flex items-stretch mx-auto mb-8 '>
-            <CallToActionButtonDownload/>
+        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
+            <div className=' lg:text-right lg:max-w-xs '>
+              <CustomProse >
+                <GetStartedIntro />
+              </CustomProse>
+            </div>
+            <div>
+              <CustomProse overrides='lg:my-6' >
+                <GetStarted />
+              </CustomProse>
+              <div data-gsap="animate" className=' mr-auto my-8 w-fit min-w-[10rem] '>
+                <CallToActionButtonDownload/>
+              </div>
+            </div>
+
           </div>
-        </div>
+        </div> 
         <Footer backdropBlur={features.backdropBlur}/>
       </div>
     </>
