@@ -12,7 +12,7 @@ export default function CustomProse({children, overrides}: Props) {
             prose-h4:font-inter prose-h4:font-normal prose-h4:text-white prose-h4:mb-2 prose-h4:text-lg prose-h4:md:text-xl prose-h4:lg:text-base prose-h4:tracking-wide
             prose-p:font-inter prose-p:text-white prose-p:text-lg prose-p:font-normal prose-p:lg:text-base
             prose-a:text-white prose-a:underline-offset-2 prose-a:font-bold prose-a:font-inter
-            prose-ol:font-source-serif-pro prose-ol:text-white prose-ol:text-lg prose-ol:font-normal prose-ol:lg:text-lg
+            prose-ol:font-inter prose-ol:text-white prose-ol:text-lg prose-ol:font-normal prose-ol:lg:text-base marker:prose-ol:text-white marker:prose-ol:font-bold
             prose-code:after:hidden prose-code:before:hidden prose-code:bg-white prose-code:bg-opacity-20 prose-code:px-1 prose-code:py-0.5 prose-code:mx-0.5 prose-code:rounded-md prose-code:text-white
         ">
             <div className={`prose  ${overrides ?? ""}`}>
