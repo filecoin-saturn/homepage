@@ -19,6 +19,7 @@ import RoadmapFirstStep from "../content/en/index/roadmap-first-step.mdx"
 import RoadmapSecondStep from "../content/en/index/roadmap-second-step.mdx"
 import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
 import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
+import WhySaturnIntroSection from "../content/en/index/why-saturn-intro-section.mdx"
 
 
 import { backgroundScrollAnimations } from '../animations/scroll'
@@ -66,7 +67,7 @@ const Home: NextPage = () => {
         <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-full flex flex-col justify-end lg:ml-20'>
             <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-xl mr-auto '>
-              <CustomProse overrides='prose-p:font-inter prose-p:font-semibold prose-p:text-2xl prose-p:font-normal prose-p:lg:text-3xl'>
+              <CustomProse overrides=''>
                 <Intro />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12'>
@@ -105,8 +106,14 @@ const Home: NextPage = () => {
         <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
         <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8'>
-            <CustomProse>
+            <CustomProse >
+              <WhySaturnIntroSection />
+              <div className='flex flex-wrap'>
+                <div className='max-w-1/2'>
+                  <WhySaturn />
+                </div>
                 <WhySaturn />
+              </div>
             </CustomProse>
           </div>
         </div> 
@@ -115,17 +122,20 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 '>
             <CustomProse overrides='prose-h3:mt-0 prose-h1:my-8 prose-h4:text-white prose-h3:text-white'>
               <Roadmap/>
-              <ListBigDots>
-                <RoadmapFirstStep />  
-                <RoadmapSecondStep />
-                <RoadmapThirdStep />
-                <RoadmapFourthStep />
-              </ListBigDots>
+              <div className='my-10'>
+                <ListBigDots>
+                  <RoadmapFirstStep />  
+                  <RoadmapSecondStep />
+                  <RoadmapThirdStep />
+                  <RoadmapFourthStep />
+                </ListBigDots>
+              </div>
+
             </CustomProse>
           </div>
         </div> 
         <div data-io="getstarted" id="getstarted" className='w-full h-0'></div>
-        <div data-gsap="animate-children" className='mx-auto px-6 text-center max-w-[17rem] md:max-w-sm lg:max-w-[34rem] mt-36 md:my-52 flex flex-col justify-center items-center'>
+        <div data-gsap="animate-children" className='mx-auto px-6 text-center max-w-xs md:max-w-sm lg:max-w-[34rem] mt-36 md:my-52 flex flex-col justify-center items-center'>
           <CustomProse>
             <GetStarted />
           </CustomProse>
