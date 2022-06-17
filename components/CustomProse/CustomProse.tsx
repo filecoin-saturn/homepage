@@ -10,7 +10,9 @@ export default function CustomProse({children, overrides}: Props) {
             prose-h2:font-inter prose-h2:font-black 
             prose-h3:font-inter prose-h3:font-black prose-h3:text-white prose-h3:text-xl prose-h3:my-2 prose-h3:md:text-2xl prose-h3:lg:text-[1.7rem] prose-h3:leading-tight
             prose-h4:font-inter prose-h4:font-semibold prose-h4:text-sat-grey-2 prose-h4:mt-2 prose-h4:md:mb-8 prose-h4:mb-2 prose-h4:text-lg prose-h4:md:text-xl prose-h4:lg:text-2xl prose-h4:tracking-wide
-            prose-p:font-source-serif-pro prose-p:my-4 prose-p:lg:my-6 prose-p:text-sat-grey-1 prose-p:text-lg prose-p:font-normal prose-p:lg:text-2xl
+            prose-p:font-source-serif-pro prose-p:my-4 prose-p:lg:my-6 prose-p:text-white prose-p:text-lg prose-p:font-normal prose-p:lg:text-xl
+            prose-a:text-sat-green-1 prose-a:underline-offset-2 prose-a:font-normal prose-a:font-source-serif-pro
+            prose-code:text-white prose-code:rounded-full
         ">
             <div className={`prose  ${overrides ?? ""}`}>
                 {children}

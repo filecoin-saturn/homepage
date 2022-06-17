@@ -1,5 +1,19 @@
-#### Why Saturn
+# How it works
 
-# Blazing fast content delivery
+Websites use Saturn by adding a `<script>` tag and a Service Worker to pages. Once added, Saturn's Service Worker intercepts requests for content-addressed assets, like [https://ipfs.io/ipfs/QmPqrxJ…](https://ipfs.io/ipfs/QmPqrxJKR4xuUzcjbAB5KnpmdUnoHPGkWs1XqerSWkgPNa/filecoin-orbit-2.mp4), and fulfills them from Saturn. In this manner, content-addressed content, from JavaScript to video NFTs, are accelerated.
 
-Saturn is a community powered CDN. Anyone can run a Saturn Node and contribute resources to the network. Websites pay Saturn for fast cheap content delivery and node operators receive the proceeds.
+Saturn nodes don't respond with files but instead IPLD [CAR files](https://ipld.io/specs/transport/car/) that are incrementally verified by Saturn's Service Worker. This prevents abuse and allows for a trustless network.
+
+Saturn's network is comprised of three node types:
+
+* Network edge nodes (L1): High bandwidth servers with large caches close to users.
+
+* Intermediate cache nodes (L2): Desktops running Windows, Linux, and OS X and smaller servers.
+
+* Content backbone nodes: Filecoin [Storage Providers](https://sp.filecoin.io/) (SPs).
+
+Amongst these, the network flow of a Saturn request is:
+
+ Browser requests a CID from the nearest L1 ↔ L1 cache misses to surrounding L2 swarm ↔ L2s cache miss to SPs
+
+After a request is fulfilled -- completely or partially -- the website pays the network in Filecoin for fulfilling the retrieval. And every L1, L2, and SP node that participated in the retrieval is remunerated for their contribution in fulfilling that request.

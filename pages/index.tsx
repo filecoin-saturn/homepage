@@ -14,10 +14,16 @@ import Saturn from '../threejs/components/Saturn/Saturn'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import { getGPUTier } from 'detect-gpu';
 import Head from 'next/head'
+import Roadmap from '../content/en/index/roadmap-section.mdx'
+import RoadmapFirstStep from "../content/en/index/roadmap-first-step.mdx"
+import RoadmapSecondStep from "../content/en/index/roadmap-second-step.mdx"
+import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
+import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
 
 
 import { mainContentScrollAnimations, footerScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
 import Network from '../threejs/components/Network/Network'
+import ListBigDots from '../components/ListBigDots/ListBigDots'
 
 const Home: NextPage = () => {
 
@@ -61,8 +67,8 @@ const Home: NextPage = () => {
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-full flex flex-col justify-end lg:ml-20'>
-            <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-[30rem] mr-auto'>
-              <CustomProse>
+            <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-xl mr-auto '>
+              <CustomProse overrides='prose-p:font-inter prose-p:font-semibold prose-p:text-2xl prose-p:font-normal prose-p:lg:text-3xl'>
                 <Intro />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 mb-12'>
@@ -74,8 +80,8 @@ const Home: NextPage = () => {
             <Saturn />
           </div>
         </div>
-        <div data-io="whatisit" id="whatisit" className='w-full h-0'></div>
-        <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative flex items-center'>
+        <div data-io="whatissaturn" id="whatissaturn" className='w-full h-0'></div>
+        <div className='w-full relative flex items-center'>
           <div className='w-full mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[70rem] '>
             <div data-gsap="animate-children" className='mt-24 lg:mt-32 max-w-xs md:max-w-sm lg:max-w-[30rem] ml-auto  '>
               <CustomProse>
@@ -87,7 +93,7 @@ const Home: NextPage = () => {
             <Network />
           </div>
         </div>
-        <div data-io="features" id="features" className='w-full h-0'></div>
+        <div data-io="goals" id="goals" className='w-full h-0'></div>
         <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 '>
             <CustomProse>
@@ -98,11 +104,27 @@ const Home: NextPage = () => {
             <Features animation={() => {return mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}} backdropBlur={backdropBlur}/>
           </div>
         </div>
-        <div data-io="why" id="why" className='w-full h-0'></div>
-        <div data-gsap="animate-children" className='mx-auto px-6 text-left max-w-xs md:max-w-sm lg:max-w-2xl mt-24 md:mt-56 flex flex-col items-end justify-end md:justify-center md:items-center'>
-          <CustomProse>
-            <WhySaturn />
-          </CustomProse>
+        <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
+        <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8'>
+            <CustomProse>
+                <WhySaturn />
+            </CustomProse>
+          </div>
+        </div> 
+        <div data-io="roadmap" id="roadmap" className='w-full h-0'></div>
+        <div className='mt-24 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 '>
+            <CustomProse overrides='prose-h3:mt-0 prose-h1:my-8 prose-h4:text-white prose-h3:text-white'>
+              <Roadmap/>
+              <ListBigDots>
+                <RoadmapFirstStep />  
+                <RoadmapSecondStep />
+                <RoadmapThirdStep />
+                <RoadmapFourthStep />
+              </ListBigDots>
+            </CustomProse>
+          </div>
         </div> 
         <div data-io="getstarted" id="getstarted" className='w-full h-0'></div>
         <div data-gsap="animate-children" className='mx-auto px-6 text-center max-w-[17rem] md:max-w-sm lg:max-w-[34rem] mt-36 md:my-52 flex flex-col justify-center items-center'>

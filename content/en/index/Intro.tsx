@@ -10,7 +10,7 @@ export default function CallToActionButtons({backdropBlur}: CallToActionButtonsC
     return (
         <>
             <Button1 text="Coming soon" link='#getstarted' />
-            <Button2 text="Learn more" link='#whatisit' backdropBlur={backdropBlur} />
+            <Button2 text="Learn more" link='#whatissaturn' backdropBlur={backdropBlur} />
         </>
     )
 }
