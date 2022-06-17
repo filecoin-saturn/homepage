@@ -21,7 +21,7 @@ import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
 import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
 
 
-import { mainContentScrollAnimations, footerScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
+import { mainContentScrollAnimations, backgroundScrollAnimations } from '../animations/scroll'
 import Network from '../threejs/components/Network/Network'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 
@@ -37,10 +37,8 @@ const Home: NextPage = () => {
   const backdropBlur = tierState >= 2 ? true : false
 
   useLayoutEffect(() => {
-    const cleanup1 = mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)
     const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
     return () => {
-      cleanup1()
       cleanup2()
     }
   }, [])
@@ -101,7 +99,7 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
           <div className='px-2 w-full lg:px-0 mt-8'>
-            <Features animation={() => {return mainContentScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}} backdropBlur={backdropBlur}/>
+            <Features backdropBlur={backdropBlur}/>
           </div>
         </div>
         <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
@@ -135,7 +133,7 @@ const Home: NextPage = () => {
             <CallToActionButtonDownload/>
           </div>
         </div>
-        <Footer backdropBlur={backdropBlur} animation={() => {return footerScrollAnimations(`[data-gsap="animate"], [data-gsap="animate-children"] p, [data-gsap="animate-children"] h1, [data-gsap="animate-children"] h2, [data-gsap="animate-children"] h3, [data-gsap="animate-children"] h4`)}}/>
+        <Footer backdropBlur={backdropBlur}/>
       </div>
     </>
   )

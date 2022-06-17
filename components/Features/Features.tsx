@@ -1,6 +1,5 @@
 import CustomProse from "../CustomProse/CustomProse"
 import dynamic from "next/dynamic";
-import { useLayoutEffect } from "react";
 
 type FeaturesContent = {
     content : Array<{
@@ -13,17 +12,7 @@ type FeaturesContent = {
 }
 
 
-function Features({content, animation, backdropBlur}: FeaturesContent) {
-    useLayoutEffect(() => {
-        if(animation) {
-            const cleanup = animation()
-            return () => {
-                cleanup()
-            }
-        }
-    },[])
-
-    return (
+function Features({content, backdropBlur}: FeaturesContent) {return (
         <div className="grid gap-2 lg:gap-16 items-stretch lg:grid-cols-2 w-full ">
             {content.map((postContent, key) => {
                 return (
