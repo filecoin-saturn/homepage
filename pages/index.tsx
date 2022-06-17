@@ -77,7 +77,7 @@ const Home: NextPage = () => {
               </div>
             </div> 
           </div>
-          <div className='absolute -z-10 inset-0 -bottom-[10%]'>
+          <div className='absolute -z-10 inset-0 -bottom-[20%]'>
             <Saturn />
           </div>
         </div>

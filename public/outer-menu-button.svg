@@ -1,10 +1,20 @@
-<svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1772_3835)">
-<circle cx="14" cy="14.3999" r="13.5" stroke="#078FFF"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000013876348191512537730000016550457150377322887_);}
+	.st1{fill:none;stroke:#078FFF;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="28" height="28"/>
+	</defs>
+	<clipPath id="SVGID_00000121965042838316156990000016733716236782211259_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000121965042838316156990000016733716236782211259_);">
+		<circle class="st1" cx="14" cy="14" r="13.5"/>
+	</g>
 </g>
-<defs>
-<clipPath id="clip0_1772_3835">
-<rect width="28" height="28" fill="white" transform="translate(0 0.399902)"/>
-</clipPath>
-</defs>
 </svg>

@@ -1,18 +1,30 @@
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1772_3808)">
-<circle cx="9.85185" cy="9.85185" r="9.85185" fill="url(#paint0_radial_1772_3818)"/>
-<rect x="9.33301" y="6.22156" width="1.03704" height="7.25926" fill="white"/>
-<rect x="9.33301" y="6.22156" width="1.03704" height="7.25926" fill="white"/>
-<rect x="13.4814" y="9.33276" width="1.03704" height="7.25926" transform="rotate(90 13.4814 9.33276)" fill="white"/>
-<rect x="13.4814" y="9.33276" width="1.03704" height="7.25926" transform="rotate(90 13.4814 9.33276)" fill="white"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000181770880183886260860000013148294142399936440_);}
+	.st1{fill:url(#SVGID_00000066494505473450858430000001912784691935898781_);}
+	.st2{fill:#FFFFFF;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="20" height="20"/>
+	</defs>
+	<clipPath id="SVGID_00000101813009746711122210000008410924909937404082_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000101813009746711122210000008410924909937404082_);">
+		
+			<radialGradient id="SVGID_00000121970927585121120980000003391341038799287228_" cx="-295.668" cy="401.6401" r="1" gradientTransform="matrix(10.1523 -12.6904 -12.6904 -10.1523 8104.6099 339.4947)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#0090FF"/>
+			<stop  offset="1" style="stop-color:#39C1CB"/>
+		</radialGradient>
+		<circle style="fill:url(#SVGID_00000121970927585121120980000003391341038799287228_);" cx="10" cy="10" r="10"/>
+		<rect x="9.5" y="6.3" class="st2" width="1.1" height="7.4"/>
+		<rect x="9.5" y="6.3" class="st2" width="1.1" height="7.4"/>
+		<rect x="6.3" y="9.5" class="st2" width="7.4" height="1.1"/>
+		<rect x="6.3" y="9.5" class="st2" width="7.4" height="1.1"/>
+	</g>
 </g>
-<defs>
-<radialGradient id="paint0_radial_1772_3818" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5.85156 14.5514) rotate(-51.3402) scale(16.0078)">
-<stop stop-color="#0090FF"/>
-<stop offset="1" stop-color="#39C1CB"/>
-</radialGradient>
-<clipPath id="clip0_1772_3818">
-<rect width="19.7" height="19.7" fill="white" transform="translate(0 0.699951)"/>
-</clipPath>
-</defs>
 </svg>

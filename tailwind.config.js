@@ -51,13 +51,10 @@ module.exports = {
         'multi-peer-logo': "url('/multi-peer-logo.svg')",
         'permissionless-logo': "url('/permissionless-logo.svg')",
         'deduplication-logo': "url('/deduplication-logo.svg')",
+        'serve-content-logo': "url('/serve-content-logo.svg')",
         'data-logo': "url('/data-logo.svg')",
         'crypto-logo': "url('/crypto-logo.svg')",
         'content-addressed-logo': "url('/content-addressed-logo.svg')",
-
-
-
-
       }, 
       boxShadow: {
         'colored': '0 0 40px #0090FF',
