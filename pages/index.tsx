@@ -12,8 +12,7 @@ import Footer from '../content/en/index/Footer'
 import FeaturesIntro from '../content/en/index/features-intro.mdx'
 import Features from '../content/en/index/Features'
 import Saturn from '../threejs/components/Saturn/Saturn'
-import { useEffect, useLayoutEffect, useState } from 'react'
-import { getGPUTier } from 'detect-gpu';
+import { useLayoutEffect } from 'react'
 import Head from 'next/head'
 import Roadmap from '../content/en/index/roadmap-section.mdx'
 import RoadmapFirstStep from "../content/en/index/roadmap-first-step.mdx"
@@ -48,6 +47,7 @@ const Home: NextPage = () => {
       <meta name="msapplication-config" content="/browserconfig.xml" />
       <meta name="msapplication-TileColor" content="#ffffff"/>
       <meta name="theme-color" content="#ffffff"/>
+      <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
     </Head>
     <div className='mx-auto text-center w-full overflow-hidden relative'>
       <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-cover bg-no-repeat bg-center'>
