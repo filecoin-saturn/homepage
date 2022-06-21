@@ -21,6 +21,7 @@ type ButtonWrapperProps = {
    link?: string,
    replace?: boolean,
    disabled?: boolean 
+   text?: string
 }
 
 
@@ -47,12 +48,16 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
             <a 
             className="group outline-none relative flex-none  "
             onClick={rest.onClick}
+            aria-label={`navigation ${rest.text}`}
             >
                 {rest.children}
             </a>
         </Link>
     ) : (
-        <button disabled={rest.disabled} className="group outline-none relative flex-none">
+        <button disabled={rest.disabled} 
+            aria-label={`navigation ${rest.text}`} 
+            className="group outline-none relative flex-none"
+        >
             {rest.children}
         </button>
     )
@@ -61,7 +66,7 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
 export default function Button7({...all}: Props) {
     const rest: Partial<Props> = all
     return (
-        <ButtonWrapper type={rest.type} disabled={rest.disabled} link={rest.link} onClick={rest.onClick} replace={rest.replace} >
+        <ButtonWrapper type={rest.type} disabled={rest.disabled} link={rest.link} onClick={rest.onClick} replace={rest.replace} text={rest.text} >
             <ButtonContent isActive={rest.isActive} text={rest.text}/>
         </ButtonWrapper>
     )

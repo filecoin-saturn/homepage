@@ -20,6 +20,7 @@ type ButtonWrapperProps = {
    link: string,
    replace: boolean,
    disabled?: boolean 
+   text: string
 }
 
 
@@ -40,17 +41,18 @@ export function ButtonContent({...all}: ButtonContentProps) {
     )
 }
 
-export function ButtonWrapper({children, type, onClick, replace, link, disabled}: ButtonWrapperProps) {
+export function ButtonWrapper({children, type, onClick, replace, link, disabled, text}: ButtonWrapperProps) {
     return type === "next-link" ? (
         <Link href={link ?? ""} replace={replace} >
             <a  onClick={onClick}
-                className={`group outline-none relative z-20 group disabled:opacity-30 `} 
-                >
+                className={`group outline-none relative z-20 group disabled:opacity-30 `}
+                aria-label={`navigation ${text}`} 
+            >
                 {children}
             </a>
         </Link>
     ) : (
-        <button disabled={disabled} onClick={onClick} className="group outline-none relative z-20 group disabled:opacity-30">
+        <button disabled={disabled} aria-label={`navigation ${text}`} onClick={onClick} className="group outline-none relative z-20 group disabled:opacity-30">
              {children}
         </button>
     )
@@ -66,7 +68,7 @@ export default function Button5({type, text, onClick, replace, isActive, backdro
                 </div>
             </div>
             <div className="absolute inset-y-0 right-0 ">
-                <ButtonWrapper type={type} onClick={onClick} replace={replace} link={link} disabled={disabled}>
+                <ButtonWrapper type={type} onClick={onClick} replace={replace} link={link} disabled={disabled} text={text}>
                     <ButtonContent text={text} isActive={isActive} backdropBlur={backdropBlur} />
                 </ButtonWrapper>
             </div>

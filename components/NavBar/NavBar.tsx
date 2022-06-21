@@ -101,27 +101,29 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-fallback-blue-5` : `bg-sat-fallback-blue-5`}`}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
                         <Button3 link="/" replace={true} backdropBlur={backdropBlur} />
-                    <div className={`flex items-center lg:hidden mr-1.5 `}>
-                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur}/>
+                    <div className={`flex items-center lg:hidden mr-1.5 ` }>
+                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur} aria="Open menu"/>
                     </div>
                     <div className={`hidden lg:flex md:items-center lg:space-x-16 space-x-4`}>
-                        <div className="flex space-x-0 md:space-x-4">
+                        <ul className="flex space-x-0 md:space-x-4">
                             {navLinkArray.map((link, index) => {
                                 const hash = link.href.split("#")[1]
                                 return (
-                                    <Button5
-                                        key={index} 
-                                        link={link.href}
-                                        type="next-link"
-                                        text={link.title} 
-                                        onClick={() => {setIsOpen(false)}} 
-                                        replace={true}
-                                        isActive={activeHash.includes(hash)} 
-                                        backdropBlur={backdropBlur}
-                                    />
+                                    <li key={index}>
+                                        <Button5
+                                            key={index} 
+                                            link={link.href}
+                                            type="next-link"
+                                            text={link.title} 
+                                            onClick={() => {setIsOpen(false)}} 
+                                            replace={true}
+                                            isActive={activeHash.includes(hash)} 
+                                            backdropBlur={backdropBlur}
+                                        />
+                                    </li>
                                 )
                             })}
-                        </div>
+                        </ul>
                         <div className={`${languageSwitcher ? `` : `hidden`} `}>
                             <Button9 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
                         </div>

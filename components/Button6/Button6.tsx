@@ -5,14 +5,17 @@ type Props = {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
     replace?: boolean
     backropBlur: boolean
+    aria?: string
 }
 
-export default function Button6({link, setIsOpen, replace, backropBlur} : Props) {
+export default function Button6({link, setIsOpen, replace, backropBlur, aria} : Props) {
     return  (
         <Link href={link} replace={replace}>
             <a 
                 onClick={() => setIsOpen(false)}
-                className="group outline-none relative" >
+                className="group outline-none relative" 
+                aria-label= {`${aria ? aria : "Move up" }`}
+            >
                 <div className={`rounded-full group-active:scale-90 will-change-transform ${backropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-focus-visible:bg-white/10 supports-blur:hover:backdrop-blur-md supports-blur:group-focus-visible:backdrop-blur-md group-hover:bg-sat-fallback-blue-2 group-focus-visible:bg-sat-fallback-blue-2` : `group-hover:bg-sat-fallback-blue-2 group-focus-visible:bg-sat-fallback-blue-2`}`}>
                     <div className=" bg-transparent rounded-full ">
                         <div className="relative bg-saturn-logo w-28 h-8 md:w-40 md:h-12 bg-no-repeat bg-contain bg-center">
