@@ -18,7 +18,7 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
     return (
         <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10">
             <div className="relative flex justify-center items-center">
-                <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur} />
+                <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur} aria="Close menu"/>
             </div>
             <div className="flex flex-col space-y-12 sm:space-y-14 mt-4">
                 <div className="flex flex-col space-y-2 sm:space-y-4 mx-auto text-center">
@@ -29,7 +29,7 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
                 </div>
             </div>
             <div className="mx-auto">
-                <Button6 setIsOpen={setIsOpen} link="/" replace={true} backropBlur={backdropBlur}/>
+                <Button6 setIsOpen={setIsOpen} link="/" replace={true} backropBlur={backdropBlur} aria={"Move up and close menu"} />
             </div>
         </div>
     )

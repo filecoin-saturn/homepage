@@ -2,14 +2,16 @@ type Props = {
     isOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
     backdropBlur: boolean
+    aria: string
 
 }
 
-export default function Button4({isOpen, setIsOpen, backdropBlur}: Props) {
+export default function Button4({isOpen, setIsOpen, backdropBlur, aria}: Props) {
     return (
         <button 
             onClick={() => setIsOpen(!isOpen)}
             className={`flex items-center justify-center outline-none group relative ${isOpen ? `rotate-45` : ``} `}
+            aria-label={aria}
         >
             <div className="relative group-active:scale-125 scale-110 bg-outer-menu-button group-hover:bg-outer-menu-button-hover group-active:bg-outer-menu-button group-focus-visible:bg-outer-menu-button-focus bg-contain bg-no-repeat bg-center h-8 w-8">              
             </div>
