@@ -31,5 +31,9 @@ module.exports = withPlugins([withTM, withMDX],{
     )
 
     return config
-  }
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 })
