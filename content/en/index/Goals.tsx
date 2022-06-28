@@ -1,4 +1,4 @@
-import FeaturesTemplate from "../../../components/Features/Features"
+import GoalsTemplate from "../../../components/Goals/Goals"
 
     const content = [{
         image: "url(serve-content-logo.svg)",
@@ -24,12 +24,12 @@ import FeaturesTemplate from "../../../components/Features/Features"
 
 
 
-type FeaturesContent = {
+type GoalsContent = {
     animation?: () => () => void
     backdropBlur: boolean
 }
 
-export default function Features({animation, backdropBlur}: FeaturesContent) {
-    return <FeaturesTemplate backdropBlur={backdropBlur} content={content} animation={animation}  />
+export default function Goals({animation, backdropBlur}: GoalsContent) {
+    return <GoalsTemplate backdropBlur={backdropBlur} content={content} animation={animation}  />
 }
 

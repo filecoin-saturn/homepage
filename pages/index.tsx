@@ -1,16 +1,16 @@
 import type { NextPage } from 'next'
-import Intro from  '../content/en/index/intro-section.mdx'
-import WhatIsItIntro from '../content/en/index/what-is-it-intro-section.mdx'
-import WhySaturn from '../content/en/index/why-saturn-section.mdx'
-import GetStartedIntro from '../content/en/index/get-started-intro-section.mdx'
-import GetStarted from '../content/en/index/get-started-section.mdx'
+import Start from  '../content/en/index/start-section.mdx'
+import WhatIsSaturnIntro from '../content/en/index/what-is-saturn-intro-section.mdx'
+import HowItWorks from '../content/en/index/how-it-works-section.mdx'
+import GetInvolvedIntro from '../content/en/index/get-involved-intro-section.mdx'
+import GetInvolved from '../content/en/index/get-involved-section.mdx'
 import CustomProse from '../components/CustomProse/CustomProse'
-import CallToActionButtons from '../content/en/index/Intro'
-import CallToActionButtonDownload from '../content/en/index/GetStarted'
+import CallToActionButtons from '../content/en/index/Start'
+import CallToActionButtonDownload from '../content/en/index/GetInvolved'
 import NavBar from '../content/en/index/NavBar'
 import Footer from '../content/en/index/Footer'
-import FeaturesIntro from '../content/en/index/features-intro.mdx'
-import Features from '../content/en/index/Features'
+import GoalsIntro from '../content/en/index/goals-intro.mdx'
+import Goals from '../content/en/index/Goals'
 import Saturn from '../threejs/components/Saturn/Saturn'
 import { useLayoutEffect } from 'react'
 import Head from 'next/head'
@@ -19,8 +19,8 @@ import RoadmapFirstStep from "../content/en/index/roadmap-first-step.mdx"
 import RoadmapSecondStep from "../content/en/index/roadmap-second-step.mdx"
 import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
 import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
-import WhySaturnIntroSection from "../content/en/index/why-saturn-intro-section.mdx"
-import WhatIsIt from '../content/en/index/what-is-it-section.mdx'
+import HowItWorksIntroSection from "../content/en/index/how-it-works-intro-section.mdx"
+import WhatIsSaturn from '../content/en/index/what-is-saturn-section.mdx'
 
 
 import { backgroundScrollAnimations } from '../animations/scroll'
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-full flex flex-col justify-end lg:ml-20'>
             <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-xl mr-auto'>
               <CustomProse overrides='prose-h1:lg:text-[3.5rem]'>
-                <Intro />
+                <Start />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 lg:mb-32 mb-12 mt-6'>
                 <CallToActionButtons backdropBlur={features.backdropBlur} />
@@ -78,11 +78,11 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
-                <WhatIsItIntro />
+                <WhatIsSaturnIntro />
               </CustomProse>
             </div>
             <CustomProse overrides='lg:my-6' >
-              <WhatIsIt />
+              <WhatIsSaturn />
             </CustomProse>
           </div>
         </div>
@@ -90,11 +90,11 @@ const Home: NextPage = () => {
         <div className='mt-28 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 '>
             <CustomProse>
-              <FeaturesIntro />
+              <GoalsIntro />
             </CustomProse>
           </div>
           <div className='px-2 w-full lg:px-0 mt-8'>
-            <Features backdropBlur={features.backdropBlur} />
+            <Goals backdropBlur={features.backdropBlur} />
           </div>
         </div>
         <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
@@ -102,11 +102,11 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
-                <WhySaturnIntroSection />
+                <HowItWorksIntroSection />
               </CustomProse>
             </div>
             <CustomProse overrides='lg:my-6' >
-              <WhySaturn />
+              <HowItWorks />
             </CustomProse>
           </div>
         </div> 
@@ -135,12 +135,12 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
-                <GetStartedIntro />
+                <GetInvolvedIntro />
               </CustomProse>
             </div>
             <div>
               <CustomProse overrides='lg:my-6' >
-                <GetStarted />
+                <GetInvolved/>
               </CustomProse>
               <div data-gsap="animate" className=' mr-auto my-8 w-fit min-w-[10rem] '>
                 <CallToActionButtonDownload/>

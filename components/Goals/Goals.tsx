@@ -1,7 +1,7 @@
 import CustomProse from "../CustomProse/CustomProse"
 import dynamic from "next/dynamic";
 
-type FeaturesContent = {
+type GoalsContent = {
     content : Array<{
         image: string,
         title: string, 
@@ -12,7 +12,7 @@ type FeaturesContent = {
 }
 
 
-function Features({content, backdropBlur}: FeaturesContent) {return (
+function Goals({content, backdropBlur}: GoalsContent) {return (
         <div className="grid gap-2 lg:gap-16 items-stretch lg:grid-cols-2 w-full ">
             {content.map((postContent, key) => {
                 return (
@@ -36,6 +36,6 @@ function Features({content, backdropBlur}: FeaturesContent) {return (
         </div> 
     )
 }
-export default dynamic(() => Promise.resolve(Features), {
+export default dynamic(() => Promise.resolve(Goals), {
     ssr: false
 })
