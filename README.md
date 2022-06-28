@@ -63,3 +63,6 @@ We recommend to place most of the code within pages or components, leaving only 
 - Assemble content in pages.
 - Components used should be content-agnostic. That means there should be a prop for every content blob.
 - Inject and translate contents for components in `/content/[lang]/[page]/[section].tsx`. Then export the translated components and use them in pages.
+
+## License
+Dual-licensed under MIT + Apache 2.0
