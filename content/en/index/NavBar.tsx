@@ -1,11 +1,11 @@
 import NavBarTemplate from "../../../components/NavBar/NavBar"
 
 const navLinkArray = [
-    {title: "What is Saturn?", href: "/#whatissaturn" },
+    {title: "What is Saturn", href: "/#whatissaturn" },
     {title: "Goals", href: "/#goals" },
     {title: "How it works", href: "/#howitworks" },
     {title: "Roadmap", href: "/#roadmap" },
-    {title: "Get Involved", href: "/#getinvolved" }
+    {title: "Get involved", href: "/#getinvolved" }
 ]
 
 const languages = {
@@ -13,11 +13,11 @@ const languages = {
 }
 
 const menuLinkArray = [
-    {title: "What is Saturn?", href: "/#whatissaturn" },
+    {title: "What is Saturn", href: "/#whatissaturn" },
     {title: "Goals", href: "/#goals" },
     {title: "How it works", href: "/#howitworks" },
     {title: "Roadmap", href: "/#roadmap" },
-    {title: "Get Involved", href: "/#getinvolved" }
+    {title: "Get involved", href: "/#getinvolved" }
 ]
 
 type NavBarContent ={
