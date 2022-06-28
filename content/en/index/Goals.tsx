@@ -2,7 +2,7 @@ import GoalsTemplate from "../../../components/Goals/Goals"
 
     const content = [{
         image: "url(serve-content-logo.svg)",
-        title: "Serve Content",
+        title: "Serve content",
         text: "Serve content stored on Filecoin with low latency.",
     },
     {
