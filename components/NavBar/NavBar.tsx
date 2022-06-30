@@ -5,7 +5,7 @@ import Button3 from "../Button3/Button3"
 import Button4 from "../Button4/Button4"
 import Button5 from "../Button5/Button5"
 import Button7 from "../Button7/Button7"
-import Button9 from "../Button9/Button9"
+import Button6 from "../Button6/Button6"
 import IntersectionObserverWrapper from "../IntersectionObserverWrapper/IntersectionObserverWrapper"
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
@@ -100,7 +100,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
             </div>
             <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-fallback-blue-5` : `bg-sat-fallback-blue-5`}`}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
-                        <Button3 link="/" replace={true} backdropBlur={backdropBlur} />
+                        <Button3 link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up"} />
                     <div className={`flex items-center lg:hidden mr-1.5 ` }>
                         <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur} aria="Open menu"/>
                     </div>
@@ -125,7 +125,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                             })}
                         </ul>
                         <div className={`${languageSwitcher ? `` : `hidden`} `}>
-                            <Button9 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
+                            <Button6 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
                         </div>
 
                     </div>

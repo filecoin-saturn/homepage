@@ -1,6 +1,6 @@
 import Button4 from "../Button4/Button4";
+import Button3 from "../Button3/Button3";
 import Button6 from "../Button6/Button6";
-import Button9 from "../Button9/Button9";
 import {memo} from "react"
 
 type Props = {
@@ -25,11 +25,11 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
                     {children}
                 </div>  
                 <div className={`${languageSwitcher ? `` : `hidden`}`}>
-                    <Button9 text={languages.text} disabled={true} backdropBlur={backdropBlur}  />
+                    <Button6 text={languages.text} disabled={true} backdropBlur={backdropBlur}  />
                 </div>
             </div>
             <div className="mx-auto">
-                <Button6 setIsOpen={setIsOpen} link="/" replace={true} backropBlur={backdropBlur} aria={"Move up and close menu"} />
+                <Button3 setIsOpen={setIsOpen} link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up and close menu"} />
             </div>
         </div>
     )
