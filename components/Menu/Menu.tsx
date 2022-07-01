@@ -18,14 +18,14 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
     return (
         <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10">
             <div className="relative flex justify-center items-center">
-                <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur} aria="Close menu"/>
+                <Button4 isOpen={isOpen} setIsOpen={setIsOpen} aria="Close menu"/>
             </div>
             <div className="flex flex-col space-y-12 sm:space-y-14 mt-4">
                 <div className="flex flex-col space-y-2 sm:space-y-4 mx-auto text-center">
                     {children}
                 </div>  
                 <div className={`${languageSwitcher ? `` : `hidden`}`}>
-                    <Button6 text={languages.text} disabled={true} backdropBlur={backdropBlur}  />
+                    <Button6 text={languages.text} disabled={!languageSwitcher} backdropBlur={backdropBlur}  />
                 </div>
             </div>
             <div className="mx-auto">
