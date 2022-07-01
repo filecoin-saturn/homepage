@@ -11,12 +11,16 @@ module.exports = {
       fontFamily: {
         "inter": ['"Inter"', 'Arial', 'sans-serif'],
         "source-serif-pro": ['"Source Serif Pro"', 'Arial', 'sans-serif'],
+        "source-code-pro": ['"Source Code Pro"', 'Arial', 'sans-serif'],
+
       },
       colors: {
         'sat-blue-1': '#0090FF',
         'sat-blue-1-60-fallback-1': '#0A67BB',
         'sat-blue-2': '#162653',
-        'sat-blue-3': '#7198FF', //bg-star-image overlay blue colour
+        'sat-blue-3': '#0E67FF',
+        'sat-blue-3-30-fallback-1': '#143679',
+        'sat-blue-4': '#7198FF', //bg-star-image overlay blue colour
         'sat-gray-1': '#CCD0DF',
         'sat-gray-2': '#8B93A9',
         'sat-green-1': '#39C1CB',
