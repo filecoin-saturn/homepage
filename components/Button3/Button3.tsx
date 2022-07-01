@@ -15,7 +15,7 @@ export default function Button3({link, replace, backdropBlur, aria, setIsOpen}: 
                 aria-label= {`${aria ? aria : "Move up" }`}
                 onClick={() => {if(setIsOpen) {setIsOpen(false)}}}
             >
-                <div className={` rounded-full group-active:scale-90 will-change-transform ${backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-focus-visible:bg-white/10 supports-blur:hover:backdrop-blur-md supports-blur:group-focus-visible:backdrop-blur-md group-hover:bg-sat-fallback-blue-2 group-focus-visible:bg-sat-fallback-blue-2` : `group-hover:bg-sat-fallback-blue-2 group-focus-visible:bg-sat-fallback-blue-2`}`}>
+                <div className={` rounded-full group-active:scale-90 will-change-transform ${backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-focus-visible:bg-white/10 supports-blur:hover:backdrop-blur-md supports-blur:group-focus-visible:backdrop-blur-md group-hover:bg-sat-white-10-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1` : `group-hover:bg-sat-white-10-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1`}`}>
                     <div className=" bg-transparent rounded-full ">
                         <div className="relative bg-saturn-logo w-32 h-10 md:w-40 md:h-12 bg-no-repeat bg-contain bg-center">
                         <div className="absolute w-full h-full border-2 border-transparent bg-transparent top-0 group-focus-visible:border-white rounded-full"></div>
