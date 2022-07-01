@@ -150,6 +150,7 @@ const Home: NextPage = () => {
         </div> 
         <Footer backdropBlur={features.backdropBlur}/>
       </div>
+      <div className='w-full h-50 bg-sat-grad-blue-green-1'>asdsadsadda</div>
     </>
   )
 }
