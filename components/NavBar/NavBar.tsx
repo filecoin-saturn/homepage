@@ -88,7 +88,10 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                 key={index} 
                                 text={link.title}
                                 link={link.href} 
-                                onClick={() => {setIsOpen(false)}}
+                                onClick={() => {
+                                    setIsOpen(false)
+                                    document.body.style.overflow = "auto"
+                                }}
                                 replace={true}
                                 isActive={activeHash.includes(hash)}
                                 type="next-link"
@@ -102,7 +105,10 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                 <div className="flex justify-between items-center p-1 md:pr-3">
                         <Button3 link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up"} />
                     <div className={`flex items-center lg:hidden mr-1.5 ` }>
-                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} aria="Open menu"/>
+                        <Button4 isOpen={isOpen} onClick={() => {
+                            setIsOpen(true)
+                            document.body.style.overflow = "hidden"
+                        }} aria="Open menu"/>
                     </div>
                     <div className={`hidden lg:flex md:items-center lg:space-x-16 space-x-4`}>
                         <ul className="flex space-x-0 md:space-x-4">

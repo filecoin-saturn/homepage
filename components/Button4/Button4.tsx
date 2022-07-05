@@ -1,14 +1,14 @@
 type Props = {
     isOpen: boolean,
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
     aria: string
+    onClick: () => void
 
 }
 
-export default function Button4({isOpen, setIsOpen, aria}: Props) {
+export default function Button4({isOpen, onClick, aria}: Props) {
     return (
         <button 
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={onClick}
             className={`flex items-center justify-center outline-none group relative ${isOpen ? `rotate-45` : ``} `}
             aria-label={aria}
         >
