@@ -61,7 +61,6 @@ const Home: NextPage = () => {
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-full flex flex-col justify-end lg:ml-20'>
             <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-xl mr-auto'>
               <CustomProse overrides='prose-h1:lg:text-[3.5rem]'>
-                <h5>Blue</h5>
                 <Start />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 lg:mb-32 mb-12 mt-6'>
