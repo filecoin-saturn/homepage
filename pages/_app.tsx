@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { WindowContextWrapper } from '../context/windowContext'
 import { FeatureContextWrapper } from '../context/featureContext'
-import { usePostHog } from 'next-use-posthog'
+import { usePostHog } from '../utils/usePostHog'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
