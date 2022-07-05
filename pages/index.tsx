@@ -120,7 +120,7 @@ const Home: NextPage = () => {
             </div>
             <CustomProse overrides='prose-h3:mt-0 prose-h4:mt-0 prose-h4:text-white prose-h3:text-white' >
               <div className='my-10'>
-                <ListBigDots>
+                <ListBigDots backdropBlur={features.backdropBlur}>
                   <RoadmapFirstStep />  
                   <RoadmapSecondStep />
                   <RoadmapThirdStep />

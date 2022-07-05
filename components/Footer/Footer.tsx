@@ -40,7 +40,7 @@ function Footer({links, credits, animation, backdropBlur}: Props){
                 <div className=" mx-auto text-white w-full flex items-center justify-center ">
                     <div className="flex text-left justify-start sm:justify-center mx-auto flex-wrap max-w-[17rem] sm:max-w-md sm:space-x-11 md:max-w-none md:space-x-16 lg:space-x-20 xl:space-x-36 antialiased">
                         <div data-gsap="animate" className="hidden sm:block text-left md:text-center md:w-fit justify-start -mt-2 md:-mt-2 ">
-                            <Button3 backdropBlur={backdropBlur} link="/" />
+                            <Button3 backdropBlur={backdropBlur} link="/" aria={"Move up"} />
                         </div>
                         <div className="flex text-left justify-between md:justify-center mx-auto font-inter text-sm sm:text-base text-light-grey space-x-8 sm:space-x-11 md:space-x-12 lg:space-x-16 xl:space-x-40 ">
                             {links.map((e, i) => {
@@ -62,7 +62,7 @@ function Footer({links, credits, animation, backdropBlur}: Props){
                         </div>
                         <div className="mt-10 md:mt-0 flex space-x-8 sm:-space-x-0 space-y-0 md:space-y-1  sm:items-stretch sm:flex-1  justify-center ">
                             <div data-gsap="animate" className="sm:hidden">
-                                <Button3 backdropBlur={backdropBlur} link="/" />
+                                <Button3 backdropBlur={backdropBlur} link="/" aria={"Move up"} />
                             </div>
                             <div className="mx-auto w-full max-w-[8rem] md:max-w-[18rem] lg:flex  lg:space-x-1 ">
                                 <div data-gsap="animate" className="flex space-x-1">

@@ -5,7 +5,7 @@ import Button3 from "../Button3/Button3"
 import Button4 from "../Button4/Button4"
 import Button5 from "../Button5/Button5"
 import Button7 from "../Button7/Button7"
-import Button9 from "../Button9/Button9"
+import Button6 from "../Button6/Button6"
 import IntersectionObserverWrapper from "../IntersectionObserverWrapper/IntersectionObserverWrapper"
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
@@ -79,7 +79,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
             />
-            <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 rounded-2xl m-2 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-fallback-blue-3` : `bg-sat-fallback-blue-3`}  `}>
+            <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 rounded-2xl m-2 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-white-5-fallback-1` : `bg-sat-white-5-fallback-1`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
                     {menuLinkArray.map((link, index) => {
                         const hash = link.href.split("#")[1]
@@ -88,7 +88,10 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                 key={index} 
                                 text={link.title}
                                 link={link.href} 
-                                onClick={() => {setIsOpen(false)}}
+                                onClick={() => {
+                                    setIsOpen(false)
+                                    document.body.style.overflow = "auto"
+                                }}
                                 replace={true}
                                 isActive={activeHash.includes(hash)}
                                 type="next-link"
@@ -98,11 +101,14 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                     })}
                 </Menu>
             </div>
-            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-fallback-blue-5` : `bg-sat-fallback-blue-5`}`}>
+            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-white-5-fallback-1` : `bg-sat-white-5-fallback-1`}`}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
-                        <Button3 link="/" replace={true} backdropBlur={backdropBlur} />
+                        <Button3 link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up"} />
                     <div className={`flex items-center lg:hidden mr-1.5 ` }>
-                        <Button4 isOpen={isOpen} setIsOpen={setIsOpen} backdropBlur={backdropBlur} aria="Open menu"/>
+                        <Button4 isOpen={isOpen} onClick={() => {
+                            setIsOpen(true)
+                            document.body.style.overflow = "hidden"
+                        }} aria="Open menu"/>
                     </div>
                     <div className={`hidden lg:flex md:items-center lg:space-x-16 space-x-4`}>
                         <ul className="flex space-x-0 md:space-x-4">
@@ -125,7 +131,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                             })}
                         </ul>
                         <div className={`${languageSwitcher ? `` : `hidden`} `}>
-                            <Button9 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
+                            <Button6 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
                         </div>
 
                     </div>

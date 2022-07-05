@@ -1,29 +1,18 @@
-import Link from "next/link"
+type props = {
+    text: string
+    disabled: boolean
+    backdropBlur: boolean
 
-type Props = {
-    link: string,
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
-    replace?: boolean
-    backropBlur: boolean
-    aria?: string
 }
 
-export default function Button6({link, setIsOpen, replace, backropBlur, aria} : Props) {
-    return  (
-        <Link href={link} replace={replace}>
-            <a 
-                onClick={() => setIsOpen(false)}
-                className="group outline-none relative" 
-                aria-label= {`${aria ? aria : "Move up" }`}
-            >
-                <div className={`rounded-full group-active:scale-90 will-change-transform ${backropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-focus-visible:bg-white/10 supports-blur:hover:backdrop-blur-md supports-blur:group-focus-visible:backdrop-blur-md group-hover:bg-sat-fallback-blue-2 group-focus-visible:bg-sat-fallback-blue-2` : `group-hover:bg-sat-fallback-blue-2 group-focus-visible:bg-sat-fallback-blue-2`}`}>
-                    <div className=" bg-transparent rounded-full ">
-                        <div className="relative bg-saturn-logo w-28 h-8 md:w-40 md:h-12 bg-no-repeat bg-contain bg-center">
-                        <div className="absolute w-full h-full border-2 border-transparent bg-transparent top-0 group-focus-visible:border-white rounded-full"></div>
-                        </div>
-                    </div>
+export default function Button6({text, disabled, backdropBlur}: props) {
+    return (
+        <button disabled={disabled} className={`disabled:opacity-30 disabled:pointer-events-none group outline-none`}>
+            <div className={`justify-center relative text-sat-gray-1 flex group-active:scale-90 items-center p-1 border-2 border-transparent group-focus-visible:border-white group-focus-visible:text-white rounded-full group-hover:text-white will-change-transform ${backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/20 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-sat-white-10-fallback-1 group-active:bg-sat-white-20-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1` : `group-hover:bg-sat-white-10-fallback-1 group-active:bg-sat-white-20-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1`}`}>
+                <div className="font-inter font-regular antialiased inset-0 tracking-wide">
+                    {text}
                 </div>
-            </a>
-        </Link>
+            </div>
+        </button>
     )
 }
