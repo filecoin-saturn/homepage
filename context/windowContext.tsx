@@ -52,7 +52,6 @@ export function WindowContextWrapper({children, debounceMs, setVh}: WindowContex
             // Scroll back
             window.scrollTo(oldScrollX, oldScrollY)
             // Calculate url bar height
-            alert(maxH - window.innerHeight)
             setDim({
                 height: dim.height,
                 width: dim.width,

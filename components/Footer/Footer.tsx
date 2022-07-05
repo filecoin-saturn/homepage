@@ -33,7 +33,6 @@ function Footer({links, credits, animation, backdropBlur}: Props){
             }
         }
     },[animation])
-
     return (
         <>
             <div className=" mx-auto w-full my-16">
@@ -69,7 +68,7 @@ function Footer({links, credits, animation, backdropBlur}: Props){
                                     <div className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
                                     {credits.text}
                                     </div>
-                                    <img className="bg-contain bg-center bg-no-repeat h-4 w-4 md:h-5 md:w-5" src={credits.logo}></img>
+                                    <img alt="Heart symbol" className="bg-contain bg-center bg-no-repeat h-4 w-4 md:h-5 md:w-5" src={credits.logo}></img>
                                     </div>
                                 <div data-gsap="animate" className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
                                     {credits.text2}

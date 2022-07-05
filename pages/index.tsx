@@ -58,12 +58,12 @@ const Home: NextPage = () => {
         <NavBar backdropBlur={features.backdropBlur} />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
-          <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] h-full flex flex-col justify-end lg:ml-20'>
-            <div data-gsap="animate-children" className=' max-w-xs md:max-w-sm lg:max-w-xl mr-auto'>
+          <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-2xl h-full flex flex-col justify-end lg:ml-20'>
+            <div data-gsap="animate-children" className=' max-w-sm md:max-w-md lg:max-w-xl mr-auto'>
               <CustomProse overrides='prose-h1:lg:text-[3.5rem]'>
                 <Start />
               </CustomProse>
-              <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 lg:mb-32 mb-12 mt-6'>
+              <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 lg:mb-32 mb-12 mt-4 md:mt-6'>
                 <CallToActionButtons backdropBlur={features.backdropBlur} />
               </div>
             </div> 
@@ -118,7 +118,7 @@ const Home: NextPage = () => {
                 <Roadmap />
               </CustomProse>
             </div>
-            <CustomProse overrides='prose-h3:mt-0 prose-h4:mt-0 prose-h4:text-white prose-h3:text-white' >
+            <CustomProse overrides='prose-p:my-0 prose-h4:mt-0 prose-h4:text-white prose-h3:text-white' >
               <div className='my-10'>
                 <ListBigDots backdropBlur={features.backdropBlur}>
                   <RoadmapFirstStep />  
@@ -131,7 +131,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="getinvolved" id="getinvolved" className='w-full h-0'></div>
-        <div className='my-24 md:my-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='my-24 md:my-48 px-4 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
