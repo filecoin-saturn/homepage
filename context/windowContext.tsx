@@ -25,10 +25,6 @@ export function WindowContextWrapper({children, debounceMs, setVh}: WindowContex
                     width: window.innerWidth,
                     scrollBarWidth: window.innerWidth - document.documentElement.clientWidth
                 })
-                if(setVh) {
-                    const vh = window.innerHeight * 0.01
-                    document.documentElement.style.setProperty('--vh', `${vh}px`);
-                }
             }
         }
         const debouncedHandleWindowResize = debounce(handleResize, debounceMs)
@@ -38,6 +34,15 @@ export function WindowContextWrapper({children, debounceMs, setVh}: WindowContex
             window.removeEventListener('resize', debouncedHandleWindowResize)
         }
     }, [debounceMs])
+
+    useEffect(() => {
+        if(typeof window !== undefined) {
+            if(setVh) {
+                const vh = window.innerHeight * 0.01
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+        }
+    }, [])
 
     return (
         <WindowContext.Provider value={dim}>
