@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   usePostHog('phc_RJEgcm0ciIXv09UhIYgC3pZcufMIIhPEHCAUmO5E1YI', { api_host: 'https://app.posthog.com' })
   return (
     <FeatureContextWrapper>
-      <WindowContextWrapper debounceMs={300} setVh>
+      <WindowContextWrapper debounceMs={60} setVh>
         <Component {...pageProps} />
       </WindowContextWrapper>
     </FeatureContextWrapper>
