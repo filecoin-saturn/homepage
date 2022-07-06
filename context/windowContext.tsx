@@ -1,11 +1,10 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { debounce } from 'lodash';
 
 const dimDefault = {
     height: 0,
     width: 0,
-    scrollBarWidth: 0,
-    urlBarHeight: 0
+    scrollBarWidth: 0
 }
 
 const WindowContext = createContext(dimDefault)
@@ -16,52 +15,60 @@ type WindowContextWrapperProps = {
     setVh?: boolean;
 }
 
+// Assumptions:
+// 1. Resize handler is debounced in such a way, that the url bar hide/show in mobile browsers only AFTER each action is complete
+// 2. Scroll event is not triggered by orientation change or resize event (i.e. scroll position is maintained when the user resizes the window).
+// 3. Url bar height does not change after the page is loaded, e.g. during orientation changes
+
 export function WindowContextWrapper({children, debounceMs, setVh}: WindowContextWrapperProps) {
     const [dim, setDim] = useState(dimDefault)
+    const [urlBarHeight, setUrlBarHeight] = useState(0)
+
+    useEffect(() => {
+        const controlDiv = document.createElement("div")
+        const appendedDiv = document.body.appendChild(controlDiv);
+        appendedDiv.style.position = "absolute"
+        appendedDiv.style.height = "100vh"
+        appendedDiv.style.width = "0"
+        appendedDiv.id = "vh-control-height"
+        return () => {
+            appendedDiv.remove()
+        }
+    }, [])
+
+
     useEffect(() => {
         function handleResize() {
             if(typeof window !== undefined) {
+                const controlElement = document.getElementById("vh-control-height")
+                const controlHeight = controlElement?.clientHeight
+                const h = window.innerHeight
+                const w = window.innerWidth
+                const cw = document.documentElement.clientWidth
+                const isUrlBarNowHidden = controlHeight && controlHeight === h ? true : false
+                // we just scrolled down and resized, so the url bar height can be calculcated
+                const newUrlBarHeight = controlHeight && isUrlBarNowHidden ? controlHeight - h : urlBarHeight
+                const heightWithoutUrlBar = controlHeight && isUrlBarNowHidden ? h - urlBarHeight : h
                 setDim({
-                    height: window.innerHeight,
-                    width: window.innerWidth,
-                    scrollBarWidth: window.innerWidth - document.documentElement.clientWidth,
-                    urlBarHeight: dim.urlBarHeight
+                    height: h,
+                    width: w,
+                    scrollBarWidth: w - cw
                 })
-
+                setUrlBarHeight(newUrlBarHeight)
+                if(setVh) {
+                    console.log("setting vh to " + heightWithoutUrlBar * 0.01)
+                    const vh = heightWithoutUrlBar * 0.01
+                    document.documentElement.style.setProperty('--vh', `${vh}px`);
+                }
             }
         }
-        const debouncedHandleWindowResize = debounce(handleResize, debounceMs)
+        const debouncedHandleWindowResize = debounce(handleResize, debounceMs, {trailing:true})
         handleResize()
         window.addEventListener('resize', debouncedHandleWindowResize)
         return () => {
             window.removeEventListener('resize', debouncedHandleWindowResize)
         }
     }, [debounceMs])
-
-    useEffect(() => {
-        // measure url bar height
-        // on page load quickly scroll down and up again
-        if(typeof window !== undefined) {
-            // Save current scroll position
-            const oldScrollX = window.scrollX
-            const oldScrollY = window.scrollY
-            // Hide url bar
-            window.scrollTo(0, document.body.scrollHeight)
-            // Measure max viewport height
-            const maxH = window.innerHeight
-            // Scroll back
-            window.scrollTo(oldScrollX, oldScrollY)
-            // Calculate url bar height
-            alert(maxH - window.innerHeight)
-            setDim({
-                height: dim.height,
-                width: dim.width,
-                scrollBarWidth: dim.scrollBarWidth,
-                urlBarHeight: maxH - window.innerHeight
-            })
-        }
-        // scenario: viewport size changes. Directly after that we can measure the scroll position. When the scroll position changed we know that the addres bar hid / showed. 
-    }, [])
 
     return (
         <WindowContext.Provider value={dim}>
