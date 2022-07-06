@@ -46,7 +46,6 @@ export function WindowContextWrapper({children, debounceMs, setVh}: WindowContex
                 const w = window.innerWidth
                 const cw = document.documentElement.clientWidth
                 const isUrlBarNowHidden = controlHeight && controlHeight === h ? true : false
-                // we just scrolled down and resized, so the url bar height can be calculcated
                 const newUrlBarHeight = controlHeight && isUrlBarNowHidden ? controlHeight - h : urlBarHeight
                 const heightWithoutUrlBar = controlHeight && isUrlBarNowHidden ? h - urlBarHeight : h
                 setDim({
