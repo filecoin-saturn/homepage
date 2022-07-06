@@ -6,7 +6,7 @@ type Props = {
 export default function CustomProse({children, overrides}: Props) {
     return (
         <div className="prose antialiased
-            prose-h1:font-inter prose-h1:font-black prose-h1:my-4 prose-h1:text-white prose-h1:text-5xl prose-h1:md:text-6xl prose-h1:lg:text-[5rem] lg:first-letter:prose-h1:uppercase lg:even:prose-h1:text-5xl xl:even:prose-h1:text-[5rem] xl:even:first-letter:prose-h1:lowercase
+            prose-h1:font-inter prose-h1:font-black prose-h1:my-4 prose-h1:text-white prose-h1:text-5xl prose-h1:md:text-6xl prose-h1:lg:text-[5rem] lg:even:prose-h1:text-5xl xl:even:prose-h1:text-[5rem]
             prose-h2:font-inter prose-h2:font-black prose-h2:text-2xl prose-h2:lg:text-4xl prose-h2:text-white prose-h2:my-4
             prose-h3:font-inter prose-h3:font-black prose-h3:text-white prose-h3:my-2 prose-h3:text-3xl prose-h3:md:text-5xl prose-h3:lg:text-6xl prose-h3:leading-tight
             prose-h4:font-inter prose-h4:font-semibold prose-h4:text-white prose-h4:my-2 prose-h4:text-2xl prose-h4:md:text-2xl prose-h4:lg:text-3xl
