@@ -1,4 +1,3 @@
-import CustomProse from "../CustomProse/CustomProse"
 
 
 type Props = {
