@@ -112,8 +112,8 @@ const Home: NextPage = () => {
         </div> 
         <div data-io="roadmap" id="roadmap" className='w-full h-0'></div>
         <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[46rem] xl:max-w-[67rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 xl:space-x-20 '>
-            <div className=' lg:text-right lg:max-w-sm flex-1'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 xl:space-x-24 '>
+            <div className=' lg:text-right'>
               <CustomProse overrides='lg:even:prose-h1:my-0 xl:even:prose-h1:my-4 lg:prose-h1:mb-0' >
                 <div className="flex lg:flex-col xl:flex-row ">
                   <Roadmap />
