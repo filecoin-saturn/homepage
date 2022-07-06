@@ -88,7 +88,7 @@ const Home: NextPage = () => {
         </div>
         <div data-io="goals" id="goals" className='w-full h-0'></div>
         <div className='mt-28 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-12'>
+          <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
             <CustomProse>
               <GoalsIntro />
             </CustomProse>
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
               </CustomProse>
             </div>
             <CustomProse overrides='prose-p:my-0 ' >
-              <div className='my-10'>
+              <div className='my-4 lg:my-10'>
                 <ListBigDots backdropBlur={features.backdropBlur}>
                   <RoadmapFirstStep />  
                   <RoadmapSecondStep />
@@ -133,7 +133,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="getinvolved" id="getinvolved" className='w-full h-0'></div>
-        <div className='my-24 md:my-48 px-4 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='my-24 md:my-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
