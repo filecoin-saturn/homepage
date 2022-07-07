@@ -64,7 +64,7 @@ export function WindowContextWrapper({children, debounceMs, setVh}: WindowContex
         return () => {
             window.removeEventListener('resize', debouncedHandleWindowResize)
         }
-    }, [debounceMs])
+    }, [debounceMs, setVh, urlBarHeight])
 
     return (
         <WindowContext.Provider value={dim}>
