@@ -32,7 +32,10 @@ export default memo(function Menu({isOpen, setIsOpen, languages, children, backd
                 </div>
             </div>
             <div className="mx-auto">
-                <Button3 setIsOpen={setIsOpen} link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up and close menu"} />
+                <Button3 onClick={() => {
+                    setIsOpen(false)
+                    document.body.style.overflow = "auto"
+                }} link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up and close menu"} />
             </div>
         </div>
     )

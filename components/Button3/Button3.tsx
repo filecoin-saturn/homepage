@@ -5,15 +5,15 @@ type Props = {
     replace?: boolean
     backdropBlur: boolean
     aria?: string
-    setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>,
+    onClick?: () => void
 }
 
-export default function Button3({link, replace, backdropBlur, aria, setIsOpen}: Props) {
+export default function Button3({link, replace, backdropBlur, aria, onClick}: Props) {
     return  (
         <Link href={link} replace={replace}>
             <a className="group outline-none relative" 
                 aria-label= {`${aria ? aria : "Move up" }`}
-                onClick={() => {if(setIsOpen) {setIsOpen(false)}}}
+                onClick={onClick}
             >
                 <div className={` rounded-full group-active:scale-90 will-change-transform ${backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-focus-visible:bg-white/10 supports-blur:hover:backdrop-blur-md supports-blur:group-focus-visible:backdrop-blur-md group-hover:bg-sat-white-10-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1` : `group-hover:bg-sat-white-10-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1`}`}>
                     <div className=" bg-transparent rounded-full ">

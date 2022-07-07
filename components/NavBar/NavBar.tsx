@@ -63,7 +63,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
             if(isHighest && (scrollToHash === "" || scrollToHash === entry.target.id)) {
                 setScrollToHash("")
                 setActiveHash(entry.target.id)
-                history.replaceState(null, "", `#${entry.target.id}`)
+                history.replaceState(null, "", entry.target.id === "start" ? "/" : `#${entry.target.id}`)
             }
         } else {
             // remove elements from intersecting that are not intersecting
