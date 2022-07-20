@@ -37,23 +37,30 @@ const Home: NextPage = () => {
   }, [])
   
   return (
-<>
-    <Head>
-      <title>Filecoin Saturn</title>
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-      <link rel="manifest" href="/site.webmanifest"/>
-      <meta name="msapplication-config" content="/browserconfig.xml" />
-      <meta name="msapplication-TileColor" content="#ffffff"/>
-      <meta name="theme-color" content="#ffffff"/>
-      <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
-    </Head>
-    <div className='mx-auto text-center w-full overflow-hidden relative'>
-      <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-2 inset-0 bg-star-background-plain bg-cover bg-no-repeat bg-center'>
-        <div className='bg-gradient-to-b from-transparent to-black w-full h-full'>
-          <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
-        </div>
+    <>
+      <Head>
+        <title>Filecoin Saturn</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
+      </Head>
+      <div className='mx-auto text-center w-full overflow-hidden relative'>
+        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-2 inset-0'>
+          <div className='absolute inset-0 grid grid-cols-3'>
+              {[1,2,3,4,5,6,7,8,9].map(v => {
+                return (
+                  <div key={v} className={`bg-star-background-plain bg-cover bg-no-repeat bg-center ${v % 3 !== 2 ? "-scale-x-100" : ""} ${(v - 1) % 6 > 2 ? "-scale-y-100" : ""} `}></div>
+                )
+              })}
+          </div>
+          <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black'>
+            <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
+          </div>
         </div>
         <NavBar backdropBlur={features.backdropBlur} />
         <div data-io="start" id="start" className='w-full h-0'></div>

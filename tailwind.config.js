@@ -44,7 +44,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 
         'saturn-logo': "url('/saturn-logo.svg')",
-        'star-background-plain': "url('/arthur-volkers-GX542ehZwSk-unsplash-turned.webp')",
+        'star-background-plain': "url('/arthur-volkers-GX542ehZwSk-unsplash-turned-small-2.webp')",
         'mobile-background': "url('/mobile-background.png')",
         'desktop-background': "url('/desktop-background.png')",
         'inner-menu-button': "url('/inner-menu-button.svg')",

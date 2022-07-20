@@ -9,6 +9,7 @@ import Button6 from "../Button6/Button6"
 import IntersectionObserverWrapper from "../IntersectionObserverWrapper/IntersectionObserverWrapper"
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
+import { debounce } from 'lodash';
 
 type Props = {
     menuLinkArray: {
@@ -38,7 +39,21 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
         path.events.on("hashChangeStart", (e) => {
             setScrollToHash(e.split("#")[1] ?? "")
         })
+        path.events.on("routeChangeStart", (e) => {
+            setScrollToHash("/")
+        })
     }, [path.events])
+
+    useEffect(() => {
+        function handleScrollFinish() {
+            setScrollToHash("")
+        }
+        const debouncedHandleScrollFinish = debounce(handleScrollFinish, 100, {trailing:true})
+        window.addEventListener('scroll', debouncedHandleScrollFinish)
+        return () => {
+            window.removeEventListener('scroll', debouncedHandleScrollFinish)
+        }
+    }, [])
 
     useLayoutEffect(() => {
         isOpen ? gsap.to("[data-gsap='animate-menu']", {duration: 0.25, x: 0}) : gsap.to("[data-gsap='animate-menu']", {duration: 0.25, x: "110%"});
