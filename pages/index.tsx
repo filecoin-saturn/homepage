@@ -11,8 +11,7 @@ import NavBar from '../content/en/index/NavBar'
 import Footer from '../content/en/index/Footer'
 import GoalsIntro from '../content/en/index/goals-intro.mdx'
 import Goals from '../content/en/index/Goals'
-import Saturn from '../threejs/components/Saturn/Saturn'
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Roadmap from '../content/en/index/roadmap-section.mdx'
 import RoadmapFirstStep from "../content/en/index/roadmap-first-step.mdx"
@@ -21,15 +20,20 @@ import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
 import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
 import HowItWorksIntroSection from "../content/en/index/how-it-works-intro-section.mdx"
 import WhatIsSaturn from '../content/en/index/what-is-saturn-section.mdx'
-
-
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
 
+const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
+  suspense: false,
+  ssr: false
+})
+
 const Home: NextPage = () => {
   const features = useFeatureContext()
-  useLayoutEffect(() => {
+  useEffect(() => {
     const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
     return () => {
       cleanup2()
@@ -77,7 +81,9 @@ const Home: NextPage = () => {
           </div>
           <div className='absolute -z-10 md:-left-[50vw] md:-bottom-[20%] md:h-[60vw] h-[100vh] md:w-[160vw] -left-[30vw] -bottom-[50vh] w-[150vw] opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'></div>
           <div className='absolute -z-20 inset-0 -bottom-[20%]'>
-            <Saturn />
+            <Suspense fallback={null}>
+              <DynamicSaturn />
+            </Suspense>
           </div>
         </div>
         <div data-io="whatissaturn" id="whatissaturn" className='w-full h-0'></div>
