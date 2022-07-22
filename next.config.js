@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const path = require('path');
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -12,8 +14,11 @@ const withMDX = require('@next/mdx')({
 
 const withPlugins = require('next-compose-plugins');
 const withTM = require('next-transpile-modules')(['three'])
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
 
-module.exports = withPlugins([withTM, withMDX],{
+module.exports = withPlugins([withTM, withMDX, withBundleAnalyzer],{
   // Append the default value with md extensions
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
