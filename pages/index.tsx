@@ -71,7 +71,7 @@ const Home: NextPage = () => {
         <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-2xl h-full flex flex-col justify-end lg:ml-20'>
             <div data-gsap="animate-children" className=' max-w-sm md:max-w-md lg:max-w-xl mr-auto relative'>
-              <CustomProse overrides='prose-h3:text-6xl prose-h3:leading-none'>
+              <CustomProse overrides='prose-h3:!text-6xl prose-h3:!leading-none'>
                 <Start />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 lg:mb-32 mb-12 mt-4 md:mt-6'>
