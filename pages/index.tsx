@@ -25,6 +25,15 @@ import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
+import CareersIntro from '../content/en/index/careers-intro-section.mdx'
+import Careers from '../content/en/index/careers-section.mdx'
+import CareersJobLink1 from '../content/en/index/careers-job-link-1'
+import CareersJobTitle1 from '../content/en/index/careers-job-title-1.mdx'
+import CareersJobLink2 from '../content/en/index/careers-job-link-2'
+import CareersJobTitle2 from '../content/en/index/careers-job-title-2.mdx'
+import CareersJobLink3 from '../content/en/index/careers-job-link-3'
+import CareersJobTitle3 from '../content/en/index/careers-job-title-3.mdx'
+import Modal3 from '../components/Modal3/Modal3'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -164,7 +173,37 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-        </div> 
+        </div>
+        <div className='my-24 md:my-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
+            <div className=' lg:text-right lg:max-w-xs '>
+              <CustomProse >
+                <CareersIntro />
+              </CustomProse>
+            </div>
+            <div>
+              <CustomProse overrides='prose-p:my-6' >
+                <Careers/>
+              </CustomProse>
+              <CustomProse overrides='prose-p:my-0 prose-strong:text-white prose-strong:font-semibold prose-p:py-1.5 prose-strong:antialiased prose-p:leading-tight' >
+                <div className='flex -mx-1 flex-col space-y-4'>
+                  <Modal3 backdropBlur={features.backdropBlur}>
+                    <CareersJobTitle1/>
+                    <CareersJobLink1/>
+                  </Modal3>
+                  <Modal3 backdropBlur={features.backdropBlur}>
+                    <CareersJobTitle2/>
+                    <CareersJobLink2/>
+                  </Modal3>
+                  <Modal3 backdropBlur={features.backdropBlur}>
+                    <CareersJobTitle3/>
+                    <CareersJobLink3/>
+                  </Modal3>
+                </div>
+              </CustomProse>
+            </div>
+          </div>
+        </div>
         <Footer backdropBlur={features.backdropBlur}/>
       </div>
     </>

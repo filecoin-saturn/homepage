@@ -60,7 +60,7 @@ module.exports = {
         'multi-peer-logo': "url('/multi-peer-logo.svg')",
         'deduplication-logo': "url('/deduplication-logo.svg')",
         'serve-content-logo': "url('/serve-content-logo.svg')",
-   
+        'arrow-right': "url('/arrow-right.svg')"
 
       }, 
       boxShadow: {
