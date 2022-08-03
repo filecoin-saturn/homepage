@@ -157,7 +157,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="getinvolved" id="getinvolved" className='w-full h-0'></div>
-        <div className='my-24 md:my-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -174,7 +174,8 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className='my-24 md:my-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div data-io="careers" id="careers" className='w-full h-0'></div>
+        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >

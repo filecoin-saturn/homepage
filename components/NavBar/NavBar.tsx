@@ -14,11 +14,13 @@ import { debounce } from 'lodash';
 type Props = {
     menuLinkArray: {
         title: string,
-        href: string
+        href: string,
+        highlight: boolean
     }[],
     navLinkArray: {
         title: string,
-        href: string
+        href: string,
+        highlight: boolean
     }[],
     languages: {
         text: string
@@ -140,6 +142,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                             replace={true}
                                             isActive={activeHash.includes(hash)} 
                                             backdropBlur={backdropBlur}
+                                            highlight={link.highlight}
                                         />
                                     </li>
                                 )

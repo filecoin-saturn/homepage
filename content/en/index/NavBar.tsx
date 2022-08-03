@@ -1,11 +1,12 @@
 import NavBarTemplate from "../../../components/NavBar/NavBar"
 
 const navLinkArray = [
-    {title: "What is Saturn", href: "/#whatissaturn" },
-    {title: "Goals", href: "/#goals" },
-    {title: "How it works", href: "/#howitworks" },
-    {title: "Roadmap", href: "/#roadmap" },
-    {title: "Get involved", href: "/#getinvolved" }
+    {title: "What is Saturn", href: "/#whatissaturn", highlight: false },
+    {title: "Goals", href: "/#goals", highlight: false },
+    {title: "How it works", href: "/#howitworks", highlight: false },
+    {title: "Roadmap", href: "/#roadmap", highlight: false },
+    {title: "Get involved", href: "/#getinvolved", highlight: false },
+    {title: "Careers", href: "/#careers", highlight: true}
 ]
 
 const languages = {
@@ -13,11 +14,12 @@ const languages = {
 }
 
 const menuLinkArray = [
-    {title: "What is Saturn", href: "/#whatissaturn" },
-    {title: "Goals", href: "/#goals" },
-    {title: "How it works", href: "/#howitworks" },
-    {title: "Roadmap", href: "/#roadmap" },
-    {title: "Get involved", href: "/#getinvolved" }
+    {title: "What is Saturn", href: "/#whatissaturn", highlight: false },
+    {title: "Goals", href: "/#goals", highlight: false },
+    {title: "How it works", href: "/#howitworks", highlight: false },
+    {title: "Roadmap", href: "/#roadmap", highlight: false },
+    {title: "Get involved", href: "/#getinvolved", highlight: false },
+    {title: "Careers", href: "/#careers", highlight: true}
 ]
 
 type NavBarContent ={
@@ -25,6 +27,6 @@ type NavBarContent ={
 }
 
 export default function NavBar({backdropBlur}: NavBarContent) {
-    return <NavBarTemplate languageSwitcher={false} backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved"]} />
+    return <NavBarTemplate languageSwitcher={false} backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} />
 }
 
