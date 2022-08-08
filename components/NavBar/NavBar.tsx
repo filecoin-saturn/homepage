@@ -97,6 +97,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
             <IntersectionObserverWrapper
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
+                margin="40% 0px 0px 0px"
             />
             <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-white-5-fallback-1` : `bg-sat-white-5-fallback-1`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >

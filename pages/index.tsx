@@ -122,7 +122,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
-        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-36 md:mt-56 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -135,7 +135,7 @@ const Home: NextPage = () => {
           </div>
         </div> 
         <div data-io="roadmap" id="roadmap" className='w-full h-0'></div>
-        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[46rem] xl:max-w-[67rem] mx-auto'>
+        <div className='mt-36 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[46rem] xl:max-w-[67rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 xl:space-x-24 '>
             <div className=' lg:text-right'>
               <CustomProse overrides='lg:even:prose-h1:my-0 xl:even:prose-h1:my-4 lg:prose-h1:mb-0' >
@@ -157,7 +157,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div data-io="getinvolved" id="getinvolved" className='w-full h-0'></div>
-        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-36 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -168,14 +168,14 @@ const Home: NextPage = () => {
               <CustomProse overrides='lg:my-6' >
                 <GetInvolved/>
               </CustomProse>
-              <div data-gsap="animate" className='min-w-[10rem] flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 lg:mb-32 mb-12 mt-4 md:mt-6 '>
+              <div data-gsap="animate" className='min-w-[10rem] flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 mt-4 md:mt-6 '>
                 <CallToActionButtonDownload backdropBlur={features.backdropBlur}/>
               </div>
             </div>
           </div>
         </div>
         <div data-io="careers" id="careers" className='w-full h-0'></div>
-        <div className='mt-24 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='mt-36 md:mt-80 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >

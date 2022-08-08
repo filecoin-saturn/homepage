@@ -3,13 +3,14 @@ import { useEffect } from "react";
 type ComponentProps = {
     targetCallbacks: Map<string, (entry: IntersectionObserverEntry, observer?: IntersectionObserver) => void>,
     threshold: number | number[],
+    margin?: string
 }
 
-export default function IntersectionObserverWrapper({targetCallbacks, threshold}: ComponentProps) {
+export default function IntersectionObserverWrapper({targetCallbacks, threshold, margin}: ComponentProps) {
     useEffect(() => {
         const options = {
             root: null,
-            rootMargin: '0px',
+            rootMargin: margin ??'0px',
             threshold: threshold
         }
         const callback = (entries: IntersectionObserverEntry[], observer?: IntersectionObserver) => {
