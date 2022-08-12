@@ -27,13 +27,7 @@ import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
 import CareersIntro from '../content/en/index/careers-intro-section.mdx'
 import Careers from '../content/en/index/careers-section.mdx'
-import CareersJobLink1 from '../content/en/index/careers-job-link-1'
-import CareersJobTitle1 from '../content/en/index/careers-job-title-1.mdx'
-import CareersJobLink2 from '../content/en/index/careers-job-link-2'
-import CareersJobTitle2 from '../content/en/index/careers-job-title-2.mdx'
-import CareersJobLink3 from '../content/en/index/careers-job-link-3'
-import CareersJobTitle3 from '../content/en/index/careers-job-title-3.mdx'
-import Modal3 from '../components/Modal3/Modal3'
+import Modal3List from '../content/en/index/careers-job-list'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -186,22 +180,7 @@ const Home: NextPage = () => {
               <CustomProse overrides='prose-p:my-6' >
                 <Careers/>
               </CustomProse>
-              <CustomProse overrides='prose-p:my-0 prose-strong:text-white prose-strong:font-semibold prose-p:py-1.5 prose-strong:antialiased prose-p:leading-tight' >
-                <div className='flex -mx-1 flex-col space-y-4'>
-                  <Modal3 backdropBlur={features.backdropBlur}>
-                    <CareersJobTitle1/>
-                    <CareersJobLink1/>
-                  </Modal3>
-                  <Modal3 backdropBlur={features.backdropBlur}>
-                    <CareersJobTitle2/>
-                    <CareersJobLink2/>
-                  </Modal3>
-                  <Modal3 backdropBlur={features.backdropBlur}>
-                    <CareersJobTitle3/>
-                    <CareersJobLink3/>
-                  </Modal3>
-                </div>
-              </CustomProse>
+              <Modal3List backdropBlur={features.backdropBlur}/>
             </div>
           </div>
         </div>
