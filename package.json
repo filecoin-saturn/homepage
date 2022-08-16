@@ -17,7 +17,7 @@
     "@next/mdx": "^12.1.6",
     "@react-three/drei": "^9.11.3",
     "@react-three/fiber": "^8.0.19",
-    "@tailwindcss/typography": "github:benjaminpreiss/tailwindcss-typography",
+    "@tailwindcss/typography": "^0.5.4",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "detect-gpu": "^4.0.25",
     "gsap": "^3.10.4",
