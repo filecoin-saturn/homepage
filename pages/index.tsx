@@ -174,8 +174,8 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div id="careers" className='w-full h-0'></div>
-        <div data-io="careers" className='w-full h-0 mt-72 md:mt-[40rem]'></div>
-        <div className='-mt-36 md:-mt-80 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div data-io="careers" className='w-full h-0 mt-[calc(var(--vh,_1vh)*25+9rem)] md:mt-[calc(var(--vh,_1vh)*25+20rem)]'></div>
+        <div className='-mt-36 md:-mt-80 mb-[calc(var(--vh,_1vh)*25)] px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >

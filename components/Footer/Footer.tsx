@@ -35,7 +35,7 @@ function Footer({links, credits, animation, backdropBlur}: Props){
     },[animation])
     return (
         <>
-            <div className=" mx-auto w-full mt-24 md:mt-48 mb-16">
+            <div className=" mx-auto w-full mt-24 md:mt-48 mb-[calc(var(--vh,_1vh)*25)]">
                 <div className=" mx-auto text-white w-full flex items-center justify-center ">
                     <div className="flex text-left justify-start sm:justify-center mx-auto flex-wrap max-w-[17rem] sm:max-w-md sm:space-x-11 md:max-w-none md:space-x-16 lg:space-x-20 xl:space-x-36 antialiased">
                         <div data-gsap="animate" className="hidden sm:block text-left md:text-center md:w-fit justify-start -mt-2 md:-mt-2 ">
