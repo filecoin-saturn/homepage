@@ -64,30 +64,31 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
     },[isOpen])
 
     const scrollCallback = useCallback((entry: IntersectionObserverEntry) => {
-        const index = intersecting.indexOf(entry.target.id)
+        const entryDataIo = entry.target.getAttribute("data-io") ?? ""
+        const index = intersecting.indexOf(entryDataIo)
         if(entry.isIntersecting) {
             let isHighest = true
             // Add entry to intersecting if not there already
             if(index === -1 ) {
-                setIntersecting(intersecting.concat([entry.target.id]))
+                setIntersecting(intersecting.concat([entryDataIo]))
             }
             // set isHighest to false if there are other intersecting elements that are higher
-            intersecting.forEach((id) => {
-                const element = document.getElementById(id)
-                if(element && id !== entry.target.id && element.getBoundingClientRect().top < entry.boundingClientRect.top) {
+            intersecting.forEach((dataIo) => {
+                const element = document.getElementById(dataIo)
+                if(element && dataIo !== entryDataIo && element.getBoundingClientRect().top < entry.boundingClientRect.top) {
                     isHighest = false
                 }
             })
-            // set the hash to the highest element (only when scrollToHash (is "" or equal to entry.target.id))
-            if(isHighest && (scrollToHash === "" || scrollToHash === entry.target.id)) {
+            // set the hash to the highest element (only when scrollToHash (is "" or equal to entryDataIo))
+            if(isHighest && (scrollToHash === "" || scrollToHash === entryDataIo)) {
                 setScrollToHash("")
-                setActiveHash(entry.target.id)
-                history.replaceState(null, "", entry.target.id === "start" ? "/" : `#${entry.target.id}`)
+                setActiveHash(entryDataIo)
+                history.replaceState(null, "", entryDataIo === "start" ? "/" : `#${entryDataIo}`)
             }
         } else {
             // remove elements from intersecting that are not intersecting
             if(index > -1) {
-                setIntersecting(intersecting.filter(value => value !== entry.target.id))
+                setIntersecting(intersecting.filter(value => value !== entryDataIo))
             }
         }
     }, [intersecting, scrollToHash])
@@ -97,7 +98,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
             <IntersectionObserverWrapper
                 targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
-                margin="40% 0px 0px 0px"
+                margin="0px 0px 0px 0px"
             />
             <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-white-5-fallback-1` : `bg-sat-white-5-fallback-1`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >

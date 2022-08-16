@@ -91,8 +91,9 @@ const Home: NextPage = () => {
             </Suspense>
           </div>
         </div>
-        <div data-io="whatissaturn" id="whatissaturn" className='w-full h-0'></div>
-        <div className='mt-20 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div id="whatissaturn" className='w-full h-0'></div>
+        <div data-io="whatissaturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-20 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -104,8 +105,9 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
         </div>
-        <div data-io="goals" id="goals" className='w-full h-0'></div>
-        <div className='mt-28 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div id="goals" className='w-full h-0'></div>
+        <div data-io="goals" className='w-full h-0 mt-56 md:mt-[24rem]'></div>
+        <div className='-mt-28 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
             <CustomProse>
               <GoalsIntro />
@@ -115,8 +117,9 @@ const Home: NextPage = () => {
             <Goals backdropBlur={features.backdropBlur} />
           </div>
         </div>
-        <div data-io="howitworks" id="howitworks" className='w-full h-0'></div>
-        <div className='mt-36 md:mt-56 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div id="howitworks" className='w-full h-0'></div>
+        <div data-io="howitworks" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
+        <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -128,8 +131,9 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
         </div> 
-        <div data-io="roadmap" id="roadmap" className='w-full h-0'></div>
-        <div className='mt-36 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[46rem] xl:max-w-[67rem] mx-auto'>
+        <div id="roadmap" className='w-full h-0'></div>
+        <div data-io="roadmap" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
+        <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[46rem] xl:max-w-[67rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 xl:space-x-24 '>
             <div className=' lg:text-right'>
               <CustomProse overrides='lg:even:prose-h1:my-0 xl:even:prose-h1:my-4 lg:prose-h1:mb-0' >
@@ -150,8 +154,9 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
         </div>
-        <div data-io="getinvolved" id="getinvolved" className='w-full h-0'></div>
-        <div className='mt-36 md:mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div id="getinvolved" className='w-full h-0'></div>
+        <div data-io="getinvolved" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
+        <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
@@ -168,8 +173,9 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div data-io="careers" id="careers" className='w-full h-0'></div>
-        <div className='mt-36 md:mt-80 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div id="careers" className='w-full h-0'></div>
+        <div data-io="careers" className='w-full h-0 mt-72 md:mt-[40rem]'></div>
+        <div className='-mt-36 md:-mt-80 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
