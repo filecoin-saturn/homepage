@@ -32,7 +32,7 @@ type ButtonContentProps = {
 
 export function ButtonContent({isActive, text}: ButtonContentProps) {
     return (
-        <div className={`group-active:scale-90 rounded-full p-1 px-[1.125rem] relative text-white bg-sat-blue-3 group-hover:bg-sat-grad-blue-green-1 group-focus-visible:outline-white outline-2 outline-offset-[-2px] outline-none`}>
+        <div className={`group-active:scale-90 rounded-full p-1 px-[1.125rem] relative text-white bg-sat-blue-3 group-hover:bg-sat-grad-blue-green-1 group-focus-visible:ring-white ring-2 ring-inset ring-transparent`}>
             <div className={`text-base sm:text-lg font-inter font-semibold antialiased tracking-wide ${isActive ? `text-white`: ``}` }>
                 {text}
             </div>
@@ -45,7 +45,7 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
     return rest.type === "next-link" ? (
         <Link href={rest.link ?? ""} replace={rest.replace}>
             <a 
-            className={`block rounded-full group relative flex-none ${rest.isActive ? "outline-[5px] outline-offset-0 outline-sat-blue-3/30 outline" : "outline-none"}`}
+            className={`block outline-none rounded-full group relative flex-none ${rest.isActive ? "ring-[5px] ring-sat-blue-3/30" : "ring-transparent"}`}
             onClick={rest.onClick}
             aria-label={`navigation ${rest.text}`}
             >
@@ -55,7 +55,7 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
     ) : (
         <button disabled={rest.disabled} 
             aria-label={`navigation ${rest.text}`} 
-            className={`group outline-none relative flex-none ${rest.isActive ? "outline-[5px] outline-offset-0 outline-sat-blue-3/30 outline" : "outline-none"}`}
+            className={`group outline-none ring-transparent relative flex-none ${rest.isActive ? "ring-[5px] ring-sat-blue-3/30" : "ring-transparent"}`}
         >
             {rest.children}
         </button>

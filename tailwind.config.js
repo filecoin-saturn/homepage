@@ -66,6 +66,9 @@ module.exports = {
       boxShadow: {
         'colored': '0 0 40px #0090FF',
       },
+      outlineStyle: {
+        'auto': 'auto'
+      }
     },
   },
 

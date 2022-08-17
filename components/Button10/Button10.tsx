@@ -29,7 +29,7 @@ type ButtonContentProps = {
 export function ButtonContent({...all}: ButtonContentProps) {
     const rest: Partial<Props> = all
     return (
-        <div className={`flex group-active:scale-90 items-center ${rest.isActive ? `space-x-2`: ``} px-2.5 py-1.5 md:px-3.5 outline-2 outline-offset-[-2px] outline-none text-white rounded-full will-change-transform bg-sat-blue-3 group-hover:bg-sat-grad-blue-green-1 group-focus-visible:outline-white`}>
+        <div className={`flex group-active:scale-90 items-center ${rest.isActive ? `space-x-2`: ``} px-2.5 py-1.5 md:px-3.5 ring-2 ring-inset ring-transparent text-white rounded-full will-change-transform bg-sat-blue-3 group-hover:bg-sat-grad-blue-green-1 group-focus-visible:ring-white`}>
             <div className={` ${rest.isActive? `` : `hidden `} h-[0.35rem] w-[0.35rem] rounded-full bg-white`}></div>
             <div className={`relative md:text-sm md:leading-tight font-inter font-semibold antialiased tracking-wide ${rest.isActive ? `text-white`: ``}` }>
                 {rest.text}
