@@ -72,7 +72,7 @@ module.exports = {
   plugins: [
     plugin(function({ addVariant })
      {
-      addVariant('supports-blur', '@supports (backdrop-filter: blur(12px))')
+      addVariant('supports-blur', '@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) and (not ( -moz-appearance:none ))')
     }),
     require('@tailwindcss/typography'),
   ]
