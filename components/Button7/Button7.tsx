@@ -1,16 +1,18 @@
 import Link from "next/link"
+import { useContent } from "../../content/content"
 
 
 
 type Props = {
     type: "next-link" | "button"
-    link: string,
-    text: string,
+    link?: string,
+    text?: string,
     onClick: () => void
     isActive: boolean,
     replace: boolean,
     disabled?: boolean,
-    backdropBlur: boolean
+    backdropBlur: boolean,
+    contentId: string
     
 }
 
@@ -65,9 +67,12 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
 
 export default function Button7({...all}: Props) {
     const rest: Partial<Props> = all
+    const content = useContent(all.contentId)
+    const l = rest.link ?? content.href
+    const t = rest.text ?? content.title
     return (
-        <ButtonWrapper type={rest.type} disabled={rest.disabled} link={rest.link} onClick={rest.onClick} replace={rest.replace} text={rest.text} >
-            <ButtonContent isActive={rest.isActive} text={rest.text} backdropBlur={rest.backdropBlur}/>
+        <ButtonWrapper type={rest.type} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} >
+            <ButtonContent isActive={rest.isActive} text={t} backdropBlur={rest.backdropBlur}/>
         </ButtonWrapper>
     )
 }

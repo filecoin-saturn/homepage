@@ -1,33 +1,19 @@
 import type { NextPage } from 'next'
-import Start from  '../content/en/index/start-section.mdx'
-import WhatIsSaturnIntro from '../content/en/index/what-is-saturn-intro-section.mdx'
-import HowItWorks from '../content/en/index/how-it-works-section.mdx'
-import GetInvolvedIntro from '../content/en/index/get-involved-intro-section.mdx'
-import GetInvolved from '../content/en/index/get-involved-section.mdx'
 import CustomProse from '../components/CustomProse/CustomProse'
-import CallToActionButtons from '../content/en/index/Start'
-import CallToActionButtonDownload from '../content/en/index/GetInvolved'
-import NavBar from '../content/en/index/NavBar'
-import Footer from '../content/en/index/Footer'
-import GoalsIntro from '../content/en/index/goals-intro.mdx'
-import Goals from '../content/en/index/Goals'
+import Footer from '../components/Footer/Footer'
 import { useEffect } from 'react'
 import Head from 'next/head'
-import Roadmap from '../content/en/index/roadmap-section.mdx'
-import RoadmapFirstStep from "../content/en/index/roadmap-first-step.mdx"
-import RoadmapSecondStep from "../content/en/index/roadmap-second-step.mdx"
-import RoadmapThirdStep from "../content/en/index/roadmap-third-step.mdx"
-import RoadmapFourthStep from "../content/en/index/roadmap-fourth-step.mdx"
-import HowItWorksIntroSection from "../content/en/index/how-it-works-intro-section.mdx"
-import WhatIsSaturn from '../content/en/index/what-is-saturn-section.mdx'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
-import CareersIntro from '../content/en/index/careers-intro-section.mdx'
-import Careers from '../content/en/index/careers-section.mdx'
-import Modal3List from '../content/en/index/careers-job-list'
+import Button1 from '../components/Button1/Button1'
+import Button2 from '../components/Button2/Button2'
+import { RenderMDXContent } from '../content/content'
+import NavBar from '../components/NavBar/NavBar'
+import Goals from '../components/Goals/Goals'
+import Modal3 from '../components/Modal3/Modal3'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -69,16 +55,17 @@ const Home: NextPage = () => {
             <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
           </div>
         </div>
-        <NavBar backdropBlur={features.backdropBlur} />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
           <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-2xl h-full flex flex-col justify-end lg:ml-20'>
             <div data-gsap="animate-children" className=' max-w-sm md:max-w-md lg:max-w-xl mr-auto relative'>
               <CustomProse overrides='prose-h3:!text-6xl prose-h3:!leading-none'>
-                <Start />
+                <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
               <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 lg:mb-32 mb-12 mt-4 md:mt-6'>
-                <CallToActionButtons backdropBlur={features.backdropBlur} />
+                <Button1 contentId='index.start.ctas[0]' />
+                <Button2 contentId='index.start.ctas[1]' backdropBlur={features.backdropBlur} />
               </div>
               <div className='absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'>
 
@@ -96,12 +83,12 @@ const Home: NextPage = () => {
         <div className='-mt-20 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
-              <CustomProse >
-                <WhatIsSaturnIntro />
+              <CustomProse>
+                <RenderMDXContent contentId='index.what-is-saturn.title.default' />
               </CustomProse>
             </div>
             <CustomProse overrides='lg:my-6' >
-              <WhatIsSaturn />
+                <RenderMDXContent contentId='index.what-is-saturn.description.default' />
             </CustomProse>
           </div>
         </div>
@@ -110,11 +97,11 @@ const Home: NextPage = () => {
         <div className='-mt-28 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
             <CustomProse>
-              <GoalsIntro />
+              <RenderMDXContent contentId='index.goals.title.default' />
             </CustomProse>
           </div>
           <div className='px-2 w-full lg:px-0'>
-            <Goals backdropBlur={features.backdropBlur} />
+            <Goals backdropBlur={features.backdropBlur} contentId="index.goals.content.content"/>
           </div>
         </div>
         <div id="howitworks" className='w-full h-0'></div>
@@ -123,11 +110,11 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
-                <HowItWorksIntroSection />
+                <RenderMDXContent contentId='index.how-it-works.intro.default' />
               </CustomProse>
             </div>
             <CustomProse overrides='lg:my-6' >
-              <HowItWorks />
+              <RenderMDXContent contentId='index.how-it-works.main.default' />
             </CustomProse>
           </div>
         </div> 
@@ -138,17 +125,17 @@ const Home: NextPage = () => {
             <div className=' lg:text-right'>
               <CustomProse overrides='lg:even:prose-h1:my-0 xl:even:prose-h1:my-4 lg:prose-h1:mb-0' >
                 <div className="flex lg:flex-col xl:flex-row ">
-                  <Roadmap />
+                  <RenderMDXContent contentId='index.roadmap.title.default' />
                 </div>
               </CustomProse>
             </div>
             <CustomProse overrides='prose-p:my-0 ' >
               <div className='my-4 lg:my-10'>
                 <ListBigDots backdropBlur={features.backdropBlur}>
-                  <RoadmapFirstStep />  
-                  <RoadmapSecondStep />
-                  <RoadmapThirdStep />
-                  <RoadmapFourthStep />
+                  <RenderMDXContent contentId='index.roadmap.step[0].default' />  
+                  <RenderMDXContent contentId='index.roadmap.step[1].default' />  
+                  <RenderMDXContent contentId='index.roadmap.step[2].default' />  
+                  <RenderMDXContent contentId='index.roadmap.step[3].default' />  
                 </ListBigDots>
               </div>
             </CustomProse>
@@ -160,15 +147,16 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
-                <GetInvolvedIntro />
+                <RenderMDXContent contentId='index.get-involved.title.default' /> 
               </CustomProse>
             </div>
             <div>
               <CustomProse overrides='lg:my-6' >
-                <GetInvolved/>
+                <RenderMDXContent contentId='index.get-involved.description.default' /> 
               </CustomProse>
               <div data-gsap="animate" className='min-w-[10rem] flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 mt-4 md:mt-6 '>
-                <CallToActionButtonDownload backdropBlur={features.backdropBlur}/>
+                <Button1 contentId='index.get-involved.buttons.getInvolved[0]' />
+                <Button2 contentId='index.get-involved.buttons.getInvolved[1]' backdropBlur={features.backdropBlur} />
               </div>
             </div>
           </div>
@@ -179,18 +167,28 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-right lg:max-w-xs '>
               <CustomProse >
-                <CareersIntro />
+                <RenderMDXContent contentId='index.careers.intro.default' /> 
               </CustomProse>
             </div>
             <div>
               <CustomProse overrides='prose-p:my-6' >
-                <Careers/>
+                <RenderMDXContent contentId='index.careers.description.default' /> 
               </CustomProse>
-              <Modal3List backdropBlur={features.backdropBlur}/>
+              <div className='flex -mx-1 flex-col space-y-4'>
+                <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[0]" >
+                  <RenderMDXContent contentId='index.careers.jobs[0].default' />
+                </Modal3>
+                <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[1]" >
+                  <RenderMDXContent contentId='index.careers.jobs[1].default' />
+                </Modal3>
+                <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[2]" >
+                  <RenderMDXContent contentId='index.careers.jobs[2].default' />
+                </Modal3>
+              </div>
             </div>
           </div>
         </div>
-        <Footer backdropBlur={features.backdropBlur}/>
+        <Footer backdropBlur={features.backdropBlur} contentId="general.footer" />
       </div>
     </>
   )

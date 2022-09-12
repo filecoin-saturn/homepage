@@ -2,29 +2,38 @@ import Button3 from "../Button3/Button3";
 import Button8 from "../Button8/Button8"
 import dynamic from "next/dynamic";
 import { useLayoutEffect } from "react";
+import { useContent } from "../../content/content";
+
+type links = {
+    title: string;
+    links: {
+        text: string;
+        link: string;
+        backgroundImage: string
+
+    }[];
+}[]
+
+type credits = {
+    text: string
+    text2: string
+    logo: string
+}
 
 type Props = {
-    links: {
-        title: string;
-        links: {
-            text: string;
-            link: string;
-            backgroundImage: string
-
-        }[];
-    }[],
-    credits: {
-        text: string
-        text2: string
-        logo: string
-    },
+    links?: links,
+    credits?: credits,
     animation?: () => () => void
-    backdropBlur: boolean
+    backdropBlur: boolean,
+    contentId: string
 }
 
 
 
-function Footer({links, credits, animation, backdropBlur}: Props){
+function Footer({links, credits, animation, backdropBlur, contentId}: Props){
+    const content = useContent(contentId)
+    const l: links = links ?? content.links
+    const c: credits = credits ?? content.credits
     useLayoutEffect(() => {
         if(animation) {
             const cleanup = animation()
@@ -42,7 +51,7 @@ function Footer({links, credits, animation, backdropBlur}: Props){
                             <Button3 backdropBlur={backdropBlur} link="/" aria={"Move up"} />
                         </div>
                         <div className="flex text-left justify-between md:justify-center mx-auto font-inter text-sm sm:text-base text-light-grey space-x-8 sm:space-x-11 md:space-x-12 lg:space-x-16 xl:space-x-40 ">
-                            {links.map((e, i) => {
+                            {l.map((e, i) => {
                                 return (
                                     <div key={i} className="px-2 flex flex-col space-y-4 items-start">
                                         <div data-gsap="animate" className="font-black text-base md:text-lg text-white">
@@ -66,12 +75,12 @@ function Footer({links, credits, animation, backdropBlur}: Props){
                             <div className="mx-auto w-full max-w-[8rem] md:max-w-[18rem] lg:flex  lg:space-x-1 ">
                                 <div data-gsap="animate" className="flex space-x-1">
                                     <div className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
-                                    {credits.text}
+                                    {c.text}
                                     </div>
-                                    <img alt="Heart symbol" className="bg-contain bg-center bg-no-repeat h-4 w-4 md:h-5 md:w-5" src={credits.logo}></img>
+                                    <img alt="Heart symbol" className="bg-contain bg-center bg-no-repeat h-4 w-4 md:h-5 md:w-5" src={c.logo}></img>
                                     </div>
                                 <div data-gsap="animate" className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
-                                    {credits.text2}
+                                    {c.text2}
                                 </div>
                             </div>
                         </div>

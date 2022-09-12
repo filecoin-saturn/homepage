@@ -1,6 +1,6 @@
-import NavBarTemplate from "../../../components/NavBar/NavBar"
+{/* c:navbar */}
 
-const navLinkArray = [
+export const navLinkArray = [
     {title: "What is Saturn", href: "/#whatissaturn", highlight: false },
     {title: "Goals", href: "/#goals", highlight: false },
     {title: "How it works", href: "/#howitworks", highlight: false },
@@ -9,11 +9,11 @@ const navLinkArray = [
     {title: "Careers", href: "/#careers", highlight: true}
 ]
 
-const languages = {
+export const languages = {
     text: "EN"
 }
 
-const menuLinkArray = [
+export const menuLinkArray = [
     {title: "What is Saturn", href: "/#whatissaturn", highlight: false },
     {title: "Goals", href: "/#goals", highlight: false },
     {title: "How it works", href: "/#howitworks", highlight: false },
@@ -22,11 +22,22 @@ const menuLinkArray = [
     {title: "Careers", href: "/#careers", highlight: true}
 ]
 
-type NavBarContent ={
-    backdropBlur : boolean
-}
+{/* c:footer */}
 
-export default function NavBar({backdropBlur}: NavBarContent) {
-    return <NavBarTemplate languageSwitcher={false} backdropBlur={backdropBlur} navLinkArray={navLinkArray} languages={languages} menuLinkArray={menuLinkArray} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} />
-}
+export const links = [
+    {
+        title: "Learn More",
+        links: [
+            {text: "GitHub", link: "https://github.com/filecoin-project/saturn-node ", backgroundImage: "github-logo.svg"},
+            {text: "Notion", link: "https://www.notion.so/pl-strflt/Filecoin-Saturn-efc122f123f344ff8ff0de6071954dba", backgroundImage: "notion-logo.svg"},
+        ]
+    },
+    {
+        title: "Reach Out",
+        links: [
+            {text: "Slack", link: "https://filecoin.io/slack", backgroundImage: "slack-logo.svg"}
+        ]
+    }
+]
 
+export const credits = {text: "Made with ", logo: "heart-logo.svg", text2: "by protocol labs"}

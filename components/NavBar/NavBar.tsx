@@ -12,27 +12,34 @@ import IntersectionObserverWrapper from "../IntersectionObserverWrapper/Intersec
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
 import { debounce } from 'lodash';
+import { useContent } from "../../content/content"
 
-type Props = {
-    menuLinkArray: {
-        title: string,
-        href: string,
-        highlight: boolean
-    }[],
-    navLinkArray: {
-        title: string,
-        href: string,
-        highlight: boolean
-    }[],
-    languages: {
-        text: string
-    },
-    sections: string[]
-    backdropBlur: boolean
-    languageSwitcher: boolean
+type Link = {
+    title: string,
+    href: string,
+    highlight: boolean
 }
 
-function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur, languageSwitcher}: Props) {
+type ContentType = {
+    menuLinkArray?: Link[],
+    navLinkArray?: Link[],
+    languages?: {
+        text: string
+    },
+}
+
+type Props = {
+    sections: string[]
+    backdropBlur: boolean
+    languageSwitcher: boolean,
+    contentId: string
+} & ContentType
+
+function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur, languageSwitcher, contentId}: Props) {
+    const content: ContentType = useContent(contentId)
+    const menuLinks = menuLinkArray ?? content.menuLinkArray
+    const navLinks = navLinkArray ?? content.navLinkArray
+    const langs = languages ?? content.languages
     const [isOpen, setIsOpen] = useState(false)
     const path = useRouter()
     const [activeHash, setActiveHash] = useState("")
@@ -101,16 +108,15 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                 margin="0px 0px 0px 0px"
             />
             <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-white-5-fallback-1` : `bg-sat-white-5-fallback-1`}  `}>
-                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={languages} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
-                    {menuLinkArray.map((link, index) => {
+                <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={langs ?? {text: "en"}} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
+                    {menuLinks?.map((link, index) => {
+                        const cId = `${contentId}.menuLinkArray[${index}]`
                         const hash = link.href.split("#")[1]
                         if(link.highlight) {
                             return (
                                 <div className="!mt-10 self-center">
                                     <Button11
-                                        key={index} 
-                                        text={link.title}
-                                        link={link.href} 
+                                        key={index}
                                         onClick={() => {
                                             setIsOpen(false)
                                             document.body.style.overflow = "auto"
@@ -118,6 +124,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                         replace={true}
                                         isActive={activeHash.includes(hash)}
                                         type="next-link"
+                                        contentId={cId}
                                     />
                                 </div>
                                 
@@ -126,8 +133,6 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                             return (
                                 <Button7
                                     key={index} 
-                                    text={link.title}
-                                    link={link.href} 
                                     onClick={() => {
                                         setIsOpen(false)
                                         document.body.style.overflow = "auto"
@@ -136,6 +141,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                     isActive={activeHash.includes(hash)}
                                     type="next-link"
                                     backdropBlur={backdropBlur}
+                                    contentId={cId}
                                 />
                             )
                         }
@@ -153,19 +159,19 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                     </div>
                     <div className={`hidden lg:flex md:items-center lg:space-x-16 space-x-4`}>
                         <ul className="flex space-x-0 md:space-x-4">
-                            {navLinkArray.map((link, index) => {
+                            {navLinks?.map((link, index) => {
+                                const cId = `${contentId}.navLinkArray[${index}]`
                                 const hash = link.href.split("#")[1]
                                 if(link.highlight) {
                                     return (
                                         <li key={index}>
                                             <Button10
                                                 key={index} 
-                                                link={link.href}
                                                 type="next-link"
-                                                text={link.title} 
                                                 onClick={() => {setIsOpen(false)}} 
                                                 replace={true}
                                                 isActive={activeHash.includes(hash)}
+                                                contentId={cId}
                                             />
                                         </li>
                                     )
@@ -174,14 +180,13 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                         <li key={index}>
                                             <Button5
                                                 key={index} 
-                                                link={link.href}
                                                 type="next-link"
-                                                text={link.title} 
                                                 onClick={() => {setIsOpen(false)}} 
                                                 replace={true}
                                                 isActive={activeHash.includes(hash)} 
                                                 backdropBlur={backdropBlur}
                                                 highlight={link.highlight}
+                                                contentId={cId}
                                             />
                                         </li>
                                     )
@@ -190,7 +195,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                             })}
                         </ul>
                         <div className={`${languageSwitcher ? `` : `hidden`} `}>
-                            <Button6 text={languages.text} disabled={false} backdropBlur={backdropBlur}/>
+                            <Button6 text={languages?.text ?? "en"} disabled={false} backdropBlur={backdropBlur}/>
                         </div>
 
                     </div>

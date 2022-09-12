@@ -1,16 +1,18 @@
 import Link from "next/link"
+import { useContent } from "../../content/content"
 
 
 type Props = {
     type: "next-link" | "button"
-    link: string,
-    text: string,
+    link?: string,
+    text?: string,
     onClick: () => void
     isActive: boolean,
     replace: boolean,
     disabled?: boolean,
     backdropBlur: boolean,
-    highlight?: boolean
+    highlight?: boolean,
+    contentId: string
 }
 
 type ButtonWrapperProps = {
@@ -59,18 +61,21 @@ export function ButtonWrapper({children, type, onClick, replace, link, disabled,
     )
 }
 
-export default function Button5({type, text, onClick, replace, isActive, backdropBlur, link, disabled, highlight}: Props) {
+export default function Button5({type, text, onClick, replace, isActive, backdropBlur, link, disabled, highlight, contentId}: Props) {
+    const content = useContent(contentId)
+    const t = text ?? content.title
+    const l = link ?? content.href
     return (
         <div className="relative ">
             <div className="flex items-center border-2 border-transparent space-x-2 px-2 py-1 md:px-3 invisible">
                 <div className={` h-[0.35rem] w-[0.35rem] rounded-full bg-transparent `}></div>
                 <div className=" text-transparent relative md:text-sm md:leading-tight font-inter font-semibold antialiased tracking-wide ">
-                    {text}
+                    {t}
                 </div>
             </div>
             <div className="absolute inset-y-0 right-0 ">
-                <ButtonWrapper type={type} onClick={onClick} replace={replace} link={link} disabled={disabled} text={text} >
-                    <ButtonContent text={text} isActive={isActive} backdropBlur={backdropBlur} highlight={highlight} />
+                <ButtonWrapper type={type} onClick={onClick} replace={replace} link={l} disabled={disabled} text={t} >
+                    <ButtonContent text={t} isActive={isActive} backdropBlur={backdropBlur} highlight={highlight} />
                 </ButtonWrapper>
             </div>
         </div>

@@ -1,0 +1,144 @@
+{/* c:start */}
+
+### Filecoin Saturn
+
+Saturn is an open-source, decentralized Content Delivery Network (CDN) built on Filecoin.  
+
+export const ctas = [
+    {text: "Get Involved", link: "#getinvolved"},
+    {text: "Learn more", link: "#whatissaturn"}
+]
+
+{/* c:what-is-saturn.title */}
+
+# What is Saturn?
+
+{/* c:what-is-saturn.description */}
+
+Saturn is a Web3 CDN in Filecoin’s retrieval market. On one side of the network, websites buy fast, low-cost content delivery. On the other side, Saturn node operators earn Filecoin by fulfilling requests.
+
+Saturn is trustless, permissionless, and inclusive. Anyone can run Saturn software, contribute to the network, and earn Filecoin.
+
+Content on Saturn is [IPFS](https://ipfs.io/) content-addressed. Every piece of content is immutable and every response verifiable.
+
+Crypto-incentives unite, align, and grow the network. Node operators earn Filecoin for accelerating web content and websites get faster content delivery for less.
+
+All work is open source and developed in the public for all humanity.
+
+{/* c:goals.title */}
+
+# Goals
+
+{/* c:goals.content */}
+
+export const content = [{
+        image: "serve-content-logo.svg",
+        title: "Fast retrievals",
+        text: "Serve content stored on Filecoin with low latency.",
+    },
+    {
+        image: "lightning-logo.svg",
+        title: "Engender Web3",
+        text: "Accelerate the adoption of Web3 by accelerating Web3 content, from NFTs to the Metaverse.",
+    },
+    {
+        image: "deduplication-logo.svg",
+        title: "Grow the Filecoin network",
+        text: "Provide a new, easier way for anyone to join the Filecoin network by lowering the hardware requirements to participate. Download the Saturn app on your desktop and earn Filecoin.",
+    },
+    {
+        image: "multi-peer-logo.svg",
+        title: "Include everyone",
+        text: "Unite a network of heterogeneous hardware into a fast, low-cost CDN -- from big servers in datacenters to end user desktops and phones.",
+    },
+]
+
+{/* c:how-it-works.intro */}
+
+# How it works
+
+{/* c:how-it-works.main */}
+
+Websites use Saturn by adding a `<script>` tag and Service Worker. Once added, Saturn's Service Worker intercepts requests for content-addressed assets, like <a href="https://ipfs.io/ipfs/QmPqrxJKR4xuUzcjbAB5KnpmdUnoHPGkWs1XqerSWkgPNa/filecoin-orbit-2.mp4" target="_blank">https://ipfs.io/ipfs/QmPxJ…</a>, and fulfills them from Saturn. In this manner, content-addressed assets, from JavaScript to videos, are accelerated.
+
+Saturn nodes don't respond with files but instead IPLD <a href="https://ipld.io/specs/transport/car/" target="_blank">CAR files</a>. These CAR files are incrementally verified by Saturn's Service Worker, as they're received, to prevent abuse and allow for a trustless network.
+
+Saturn's network is comprised of three node types:
+
+- <b>Network edge nodes (L1s)</b>: High bandwidth servers with large caches close to users.
+- <b>Intermediate cache nodes (L2s)</b>: Desktops running Windows, Linux, and OS X and smaller servers.
+- Content backbone nodes: Filecoin <a href="https://sp.filecoin.io/" target="_blank">Storage Providers</a> (SPs).
+
+With these, the network flow of a Saturn request is:
+
+ 1. A browser requests an asset from the nearest L1
+ 2. The L1 cache misses to its surrounding swarm of L2s
+ 3. L2s cache miss to SPs
+
+After a request is fulfilled -- completely or partially -- the website pays the network in Filecoin for fulfilling the retrieval. And every L1, L2, and SP node that participated in the retrieval is remunerated for their contribution in fulfilling that request.
+
+{/* c:roadmap.title */}
+
+# Road
+# map
+
+{/* c:roadmap.step[0] */}
+
+##### Q2 2022 
+Private test network of L1 nodes. Beat IPFS Gateway performance.
+
+{/* c:roadmap.step[1] */}
+
+##### Q3 2022 
+Open, public network of L1 nodes. Test network of L2 nodes.
+
+{/* c:roadmap.step[2] */}
+
+##### Q4 2022
+Connect L1s to L2s and L2s to Storage Providers (SPs), end-to-end.
+
+{/* c:roadmap.step[3] */}
+
+##### Q1 2023 
+Adopt first network-wide Cryptoeconomics model.
+
+{/* c:get-involved.title */}
+
+# Get involved
+
+{/* c:get-involved.description */}
+
+We're looking for early node operators to run L1 nodes and earn Filecoin when Saturn enter private beta. Do you have server capacity with considerable uplink and storage and want to get in early? If so, please introduce yourself in <a href="https://filecoinproject.slack.com/archives/C03DH0BL02E">#filecoin-saturn</a> on <a href="https://filecoin.io/slack" target="_blank">Filecoin Slack</a>!
+
+{/* c:get-involved.buttons */}
+
+export const getInvolved = [
+    {text: "Join the team", link: "#careers"},
+    {text: "Get in touch", link: "mailto:ansgar@protocol.ai"}
+]
+
+{/* c:careers.intro */}
+
+# Careers
+
+{/* c:careers.description */}
+
+The Saturn team is also actively hiring full-stack and distributed systems engineers. Want to build an interplanetary, Web3 CDN?
+
+{/* c:careers.jobs[0] */}
+
+**Sr. Full Stack Engineer**
+
+export const link = "https://docs.google.com/document/d/1YD5nm2Xl_Ou4H0andiUuEAtR9Dkyebg7WHiMKOoJBjw/edit#heading=h.m8cb1y5cszh7"
+
+{/* c:careers.jobs[1] */}
+
+**Sr. Infrastructure Engineer**
+
+export const link = "https://docs.google.com/document/d/1XVCz1uiI5vKdKRNugwsHp9U5f2L6Zk6A2q-57eAmLno/edit#heading=h.noe02bov1nc3"
+
+{/* c:careers.jobs[2] */}
+
+**Sr. Distributed Systems Engineer**
+
+export const link = "https://docs.google.com/document/d/1_HTxZqBLZVNLzXjCx55ZekIO7SWv1gwtigcCe38qQDE/edit#heading=h.m8cb1y5cszh7"

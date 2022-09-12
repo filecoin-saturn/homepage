@@ -1,20 +1,27 @@
 import CustomProse from "../CustomProse/CustomProse"
 import dynamic from "next/dynamic";
+import { useContent } from "../../content/content";
+
+type contentType = Array<{
+    image: string,
+    title: string, 
+    text: string,
+}>
 
 type GoalsContent = {
-    content : Array<{
-        image: string,
-        title: string, 
-        text: string,
-    }>,
+    content?: contentType,
     animation?: () => () => void,
-    backdropBlur: boolean
+    backdropBlur: boolean,
+    contentId: string
 }
 
 
-function Goals({content, backdropBlur}: GoalsContent) {return (
+function Goals({content, backdropBlur, contentId}: GoalsContent) {
+    const c = useContent(contentId)
+    const c1: contentType = content ?? c
+    return (
         <div className="grid gap-2 lg:gap-16 items-stretch lg:grid-cols-2 w-full ">
-            {content.map((postContent, key) => {
+            {c1.map((postContent, key) => {
                 return (
                     <div key={key} className="odd:text-left even:text-right relative flex flex-col odd:items-start even:items-end lg:even:items-start text-right lg:even:text-left w-full my-2 sm:my-1 lg:my-0 whitespace-pre-wrap">
                         <div data-gsap="animate" className={` rounded-full p-2 relative mb-2 md:my-2 lg:my-4 w-fit will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-md supports-blur:bg-white/20 bg-sat-white-20-fallback-1`: `bg-sat-white-20-fallback-1`}`}>
