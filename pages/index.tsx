@@ -8,12 +8,16 @@ import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
-import Button1 from '../components/Button1/Button1'
-import Button2 from '../components/Button2/Button2'
+import Button12 from '../components/Button12/Button12'
+import Button13 from '../components/Button13/Button13'
 import { RenderMDXContent } from '../content/content'
 import NavBar from '../components/NavBar/NavBar'
 import Goals from '../components/Goals/Goals'
 import Modal3 from '../components/Modal3/Modal3'
+import Button1 from '../components/Button1/Button1'
+import Button2 from '../components/Button2/Button2'
+import CaseStudies from '../components/CaseStudies/CaseStudies'
+import Metrics from '../components/Metrics/Metrics'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -43,46 +47,60 @@ const Home: NextPage = () => {
         <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
       </Head>
       <div className='mx-auto text-center w-full overflow-hidden relative'>
-        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-2 inset-0'>
-          <div className='absolute inset-0 grid grid-cols-3'>
-              {[1,2,3,4,5,6,7,8,9].map(v => {
-                return (
-                  <div key={v} className={`bg-star-background-plain bg-cover bg-no-repeat bg-center ${v % 3 !== 2 ? "-scale-x-100" : ""} ${(v - 1) % 6 > 2 ? "-scale-y-100" : ""} `}></div>
-                )
-              })}
-          </div>
-          <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black'>
-            <div className='bg-sat-blue-4 bg-opacity-40 mix-blend-overlay w-full h-full'></div>
-          </div>
-        </div>
+        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-[#010024] inset-0'></div>
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
-        <div className='h-[calc(var(--vh,_1vh)*100)] w-full relative'>
-          <div className='mx-auto px-6 md:pb-12 text-left max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-2xl h-full flex flex-col justify-end lg:ml-20'>
-            <div data-gsap="animate-children" className=' max-w-sm md:max-w-md lg:max-w-xl mr-auto relative'>
-              <CustomProse overrides='prose-h3:!text-6xl prose-h3:!leading-none'>
+        <div className=' w-full relative'>
+          <div className='mx-auto  max-w-lg sm:max-w-xl md:max-w-4xl lg:max-w-7xl sm:mx-auto px-6 sm:px-8 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
+            <div className='max-h-[11.5rem] h-[100vh] min-h-[10rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
+            <div data-gsap="animate-children" className=' max-w-sm sm:max-w-md md:max-w-4xl md:min-w-[40rem] lg:min-w-[45rem] lg:max-w-7xl xl:min-w-[52rem] mr-auto relative'>
+              <CustomProse overrides='prose-p:md:!text-xl prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
-              <div data-gsap="animate" className='flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 lg:mb-32 mb-12 mt-4 md:mt-6'>
-                <Button1 contentId='index.start.ctas[0]' />
-                <Button2 contentId='index.start.ctas[1]' backdropBlur={features.backdropBlur} />
+              <div data-gsap="animate" className='w-full flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
+                <Button12 contentId='index.start.ctas[0]' />
+                <Button13 contentId='index.start.ctas[1]' backdropBlur={features.backdropBlur} />
               </div>
               <div className='absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'>
-
               </div>
             </div> 
+            <Metrics contentId='index.metrics.metrics' />
           </div>
-          <div className='absolute -z-20 inset-0 -bottom-[20%]'>
+          <div className='absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]'>
             <Suspense fallback={null}>
               <DynamicSaturn />
             </Suspense>
+          </div>
+        </div>
+        <div id="didyouknow" className='w-full h-0'></div>
+        <div data-io="didyouknow" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-20 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
+            <div className=' lg:text-right lg:max-w-sm '>
+              <CustomProse>
+                <RenderMDXContent contentId='index.did-you-know.title.default' />
+              </CustomProse>
+            </div>
+            <CustomProse overrides='lg:mt-6' >
+              <RenderMDXContent contentId='index.did-you-know.subtitle.default' />
+              <RenderMDXContent contentId='index.did-you-know.description.default' />
+            </CustomProse>
+          </div>
+          <div>
+            <CustomProse overrides='lg:mx-6' >
+              <div className='text-left mx-2'>
+                <RenderMDXContent contentId='index.did-you-know.case-studies.default' />
+              </div>
+            </CustomProse>
+            <CaseStudies backdropBlur={features.backdropBlur}  contentId='index.did-you-know.case-studies.studies' />
+           
           </div>
         </div>
         <div id="whatissaturn" className='w-full h-0'></div>
         <div data-io="whatissaturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-xs '>
+            <div className=' lg:text-right lg:max-w-sm '>
               <CustomProse>
                 <RenderMDXContent contentId='index.what-is-saturn.title.default' />
               </CustomProse>
@@ -108,7 +126,7 @@ const Home: NextPage = () => {
         <div data-io="howitworks" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
         <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-xs '>
+            <div className=' lg:text-right lg:max-w-sm '>
               <CustomProse >
                 <RenderMDXContent contentId='index.how-it-works.intro.default' />
               </CustomProse>
@@ -145,7 +163,7 @@ const Home: NextPage = () => {
         <div data-io="getinvolved" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
         <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-xs '>
+            <div className=' lg:text-right lg:max-w-sm '>
               <CustomProse >
                 <RenderMDXContent contentId='index.get-involved.title.default' /> 
               </CustomProse>
@@ -165,7 +183,7 @@ const Home: NextPage = () => {
         <div data-io="careers" className='w-full h-0 mt-[calc(var(--vh,_1vh)*25+9rem)] md:mt-[calc(var(--vh,_1vh)*25+20rem)]'></div>
         <div className='-mt-36 md:-mt-80 mb-[calc(var(--vh,_1vh)*25)] px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-xs '>
+            <div className=' lg:text-right lg:max-w-sm '>
               <CustomProse >
                 <RenderMDXContent contentId='index.careers.intro.default' /> 
               </CustomProse>

@@ -29,9 +29,9 @@ function Goals({content, backdropBlur, contentId}: GoalsContent) {
                         </div>
                         <div data-gsap="animate-children" className="odd:place-self-start lg:even:place-self-start max-w-md">
                             <CustomProse overrides="prose-p:my-0" >
-                                <h5>
+                                <h4>
                                     {postContent.title}
-                                </h5>
+                                </h4>
                                 <p >
                                     {postContent.text}
                                 </p>

@@ -44,9 +44,6 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 
         'saturn-logo': "url('/saturn-logo.svg')",
-        'star-background-plain': "url('/arthur-volkers-GX542ehZwSk-unsplash-turned-small-2.webp')",
-        'mobile-background': "url('/mobile-background.png')",
-        'desktop-background': "url('/desktop-background.png')",
         'inner-menu-button': "url('/inner-menu-button.svg')",
         'outer-menu-button': "url('/outer-menu-button.svg')",
         'inner-menu-button-hover': "url('/inner-menu-button-hover.svg')",
@@ -60,11 +57,13 @@ module.exports = {
         'multi-peer-logo': "url('/multi-peer-logo.svg')",
         'deduplication-logo': "url('/deduplication-logo.svg')",
         'serve-content-logo': "url('/serve-content-logo.svg')",
-        'arrow-right': "url('/arrow-right.svg')"
+        'arrow-right': "url('/arrow-right.svg')",
+        'backdropblur-ellipsis': "url('/backdropblur-ellipsis.svg')"
 
       }, 
       boxShadow: {
         'colored': '0 0 40px #0090FF',
+        'ellipse': '0 0 40px #0E67FF'
       },
       outlineStyle: {
         'auto': 'auto'
