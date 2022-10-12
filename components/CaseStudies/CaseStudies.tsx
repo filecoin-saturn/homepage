@@ -21,22 +21,24 @@ function CaseStudies({content, backdropBlur, contentId}: CaseStudiesContent) {
     const c = useContent(contentId)
     const c1: contentType = content ?? c
     return (
-        <div className="space-y-4 sm:space-y-0 sm:flex justify-between mx-2 gap-2 lg:gap-16 items-stretch lg:grid-cols-2 w-full ">
+        <div className="space-y-4 md:space-y-0 md:flex md:my-3 justify-start j mx-2 gap-2 md:gap-6 lg:gap-8 w-full ">
             {c1.map((postContent, key) => {
                 return (
-                    <a  href={postContent.link} key={key} className={`-ml-4 xs:ml-0 group flex rounded-3xl px-2 justify-center items-center will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-md supports-blur:bg-white/10 bg-sat-white-10-fallback-1`: `bg-sat-white-10-fallback-1`}`}>
-                        <div data-gsap="animate" className={` rounded-full p-4 relative mb-2 md:my-2 lg:my-4 w-fit will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-md supports-blur:bg-white/20 bg-sat-white-20-fallback-1`: `bg-sat-white-20-fallback-1`}`}>
-                            <img alt={postContent.title} src={postContent.logo} className=""></img>
+                    <a  href={postContent.link} key={key} className={`grow outline-4 p-3 sm:px-3 relative md:p-2 md:px-0 md:py-4 lg:px-4 lg:py-3 outline-offset-0 focus-visible:outline-white outline-none active:scale-90 -ml-4 xs:-ml-2  group flex rounded-2xl md:rounded-3xl items-center will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-sm supports-blur:bg-sat-grad-blue-green-1-20 bg-sat-grad-blue-green-1-20-fallback-1`: `bg-sat-grad-blue-green-1-20-fallback-1`}`}>
+                        <div className="flex justify-start items-center px-2">
+                            <div data-gsap="animate" className={` rounded-full relative p-4 will-change-transform ${backdropBlur ? `supports-blur:backdrop-blur-md supports-blur:bg-white/20 bg-sat-white-20-fallback-1`: `bg-sat-white-20-fallback-1`}`}>
+                                <img alt={postContent.title} src={postContent.logo} className="max-w-[2rem] md:max-w-[2.5rem]"></img>
+                            </div>
+                            <div data-gsap="animate-children" className="text-left mx-4">
+                                <CustomProse overrides="prose-p:mt-0 prose-h5:text-base prose-h5:md:text-xl prose-h5:lg:text-[1.5rem] prose-h5:!my-0 prose-h5:sm:!my-0 prose-h5:lg:leading-7" >
+                                    <h5 className="">
+                                        {postContent.title}
+                                    </h5>
+                                    <p >
+                                        {postContent.subtitle}
+                                    </p>
+                                </CustomProse>
                         </div>
-                        <div data-gsap="animate-children" className="text-left mx-4">
-                            <CustomProse overrides="prose-p:my-2" >
-                                <h5>
-                                    {postContent.title}
-                                </h5>
-                                <p >
-                                    {postContent.subtitle}
-                                </p>
-                            </CustomProse>
                         </div>
                     </a>
                 )

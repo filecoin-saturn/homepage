@@ -26,7 +26,7 @@ module.exports = {
         'sat-blue-2': '#162653',
         'sat-blue-3': '#0E67FF',
         'sat-blue-3-30-fallback-1': '#143679',
-        'sat-blue-4': '#7198FF', //bg-star-image overlay blue colour
+        'sat-blue-4': '#001324', //bg-star-image overlay blue colour
         'sat-blue-5': '#06213A',
         'sat-gray-1': '#CCD0DF',
         'sat-gray-2': '#8B93A9',
@@ -42,7 +42,7 @@ module.exports = {
       backgroundImage: {
         // gradient colours 
         'sat-grad-blue-green-1': "linear-gradient(90deg, #39C1CB 0%, #0090FF 100%);",
-        'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%);",
+        'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%)",
         'sat-grad-blue-green-1-30': "linear-gradient(90deg, rgba(57, 193, 203, 0.3) 0%, rgba(7, 143, 255, 0.3) 100%)",
         'sat-grad-blue-green-1-20-fallback-1': "linear-gradient(90deg, #1D4469 0%, #143B74 100%)",
         'sat-grad-blue-green-1-30-fallback-1': "linear-gradient(90deg, #114656 0%, #023865 100%)",

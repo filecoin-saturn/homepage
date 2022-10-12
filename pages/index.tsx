@@ -47,7 +47,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
       </Head>
       <div className='mx-auto text-center w-full overflow-hidden relative'>
-        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-[#010024] inset-0'></div>
+        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0'></div>
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
@@ -75,20 +75,20 @@ const Home: NextPage = () => {
         <div id="didyouknow" className='w-full h-0'></div>
         <div data-io="didyouknow" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
+          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-14 '>
             <div className=' lg:text-left lg:max-w-sm '>
               <CustomProse>
                 <RenderMDXContent contentId='index.did-you-know.title.default' />
               </CustomProse>
             </div>
-            <CustomProse overrides='lg:mt-6' >
+            <CustomProse overrides='lg:mt-6 prose-h5:text-base prose-h5:md:text-2xl prose-h5:lg:text-3xl ' >
               <RenderMDXContent contentId='index.did-you-know.subtitle.default' />
               <RenderMDXContent contentId='index.did-you-know.description.default' />
             </CustomProse>
           </div>
           <div>
-            <CustomProse overrides='lg:mx-6 ' >
-              <div className='text-left mx-2 '>
+            <CustomProse overrides=' ' >
+              <div className='text-left '>
                 <RenderMDXContent contentId='index.did-you-know.case-studies.default' />
               </div>
             </CustomProse>
