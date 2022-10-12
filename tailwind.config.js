@@ -1,4 +1,6 @@
 const plugin = require('tailwindcss/plugin')
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 
 
 module.exports = {
@@ -7,6 +9,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'xs': '485px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         "inter": ['"Inter"', 'Arial', 'sans-serif'],
@@ -21,6 +27,7 @@ module.exports = {
         'sat-blue-3': '#0E67FF',
         'sat-blue-3-30-fallback-1': '#143679',
         'sat-blue-4': '#7198FF', //bg-star-image overlay blue colour
+        'sat-blue-5': '#06213A',
         'sat-gray-1': '#CCD0DF',
         'sat-gray-2': '#8B93A9',
         'sat-green-1': '#39C1CB',
@@ -38,7 +45,7 @@ module.exports = {
         'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%);",
         'sat-grad-blue-green-1-30': "linear-gradient(90deg, rgba(57, 193, 203, 0.3) 0%, rgba(7, 143, 255, 0.3) 100%)",
         'sat-grad-blue-green-1-20-fallback-1': "linear-gradient(90deg, #1D4469 0%, #143B74 100%)",
-        'sat-grad-blue-green-1-30-fallback-1': "linear-gradient(90deg, #215578 0%, #144A8D 100%, #078FFF 100%)",
+        'sat-grad-blue-green-1-30-fallback-1': "linear-gradient(90deg, #114656 0%, #023865 100%)",
         'sat-grad-blue-green-2': "radial-gradient(63.44% 63.44% at 29.7% 70.3%, #0090FF 0%, #39C1CB 100%)",
         'sat-grad-blue-green-3': "radial-gradient(76.79% 76.79% at 89.29% 16.07%, #0090FF 0%, #39C1CB 100%)",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -63,7 +70,7 @@ module.exports = {
       }, 
       boxShadow: {
         'colored': '0 0 40px #0090FF',
-        'ellipse': '0 0 40px #0E67FF'
+        'ellipse': '0 0 70px #0E67FF'
       },
       outlineStyle: {
         'auto': 'auto'

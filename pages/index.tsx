@@ -51,13 +51,13 @@ const Home: NextPage = () => {
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
-          <div className='mx-auto  max-w-lg sm:max-w-xl md:max-w-4xl lg:max-w-7xl sm:mx-auto px-6 sm:px-8 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
+          <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
             <div className='max-h-[11.5rem] h-[100vh] min-h-[10rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
-            <div data-gsap="animate-children" className=' max-w-sm sm:max-w-md md:max-w-4xl md:min-w-[40rem] lg:min-w-[45rem] lg:max-w-7xl xl:min-w-[52rem] mr-auto relative'>
-              <CustomProse overrides='prose-p:md:!text-xl prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
+            <div data-gsap="animate-children" className=' max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
+              <CustomProse overrides='prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
-              <div data-gsap="animate" className='w-full flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
+              <div data-gsap="animate" className='w-full flex flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-3 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
                 <Button12 contentId='index.start.ctas[0]' />
                 <Button13 contentId='index.start.ctas[1]' backdropBlur={features.backdropBlur} />
               </div>
@@ -74,9 +74,9 @@ const Home: NextPage = () => {
         </div>
         <div id="didyouknow" className='w-full h-0'></div>
         <div data-io="didyouknow" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-sm '>
+            <div className=' lg:text-left lg:max-w-sm '>
               <CustomProse>
                 <RenderMDXContent contentId='index.did-you-know.title.default' />
               </CustomProse>
@@ -87,8 +87,8 @@ const Home: NextPage = () => {
             </CustomProse>
           </div>
           <div>
-            <CustomProse overrides='lg:mx-6' >
-              <div className='text-left mx-2'>
+            <CustomProse overrides='lg:mx-6 ' >
+              <div className='text-left mx-2 '>
                 <RenderMDXContent contentId='index.did-you-know.case-studies.default' />
               </div>
             </CustomProse>
@@ -172,7 +172,7 @@ const Home: NextPage = () => {
               <CustomProse overrides='lg:my-6' >
                 <RenderMDXContent contentId='index.get-involved.description.default' /> 
               </CustomProse>
-              <div data-gsap="animate" className='min-w-[10rem] flex w-full items-stretch space-x-3 lg:space-x-6 -ml-1 mt-4 md:mt-6 '>
+              <div data-gsap="animate" className='min-w-[10rem] flex w-full space-x-3 lg:space-x-6 -ml-1 mt-4 md:mt-6 '>
                 <Button1 contentId='index.get-involved.buttons.getInvolved[0]' />
                 <Button2 contentId='index.get-involved.buttons.getInvolved[1]' backdropBlur={features.backdropBlur} />
               </div>
