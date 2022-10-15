@@ -46,9 +46,9 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#ffffff"/>
         <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
       </Head>
-      <div className='mx-auto text-center w-full overflow-hidden relative'>
+      <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0'></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "whatissaturn", "goals", "howitworks", "roadmap", "getinvolved", "careers"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "didyouknow", "accelerateyoursite", "goals", "roadmap", "getinvolved", "careers"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
         <div id="didyouknow" className='w-full h-0'></div>
         <div data-io="didyouknow" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-14 '>
+          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
             <div className=' lg:text-left lg:max-w-sm '>
               <CustomProse>
                 <RenderMDXContent contentId='index.did-you-know.title.default' />
@@ -93,26 +93,37 @@ const Home: NextPage = () => {
               </div>
             </CustomProse>
             <CaseStudies backdropBlur={features.backdropBlur}  contentId='index.did-you-know.case-studies.studies' />
-           
           </div>
         </div>
-        <div id="whatissaturn" className='w-full h-0'></div>
-        <div data-io="whatissaturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse>
-                <RenderMDXContent contentId='index.what-is-saturn.title.default' />
+        <div id="accelerateyoursite" className='w-full h-0'></div>
+        <div data-io="accelerateyoursite" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 '>
+            <div className='text-left '>
+              <CustomProse overrides='lg:max-w-[70rem]' overridesParent='lg:max-w-[70rem]'>
+                <RenderMDXContent contentId='index.accelerate-your-site.title.default' />
               </CustomProse>
             </div>
-            <CustomProse overrides='lg:my-6' >
-                <RenderMDXContent contentId='index.what-is-saturn.description.default' />
-            </CustomProse>
+          </div>
+          <div data-gsap="animate-children" className='text-left w-full my-8 md:my-0 md:flex md:space-x-4 '>
+            <div className=' lg:text-left lg:max-w-xl '>
+              <CustomProse overrides='md:max-w-[40rem] lg:max-w-[45rem] prose-h3:lg:w-[35rem] prose-h3:my-0'>
+                <RenderMDXContent contentId='index.accelerate-your-site.subtitle.default' />
+              </CustomProse>
+            </div>
+            <div className=''>
+              <CustomProse overrides='mt-2 md:mt-1 lg:mt-3 prose-h5:text-base prose-h5:md:text-2xl prose-h5:lg:text-3xl ' >
+                <RenderMDXContent contentId='index.accelerate-your-site.description.default' />
+              </CustomProse>
+              <div className='w-[75%] md:m-0 py-4'>
+                <Button2 backdropBlur={features.backdropBlur} contentId='index.accelerate-your-site.description.cta[0]'/>
+              </div>
+            </div>
           </div>
         </div>
         <div id="goals" className='w-full h-0'></div>
         <div data-io="goals" className='w-full h-0 mt-56 md:mt-[24rem]'></div>
-        <div className='-mt-28 md:-mt-48 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
+        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
             <CustomProse>
               <RenderMDXContent contentId='index.goals.title.default' />
@@ -120,90 +131,6 @@ const Home: NextPage = () => {
           </div>
           <div className='px-2 w-full lg:px-0'>
             <Goals backdropBlur={features.backdropBlur} contentId="index.goals.content.content"/>
-          </div>
-        </div>
-        <div id="howitworks" className='w-full h-0'></div>
-        <div data-io="howitworks" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
-        <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse >
-                <RenderMDXContent contentId='index.how-it-works.intro.default' />
-              </CustomProse>
-            </div>
-            <CustomProse overrides='lg:my-6' >
-              <RenderMDXContent contentId='index.how-it-works.main.default' />
-            </CustomProse>
-          </div>
-        </div> 
-        <div id="roadmap" className='w-full h-0'></div>
-        <div data-io="roadmap" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
-        <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[46rem] xl:max-w-[67rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 xl:space-x-24 '>
-            <div className=' lg:text-right'>
-              <CustomProse overrides='lg:even:prose-h1:my-0 xl:even:prose-h1:my-4 lg:prose-h1:mb-0' >
-                <div className="flex lg:flex-col xl:flex-row ">
-                  <RenderMDXContent contentId='index.roadmap.title.default' />
-                </div>
-              </CustomProse>
-            </div>
-            <CustomProse overrides='prose-p:my-0 ' >
-              <div className='my-4 lg:my-10'>
-                <ListBigDots backdropBlur={features.backdropBlur}>
-                  <RenderMDXContent contentId='index.roadmap.step[0].default' />  
-                  <RenderMDXContent contentId='index.roadmap.step[1].default' />  
-                  <RenderMDXContent contentId='index.roadmap.step[2].default' />  
-                  <RenderMDXContent contentId='index.roadmap.step[3].default' />  
-                </ListBigDots>
-              </div>
-            </CustomProse>
-          </div>
-        </div>
-        <div id="getinvolved" className='w-full h-0'></div>
-        <div data-io="getinvolved" className='w-full h-0 mt-72 md:mt-[30rem]'></div>
-        <div className='-mt-36 md:-mt-60 px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse >
-                <RenderMDXContent contentId='index.get-involved.title.default' /> 
-              </CustomProse>
-            </div>
-            <div>
-              <CustomProse overrides='lg:my-6' >
-                <RenderMDXContent contentId='index.get-involved.description.default' /> 
-              </CustomProse>
-              <div data-gsap="animate" className='min-w-[10rem] flex w-full space-x-3 lg:space-x-6 -ml-1 mt-4 md:mt-6 '>
-                <Button1 contentId='index.get-involved.buttons.getInvolved[0]' />
-                <Button2 contentId='index.get-involved.buttons.getInvolved[1]' backdropBlur={features.backdropBlur} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="careers" className='w-full h-0'></div>
-        <div data-io="careers" className='w-full h-0 mt-[calc(var(--vh,_1vh)*25+9rem)] md:mt-[calc(var(--vh,_1vh)*25+20rem)]'></div>
-        <div className='-mt-36 md:-mt-80 mb-[calc(var(--vh,_1vh)*25)] px-6 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[60rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
-            <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse >
-                <RenderMDXContent contentId='index.careers.intro.default' /> 
-              </CustomProse>
-            </div>
-            <div>
-              <CustomProse overrides='prose-p:my-6' >
-                <RenderMDXContent contentId='index.careers.description.default' /> 
-              </CustomProse>
-              <div className='flex -mx-1 flex-col space-y-4'>
-                <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[0]" >
-                  <RenderMDXContent contentId='index.careers.jobs[0].default' />
-                </Modal3>
-                <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[1]" >
-                  <RenderMDXContent contentId='index.careers.jobs[1].default' />
-                </Modal3>
-                <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[2]" >
-                  <RenderMDXContent contentId='index.careers.jobs[2].default' />
-                </Modal3>
-              </div>
-            </div>
           </div>
         </div>
         <Footer backdropBlur={features.backdropBlur} contentId="general.footer" />
