@@ -75,9 +75,9 @@ const Home: NextPage = () => {
         <div id="didyouknow" className='w-full h-0'></div>
         <div data-io="didyouknow" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 lg:flex lg:space-x-24 '>
+          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24 '>
             <div className=' lg:text-left lg:max-w-sm '>
-              <CustomProse>
+              <CustomProse overrides='prose-h1:sm:my-0'>
                 <RenderMDXContent contentId='index.did-you-know.title.default' />
               </CustomProse>
             </div>
