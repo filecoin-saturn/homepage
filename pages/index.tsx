@@ -6,15 +6,12 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
-import ListBigDots from '../components/ListBigDots/ListBigDots'
 import { useFeatureContext } from '../context/featureContext'
 import Button12 from '../components/Button12/Button12'
 import Button13 from '../components/Button13/Button13'
 import { RenderMDXContent } from '../content/content'
 import NavBar from '../components/NavBar/NavBar'
 import Goals from '../components/Goals/Goals'
-import Modal3 from '../components/Modal3/Modal3'
-import Button1 from '../components/Button1/Button1'
 import Button2 from '../components/Button2/Button2'
 import CaseStudies from '../components/CaseStudies/CaseStudies'
 import Metrics from '../components/Metrics/Metrics'
@@ -81,7 +78,7 @@ const Home: NextPage = () => {
                 <RenderMDXContent contentId='index.did-you-know.title.default' />
               </CustomProse>
             </div>
-            <CustomProse overrides='lg:mt-6 prose-h5:text-base prose-h5:md:text-2xl prose-h5:lg:text-3xl ' >
+            <CustomProse overrides='lg:mt-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl ' >
               <RenderMDXContent contentId='index.did-you-know.subtitle.default' />
               <RenderMDXContent contentId='index.did-you-know.description.default' />
             </CustomProse>
@@ -112,7 +109,7 @@ const Home: NextPage = () => {
               </CustomProse>
             </div>
             <div className=''>
-              <CustomProse overrides='mt-2 md:mt-1 lg:mt-3 prose-h5:text-base prose-h5:md:text-2xl prose-h5:lg:text-3xl ' >
+              <CustomProse overrides='mt-2 md:mt-1 lg:mt-3 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl ' >
                 <RenderMDXContent contentId='index.accelerate-your-site.description.default' />
               </CustomProse>
               <div className='w-[75%] md:m-0 py-4'>
