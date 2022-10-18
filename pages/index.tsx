@@ -60,7 +60,6 @@ const Home: NextPage = () => {
               </CustomProse>
               <div data-gsap="animate" className='w-full flex flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-3 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
                 <Button12 contentId='index.start.ctas[0]' />
-                <Button13 contentId='index.start.ctas[1]' backdropBlur={features.backdropBlur} />
               </div>
               <div className='absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'>
               </div>
@@ -71,55 +70,6 @@ const Home: NextPage = () => {
             <Suspense fallback={null}>
               <DynamicSaturn />
             </Suspense>
-          </div>
-        </div>
-        <div id="didyouknow" className='w-full h-0'></div>
-        <div data-io="didyouknow" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24 '>
-            <div className=' lg:text-left lg:max-w-sm '>
-              <CustomProse overrides='prose-h1:sm:my-0'>
-                <RenderMDXContent contentId='index.did-you-know.title.default' />
-              </CustomProse>
-            </div>
-            <CustomProse overrides='lg:mt-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl ' >
-              <RenderMDXContent contentId='index.did-you-know.subtitle.default' />
-              <RenderMDXContent contentId='index.did-you-know.description.default' />
-            </CustomProse>
-          </div>
-          <div>
-            <CustomProse overrides=' ' >
-              <div className='text-left '>
-                <RenderMDXContent contentId='index.did-you-know.case-studies.default' />
-              </div>
-            </CustomProse>
-            <CaseStudies backdropBlur={features.backdropBlur}  contentId='index.did-you-know.case-studies.studies' />
-          </div>
-        </div>
-        <div id="accelerateyoursite" className='w-full h-0'></div>
-        <div data-io="accelerateyoursite" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-32 md:-mt-72 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 '>
-            <div className='text-left '>
-              <CustomProse overrides='lg:max-w-[70rem]' overridesParent='lg:max-w-[70rem]'>
-                <RenderMDXContent contentId='index.accelerate-your-site.title.default' />
-              </CustomProse>
-            </div>
-          </div>
-          <div data-gsap="animate-children" className='text-left w-full my-8 md:my-0 md:flex md:space-x-4 '>
-            <div className=' lg:text-left lg:max-w-xl '>
-              <CustomProse overrides='md:max-w-[40rem] lg:max-w-[45rem] prose-h3:lg:w-[35rem] prose-h3:my-0'>
-                <RenderMDXContent contentId='index.accelerate-your-site.subtitle.default' />
-              </CustomProse>
-            </div>
-            <div className=''>
-              <CustomProse overrides='mt-2 md:mt-1 lg:mt-3 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl ' >
-                <RenderMDXContent contentId='index.accelerate-your-site.description.default' />
-              </CustomProse>
-              <div className='w-[75%] md:m-0 py-4'>
-                <Button2 backdropBlur={features.backdropBlur} contentId='index.accelerate-your-site.description.cta[0]'/>
-              </div>
-            </div>
           </div>
         </div>
         <div id="howsaturnworks" className='w-full h-0'></div>
@@ -207,14 +157,10 @@ const Home: NextPage = () => {
               <CustomProse overrides='my-4 lg:mt-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl ' >
                 <RenderMDXContent contentId='index.contact.description.default' />
               </CustomProse>
-              <CustomProse overrides='prose-p:!mt-0 prose-p:!font-bold prose-p:!text-base prose-p:md:!text-xl prose-p:!lg:text-[1.5rem] prose-p:!my-0 prose-p:sm:!my-0 prose-p:lg:leading-7 ' >
+              <CustomProse overrides='my-4 prose-p:!font-black ' >
                 <RenderMDXContent contentId='index.contact.email.title.default' />
               </CustomProse>
-              <Modal5 backdropBlur={features.backdropBlur} contentId='index.contact.email-address.email'/>
-              <CustomProse overrides='my-4 prose-p:!font-black ' >
-                <RenderMDXContent contentId='index.contact.email.subtitle.default' />
-              </CustomProse>
-              <div className='flex space-x-2 sm:space-x-2'>
+              <div className='flex space-x-2 sm:space-x-2 -mx-1'>
                 <Button15 backdropBlur={features.backdropBlur} contentId={'index.contact.join[0].button'} />
                 <Button15 backdropBlur={features.backdropBlur} contentId={"index.contact.join[1].button"} />
               </div>
