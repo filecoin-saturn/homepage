@@ -44,8 +44,10 @@ module.exports = {
         'sat-grad-blue-green-1': "linear-gradient(90deg, #39C1CB 0%, #0090FF 100%);",
         'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%)",
         'sat-grad-blue-green-1-30': "linear-gradient(90deg, rgba(57, 193, 203, 0.3) 0%, rgba(7, 143, 255, 0.3) 100%)",
+        'sat-grad-blue-green-1-40': "linear-gradient(90deg, rgba(57, 193, 203, 0.4) 0%, rgba(7, 143, 255, 0.4) 100%)",
         'sat-grad-blue-green-1-20-fallback-1': "linear-gradient(90deg, #1D4469 0%, #143B74 100%)",
         'sat-grad-blue-green-1-30-fallback-1': "linear-gradient(90deg, #114656 0%, #023865 100%)",
+        'sat-grad-blue-green-1-40-fallback-1': "linear-gradient(90deg, #175969 0%, #05477D 100%)",
         'sat-grad-blue-green-2': "radial-gradient(63.44% 63.44% at 29.7% 70.3%, #0090FF 0%, #39C1CB 100%)",
         'sat-grad-blue-green-3': "radial-gradient(76.79% 76.79% at 89.29% 16.07%, #0090FF 0%, #39C1CB 100%)",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -59,13 +61,17 @@ module.exports = {
         'notion-logo': "url('/notion-logo.svg')",
         'github-logo': "url('/github-logo.svg')",
         'slack-logo': "url('/slack-logo.svg')",
+        'twitter-logo': "url('/twitter-logo.svg')",
         'heart-logo': "url('/heart-logo.svg')",
         'lightning-logo': "url('/lightning-logo.svg')",
         'multi-peer-logo': "url('/multi-peer-logo.svg')",
         'deduplication-logo': "url('/deduplication-logo.svg')",
         'serve-content-logo': "url('/serve-content-logo.svg')",
         'arrow-right': "url('/arrow-right.svg')",
-        'backdropblur-ellipsis': "url('/backdropblur-ellipsis.svg')"
+        'backdropblur-ellipsis': "url('/backdropblur-ellipsis.svg')",
+        'copy-button': "url('/copy-button.svg')",
+        'check-icon': "url('/check-icon.svg')",
+
 
       }, 
       boxShadow: {
