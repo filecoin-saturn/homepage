@@ -27,7 +27,6 @@ export default function Modal4({postContent, backdropBlur}: Props) {
                                 {postContent.subtitle}
                             </p>
                         </CustomProse>
-                        
                     </div>
                 </div>
             </a>
