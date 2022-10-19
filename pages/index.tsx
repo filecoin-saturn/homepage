@@ -8,17 +8,15 @@ import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import { useFeatureContext } from '../context/featureContext'
 import Button12 from '../components/Button12/Button12'
-import Button13 from '../components/Button13/Button13'
 import { RenderMDXContent } from '../content/content'
 import NavBar from '../components/NavBar/NavBar'
 import Goals from '../components/Goals/Goals'
-import Button2 from '../components/Button2/Button2'
-import CaseStudies from '../components/CaseStudies/CaseStudies'
 import Metrics from '../components/Metrics/Metrics'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
 import Modal3 from '../components/Modal3/Modal3'
-import Modal5 from '../components/Modal5/Modal5'
 import Button15 from '../components/Button15/Button15'
+import Button16 from '../components/Button16/Button16'
+import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -33,6 +31,10 @@ const Home: NextPage = () => {
       cleanup2()
     }
   }, [])
+
+  const bigP = "[&_.big-p]:text-base [&_.big-p]:text-base [&_.big-p]:md:text-lg [&_.big-p]:lg:text-2xl [&_.big-p]:font-black [&_.big-p]:leading-5 [&_.big-p]:lg:leading-6"
+  const smallP = "[&_.small-p]:!my-0 [&_.small-p]:!text-xs [&_.small-p]:md:!text-sm [&_.small-p]:lg:!text-sm [&_.small-p]:my-0"
+
   
   return (
     <>
@@ -49,11 +51,11 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0'></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "didyouknow", "accelerateyoursite", "howsaturnworks", "ourvision", "roadmap", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "howsaturnworks", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
-            <div className='max-h-[11.5rem] h-[100vh] min-h-[10rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
+            <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className=' max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
               <CustomProse overrides='prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
@@ -117,12 +119,72 @@ const Home: NextPage = () => {
               </CustomProse>
           </div>
         </div>
+        <div id="setupyournode" className='w-full h-0'></div>
+        <div data-io="setupyournode" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8  '>
+            <div className=' lg:text-left underline-offset-2  '>
+              <CustomProse overrides='prose-h1:sm:my-0   prose-h1:lg:max-w-[60rem] lg:max-w-[60rem] ' overridesParent='max-w-[60rem]'>
+                <RenderMDXContent contentId='index.set-up-your-node.title.default' />
+                <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
+                <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
+              </CustomProse>
+              <CustomProse  overrides={`${bigP} ${smallP}
+              prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.6rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6  max-w-xl md:max-w-4xl lg:max-w-[70rem]`} 
+              overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
+                <div className='md:flex md:space-x-16 md:justify-between '>
+                  <div className='grow'>
+                    <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[0].default' />
+                    <BackgroundWrapper backdropBlur={features.backdropBlur}>
+                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description[0].default' />
+                    </BackgroundWrapper>
+                  </div>
+                  <div className='grow'>
+                    <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[1].default' />
+                    <BackgroundWrapper backdropBlur={features.backdropBlur}>
+                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
+                    </BackgroundWrapper>
+                      <div className='lg:flex lg:space-x-6 items-end justify-start my-4 md:my-1 lg:my-2'>
+                        <CustomProse overrides='prose-p:my-1 lg:prose-p:my-0'>
+                          <RenderMDXContent contentId='index.set-up-your-node.requirements.legal.title.default' />
+                        </CustomProse>
+                        <CustomProse overrides='prose-p:!my-0 prose-p:!text-xs prose-p:md:!text-sm prose-p:lg:!text-sm prose-p:my-0'>
+                          <RenderMDXContent contentId='index.set-up-your-node.requirements.legal.description.default' />
+                        </CustomProse>
+                      </div>
+                  </div>
+                </div>
+              </CustomProse>
+              <div className={`my-8 lg:my-10 xl:my-12 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-6 py-2 md:px-20 md:py-4 lg:px-12 lg:-mx-8 xl:-mx-20 xl:px-20  rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
+                <CustomProse overrides={`max-w-xl md:max-w-4xl lg:max-w-[70rem]`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                  <div className='sm:hidden '>
+                    <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
+                  </div>
+                  <div className=' sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-12 sm:items-center sm:justify-between sm:flex w-full'>
+                      <img src="/dummy-image.png" alt=""  className='sm:w-1/2 h-full rounded-2xl object-cover max-h-[18rem] sm:max-h-[22rem] mx-auto'/>
+                    <div className='sm:w-1/2 sm:py-2 '>
+                      <div className='hidden sm:block'>
+                        <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
+                      </div>
+                      <RenderMDXContent contentId='index.set-up-your-node.description.subtitle.default' />
+                      <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
+                      <Button16 contentId='index.set-up-your-node.description.button.cta[0]' />
+                      <CustomProse overrides='prose-p:my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
+                        <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
+                      </CustomProse>
+                    </div>
+                  </div>
+                </CustomProse>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="careers" className='w-full h-0'></div>
         <div data-io="careers" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24  '>
               <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse >
+              <CustomProse overrides='' >
                   <RenderMDXContent contentId='index.careers.intro.default' /> 
               </CustomProse>
               </div>
@@ -149,7 +211,7 @@ const Home: NextPage = () => {
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24 '>
             <div className=' lg:text-left lg:max-w-sm '>
-              <CustomProse overrides='prose-h1:sm:my-0'>
+              <CustomProse overrides=''>
                 <RenderMDXContent contentId='index.contact.title.default' />
               </CustomProse>
             </div>

@@ -42,6 +42,11 @@ module.exports = {
       backgroundImage: {
         // gradient colours 
         'sat-grad-blue-green-1': "linear-gradient(90deg, #39C1CB 0%, #0090FF 100%);",
+        'sat-grad-blue-green-1-10': "linear-gradient(90deg, rgba(57, 193, 203, 0.1) 0%, rgba(7, 143, 255, 0.1) 100%);",
+        'sat-grad-blue-green-1-10-fallback-1': "linear-gradient(90deg, #062535 0%, #01203A 100%);",
+
+
+
         'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%)",
         'sat-grad-blue-green-1-30': "linear-gradient(90deg, rgba(57, 193, 203, 0.3) 0%, rgba(7, 143, 255, 0.3) 100%)",
         'sat-grad-blue-green-1-40': "linear-gradient(90deg, rgba(57, 193, 203, 0.4) 0%, rgba(7, 143, 255, 0.4) 100%)",
