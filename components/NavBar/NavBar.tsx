@@ -114,9 +114,8 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                         const hash = link.href.split("#")[1]
                         if(link.highlight) {
                             return (
-                                <div className="!mt-10 self-center">
+                                <div key={index} className="!mt-10 self-center">
                                     <Button11
-                                        key={index}
                                         onClick={() => {
                                             setIsOpen(false)
                                             document.body.style.overflow = "auto"
