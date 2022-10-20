@@ -76,6 +76,8 @@ module.exports = {
         'backdropblur-ellipsis': "url('/backdropblur-ellipsis.svg')",
         'copy-button': "url('/copy-button.svg')",
         'check-icon': "url('/check-icon.svg')",
+        'dummy-image': "url('/dummy-image.png')",
+
 
 
       }, 

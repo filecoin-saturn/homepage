@@ -17,6 +17,7 @@ import Modal3 from '../components/Modal3/Modal3'
 import Button15 from '../components/Button15/Button15'
 import Button16 from '../components/Button16/Button16'
 import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
+import Script from 'next/script'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -50,7 +51,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
-        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0'></div>
+        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "howsaturnworks", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
@@ -144,7 +145,7 @@ const Home: NextPage = () => {
                     <BackgroundWrapper backdropBlur={features.backdropBlur}>
                       <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
                     </BackgroundWrapper>
-                      <div className='lg:flex lg:space-x-6 items-end justify-start my-4 md:my-1 lg:my-2'>
+                      <div className='lg:flex lg:space-x-6 items-end justify-start my-4 md:my-1 lg:my-4'>
                         <CustomProse overrides='prose-p:my-1 lg:prose-p:my-0'>
                           <RenderMDXContent contentId='index.set-up-your-node.requirements.legal.title.default' />
                         </CustomProse>
@@ -160,8 +161,8 @@ const Home: NextPage = () => {
                   <div className='sm:hidden '>
                     <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
                   </div>
-                  <div className=' sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-12 sm:items-center sm:justify-between sm:flex w-full'>
-                      <img src="/dummy-image.png" alt=""  className='sm:w-1/2 h-full rounded-2xl object-cover max-h-[18rem] sm:max-h-[22rem] mx-auto'/>
+                  <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-12  sm:justify-between w-full'>
+                    <div className='bg-dummy-image rounded-2xl my-4 md:my-8 lg:my-8 md:rounded-3xl bg-center bg-no-repeat bg-cover h-80 sm:h-auto w-full sm:w-1/2'></div>
                     <div className='sm:w-1/2 sm:py-2 '>
                       <div className='hidden sm:block'>
                         <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
@@ -184,7 +185,7 @@ const Home: NextPage = () => {
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24  '>
               <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse overrides='' >
+              <CustomProse >
                   <RenderMDXContent contentId='index.careers.intro.default' /> 
               </CustomProse>
               </div>
