@@ -77,6 +77,8 @@ module.exports = {
         'copy-button': "url('/copy-button.svg')",
         'check-icon': "url('/check-icon.svg')",
         'dummy-image': "url('/dummy-image.png')",
+        'wide-arrow-icon-white': "url('/wide-arrow-icon-white.svg')",
+        'wide-arrow-icon-green': "url('/wide-arrow-icon-green.svg')",
 
 
 

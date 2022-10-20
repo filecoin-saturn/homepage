@@ -17,6 +17,7 @@ import Modal3 from '../components/Modal3/Modal3'
 import Button15 from '../components/Button15/Button15'
 import Button16 from '../components/Button16/Button16'
 import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
+import Modal8 from '../components/Modal8/Modal8'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "howsaturnworks", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "howsaturnworks", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
@@ -136,13 +137,13 @@ const Home: NextPage = () => {
                 <div className='md:flex md:space-x-16 md:justify-between '>
                   <div className='grow'>
                     <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[0].default' />
-                    <BackgroundWrapper backdropBlur={features.backdropBlur}>
+                    <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
                       <RenderMDXContent contentId='index.set-up-your-node.requirements.description[0].default' />
                     </BackgroundWrapper>
                   </div>
                   <div className='grow'>
                     <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[1].default' />
-                    <BackgroundWrapper backdropBlur={features.backdropBlur}>
+                    <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
                       <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
                     </BackgroundWrapper>
                       <div className='lg:flex lg:space-x-6 items-end justify-start my-4 md:my-1 lg:my-4'>
@@ -169,7 +170,7 @@ const Home: NextPage = () => {
                       </div>
                       <RenderMDXContent contentId='index.set-up-your-node.description.subtitle.default' />
                       <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
-                      <Button16 contentId='index.set-up-your-node.description.button.cta[0]' />
+                      <Button16 target='_blank' contentId='index.set-up-your-node.description.button.cta[0]' />
                       <CustomProse overrides='prose-p:my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
                         <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
                       </CustomProse>
@@ -178,6 +179,22 @@ const Home: NextPage = () => {
                 </CustomProse>
               </div>
             </div>
+          </div>
+        </div>
+        <div id="faq" className='w-full h-0'></div>
+        <div data-io="faq" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left w-full my-8 md:flex md:space-x-32 lg:space-x-44  '>
+              <div className=' lg:text-right lg:max-w-sm '>
+              <CustomProse >
+                  <RenderMDXContent contentId='index.faq.title.default' /> 
+              </CustomProse>
+              </div>
+              <div>
+              <div className='flex -mx-1 flex-col space-y-4 md:my-5'>
+                  <Modal8 backdropBlur={features.backdropBlur} contentId="faq.questions" />
+              </div>
+              </div>
           </div>
         </div>
         <div id="careers" className='w-full h-0'></div>

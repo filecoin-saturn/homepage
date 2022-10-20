@@ -25,7 +25,7 @@ export function useContent(contentId: string) {
     const router = useRouter()
     const locale = router.locale ?? "en"
     const pathName = router.pathname.replace("/", ".").substring(1)
-    const p = `${locale}.${contentId.startsWith("general") ? '' : pathName}.${contentId}`.replace(/\.+/, ".")
+    const p = `${locale}.${contentId.startsWith("general") || contentId.startsWith("faq") ? '' : pathName}.${contentId}`.replace(/\.+/, ".")
     const value = _get(contentFiles, p)
     return value
 }
