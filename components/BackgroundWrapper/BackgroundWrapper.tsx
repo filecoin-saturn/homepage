@@ -1,7 +1,3 @@
-import Link from "next/link";
-import { useContent } from "../../content/content";
-import CustomProse from "../CustomProse/CustomProse";
-
 type Props = {
     children: React.ReactNode
     backdropBlur: boolean

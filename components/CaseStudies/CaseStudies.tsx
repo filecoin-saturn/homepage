@@ -1,4 +1,3 @@
-import CustomProse from "../CustomProse/CustomProse"
 import dynamic from "next/dynamic";
 import { useContent } from "../../content/content";
 import Modal4 from "../Modal4/Modal4";

@@ -17,7 +17,6 @@ import Modal3 from '../components/Modal3/Modal3'
 import Button15 from '../components/Button15/Button15'
 import Button16 from '../components/Button16/Button16'
 import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
-import Script from 'next/script'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -122,7 +121,8 @@ const Home: NextPage = () => {
         </div>
         <div id="setupyournode" className='w-full h-0'></div>
         <div data-io="setupyournode" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
+        <img src="/saturn-node.png" alt="" className='hidden opacity-70 -z-10 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-1/3 lg:translate-x-[40%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-[40%]' />
           <div data-gsap="animate-children" className='text-left w-full my-8  '>
             <div className=' lg:text-left underline-offset-2  '>
               <CustomProse overrides='prose-h1:sm:my-0   prose-h1:lg:max-w-[60rem] lg:max-w-[60rem] ' overridesParent='max-w-[60rem]'>

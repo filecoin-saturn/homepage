@@ -1,5 +1,4 @@
 import {useContent} from '../../content/content'
-import CustomProse from '../CustomProse/CustomProse'
 
 type Props = {
     text?: string,
