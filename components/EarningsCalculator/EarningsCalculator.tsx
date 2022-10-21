@@ -68,7 +68,7 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
 
     useEffect(() => {
         function setOutputNumber(outputNumber: HTMLOutputElement) {
-            outputNumber.innerHTML = (currentValue > 45 && currentValue < 55 && aver) ? averageTxt : perc ? currentValue.toString() + "%" : (Math.exp(minV + scale*(currentValue-minP))) === 1 ? (Math.exp(minV + scale*(currentValue-minP))).toString() : (Math.exp(minV + scale*(currentValue-minP))).toFixed(1).toString();
+            outputNumber.innerHTML = (currentValue > 45 && currentValue < 55 && aver) ? averageTxt : perc ? currentValue.toString() + "%" : (Math.exp(minV + scale*(currentValue-minP))) < 1.09 || (Math.exp(minV + scale*(currentValue-minP))) >= 100 ? (Math.exp(minV + scale*(currentValue-minP))).toFixed(0).toString() : (Math.exp(minV + scale*(currentValue-minP))).toFixed(1).toString();
             outputNumber.style.left = `calc(${x} * (100% - 2 * var(--mobile-slider-extension)) + var(--mobile-slider-extension))`;
         }
         if(outputNumber) setOutputNumber(outputNumber);
@@ -109,14 +109,14 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
                 input[type="range"]::-webkit-slider-thumb {
                     -webkit-appearance: none;
                     border-radius: 10px;
-                    background-color: #0E67FF;
+                    background-color: #fff;
                     transition: background-color 0.5s ease-in-out;
                     position: relative;
                     height: 1rem;
                     width: 1.5rem;
                     z-index:20;
-                    box-shadow: 6px 0 0 #0E67FF,
-                                -6px 0 0 #0E67FF;;
+                    box-shadow: 6px 0 0 #fff,
+                                -6px 0 0 #fff;;
                     
                 }
                 @media (min-width: 768px) {
