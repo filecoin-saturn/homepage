@@ -93,6 +93,9 @@ module.exports = {
       },
       outlineStyle: {
         'auto': 'auto'
+      },
+      borderRadius: {
+        '2.5xl': '20px'
       }
     },
   },
