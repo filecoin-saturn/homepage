@@ -18,6 +18,8 @@ import Button15 from '../components/Button15/Button15'
 import Button16 from '../components/Button16/Button16'
 import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
 import Modal8 from '../components/Modal8/Modal8'
+import EarningsCalculator from '../components/EarningsCalculator/EarningsCalculator'
+import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -51,7 +53,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Join the Saturn Network and start earning Filecoin!"/>
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
-        <div data-gsap="bg" className='fixed -z-20 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
+        <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "howsaturnworks", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
@@ -73,6 +75,33 @@ const Home: NextPage = () => {
             <Suspense fallback={null}>
               <DynamicSaturn />
             </Suspense>
+          </div>
+        </div>
+        <div id="calculateearnings" className='w-full h-0'></div>
+        <div data-io="calculateearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='w-full mx-auto relative'>
+          <div className='bg-filecoin-bg-logo bg-center opacity-30 bg-cover md:bg-contain blur-md bg-no-repeat w-full my-16 h-full absolute -z-40'></div>
+          <div className='bg-gradient-to-tr from-sat-blue-4/5 to-sat-blue-4 w-full h-full -z-30 backdrop-blur-sm blur-sm absolute py-20'></div>
+          <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
+            <div data-gsap="animate-children" className='text-left w-full px-2 md:flex md:space-x-8 lg:space-x-44   '>
+                <div className=' lg:text-right lg:max-w-sm '>
+                <CustomProse overrides='prose-h1:md:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0  ' >
+                    <RenderMDXContent contentId='index.calculateearnings.title.default' /> 
+                </CustomProse>
+                </div>
+                <div className=''>
+                  <CustomProse overrides='prose-p:md:my-2 prose-p:lg:my-4'>
+                    <RenderMDXContent contentId='index.calculateearnings.description.default' /> 
+                  </CustomProse>
+                </div>
+            </div>
+            <TotalEarnings contentId="index.calculateearnings.input.calculatorInformation" ></TotalEarnings>
+            <div className='px-4'>
+              <CustomProse overrides='prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]' overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                <RenderMDXContent contentId='index.calculateearnings.footnote.default' /> 
+              </CustomProse>
+            </div>
+
           </div>
         </div>
         <div id="howsaturnworks" className='w-full h-0'></div>
@@ -123,7 +152,7 @@ const Home: NextPage = () => {
         <div id="setupyournode" className='w-full h-0'></div>
         <div data-io="setupyournode" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
-        <img src="/saturn-node.png" alt="" className='hidden opacity-70 -z-10 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-1/3 lg:translate-x-[40%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-[40%]' />
+        <img src="/saturn-node.png" alt="" className='hidden opacity-70 -z-10 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
           <div data-gsap="animate-children" className='text-left w-full my-8  '>
             <div className=' lg:text-left underline-offset-2  '>
               <CustomProse overrides='prose-h1:sm:my-0   prose-h1:lg:max-w-[60rem] lg:max-w-[60rem] ' overridesParent='max-w-[60rem]'>

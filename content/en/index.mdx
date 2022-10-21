@@ -17,6 +17,28 @@ export const metrics = [
 
 ]
 
+{/* c:calculateearnings.title */}
+
+# Calculate earnings
+
+{/* c:calculateearnings.description */}
+
+Do you have excess server capacity with considerable upload bandwidth and storage capacity?
+
+We're looking for node operators to participate in the Filecoin Saturn network. <b>The earlier you join, the more Filecoin (FIL) you’ll earn!</b>
+
+{/* c:calculateearnings.input */}
+
+export const calculatorInformation = [
+    {usdText: "USD", filText: "FIL", perMonthText: "Monthly Earnings", or: "or"},
+    {percentage:false, average:false, label:'Available upload capacity (Gbps)' , minValue:10 , maxValue:1000 , startValue:10, averageText: "Average"},
+    {maxLabel:"high" , minLabel:"low" , percentage:true, average:true, label:'Load carried by server*' , minValue:10 , maxValue:90 , startValue:50, averageText: "Average"}
+
+]
+
+{/* c:calculateearnings.footnote */}
+
+*Load is determined by how many nodes with similar server capacity are in your region (competition), and how much content is requested by end-users (demand).
 
 {/* c:how-saturn-works.title */}
 
