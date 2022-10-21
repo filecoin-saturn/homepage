@@ -32,7 +32,7 @@ useEffect(() => {
     const maxV = Math.log(100)
     const scale = (maxV-minV) / (maxP-minP);
 
-    const a = 800000/54150 * Math.min(45, secondValue / 100 * Math.exp(minV + scale*(firstValue-minP)) * 60 * 60 * 24 * 3 / 1000)
+    const a = 800000/54150 * Math.min(45, secondValue / 100 * (Math.exp(minV + scale*(firstValue-minP)) / 100) * 60 * 60 * 24 * 3 / 1000)
     setTotalFILEarnings(a)
 },[setTotalFILEarnings, firstValue, secondValue, content])
 
