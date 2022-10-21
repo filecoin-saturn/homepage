@@ -138,7 +138,7 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
             </style>
             <div className="relative my-12 text-white ">
                 <input type="range" value={currentValue}  onChange={(event) => {setCurrentValue(Number(event.target.value))}} step={st} min={minVal} max={maxVal} className="relative appearance-none w-full  bg-gradient-blue bg-with rounded outline-none "   />
-                <output ref={grabOutputNumber} className='out absolute text-sm md:text-base lg:text-lg font-inter font-black antialiased -translate-x-1/2 -translate-y-[150%]  text-gradient-blue md:-translate-y-[120%]' 
+                <output ref={grabOutputNumber} className='absolute text-sm md:text-base lg:text-lg font-inter font-black antialiased -translate-x-1/2 -translate-y-[150%]  text-gradient-blue md:-translate-y-[120%]' 
                     style={ {
                         left: !outputNumber ? `calc(${x} * (100% - 2 * var(--mobile-slider-extension)) + var(--mobile-slider-extension))` : undefined
                     } } 
