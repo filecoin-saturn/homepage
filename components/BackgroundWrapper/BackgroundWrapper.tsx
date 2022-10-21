@@ -8,7 +8,7 @@ export default function BackgroundWrapper({children, backdropBlur, color}: Props
     
     if(color === "10") { 
     return (
-        <div className={` -mx-3 md:-mx-6 px-3 py-2 xs:px-5 md:px-8 md:py-4 rounded-2xl md:rounded-3xl ${backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
+        <div className={` -mx-3 md:-mx-3 px-5 py-1 xs:px-5 md:px-8 xs:py-1 xs:pb-2 md:py-3 lg:py-2 lg:pb-3 rounded-[0.9375rem] md:rounded-[0.9375rem] ${backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
             {children}
         </div>
     )}
