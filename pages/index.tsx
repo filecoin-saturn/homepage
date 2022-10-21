@@ -80,8 +80,8 @@ const Home: NextPage = () => {
         <div id="calculateearnings" className='w-full h-0'></div>
         <div data-io="calculateearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full mx-auto relative'>
-          <div className='bg-filecoin-bg-logo bg-center opacity-30 bg-cover md:bg-contain blur-md bg-no-repeat w-full my-16 h-full absolute -z-40'></div>
-          <div className='bg-gradient-to-tr from-sat-blue-4/5 to-sat-blue-4 w-full h-full -z-30 backdrop-blur-sm blur-sm absolute py-20'></div>
+          <div className='bg-filecoin-bg-logo bg-center opacity-20 bg-cover md:bg-contain blur-md bg-no-repeat w-full my-16 h-full absolute -z-40'></div>
+          <div className='bg-gradient-to-tr from-sat-blue-4/5 to-sat-blue-4 w-full h-full -z-30 backdrop-blur-sm blur-sm absolute my-14'></div>
           <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
             <div data-gsap="animate-children" className='text-left w-full px-2 md:flex md:space-x-8 lg:space-x-44   '>
                 <div className=' lg:text-right lg:max-w-sm '>
