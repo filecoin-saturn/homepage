@@ -16,7 +16,7 @@ type Props = {
 }
 export default memo(function Menu({isOpen, setIsOpen, languages, children, backdropBlur, languageSwitcher}: Props){
     return (
-        <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10">
+        <div className="flex flex-col justify-between h-full text-center py-8 sm:py-10 z-100">
             <div className="relative flex justify-center items-center">
                 <Button4 isOpen={isOpen} onClick={() => {
                     setIsOpen(false)
