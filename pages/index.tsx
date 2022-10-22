@@ -17,9 +17,9 @@ import Modal3 from '../components/Modal3/Modal3'
 import Button16 from '../components/Button16/Button16'
 import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
 import Modal8 from '../components/Modal8/Modal8'
-import EarningsCalculator from '../components/EarningsCalculator/EarningsCalculator'
 import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
+import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -192,7 +192,7 @@ const Home: NextPage = () => {
                     <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
                   </div>
                   <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
-                    <div className='bg-dummy-image rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl bg-center bg-no-repeat bg-cover h-80 sm:h-auto w-full sm:w-1/2'></div>
+                    <AsciinemaPlayer className='rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay loop />
                     <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
                       <div className='hidden sm:block'>
                         <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
