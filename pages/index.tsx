@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import CustomProse from '../components/CustomProse/CustomProse'
 import Footer from '../components/Footer/Footer'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
@@ -20,6 +20,7 @@ import Modal8 from '../components/Modal8/Modal8'
 import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
+import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -32,6 +33,15 @@ const Home: NextPage = () => {
     const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
     return () => {
       cleanup2()
+    }
+  }, [])
+  const [playTerminal, setPlayTerminal] = useState<boolean>(false)
+
+  const playerScrollCallback = useCallback((entry: IntersectionObserverEntry) => {
+    if(entry.isIntersecting) {
+      setPlayTerminal(true)
+    } else {
+      setPlayTerminal(false)
     }
   }, [])
 
@@ -194,7 +204,14 @@ const Home: NextPage = () => {
                     <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
                   </div>
                   <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
-                    <AsciinemaPlayer className='rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay loop />
+                    <IntersectionObserverWrapper
+                      targetCallbacks={new Map([["player", playerScrollCallback]])}
+                      threshold={[0,1]}
+                      margin="0px 0px 0px 0px"
+                    />
+                    <div data-io="player" className='bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
+                      <AsciinemaPlayer className='w-full h-full' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay play={playTerminal} />
+                    </div>
                     <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
                       <div className='hidden sm:block'>
                         <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
