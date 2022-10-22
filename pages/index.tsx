@@ -53,7 +53,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "whatissaturn", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
@@ -229,7 +229,7 @@ const Home: NextPage = () => {
         </div>
         <div id="careers" className='w-full h-0'></div>
         <div data-io="careers" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24  '>
               <div className=' lg:text-right lg:max-w-sm '>
               <CustomProse >
@@ -256,7 +256,7 @@ const Home: NextPage = () => {
         </div>
         <div id="contact" className='w-full h-0'></div>
         <div data-io="contact" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24 '>
             <div className=' lg:text-left lg:max-w-sm '>
               <CustomProse overrides='prose-h1:mb-1'>
