@@ -114,7 +114,6 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
                     position: relative;
                     height: 1rem;
                     width: 1.5rem;
-                    z-index:20;
                     box-shadow: 6px 0 0 #fff,
                                 -6px 0 0 #fff;;
                     

@@ -157,7 +157,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                         }} aria="Open menu"/>
                     </div>
                     <div className={`hidden lg:flex md:items-center lg:space-x-16 space-x-4`}>
-                        <ul className="flex lg:space-x-1 xl:space-x-4">
+                        <ul className="flex lg:space-x-0 xl:space-x-4">
                             {navLinks?.map((link, index) => {
                                 const cId = `${contentId}.navLinkArray[${index}]`
                                 const hash = link.href.split("#")[1]

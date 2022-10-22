@@ -53,7 +53,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "estimateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
@@ -76,30 +76,30 @@ const Home: NextPage = () => {
             </Suspense>
           </div>
         </div>
-        <div id="calculateearnings" className='w-full h-0'></div>
-        <div data-io="calculateearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="estimateyourearnings" className='w-full h-0'></div>
+        <div data-io="estimateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
-          <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-20 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
+          <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-20 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
           </div>
           <div className='bg-gradient-to-t from-sat-blue-4/10  to-sat-blue-4 opacity-100 w-full h-[120%] -translate-y-[15%] -z-30 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
           <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
             <div data-gsap="animate-children" className='text-left w-full px-2 md:flex md:space-x-8 lg:space-x-44   '>
                 <div className=' lg:text-right lg:max-w-sm '>
                 <CustomProse overrides='prose-h1:md:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0  ' >
-                    <RenderMDXContent contentId='index.calculateearnings.title.default' /> 
+                    <RenderMDXContent contentId='index.estimateyourearnings.title.default' /> 
                 </CustomProse>
                 </div>
                 <div className=''>
                   <CustomProse overrides='prose-p:md:my-2 prose-p:lg:my-4'>
-                    <RenderMDXContent contentId='index.calculateearnings.description.default' /> 
+                    <RenderMDXContent contentId='index.estimateyourearnings.description.default' /> 
                   </CustomProse>
                 </div>
             </div>
-            <TotalEarnings contentId="index.calculateearnings.input.calculatorInformation" ></TotalEarnings>
+            <TotalEarnings contentId="index.estimateyourearnings.input.calculatorInformation" ></TotalEarnings>
             <div className='px-4'>
               <CustomProse overrides={` prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                <RenderMDXContent contentId='index.calculateearnings.footnote.default' /> 
+                <RenderMDXContent contentId='index.estimateyourearnings.footnote.default' /> 
               </CustomProse>
             </div>
 
