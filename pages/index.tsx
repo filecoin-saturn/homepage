@@ -214,18 +214,26 @@ const Home: NextPage = () => {
         </div>
         <div id="faq" className='w-full h-0'></div>
         <div data-io="faq" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 md:flex md:space-x-32 lg:space-x-44  '>
-              <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse >
-                  <RenderMDXContent contentId='index.faq.title.default' /> 
-              </CustomProse>
-              </div>
-              <div>
-              <div className='flex -mx-1 flex-col space-y-4 md:my-5'>
-                  <Modal8 backdropBlur={features.backdropBlur} contentId="faq.questions" />
-              </div>
-              </div>
+        <div className='w-full relative mx-auto'>
+          <div className=' w-full bg-gradient-to-t from-[#00185b]/10 via-[#002aff]/90 to-[#00185b]/10 h-[130%] -translate-y-[5%]  blur-lg absolute rounded-3xl -z-40 opacity-20'></div>
+          <div className='max-w-3xl w-full h-full blur-xl relative mx-auto -z-10'>
+            <div className=' w-[60rem] h-[40rem] -translate-x-[65%] -translate-y-[20%] md:-translate-x-[65%] md:-translate-y-[15%]  lg:-translate-x-[75%] lg:-translate-y-[15%] xl:-translate-x-[85%] xl:-translate-y-[15%] blur-sm bg-gradient-radial from-[#5f88ed] via-[#112aa6]/50 to-[#000000] rounded-full  absolute opacity-60 -z-10'></div>
+            <div className=' w-[20rem] h-[10rem] -translate-x-[75%] translate-y-[10%]  md:-translate-x-[90%] md:translate-y-[70%] lg:-translate-x-[125%] lg:translate-y-[80%]  xl:-translate-x-[145%] xl:translate-y-[80%] blur-sm bg-gradient-to-tl from-[#5a0000] via-[#ac9307] to-[#000e56] rounded-full rotate-12  absolute opacity-50 -z-30'></div>
+            <div className=' w-[60rem] h-[28rem]   lg:w-[60rem] lg:h-[35rem] translate-x-1/3 translate-y-[45%] xl:translate-x-1/3 xl:translate-y-[45%] blur-sm bg-gradient-to-br from-[#1e00b26a] via-[#112aa6] to-[#020636] rounded-full  absolute opacity-30 -z-10'></div>
+          </div>
+          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+            <div data-gsap="animate-children" className='text-left w-full my-8 md:flex md:space-x-32 lg:space-x-44  '>
+                <div className=' lg:text-right lg:max-w-sm '>
+                <CustomProse >
+                    <RenderMDXContent contentId='index.faq.title.default' /> 
+                </CustomProse>
+                </div>
+                <div>
+                <div className='flex -mx-1 flex-col space-y-4 md:my-5'>
+                    <Modal8 backdropBlur={features.backdropBlur} contentId="faq.questions" />
+                </div>
+                </div>
+            </div>
           </div>
         </div>
         <div id="careers" className='w-full h-0'></div>
