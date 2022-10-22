@@ -28,7 +28,7 @@ const [totalFilEarnings, setTotalFILEarnings] = useState<number>(0)
 useEffect(() => {
     const minP = content[1].minValue 
     const maxP = content[1].maxValue
-    const minV = Math.log(1)
+    const minV = Math.log(10)
     const maxV = Math.log(100)
     const scale = (maxV-minV) / (maxP-minP);
 

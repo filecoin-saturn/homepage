@@ -46,7 +46,7 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
 
     const minP = minVal?? 1
     const maxP = maxVal?? 100
-    const minV = Math.log(1)
+    const minV = Math.log(10)
     const maxV = Math.log(100)
     const scale = (maxV-minV) / (maxP-minP);
 
@@ -68,7 +68,7 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
 
     useEffect(() => {
         function setOutputNumber(outputNumber: HTMLOutputElement) {
-            outputNumber.innerHTML = (currentValue > 45 && currentValue < 55 && aver) ? averageTxt : perc ? currentValue.toString() + "%" : (Math.exp(minV + scale*(currentValue-minP))) < 1.09 || (Math.exp(minV + scale*(currentValue-minP))) >= 100 ? (Math.exp(minV + scale*(currentValue-minP))).toFixed(0).toString() : (Math.exp(minV + scale*(currentValue-minP))).toFixed(1).toString();
+            outputNumber.innerHTML = (currentValue > 25 && currentValue < 35 && aver) ? averageTxt : perc ? currentValue.toString() + "%" : (Math.exp(minV + scale*(currentValue-minP))) < 10.09 || (Math.exp(minV + scale*(currentValue-minP))) >= 100 ? (Math.exp(minV + scale*(currentValue-minP))).toFixed(0).toString() : (Math.exp(minV + scale*(currentValue-minP))).toFixed(1).toString();
             outputNumber.style.left = `calc(${x} * (100% - 2 * var(--mobile-slider-extension)) + var(--mobile-slider-extension))`;
         }
         if(outputNumber) setOutputNumber(outputNumber);
