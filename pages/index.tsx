@@ -54,7 +54,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "estimateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
@@ -77,8 +77,8 @@ const Home: NextPage = () => {
             </Suspense>
           </div>
         </div>
-        <div id="estimateyourearnings" className='w-full h-0'></div>
-        <div data-io="estimateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="calculateyourearnings" className='w-full h-0'></div>
+        <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
           <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-20 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
@@ -88,19 +88,19 @@ const Home: NextPage = () => {
             <div data-gsap="animate-children" className='text-left w-full px-2 md:flex md:space-x-8 lg:space-x-44   '>
                 <div className=' lg:text-right lg:max-w-sm '>
                 <CustomProse overrides='prose-h1:md:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0  ' >
-                    <RenderMDXContent contentId='index.estimateyourearnings.title.default' /> 
+                    <RenderMDXContent contentId='index.calculateyourearnings.title.default' /> 
                 </CustomProse>
                 </div>
                 <div className=''>
                   <CustomProse overrides='prose-p:md:my-2 prose-p:lg:my-4'>
-                    <RenderMDXContent contentId='index.estimateyourearnings.description.default' /> 
+                    <RenderMDXContent contentId='index.calculateyourearnings.description.default' /> 
                   </CustomProse>
                 </div>
             </div>
-            <TotalEarnings contentId="index.estimateyourearnings.input.calculatorInformation" ></TotalEarnings>
+            <TotalEarnings contentId="index.calculateyourearnings.input.calculatorInformation" ></TotalEarnings>
             <div className='px-4'>
               <CustomProse overrides={` prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                <RenderMDXContent contentId='index.estimateyourearnings.footnote.default' /> 
+                <RenderMDXContent contentId='index.calculateyourearnings.footnote.default' /> 
               </CustomProse>
             </div>
 
@@ -209,30 +209,6 @@ const Home: NextPage = () => {
                   </div>
                 </CustomProse>
               </div>
-            </div>
-          </div>
-        </div>
-        <div id="faq" className='w-full h-0'></div>
-        <div data-io="faq" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='w-full relative mx-auto'>
-          <div className=' w-full bg-gradient-to-t from-[#00185b]/10 via-[#002aff]/90 to-[#00185b]/10 h-[130%] -translate-y-[5%]  blur-lg absolute rounded-3xl -z-40 opacity-20'></div>
-          <div className='max-w-3xl w-full h-full blur-xl relative mx-auto -z-10'>
-            <div className=' w-[60rem] h-[40rem] -translate-x-[65%] -translate-y-[20%] md:-translate-x-[65%] md:-translate-y-[15%]  lg:-translate-x-[75%] lg:-translate-y-[15%] xl:-translate-x-[85%] xl:-translate-y-[15%] blur-sm bg-gradient-radial from-[#5f88ed] via-[#112aa6]/50 to-[#000000] rounded-full  absolute opacity-60 -z-10'></div>
-            <div className=' w-[20rem] h-[10rem] -translate-x-[75%] translate-y-[10%]  md:-translate-x-[90%] md:translate-y-[70%] lg:-translate-x-[125%] lg:translate-y-[80%]  xl:-translate-x-[145%] xl:translate-y-[80%] blur-sm bg-gradient-to-tl from-[#5a0000] via-[#ac9307] to-[#000e56] rounded-full rotate-12  absolute opacity-50 -z-30'></div>
-            <div className=' w-[60rem] h-[28rem]   lg:w-[60rem] lg:h-[35rem] translate-x-1/3 translate-y-[45%] xl:translate-x-1/3 xl:translate-y-[45%] blur-sm bg-gradient-to-br from-[#1e00b26a] via-[#112aa6] to-[#020636] rounded-full  absolute opacity-30 -z-10'></div>
-          </div>
-          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-            <div data-gsap="animate-children" className='text-left w-full my-8 md:flex md:space-x-32 lg:space-x-44  '>
-                <div className=' lg:text-right lg:max-w-sm '>
-                <CustomProse >
-                    <RenderMDXContent contentId='index.faq.title.default' /> 
-                </CustomProse>
-                </div>
-                <div>
-                <div className='flex -mx-1 flex-col space-y-4 md:my-5'>
-                    <Modal8 backdropBlur={features.backdropBlur} contentId="faq.questions" />
-                </div>
-                </div>
             </div>
           </div>
         </div>
