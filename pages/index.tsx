@@ -157,7 +157,7 @@ const Home: NextPage = () => {
         <img src="/saturn-node.png" alt="" className='hidden opacity-70 -z-10 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
           <div data-gsap="animate-children" className='text-left w-full my-8  '>
             <div className=' lg:text-left underline-offset-2  '>
-              <CustomProse overrides='prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
+              <CustomProse overrides='prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
                 <RenderMDXContent contentId='index.set-up-your-node.title.default' />
                 <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
                 <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
@@ -233,15 +233,15 @@ const Home: NextPage = () => {
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24  '>
               <div className=' lg:text-right lg:max-w-sm '>
-              <CustomProse >
+              <CustomProse overrides='prose-h1:my-3.5 prose-h1:sm:my-3 prose-h1:md:my-1'>
                   <RenderMDXContent contentId='index.careers.intro.default' /> 
               </CustomProse>
               </div>
               <div>
-              <CustomProse overrides='prose-p:my-6' >
+              <CustomProse overrides='prose-p:my-6 prose-p:mt-3.5 prose-p:mb-[1.125rem] prose-p:sm:mr-1 prose-p:md:mr-0 prose-p:md:mb-[1.4375rem] prose-p:lg:mt-[1.375rem] prose-p:lg:mb-8' >
                   <RenderMDXContent contentId='index.careers.description.default' /> 
               </CustomProse>
-              <div className='flex -mx-1 flex-col space-y-4'>
+              <div className='flex -mx-1 flex-col space-y-3 md:space-y-[0.9375rem] lg:space-y-[1.1875rem]'>
                   <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[0]" >
                     <RenderMDXContent contentId='index.careers.jobs[0].default' />
                   </Modal3>
@@ -260,7 +260,7 @@ const Home: NextPage = () => {
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-8 md:space-x-12 lg:space-x-24 '>
             <div className=' lg:text-left lg:max-w-sm '>
-              <CustomProse overrides='prose-h1:mb-1'>
+              <CustomProse overrides='prose-h1:my-3.5'>
                 <RenderMDXContent contentId='index.contact.title.default' />
               </CustomProse>
             </div>
