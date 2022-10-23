@@ -5,15 +5,15 @@
 Filecoin Saturn is an open-source, community-run Content Delivery Network (CDN) built on Filecoin. Join the network, run a node, and earn Filecoin for accelerating the decentralized web.
 
 export const ctas = [
-    {subtext:"Become a node operator:", text: "Setup & Earn (5 mins)", link: "#setupyournode"},
+    {subtext:"Become a node operator:", text: "Set up & Earn (5 mins)", link: "#setupyournode"},
 ]
 
 {/* c:metrics */}
 
 export const metrics = [
-    {metric:"Points of presence (POPs)", number: "65", unit: ""},
+    {metric:"Points of\nPresence (PoPs)", number: "65", unit: ""},
     {metric:"Requests served each day", number: "140", unit: "M"},
-    // {metric:"Global network uplink capacity", number: "155", unit: "TBit /s"}
+    {metric:"Average TTFB to IPFS content", number: "320", unit: "ms"}
 
 ]
 
@@ -54,7 +54,7 @@ Content on Saturn is [IPFS](https://ipfs.io/) content-addressed. Every piece of 
 
 Crypto-incentives unite, align, and grow the network. Node operators earn Filecoin for accelerating web content and websites get faster content delivery for less.
 
-All work is open source and developed in the public for all humanity.
+All work is open source and developed in the public for all of humanity.
 
 {/* c:our-vision.title */}
 
@@ -62,25 +62,25 @@ All work is open source and developed in the public for all humanity.
 
 {/* c:our-vision.content */}
 
-export const content = [{
+export const content = [
+    {
+        image: "multi-peer-logo.svg",
+        title: "Advance Web3 Adoption",
+        text: "Accelerate Web3 adoption by accelerating Web3 content, from NFTs to the Metaverse.",
+    },{
         image: "serve-content-logo.svg",
         title: "Include everyone",
-        text: "With Saturn, everyone can contribute and earn —  from big servers in datacenters, to end users with desktops and phones.",
+        text: "Anyone can join. Saturn is a united network of the world’s hardware — from servers in data centers to end user desktops and phones.",
     },
     {
         image: "lightning-logo.svg",
-        title: "Democratize Earnings",
-        text: "Filecoin Saturn democratizes earnings instead of developers having to pay centralized CDNs to slowly build web2 data centers.",
+        title: "Democratize Delivery",
+        text: "Everyone can contribute to the network and earn Filecoin, wherever they are. Earnings are shared by the community, not a company.",
     },
     {
         image: "deduplication-logo.svg",
-        title: "Fast file retrievals",
-        text: "Access your web3 content faster — from videos to NFTs and Metaverse data, Saturn makes retrieving content a seemless user experience.",
-    },
-    {
-        image: "multi-peer-logo.svg",
-        title: "Expand web3 adoption",
-        text: "By lowering hardware requirements, Saturn accelerates the adoption of web3 by allowing more people to join the Filecoin network.",
+        title: "Fast retrievals",
+        text: "Serve Web3 content with low latency and at low cost.",
     },
 ]
 
@@ -125,16 +125,14 @@ Earn filecoin by contributing server resources - <strong>Serve more, earn more!<
 {/* c:set-up-your-node.requirements.description.title[0] */}
 
 
-<p className="big-p">Hardware</p>
+<p className="big-p">Minimum Hardware</p>
 
 {/* c:set-up-your-node.requirements.description[0] */}
 
-- **6 Core CPU (12+ cores recommended)** 
-<br/><p className="small-p">8,000+ CPU Mark (20,000+ recommended)</p>
-- **1TB SSD minimum**
-<br/><p className="small-p">(4x1TB+ NVMe SSD in RAID 5 or RAID 10 recommended)</p>
-- **10Gbps upload link minimum**
-- **32GB RAM minimum**
+- **6 Core CPU** <span className="small-p">(12+ cores recommended)</span>
+- **1TB SSD** <span className="small-p">(4TB+ SSD recommended)</span>
+- **10Gbps upload** <span className="small-p">(4TB+ SSD recommended)</span>
+- **32GB RAM** <span className="small-p">(128GB+ recommended)</span>
 
 {/* c:set-up-your-node.requirements.description.title[1] */}
 
@@ -142,10 +140,10 @@ Earn filecoin by contributing server resources - <strong>Serve more, earn more!<
 
 {/* c:set-up-your-node.requirements.description[1] */}
 
-- **<span className="font-black">Dedicated</span> server with a public IPv4 address**
+- **Dedicated Linux server with a public IPv4 address**
 - **Ports 80 and 443 free**
 - **User with sudo privileges**
-- <a target="_blank" href="https://docs.filecoin.io/reference/overview/#wallets-audited">FIL Wallet</a>
+- <a target="_blank" href="https://docs.filecoin.io/reference/overview/#wallets-audited">Filecoin Wallet</a>
 
 {/* c:set-up-your-node.requirements.legal.title */}
 
@@ -164,23 +162,18 @@ Earn filecoin by contributing server resources - <strong>Serve more, earn more!<
 ###### Setup instructions
 
 {/* c:set-up-your-node.description.text */}
-
-Saturn nodes are docker containers. Set up your node today either manually or with our ansible playbook.
+    
+Saturn nodes are neatly packaged Docker containers. Set up your node in no time with <a href="https://www.docker.com/" target="_blank">Docker</a> or with our easy-to-use <a href="https://www.ansible.com/" target="_blank">Ansible</a> playbook.
 
 {/* c:set-up-your-node.description.button */}
 
 export const cta = [
-    {text:"Setup & Earn", link: "https://github.com/filecoin-saturn/L1-node"},
+    {text:"Set up & Earn", link: "https://github.com/filecoin-saturn/L1-node#running-a-node"},
 ]
 
 {/* c:set-up-your-node.description.join */}
 
-... or join our <a target="_blank" href="https://filecoin.io/slack">Slack channel</a> and find more information
-
-{/* c:faq.title */}
-
-# FAQs
-
+Questions? Join <a target="_blank" href="https://filecoinproject.slack.com/archives/C03DH0BL02E">#filecoin-saturn</a> for personal help with a smile.
 
 {/* c:careers.intro */}
 
@@ -188,7 +181,7 @@ export const cta = [
 
 {/* c:careers.description */}
 
-The Saturn team is also actively hiring full-stack and distributed systems engineers. Want to build an interplanetary, Web3 CDN?
+The Saturn team is actively hiring full-stack and distributed systems engineers. Want to build an interplanetary, Web3 CDN? We'd love to hear from you.
 
 {/* c:careers.jobs[0] */}
 
@@ -215,17 +208,17 @@ export const link = "https://docs.google.com/document/d/1_HTxZqBLZVNLzXjCx55ZekI
 
 {/* c:contact.description */}
 
-The Saturn team is actively hiring full-stack and distributed systems engineers. Want to build an interplanetary, Web3 CDN? We'd love to hear from you.
+Interested in Saturn development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.
 
 {/* c:contact.email.title */}
 
-###### Join our community
+###### Join the community
 
 {/* c:contact.join[0] */}
 
 export const button = {
     text: "Slack",
-    link: "https://filecoin.io/slack",
+    link: "https://filecoinproject.slack.com/archives/C03DH0BL02E",
     backgroundImage: "slack-logo.svg",
 }
 

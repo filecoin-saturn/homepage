@@ -68,7 +68,7 @@ export default function EarningsCalculator({content ,label, minValue, maxValue, 
 
     useEffect(() => {
         function setOutputNumber(outputNumber: HTMLOutputElement) {
-            outputNumber.innerHTML = (currentValue > 25 && currentValue < 35 && aver) ? averageTxt : perc ? currentValue.toString() + "%" : (Math.exp(minV + scale*(currentValue-minP))) < 10.09 || (Math.exp(minV + scale*(currentValue-minP))) >= 100 ? (Math.exp(minV + scale*(currentValue-minP))).toFixed(0).toString() : (Math.exp(minV + scale*(currentValue-minP))).toFixed(1).toString();
+            outputNumber.innerHTML = (currentValue > 25 && currentValue < 35 && aver) ? averageTxt : perc ? currentValue.toString() + "%" : (Math.exp(minV + scale*(currentValue-minP))) < 10.09 || (Math.exp(minV + scale*(currentValue-minP))) >= 100 ? (Math.exp(minV + scale*(currentValue-minP))).toFixed(0).toString() : (Math.exp(minV + scale*(currentValue-minP))).toLocaleString(undefined, {maximumFractionDigits: 0});
             outputNumber.style.left = `calc(${x} * (100% - 2 * var(--mobile-slider-extension)) + var(--mobile-slider-extension))`;
         }
         if(outputNumber) setOutputNumber(outputNumber);

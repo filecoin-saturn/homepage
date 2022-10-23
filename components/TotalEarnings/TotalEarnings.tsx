@@ -101,10 +101,10 @@ useEffect(() => {
                             {perMonthTxt}
                         </div>
                         <div className='flex items-baseline space-x-1 md:space-x-2 lg:space-x-3'>
-                            <animated.div id="animateusd" className=' text-3xl xs:text-4xl md:text-[2.55rem] lg:text-6xl font-inter font-black antialiased'>{animFinished ? priceInUsd?.toFixed() : priceInUsdAnimated.val.to(val => Math.floor(val))}</animated.div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{usdTxt}</div>
+                            <animated.div id="animateusd" className=' text-3xl xs:text-4xl md:text-[2.55rem] lg:text-6xl font-inter font-black antialiased'>{animFinished ? priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) : priceInUsdAnimated.val.to(val => Math.floor(val))}</animated.div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{usdTxt}</div>
                         </div>
                         <div className='flex space-x-1 md:space-x-2 items-baseline '>
-                            <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{" "+ totalFilEarnings.toFixed(2) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg '>{filTxt}</div>
+                            <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{" "+ totalFilEarnings.toLocaleString(undefined, {maximumFractionDigits: 0}) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg '>{filTxt}</div>
                         </div>
                     </div>
                     <div className='px-4 w-full '>
