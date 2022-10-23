@@ -24,7 +24,6 @@ type AsciinemaPlayerProps = {
 };
 
 function AsciinemaPlayer ({src, className, play, ...asciinemaOptions}: AsciinemaPlayerProps) {
-    console.log(play)
     const ref = useRef<HTMLDivElement>(null);
     const [player, setPlayer] = useState<typeof import("asciinema-player")>()
     const [instance, setInstance] = useState<Record<string, unknown> & {dispose: () => void, play: () => void, pause: () => void, seek: (number: number) => void}>()

@@ -37,7 +37,7 @@ useEffect(() => {
     setTotalFILEarnings(a)
 },[setTotalFILEarnings, firstValue, secondValue, content])
 
-const [currentFilPrice, setCurrentFilPrice] = useState<number>(0)
+const [currentFilPrice, setCurrentFilPrice] = useState<number>(5)
 const [priceInUsd, setPriceInUsd] = useState<number>()
 
 useEffect(() => {
