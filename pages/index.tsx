@@ -182,7 +182,7 @@ const Home: NextPage = () => {
                       threshold={[0,1]}
                       margin="0px 0px 0px 0px"
                     />
-                    <div data-io="player" className='bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
+                    <div data-io="player" className='p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
                       <AsciinemaPlayer className='w-full h-full' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay play={playTerminal} />
                     </div>
                     <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
