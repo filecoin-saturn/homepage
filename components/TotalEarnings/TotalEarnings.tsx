@@ -45,6 +45,7 @@ useEffect(() => {
     setPriceInUsd(earningsInUsd)
 },[currentFilPrice,totalFilEarnings, setPriceInUsd])
 
+
 useEffect(() => {
     (async function getCurrenFilRate() {
         const options = {method: 'GET', headers: {accept: ''}};
