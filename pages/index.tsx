@@ -94,8 +94,8 @@ const Home: NextPage = () => {
           </div>
           <div className='bg-gradient-to-t from-sat-blue-4/10  to-sat-blue-4 opacity-100 w-full h-[120%] -translate-y-[15%] -z-30 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
           <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
-            <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-44'>
-                <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:max-w-sm md:mt-1'>
+            <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24'>
+                <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-[28rem] md:mt-1'>
                 <CustomProse overrides='prose-h1:sm:leading-[2rem] prose-h1:sm:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0 sm:first-line:[&_h1]:text-base sm:first-line:[&_h1]:font-inter sm:first-line:[&_h1]:font-black sm:first-line:[&_h1]:text-white sm:first-line:[&_h1]:my-2 md:first-line:[&_h1]:my-6 sm:first-line:[&_h1]:text-[1.625rem] md:first-line:[&_h1]:text-4xl lg:first-line:[&_h1]:text-6xl sm:first-line:[&_h1]:leading-tight' >
                     <RenderMDXContent contentId='index.calculateyourearnings.title.default' />
                 </CustomProse>
@@ -119,7 +119,7 @@ const Home: NextPage = () => {
         <div data-io="whatissaturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
-            <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:max-w-sm '>
+            <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm '>
               <CustomProse overrides='prose-h1:sm:my-0 '>
                 <RenderMDXContent contentId='index.what-is-saturn.title.default' />
               </CustomProse>
@@ -144,8 +144,8 @@ const Home: NextPage = () => {
         <div id="roadmap" className='w-full h-0'></div>
         <div data-io="roadmap" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-32 '>
-            <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:max-w-sm '>
+          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
+            <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:w-full lg:max-w-sm '>
               <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
                 <RenderMDXContent contentId='index.roadmap.title.default' />
               </CustomProse>
@@ -223,7 +223,7 @@ const Home: NextPage = () => {
         <div data-io="careers" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24  '>
-              <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:max-w-sm '>
+              <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm '>
               <CustomProse overrides='prose-h1:my-3.5 prose-h1:sm:my-3 prose-h1:md:my-1'>
                   <RenderMDXContent contentId='index.careers.intro.default' /> 
               </CustomProse>
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
         <div data-io="contact" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
-            <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:max-w-sm '>
+            <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm'>
               <CustomProse overrides='prose-h1:my-3.5'>
                 <RenderMDXContent contentId='index.contact.title.default' />
               </CustomProse>
