@@ -34,7 +34,8 @@ type RenderMDXContentProps = {
     contentId: string
 }
 
-export function RenderMDXContent({contentId}: RenderMDXContentProps) {
+export default function RenderMDXContent({contentId}: RenderMDXContentProps) {
     const Component = useContent(contentId)
+    if(!Component) throw Error("There might be something off with your content. Please double check contentId " + contentId + ".")
     return <Component/>
 }

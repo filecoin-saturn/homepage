@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RenderMDXContent, useContent } from "../../content/content";
+import RenderMDXContent, { useContent } from "../../content/content";
 import BackgroundWrapper from "../BackgroundWrapper/BackgroundWrapper";
 import CustomProse from "../CustomProse/CustomProse";
 import Question from "../Question/Question";

@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import { useFeatureContext } from '../context/featureContext'
 import Button12 from '../components/Button12/Button12'
-import { RenderMDXContent } from '../content/content'
+import RenderMDXContent from '../content/content'
 import NavBar from '../components/NavBar/NavBar'
 import Goals from '../components/Goals/Goals'
 import Metrics from '../components/Metrics/Metrics'
@@ -16,7 +16,6 @@ import ListBigDots from '../components/ListBigDots/ListBigDots'
 import Modal3 from '../components/Modal3/Modal3'
 import Button16 from '../components/Button16/Button16'
 import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
-import Modal8 from '../components/Modal8/Modal8'
 import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
@@ -98,7 +97,7 @@ const Home: NextPage = () => {
             <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-44'>
                 <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:max-w-sm md:mt-1'>
                 <CustomProse overrides='prose-h1:sm:leading-[2rem] prose-h1:sm:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0 sm:first-line:[&_h1]:text-base sm:first-line:[&_h1]:font-inter sm:first-line:[&_h1]:font-black sm:first-line:[&_h1]:text-white sm:first-line:[&_h1]:my-2 md:first-line:[&_h1]:my-6 sm:first-line:[&_h1]:text-[1.625rem] md:first-line:[&_h1]:text-4xl lg:first-line:[&_h1]:text-6xl sm:first-line:[&_h1]:leading-tight' >
-                    <RenderMDXContent contentId='index.estimateyourearnings.title.default' />
+                    <RenderMDXContent contentId='index.calculateyourearnings.title.default' />
                 </CustomProse>
                 </div>
                 <div className='sm:mt-1 md:mt-0'>

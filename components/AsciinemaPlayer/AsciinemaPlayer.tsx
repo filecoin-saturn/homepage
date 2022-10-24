@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
 import { useWindowContext } from '../../context/windowContext';
-import {cloneDeep} from 'lodash'
 
 type AsciinemaPlayerProps = {
     src: string;
@@ -26,7 +25,6 @@ type AsciinemaPlayerProps = {
 function AsciinemaPlayer ({src, className, play, ...asciinemaOptions}: AsciinemaPlayerProps) {
     const ref = useRef<HTMLDivElement>(null);
     const [player, setPlayer] = useState<typeof import("asciinema-player")>()
-    const [instance, setInstance] = useState<Record<string, unknown> & {dispose: () => void, play: () => void, pause: () => void, seek: (number: number) => void}>()
     const windowContext = useWindowContext()
     useEffect(() => {
         import("asciinema-player").then(p => {setPlayer(p)})

@@ -28,7 +28,7 @@ function getFeatures(n: number) {
     return newFeatures
 }
 
-export function FeatureContextWrapper({children}: FeatureContextWrapperProps) {
+export default function FeatureContextWrapper({children}: FeatureContextWrapperProps) {
     const [features, setFeatures] = useState(featureDefault)
 
     useEffect(() => {
