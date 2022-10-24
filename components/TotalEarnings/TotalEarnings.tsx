@@ -10,15 +10,13 @@ type CalculatorProps = {
     usdText?: string
     filText?: string
     perMonthText?: string
-    or?: string
 
 }
-export default function TotalEarnings({contentId, usdText, filText, perMonthText, or}: CalculatorProps) {
+export default function TotalEarnings({contentId, usdText, filText, perMonthText}: CalculatorProps) {
 const content = useContent(contentId ?? "")
 const usdTxt = usdText ?? content[0]?.usdText
 const filTxt = filText ?? content[0]?.filText
 const perMonthTxt = perMonthText ?? content[0]?.perMonthText
-const o = or ?? content[0]?.or
 
 // create values per calculator
 const [firstValue, setFirstValue] = useState(content[1].startValue)
