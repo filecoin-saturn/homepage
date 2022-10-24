@@ -45,16 +45,13 @@ useEffect(() => {
     setPriceInUsd(earningsInUsd)
 },[currentFilPrice,totalFilEarnings, setPriceInUsd])
 
-
 useEffect(() => {
     (async function getCurrenFilRate() {
         const options = {method: 'GET', headers: {accept: ''}};
 
-        await fetch('https://api.coingecko.com/api/v3/coins/binance-peg-filecoin', options)
-        .then(response => response.json())
-        .then(response => setCurrentFilPrice(response.market_data.current_price.usd))
-        .catch(err => console.error(err));
-
+        const response = await fetch('https://api.coingecko.com/api/v3/coins/binance-peg-filecoin', options)
+        const jsonResponse = await response.json()
+        jsonResponse ? setCurrentFilPrice(jsonResponse.market_data.current_price.usd) : setCurrentFilPrice(5)
 
     })();
   }, []); 
