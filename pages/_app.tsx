@@ -5,6 +5,7 @@ import { FeatureContextWrapper } from '../context/featureContext'
 import Script from 'next/script'
 
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
 <>

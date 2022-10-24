@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import CustomProse from '../components/CustomProse/CustomProse'
 import Footer from '../components/Footer/Footer'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
@@ -20,6 +20,7 @@ import Modal8 from '../components/Modal8/Modal8'
 import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
+import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -32,6 +33,15 @@ const Home: NextPage = () => {
     const cleanup2 = backgroundScrollAnimations(`[data-gsap="bg"]`)
     return () => {
       cleanup2()
+    }
+  }, [])
+  const [playTerminal, setPlayTerminal] = useState<boolean>(false)
+
+  const playerScrollCallback = useCallback((entry: IntersectionObserverEntry) => {
+    if(entry.isIntersecting) {
+      setPlayTerminal(true)
+    } else {
+      setPlayTerminal(false)
     }
   }, [])
 
@@ -54,7 +64,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "estimateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "faq", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
@@ -77,8 +87,8 @@ const Home: NextPage = () => {
             </Suspense>
           </div>
         </div>
-        <div id="estimateyourearnings" className='w-full h-0'></div>
-        <div data-io="estimateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="calculateyourearnings" className='w-full h-0'></div>
+        <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
           <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-20 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
@@ -93,14 +103,14 @@ const Home: NextPage = () => {
                 </div>
                 <div className='sm:mt-1 md:mt-0'>
                   <CustomProse overrides='prose-p:md:my-2 prose-p:lg:my-4'>
-                    <RenderMDXContent contentId='index.estimateyourearnings.description.default' /> 
+                    <RenderMDXContent contentId='index.calculateyourearnings.description.default' /> 
                   </CustomProse>
                 </div>
             </div>
-            <TotalEarnings contentId="index.estimateyourearnings.input.calculatorInformation" ></TotalEarnings>
+            <TotalEarnings contentId="index.calculateyourearnings.input.calculatorInformation" ></TotalEarnings>
             <div className='px-4'>
               <CustomProse overrides={` prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                <RenderMDXContent contentId='index.estimateyourearnings.footnote.default' /> 
+                <RenderMDXContent contentId='index.calculateyourearnings.footnote.default' /> 
               </CustomProse>
             </div>
 
@@ -160,11 +170,38 @@ const Home: NextPage = () => {
               <CustomProse overrides='prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
                 <RenderMDXContent contentId='index.set-up-your-node.title.default' />
                 <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
-                <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
               </CustomProse>
+              <div className={`my-8 md:my-14 lg:my-16 xl:my-16 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-8 py-2 md:px-14 md:py-0 lg:px-[3.225rem] lg:-mx-[3.315rem] xl:-mx-20 xl:px-[3.315rem] rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
+                <CustomProse overrides={`max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-5  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:!mb-3 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                  <div className='sm:hidden '>
+                    <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
+                  </div>
+                  <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
+                    <IntersectionObserverWrapper
+                      targetCallbacks={new Map([["player", playerScrollCallback]])}
+                      threshold={[0,1]}
+                      margin="0px 0px 0px 0px"
+                    />
+                    <div data-io="player" className='p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
+                      <AsciinemaPlayer className='w-full h-full' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay play={playTerminal} />
+                    </div>
+                    <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
+                      <div className='hidden sm:block'>
+                        <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
+                      </div>
+                      <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
+                      <Button16 target='_blank' contentId='index.set-up-your-node.description.button.cta[0]' />
+                      <CustomProse overrides='prose-p:!my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
+                        <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
+                      </CustomProse>
+                    </div>
+                  </div>
+                </CustomProse>
+              </div>
               <CustomProse  overrides={`${bigP} ${smallP}
-              prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs`} 
+              prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `} 
               overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
+                <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
                 <div className='md:flex md:space-x-16 lg:space-x-16 md:justify-between md:items-start space-y-4 sm:space-y-4 md:space-y-0'>
                   <div className='grow'>
                     <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[0].default' />
@@ -177,55 +214,10 @@ const Home: NextPage = () => {
                     <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
                       <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
                     </BackgroundWrapper>
-                      <div className='sm:flex sm:space-x-7 prose-p:md:!leading-none md:mt-4 md:ml-4 lg:flex lg:space-x-10 items-end justify-start my-4 sm:mt-4 md:my-1 lg:my-6'>
-                        <CustomProse overrides='prose-p:my-1 sm:prose-p:my-0 prose-p:lg:!my-0'>
-                          <RenderMDXContent contentId='index.set-up-your-node.requirements.legal.title.default' />
-                        </CustomProse>
-                        <CustomProse overrides='prose-p:!my-0 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 '>
-                          <RenderMDXContent contentId='index.set-up-your-node.requirements.legal.description.default' />
-                        </CustomProse>
-                      </div>
                   </div>
                 </div>
               </CustomProse>
-              <div className={`my-8 md:my-14 lg:my-16 xl:my-16 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-8 py-2 md:px-14 md:py-0 lg:px-[3.225rem] lg:-mx-[3.315rem] xl:-mx-20 xl:px-[3.315rem] rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
-                <CustomProse overrides={`max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-6 prose-h3:xl:!mb-7  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:mb-6 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3 `} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                  <div className='sm:hidden '>
-                    <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
-                  </div>
-                  <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
-                    <AsciinemaPlayer className='rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay loop />
-                    <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
-                      <div className='hidden sm:block'>
-                        <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
-                      </div>
-                      <RenderMDXContent contentId='index.set-up-your-node.description.subtitle.default' />
-                      <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
-                      <Button16 target='_blank' contentId='index.set-up-your-node.description.button.cta[0]' />
-                      <CustomProse overrides='prose-p:!my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
-                        <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
-                      </CustomProse>
-                    </div>
-                  </div>
-                </CustomProse>
-              </div>
             </div>
-          </div>
-        </div>
-        <div id="faq" className='w-full h-0'></div>
-        <div data-io="faq" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-12 md:space-x-16 lg:space-x-44  '>
-              <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:max-w-sm '>
-              <CustomProse >
-                  <RenderMDXContent contentId='index.faq.title.default' /> 
-              </CustomProse>
-              </div>
-              <div>
-              <div className='flex -mx-1 flex-col space-y-4 md:my-5'>
-                  <Modal8 backdropBlur={features.backdropBlur} contentId="faq.questions" />
-              </div>
-              </div>
           </div>
         </div>
         <div id="careers" className='w-full h-0'></div>
