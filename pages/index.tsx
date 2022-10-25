@@ -85,6 +85,9 @@ const Home: NextPage = () => {
               <DynamicSaturn />
             </Suspense>
           </div>
+          <div className='absolute -z-30 inset-x-0 bottom-0 rotate-6 -translate-x-1/3'>
+            <img src="hero-background.png" className='w-full'/>
+          </div>
         </div>
         <div id="calculateyourearnings" className='w-full h-0'></div>
         <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
