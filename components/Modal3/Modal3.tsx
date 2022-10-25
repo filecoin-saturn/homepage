@@ -1,7 +1,4 @@
-import Link from "next/link";
 import { useContent } from "../../content/content";
-import Button14 from "../Button14/Button14";
-import CustomProse from "../CustomProse/CustomProse";
 
 type Props = {
     backdropBlur: boolean
