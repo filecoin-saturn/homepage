@@ -13,27 +13,21 @@ type CalculatorProps = {
 
 }
 export default function TotalEarnings({contentId, usdText, filText, perMonthText}: CalculatorProps) {
-const content = useContent(contentId ?? "")
-const usdTxt = usdText ?? content[0]?.usdText
-const filTxt = filText ?? content[0]?.filText
-const perMonthTxt = perMonthText ?? content[0]?.perMonthText
+const inputContent = useContent(contentId + ".input.calculatorInformation" ?? "")
+const outputContent = useContent(contentId + ".formula.earningsFormula" ?? "")
+const usdTxt = usdText ?? inputContent[0]?.usdText
+const filTxt = filText ?? inputContent[0]?.filText
+const perMonthTxt = perMonthText ?? inputContent[0]?.perMonthText
 
 // create values per calculator
-const [firstValue, setFirstValue] = useState(content[1].startValue)
-const [secondValue, setSecondValue] = useState(content[2].startValue)
+const [firstValue, setFirstValue] = useState(inputContent[1].startValue)
+const [secondValue, setSecondValue] = useState(inputContent[2].startValue)
 
 
 const [totalFilEarnings, setTotalFILEarnings] = useState<number>(0)
 useEffect(() => {
-    const minP = content[1].minValue 
-    const maxP = content[1].maxValue
-    const minV = Math.log(10)
-    const maxV = Math.log(100)
-    const scale = (maxV-minV) / (maxP-minP);
-
-    const a = 800000/54150 * Math.min(45, secondValue / 100 * (Math.exp(minV + scale*(firstValue-minP)) / 100) * 60 * 60 * 24 * 3 / 1000)
-    setTotalFILEarnings(a)
-},[setTotalFILEarnings, firstValue, secondValue, content])
+    setTotalFILEarnings(outputContent(firstValue, secondValue))
+},[setTotalFILEarnings, firstValue, secondValue, outputContent])
 
 const [currentFilPrice, setCurrentFilPrice] = useState<number>(5)
 const [priceInUsd, setPriceInUsd] = useState<number>()
@@ -104,8 +98,8 @@ useEffect(() => {
                         </div>
                     </div>
                     <div className='px-4 w-full '>
-                        <EarningsCalculator content={content[1]} setOutputValue={setFirstValue} />
-                        <EarningsCalculator content={content[2]} setOutputValue={setSecondValue} />
+                        <EarningsCalculator content={inputContent[1]} setOutputValue={setFirstValue} />
+                        <EarningsCalculator content={inputContent[2]} setOutputValue={setSecondValue} />
                     </div>
                 </div>
             </>

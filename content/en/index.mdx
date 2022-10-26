@@ -30,9 +30,29 @@ Saturn is growing rapidly. The earlier you join, the more you’ll earn.
 
 export const calculatorInformation = [
     {usdText: "USD", filText: "FIL", perMonthText: "Estimated monthly earnings"},
-    {percentage:false, average:false, label:'Available upload capacity (Gbps)' , minValue:100 , maxValue:1000 , startValue:100},
-    {maxLabel:"high" , minLabel:"low" , percentage:true, average:true, label:'Load carried by server*' , minValue:10 , maxValue:90 , startValue:30, averageText: "Average"}
+    {label:'<strong>Upload speed (Gbps; </strong>10Gbps minimum<strong>)</strong>' , minValue:1 , maxValue:50, minUsedValue:10 , startValue:10, outputGen: (val, minV, maxV, minP, maxP) => {
+        const logMinV = Math.log(minV)
+        const logMaxV = Math.log(maxV)
+        const scale = (logMaxV-logMinV) / (maxP-minP);
+        return Math.exp(logMinV + scale*(val-minP))
+    }, outputGenString: (val) => val.toLocaleString(undefined, {maximumFractionDigits: 0})},
+    {label:'<strong>Available storage (TB)</strong>' , minValue:1 , maxValue:50 , startValue:4, outputGen: (val, minV, maxV, minP, maxP) => {
+        const logMinV = Math.log(minV)
+        const logMaxV = Math.log(maxV)
+        const scale = (logMaxV-logMinV) / (maxP-minP);
+        return Math.exp(logMinV + scale*(val-minP))
+    }, outputGenString: (val) => val.toLocaleString(undefined, {maximumFractionDigits: 1})}
 ]
+
+{/* c:calculateyourearnings.formula */}
+
+export const earningsFormula = (val1, val2) => {
+    const i = 800000 / 54150
+    const c = val1 * 60 * 60 * 24 * 30 / 1000
+    const r = 0.00013
+    const dS = (5 + Math.log(val2)) / (5 + Math.log(4))
+    return i * (11.25 + r * c) * Math.pow(dS, 2)
+}
 
 {/* c:calculateyourearnings.footnote */}
 
