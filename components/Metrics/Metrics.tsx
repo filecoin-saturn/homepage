@@ -19,15 +19,28 @@ export default function Metrics({contentId}: Props) {
 
         const styles = useSpring({
             to: useCallback(async (next: <T>(a: T) => void) => {
-             const metrics = await getUptoDateMetrics(content) 
-             await Promise.all(
+             
+            try { 
+            const metrics = await getUptoDateMetrics(content) 
+            
+            await Promise.all(
                 [
                     next({ x: metrics[0], config: { duration: 350 } }),
                     next({ y: metrics[1], config: { duration: 550 } }),
                     next({ z: Number(content[2].number), config: { duration: 650 } })
                 ]
-             )
-            },[content]),
+             )}
+             catch(err){
+                // fallback from abort controller
+             await Promise.all(
+                [
+                    next({ x: Number(content[0].number), config: { duration: 350 } }),
+                    next({ y: Number(content[1].number), config: { duration: 550 } }),
+                    next({ z: Number(content[2].number), config: { duration: 650 } })
+                ]
+                )}
+             }
+            ,[content]),
             from: { x: 0, y: 0, z: 0 },
         })
         
