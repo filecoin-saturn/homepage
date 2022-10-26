@@ -65,7 +65,7 @@ const Home: NextPage = () => {
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
-        <div className=' w-full relative'>
+        <div className=' w-full mx-auto relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className=' max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
               <DynamicSaturn />
             </Suspense>
           </div>
-          <div className='absolute -z-30 inset-x-0 bottom-0 rotate-6 -translate-x-1/3'>
+          <div className='absolute opacity-30 -z-30 inset-x-0 bottom-0 rotate-6 -translate-y-1/2 sm:-translate-y-1/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/3 xl:-translate-y-0'>
             <img src="hero-background.png" className='w-full'/>
           </div>
         </div>
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
           <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-20 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
           </div>
-          <div className='bg-gradient-to-t from-sat-blue-4/10  to-sat-blue-4 opacity-100 w-full h-[120%] -translate-y-[15%] -z-30 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
+          <div className='bg-gradient-to-t from-sat-blue-4/10  to-sat-blue-4 opacity-100 w-full h-[120%] -translate-y-[15%] -z-40 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
           <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
             <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24'>
                 <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-[28rem] md:mt-1'>
@@ -134,92 +134,107 @@ const Home: NextPage = () => {
         </div>
         <div id="ourvision" className='w-full h-0'></div>
         <div data-io="ourvision" className='w-full h-0 mt-56 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
-            <CustomProse>
-              <RenderMDXContent contentId='index.our-vision.title.default' />
-            </CustomProse>
-          </div>
-          <div className='px-2 w-full lg:px-0'>
-            <Goals backdropBlur={features.backdropBlur} contentId="index.our-vision.content.content"/>
+        <div className='w-full relative'>
+          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+            <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
+              <CustomProse>
+                <RenderMDXContent contentId='index.our-vision.title.default' />
+              </CustomProse>
+            </div>
+            <div className='px-2 w-full lg:px-0'>
+              <Goals backdropBlur={features.backdropBlur} contentId="index.our-vision.content.content"/>
+            </div>
+            <div className='absolute -z-50 w-full max-w-[15rem] md:max-w-6xl -translate-x-1/2 -translate-y-3/4 xs:translate-x-[10%] rotate-0 '>
+              <img src="green-planet.webp" className='w-full min-h-[35rem] min-w-[35rem] xs:min-w-[40rem] xs:min-h-[40rem] max-h-[100rem]'/>
+            </div>
           </div>
         </div>
         <div id="setupyournode" className='w-full h-0'></div>
         <div data-io="setupyournode" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
-        <img src="/saturn-node.png" alt="" className='hidden opacity-70 -z-10 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
-          <div data-gsap="animate-children" className='text-left w-full my-8  '>
-            <div className=' lg:text-left underline-offset-2  '>
-              <CustomProse overrides='prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
-                <RenderMDXContent contentId='index.set-up-your-node.title.default' />
-                <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
-              </CustomProse>
-              <div className={`my-8 md:my-14 lg:my-16 xl:my-16 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-8 py-2 md:px-14 md:py-0 lg:px-[3.225rem] lg:-mx-[3.315rem] xl:-mx-20 xl:px-[3.315rem] rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
-                <CustomProse overrides={`max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-5  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:!mb-3 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                  <div className='sm:hidden '>
-                    <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
-                  </div>
-                  <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
-                    <IntersectionObserverWrapper
-                      targetCallbacks={new Map([["player", playerScrollCallback]])}
-                      threshold={[0,1]}
-                      margin="0px 0px 0px 0px"
-                    />
-                    <div data-io="player" className='p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
-                      <AsciinemaPlayer className='w-full h-full' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay play={playTerminal} />
+        <div className='w-full max-w-7xl mx-auto relative'>
+          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
+            <img src="/saturn-node.webp" alt="" className='mix-blend-lighten hidden -z-40 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
+            <div data-gsap="animate-children" className='text-left w-full my-8  '>
+              <div className=' lg:text-left underline-offset-2  '>
+                <CustomProse overrides='prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
+                  <RenderMDXContent contentId='index.set-up-your-node.title.default' />
+                  <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
+                </CustomProse>
+                <div className={`my-8 md:my-14 lg:my-16 xl:my-16 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-8 py-2 md:px-14 md:py-0 lg:px-[3.225rem] lg:-mx-[3.315rem] xl:-mx-20 xl:px-[3.315rem] rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md  bg-sat-grad-blue-green-1-10-fallback-2 ` : `bg-sat-grad-blue-green-1-10-fallback-2 `}`}>
+                  <CustomProse overrides={`max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-5  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:!mb-3 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                    <div className='sm:hidden '>
+                      <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
                     </div>
-                    <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
-                      <div className='hidden sm:block'>
-                        <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
+                    <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
+                      <IntersectionObserverWrapper
+                        targetCallbacks={new Map([["player", playerScrollCallback]])}
+                        threshold={[0,1]}
+                        margin="0px 0px 0px 0px"
+                      />
+                      <div data-io="player" className='p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
+                        <AsciinemaPlayer className='w-full h-full' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay play={playTerminal} />
                       </div>
-                      <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
-                      <Button16 target='_blank' contentId='index.set-up-your-node.description.button.cta[0]' />
-                      <CustomProse overrides='prose-p:!my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
-                        <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
-                      </CustomProse>
+                      <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
+                        <div className='hidden sm:block'>
+                          <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
+                        </div>
+                        <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
+                        <Button16 target='_blank' contentId='index.set-up-your-node.description.button.cta[0]' />
+                        <CustomProse overrides='prose-p:!my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
+                          <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
+                        </CustomProse>
+                      </div>
+                    </div>
+                  </CustomProse>
+                </div>
+                <CustomProse  overrides={`${bigP} ${smallP}
+                prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `} 
+                overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
+                  <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
+                  <div className='md:flex md:space-x-16 lg:space-x-16 md:justify-between md:items-start space-y-4 sm:space-y-4 md:space-y-0'>
+                    <div className='grow'>
+                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[0].default' />
+                      <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
+                        <RenderMDXContent contentId='index.set-up-your-node.requirements.description[0].default' />
+                      </BackgroundWrapper>
+                    </div>
+                    <div className='grow'>
+                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[1].default' />
+                      <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
+                        <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
+                      </BackgroundWrapper>
                     </div>
                   </div>
                 </CustomProse>
               </div>
-              <CustomProse  overrides={`${bigP} ${smallP}
-              prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `} 
-              overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
-                <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
-                <div className='md:flex md:space-x-16 lg:space-x-16 md:justify-between md:items-start space-y-4 sm:space-y-4 md:space-y-0'>
-                  <div className='grow'>
-                    <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[0].default' />
-                    <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
-                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description[0].default' />
-                    </BackgroundWrapper>
-                  </div>
-                  <div className='grow'>
-                    <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[1].default' />
-                    <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
-                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
-                    </BackgroundWrapper>
-                  </div>
-                </div>
-              </CustomProse>
             </div>
+          </div>
+          <div className='absolute max-w-6xl -z-50 rotate-0 opacity-60 -translate-x-1/2 sm:translate-x-0 sm:-translate-y-1/4 top-0 md:translate-y-0 lg:-translate-x-1/4 md:translate-x-0 xl:-translate-x-[5%] '>
+            <img src="hero-background.png" className='w-full min-h-[45rem] min-w-[40rem] '/>
+          </div>
+          <div className='absolute -z-50 mix-blend-lighten top-1/2 translate-y-1/4 md:inset-0 rotate-180 sm:-translate-y-0 md:translate-y-[20%] opacity-30 '>
+            <img src="hero-background.png" className='w-full min-w-[20rem] min-h-[40rem]'/>
           </div>
         </div>
         <div id="roadmap" className='w-full h-0'></div>
         <div data-io="roadmap" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
-            <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:w-full lg:max-w-sm '>
-              <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 even:prose-h1:my-0 odd:prose-h1:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
-                <RenderMDXContent contentId='index.roadmap.title.default' />
-              </CustomProse>
+        <div className='w-full relative '>
+          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+            <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
+              <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:w-full lg:max-w-sm '>
+                <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 even:prose-h1:my-0 odd:prose-h1:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
+                  <RenderMDXContent contentId='index.roadmap.title.default' />
+                </CustomProse>
+              </div>
+              <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
+                      <ListBigDots backdropBlur={features.backdropBlur}>
+                        <RenderMDXContent contentId='index.roadmap.step[0].default' />  
+                        <RenderMDXContent contentId='index.roadmap.step[1].default' />  
+                        <RenderMDXContent contentId='index.roadmap.step[2].default' />  
+                        <RenderMDXContent contentId='index.roadmap.step[3].default' />  
+                      </ListBigDots>
+                </CustomProse>
             </div>
-            <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
-                    <ListBigDots backdropBlur={features.backdropBlur}>
-                      <RenderMDXContent contentId='index.roadmap.step[0].default' />  
-                      <RenderMDXContent contentId='index.roadmap.step[1].default' />  
-                      <RenderMDXContent contentId='index.roadmap.step[2].default' />  
-                      <RenderMDXContent contentId='index.roadmap.step[3].default' />  
-                    </ListBigDots>
-              </CustomProse>
           </div>
         </div>
         <div id="careers" className='w-full h-0'></div>
@@ -251,25 +266,30 @@ const Home: NextPage = () => {
         </div>
         <div id="contact" className='w-full h-0'></div>
         <div data-io="contact" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
-            <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm'>
-              <CustomProse overrides='prose-h1:my-3.5 prose-h1:mb-3'>
-                <RenderMDXContent contentId='index.contact.title.default' />
-              </CustomProse>
-            </div>
-            <div className='relative'>
-              <CustomProse overrides='mt-1 mb-4 sm:mt-4 lg:mt-6 lg:mb-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl prose-p:sm:leading-tight' >
-                <RenderMDXContent contentId='index.contact.description.default' />
-              </CustomProse>
-              <CustomProse overrides='mt-[1.625rem] mb-[0.625rem] md:mt-[1.3125rem] md:mb-[0.8125rem] lg:mt-[1.375rem] lg:mb-[0.8125rem] prose-p:!font-black prose-h6:sm:text-[1.1875rem] prose-h6:sm:leading-tight prose-h6:md:text-[1.4375rem] prose-h6:md:leading-tight prose-h6:lg:text-[1.4375rem] prose-h6:lg:leading-7' >
-                <RenderMDXContent contentId='index.contact.email.title.default' />
-              </CustomProse>
-              <div className='flex space-x-3 md:space-x-5 lg:space-x-5 -mx-1'>
-                <Button17 backdropBlur={features.backdropBlur} contentId={'index.contact.join[0].button'} />
-                <Button17 backdropBlur={features.backdropBlur} contentId={"index.contact.join[1].button"} />
+        <div className='w-full max-w-7xl mx-auto relative'>
+          <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+            <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
+              <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm'>
+                <CustomProse overrides='prose-h1:my-3.5 prose-h1:mb-3'>
+                  <RenderMDXContent contentId='index.contact.title.default' />
+                </CustomProse>
+              </div>
+              <div className='relative'>
+                <CustomProse overrides='mt-1 mb-4 sm:mt-4 lg:mt-6 lg:mb-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl prose-p:sm:leading-tight' >
+                  <RenderMDXContent contentId='index.contact.description.default' />
+                </CustomProse>
+                <CustomProse overrides='mt-[1.625rem] mb-[0.625rem] md:mt-[1.3125rem] md:mb-[0.8125rem] lg:mt-[1.375rem] lg:mb-[0.8125rem] prose-p:!font-black prose-h6:sm:text-[1.1875rem] prose-h6:sm:leading-tight prose-h6:md:text-[1.4375rem] prose-h6:md:leading-tight prose-h6:lg:text-[1.4375rem] prose-h6:lg:leading-7' >
+                  <RenderMDXContent contentId='index.contact.email.title.default' />
+                </CustomProse>
+                <div className='flex space-x-3 md:space-x-5 lg:space-x-5 -mx-1'>
+                  <Button17 backdropBlur={features.backdropBlur} contentId={'index.contact.join[0].button'} />
+                  <Button17 backdropBlur={features.backdropBlur} contentId={"index.contact.join[1].button"} />
+                </div>
               </div>
             </div>
+          </div>
+          <div className='absolute -z-50 rotate-45 -translate-x-1/4 inset-0 sm:rotate-[190deg] xs:translate-x-0 xs:translate-y-[10%] md:translate-y-1/2 lg:translate-y-[85%] '>
+            <img src="gray-gradient.webp" className='w-full'/>
           </div>
         </div>
         <Footer backdropBlur={features.backdropBlur} contentId="general.footer" />

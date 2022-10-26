@@ -1,6 +1,6 @@
-# station-website
+# Saturn-website
 
-The distribution website for Filecoin Station
+The distribution website for Filecoin Saturn
 
 ## Developer notes
 
