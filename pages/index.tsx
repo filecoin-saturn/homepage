@@ -125,12 +125,6 @@ const Home: NextPage = () => {
                 </div>
             </div>
             <TotalEarnings contentId="index.calculateyourearnings" ></TotalEarnings>
-            <div className='px-4'>
-              <CustomProse overrides={` prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                <RenderMDXContent contentId='index.calculateyourearnings.footnote.default' /> 
-              </CustomProse>
-            </div>
-
           </div>
         </div>
         <div id="whatissaturn" className='w-full h-0'></div>
