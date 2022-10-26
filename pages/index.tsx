@@ -20,6 +20,7 @@ import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
 import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
+import { useWindowContext } from '../context/windowContext'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -44,10 +45,24 @@ const Home: NextPage = () => {
     }
   }, [])
 
+  // set big and small p sizes
   const bigP = "[&_.big-p]:text-base [&_.big-p]:text-base [&_.big-p]:md:text-lg [&_.big-p]:lg:text-xl [&_.big-p]:font-black [&_.big-p]:leading-5 [&_.big-p]:lg:leading-6 [&_.big-p]:lg:mb-2  [&_.big-p]:xl:my-3"
   const smallP = "[&_.small-p]:!my-0 [&_.small-p]:!text-xs [&_.small-p]:!leading-3 [&_.small-p]:md:!text-xs [&_.small-p]:lg:!text-base [&_.small-p]:my-0"
 
-  
+  // define player height and width rows 
+  const window = useWindowContext()
+  const [playerCols, setplayerCols] = useState<string>()
+  const [playerRows, setplayerRows] = useState<string>()
+  const widthToCols = 5.4
+  const heightToRows = 11.93333333333
+
+  useEffect(() => {
+    const playerElement = document.getElementById("player")
+    if(playerElement){
+      setplayerCols((playerElement.clientWidth / widthToCols).toFixed(0))
+      setplayerRows((playerElement.clientHeight / heightToRows).toFixed(0))
+    }
+  },[window, setplayerCols, setplayerRows])  
   return (
     <>
       <Head>
