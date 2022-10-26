@@ -20,6 +20,7 @@ import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
 import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
+import { useWindowContext } from '../context/windowContext'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -44,10 +45,24 @@ const Home: NextPage = () => {
     }
   }, [])
 
+  // set big and small p sizes
   const bigP = "[&_.big-p]:text-base [&_.big-p]:text-base [&_.big-p]:md:text-lg [&_.big-p]:lg:text-xl [&_.big-p]:font-black [&_.big-p]:leading-5 [&_.big-p]:lg:leading-6 [&_.big-p]:lg:mb-2  [&_.big-p]:xl:my-3"
   const smallP = "[&_.small-p]:!my-0 [&_.small-p]:!text-xs [&_.small-p]:!leading-3 [&_.small-p]:md:!text-xs [&_.small-p]:lg:!text-base [&_.small-p]:my-0"
 
-  
+  // define player height and width rows 
+  const window = useWindowContext()
+  const [playerCols, setplayerCols] = useState<string>()
+  const [playerRows, setplayerRows] = useState<string>()
+  const widthToCols = 5.4
+  const heightToRows = 11.93333333333
+
+  useEffect(() => {
+    const playerElement = document.getElementById("player")
+    if(playerElement){
+      setplayerCols((playerElement.clientWidth / widthToCols).toFixed(0))
+      setplayerRows((playerElement.clientHeight / heightToRows).toFixed(0))
+    }
+  },[window, setplayerCols, setplayerRows])  
   return (
     <>
       <Head>
@@ -171,8 +186,8 @@ const Home: NextPage = () => {
                         threshold={[0,1]}
                         margin="0px 0px 0px 0px"
                       />
-                      <div data-io="player" className='p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
-                        <AsciinemaPlayer className='w-full h-full' src="/filecoin-saturn-setup-1.cast" rows="30" idleTimeLimit={3} preload={true} fit="height" speed={4} autoPlay play={playTerminal} />
+                      <div id='player' data-io="player" className='p-2 lg:max-w-h-[22rem]  md:p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
+                        <AsciinemaPlayer className='w-full lg:max-h-[22rem] h-full' src="/filecoin-saturn-setup-1.cast" cols={playerCols} rows={playerRows} idleTimeLimit={3} preload={true} fit="width" speed={80} autoPlay play={playTerminal} />
                       </div>
                       <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
                         <div className='hidden sm:block'>

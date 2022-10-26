@@ -1,5 +1,5 @@
-{"version": 2, "width": 127, "height": 43, "timestamp": 1666383616, "env": {"SHELL": "/bin/zsh", "TERM": "xterm-256color"}}
-[0.31399, "o", "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                              \r \r\u001b]2;someuser@Someusers-MBP:~/Documents/work/filecoin-node-terminal-recording\u0007\u001b]1;..nal-recording\u0007"]
+{"version": 2, "width": 80, "height": 43, "timestamp": 1666383616, "env": {"SHELL": "/bin/zsh", "TERM": "xterm-256color"}}
+                                                                                                                             \r \r\u001b]2;someuser@Someusers-MBP:~/Documents/work/filecoin-node-terminal-recording\u0007\u001b]1;..nal-recording\u0007"]
 [0.323366, "o", "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\r\u001b[1;36m./l1-node-setup\u001b[0m \r\n\u001b[1;32m❯\u001b[0m \u001b[K"]
 [0.323439, "o", "\u001b[?1h\u001b=\u001b[?2004h"]
 [1.418912, "o", "s"]
