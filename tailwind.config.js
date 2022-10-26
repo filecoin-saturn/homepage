@@ -46,13 +46,15 @@ module.exports = {
         'sat-grad-blue-green-1-10-fallback-1': "linear-gradient(90deg, rgb(6, 37, 53) 0%, rgb(1, 32, 58) 100%);",
         'sat-grad-blue-green-1-10-fallback-2': "linear-gradient(90deg, rgb(6, 37, 53, 0.6) 0%, rgb(1, 32, 58, 0.6) 100%);",
 
-
+        // bg-sat-grad-blue-green-1-20-fallback-2
 
 
         'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%)",
         'sat-grad-blue-green-1-30': "linear-gradient(90deg, rgba(57, 193, 203, 0.3) 0%, rgba(7, 143, 255, 0.3) 100%)",
         'sat-grad-blue-green-1-40': "linear-gradient(90deg, rgba(57, 193, 203, 0.4) 0%, rgba(7, 143, 255, 0.4) 100%)",
         'sat-grad-blue-green-1-20-fallback-1': "linear-gradient(90deg, #1D4469 0%, #143B74 100%)",
+        'sat-grad-blue-green-1-20-fallback-2': "linear-gradient(90deg, #0C3646 0%, #022D50 100%)",
+        'sat-grad-blue-green-1-30-fallback-2': "linear-gradient(90deg, #114656 0%, #023865 100%)",
         'sat-grad-blue-green-1-30-fallback-1': "linear-gradient(90deg, #114656 0%, #023865 100%)",
         'sat-grad-blue-green-1-40-fallback-1': "linear-gradient(90deg, #175969 0%, #05477D 100%)",
         'sat-grad-blue-green-2': "radial-gradient(63.44% 63.44% at 29.7% 70.3%, #0090FF 0%, #39C1CB 100%)",
