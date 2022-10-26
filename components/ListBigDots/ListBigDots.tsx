@@ -17,8 +17,8 @@ export default function ListBigDots({children, backdropBlur}: Props) {
                                 <div className={`${backdropBlur ? `supports-blur:backdrop-blur-md supports-blur:bg-sat-blue-3/30` : ``} bg-sat-blue-3-30-fallback-1 flex-grow my-2 w-0.5`}/>
                             )}
                         </div>
-                        <div className='pl-[0.54875rem] mb-[1.375rem] md:mb-8 -mt-4 md:flex-none md:pl-[0.8125rem] max-w-lg'>
-                                {child}
+                        <div className='pl-[0.54875rem] mb-[1.375rem] md:mb-8 -mt-4 md:flex-none md:pl-[0.8125rem] max-w-lg lg:max-w-md xl:max-w-lg'>
+                            {child}
                         </div>
                     </div>
                 )
