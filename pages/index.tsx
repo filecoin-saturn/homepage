@@ -159,7 +159,7 @@ const Home: NextPage = () => {
             <div className='px-2 w-full lg:px-0'>
               <Goals backdropBlur={features.backdropBlur} contentId="index.our-vision.content.content"/>
             </div>
-            <div className='absolute -z-50 w-full max-w-[15rem] md:max-w-6xl -translate-x-1/2 -translate-y-3/4 xs:translate-x-[10%] rotate-0 '>
+            <div className='absolute -z-40 mix-blend-lighten w-full max-w-[15rem] md:max-w-6xl -translate-x-1/2 -translate-y-3/4 xs:translate-x-[10%] rotate-0 '>
               <img src="green-planet.webp" className='w-full min-h-[35rem] min-w-[35rem] xs:min-w-[40rem] xs:min-h-[40rem] max-h-[100rem]'/>
             </div>
           </div>
