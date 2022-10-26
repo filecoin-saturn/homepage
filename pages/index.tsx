@@ -208,11 +208,11 @@ const Home: NextPage = () => {
         <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
             <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:w-full lg:max-w-sm '>
-              <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
+              <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 even:prose-h1:my-0 odd:prose-h1:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
                 <RenderMDXContent contentId='index.roadmap.title.default' />
               </CustomProse>
             </div>
-            <CustomProse overrides='my-4 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-p:lg:max-w-none   ' >
+            <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
                     <ListBigDots backdropBlur={features.backdropBlur}>
                       <RenderMDXContent contentId='index.roadmap.step[0].default' />  
                       <RenderMDXContent contentId='index.roadmap.step[1].default' />  
@@ -254,7 +254,7 @@ const Home: NextPage = () => {
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
             <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm'>
-              <CustomProse overrides='prose-h1:my-3.5'>
+              <CustomProse overrides='prose-h1:my-3.5 prose-h1:mb-3'>
                 <RenderMDXContent contentId='index.contact.title.default' />
               </CustomProse>
             </div>
@@ -262,7 +262,7 @@ const Home: NextPage = () => {
               <CustomProse overrides='mt-1 mb-4 sm:mt-4 lg:mt-6 lg:mb-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl prose-p:sm:leading-tight' >
                 <RenderMDXContent contentId='index.contact.description.default' />
               </CustomProse>
-              <CustomProse overrides='mt-4 mb-1 md:mb-3 lg:mb-4 prose-p:!font-black prose-h6:sm:text-xl' >
+              <CustomProse overrides='mt-[1.625rem] mb-[0.625rem] md:mt-[1.3125rem] md:mb-[0.8125rem] lg:mt-[1.375rem] lg:mb-[0.8125rem] prose-p:!font-black prose-h6:sm:text-[1.1875rem] prose-h6:sm:leading-tight prose-h6:md:text-[1.4375rem] prose-h6:md:leading-tight prose-h6:lg:text-[1.4375rem] prose-h6:lg:leading-7' >
                 <RenderMDXContent contentId='index.contact.email.title.default' />
               </CustomProse>
               <div className='flex space-x-3 md:space-x-5 lg:space-x-5 -mx-1'>

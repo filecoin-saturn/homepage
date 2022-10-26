@@ -48,12 +48,24 @@ useEffect(() => {
     (async function getCurrenFilRate() {
         const options = {method: 'GET', headers: {accept: ''}};
 
-        const response = await fetch('https://api.coingecko.com/api/v3/coins/binance-peg-filecoin', options)
+        const response = await fetch('https://api.binance.com/api/v3/avgPrice?symbol=FILUSDT', options)
         const jsonResponse = await response.json()
-        jsonResponse ? setCurrentFilPrice(jsonResponse.market_data.current_price.usd) : setCurrentFilPrice(5)
+        console.log(jsonResponse.price)
+        jsonResponse ? setCurrentFilPrice(jsonResponse.price) : setCurrentFilPrice(5)
 
     })();
   }, []); 
+
+// for (let i = 0; i < 100; i++) {
+//     (async function getCurrenFilRate() {
+//         const options = {method: 'GET', headers: {accept: ''}};
+
+//         const response = await fetch('https://api.coingecko.com/api/v3/coins/binance-peg-filecoin', options)
+//         const jsonResponse = await response.json()
+//         console.log(i, jsonResponse)
+
+//     })();
+// }
 
 //   animation 
 
