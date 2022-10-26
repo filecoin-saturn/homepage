@@ -25,7 +25,7 @@ export function useContent(contentId: string) {
     const router = useRouter()
     const locale = router.locale ?? "en"
     const pathName = router.pathname.replace("/", ".").substring(1)
-    const p = `${locale}.${pathName}${contentId}`
+    const p = `${locale}.${contentId.startsWith("general") || contentId.startsWith("faq") ? '' : pathName}.${contentId}`.replace(/\.+/, ".")
     const value = _get(contentFiles, p)
     return value
 }
@@ -34,7 +34,8 @@ type RenderMDXContentProps = {
     contentId: string
 }
 
-export function RenderMDXContent({contentId}: RenderMDXContentProps) {
+export default function RenderMDXContent({contentId}: RenderMDXContentProps) {
     const Component = useContent(contentId)
+    if(!Component) throw Error("There might be something off with your content. Please double check contentId " + contentId + ".")
     return <Component/>
 }

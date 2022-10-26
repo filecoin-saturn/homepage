@@ -35,7 +35,7 @@ type ButtonContentProps = {
 
 export function ButtonContent({isActive, text, backdropBlur}: ButtonContentProps) {
     return (
-        <div className={`border-2 border-transparent  group-active:scale-90 group-focus-visible:border-white hover:backdrop-blur-md rounded-full p-0.5 px-4 relative text-sat-gray-1 group-focus-visible:text-white ${backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/20 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-sat-white-10-fallback-1 group-active:bg-sat-white-20-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1` : `group-hover:bg-sat-white-10-fallback-1 group-active:bg-sat-white-20-fallback-1 group-focus-visible:bg-sat-white-10-fallback-1`}`}>
+        <div className={`border-2 border-transparent  group-active:scale-90 group-focus-visible:border-white hover:backdrop-blur-md rounded-full p-0.5 px-4 relative text-sat-gray-1 group-focus-visible:text-white ${backdropBlur ? `supports-blur:group-hover:bg-white/10 supports-blur:group-active:bg-white/20 supports-blur:group-hover:backdrop-blur-md supports-blur:group-active:backdrop-blur-md supports-blur:group-focus-visible:bg-white/10 group-hover:bg-white/10 group-active:bg-white/20 group-focus-visible:bg-white/10` : `group-hover:bg-white/10 group-active:bg-white/20 group-focus-visible:bg-white/10`}`}>
             <div className={`text-base sm:text-lg font-inter font-semibold antialiased tracking-wide ${isActive ? `text-white`: ``}` }>
                 {text}
             </div>

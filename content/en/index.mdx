@@ -1,13 +1,58 @@
 {/* c:start */}
 
-### Filecoin Saturn
+# Filecoin Saturn <br/> The Web3 CDN
 
-Saturn is an open-source, decentralized Content Delivery Network (CDN) built on Filecoin.  
+Filecoin Saturn is an open-source, community-run Content Delivery Network (CDN) built on Filecoin. Join the network, run a node, and earn Filecoin for accelerating the decentralized web.
 
 export const ctas = [
-    {text: "Get Involved", link: "#getinvolved"},
-    {text: "Learn more", link: "#whatissaturn"}
+    {subtext:"Become a node operator:", text: "Set up & Earn (5 mins)", link: "#setupyournode"},
 ]
+
+{/* c:metrics */}
+
+export const metrics = [
+    {metric:"Global Points of\nPresence (PoPs)", number: "62", unit: ""},
+    {metric:"Requests served each day", number: "150", unit: "M"},
+    {metric:"Average TTFB to IPFS content", number: "320", unit: "ms"}
+]
+
+{/* c:calculateyourearnings.title */} 
+
+# Calculate your earnings
+
+{/* c:calculateyourearnings.description */}
+
+Have a server? Enter your server's upload speed and available storage below to estimate how much you can earn monthly.
+	
+Saturn is growing rapidly. The earlier you join, the more you’ll earn.
+
+{/* c:calculateyourearnings.input */}
+
+export const calculatorInformation = [
+    {usdText: "USD", filText: "FIL", perMonthText: "Estimated monthly earnings"},
+    {label:'<strong>Upload speed (Gbps; </strong>10Gbps minimum<strong>)</strong>' , minValue:1 , maxValue:50, minUsedValue:10 , startValue:10, outputGen: (val, minV, maxV, minP, maxP) => {
+        const logMinV = Math.log(minV)
+        const logMaxV = Math.log(maxV)
+        const scale = (logMaxV-logMinV) / (maxP-minP);
+        return Math.exp(logMinV + scale*(val-minP))
+    }, outputGenString: (val) => val.toLocaleString(undefined, {maximumFractionDigits: 0})},
+    {label:'<strong>Available storage (TB)</strong>' , minValue:1 , maxValue:50 , startValue:4, outputGen: (val, minV, maxV, minP, maxP) => {
+        const logMinV = minV
+        const logMaxV = maxV
+        const scale = (logMaxV-logMinV) / (maxP-minP);
+        return logMinV + scale*(val-minP)
+    }, outputGenString: (val) => val.toLocaleString(undefined, {maximumFractionDigits: 1})}
+]
+
+{/* c:calculateyourearnings.formula */}
+
+export const earningsFormula = (val1, val2) => {
+    const i = 800000 / 54150
+    const c = val1 * 60 * 60 * 24 * 30 / 1000
+    const r = 0.00013
+    const dS = (5 + Math.log(val2)) / (5 + Math.log(4))
+    return i * (11.25 + r * c) * Math.pow(dS, 2)
+}
 
 {/* c:what-is-saturn.title */}
 
@@ -19,63 +64,39 @@ Saturn is a Web3 CDN in Filecoin’s retrieval market. On one side of the networ
 
 Saturn is trustless, permissionless, and inclusive. Anyone can run Saturn software, contribute to the network, and earn Filecoin.
 
-Content on Saturn is [IPFS](https://ipfs.io/) content-addressed. Every piece of content is immutable and every response verifiable.
+Content on Saturn is <a target="_blank" href="https://ipfs.io/">IPFS</a> content-addressed. Every piece of content is immutable and every response verifiable.
 
 Crypto-incentives unite, align, and grow the network. Node operators earn Filecoin for accelerating web content and websites get faster content delivery for less.
 
-All work is open source and developed in the public for all humanity.
+All work is open source and developed in the public for all of humanity.
 
-{/* c:goals.title */}
+{/* c:our-vision.title */}
 
-# Goals
+# Our Vision
 
-{/* c:goals.content */}
+{/* c:our-vision.content */}
 
-export const content = [{
+export const content = [
+    {
+        image: "multi-peer-logo.svg",
+        title: "Advance Web3 Adoption",
+        text: "Accelerate Web3 adoption by accelerating Web3 content, from NFTs to the Metaverse.",
+    },{
         image: "serve-content-logo.svg",
-        title: "Fast retrievals",
-        text: "Serve content stored on Filecoin with low latency.",
+        title: "Include everyone",
+        text: "Anyone can join and participate. Saturn is a united network of the humanity's hardware — from servers in data centers to end user desktops and phones.",
     },
     {
         image: "lightning-logo.svg",
-        title: "Engender Web3",
-        text: "Accelerate the adoption of Web3 by accelerating Web3 content, from NFTs to the Metaverse.",
+        title: "Democratize Delivery",
+        text: "Everyone can contribute to the network and earn Filecoin, anywhere in the world. Earnings are shared by the community, not captured by a single company.",
     },
     {
         image: "deduplication-logo.svg",
-        title: "Grow the Filecoin network",
-        text: "Provide a new, easier way for anyone to join the Filecoin network by lowering the hardware requirements to participate. Download the Saturn app on your desktop and earn Filecoin.",
-    },
-    {
-        image: "multi-peer-logo.svg",
-        title: "Include everyone",
-        text: "Unite a network of heterogeneous hardware into a fast, low-cost CDN -- from big servers in datacenters to end user desktops and phones.",
+        title: "Fast retrievals",
+        text: "Serve Web3 content with low latency and at low cost.",
     },
 ]
-
-{/* c:how-it-works.intro */}
-
-# How it works
-
-{/* c:how-it-works.main */}
-
-Websites use Saturn by adding a `<script>` tag and Service Worker. Once added, Saturn's Service Worker intercepts requests for content-addressed assets, like <a href="https://ipfs.io/ipfs/QmPqrxJKR4xuUzcjbAB5KnpmdUnoHPGkWs1XqerSWkgPNa/filecoin-orbit-2.mp4" target="_blank">https://ipfs.io/ipfs/QmPxJ…</a>, and fulfills them from Saturn. In this manner, content-addressed assets, from JavaScript to videos, are accelerated.
-
-Saturn nodes don't respond with files but instead IPLD <a href="https://ipld.io/specs/transport/car/" target="_blank">CAR files</a>. These CAR files are incrementally verified by Saturn's Service Worker, as they're received, to prevent abuse and allow for a trustless network.
-
-Saturn's network is comprised of three node types:
-
-- <b>Network edge nodes (L1s)</b>: High bandwidth servers with large caches close to users.
-- <b>Intermediate cache nodes (L2s)</b>: Desktops running Windows, Linux, and OS X and smaller servers.
-- Content backbone nodes: Filecoin <a href="https://sp.filecoin.io/" target="_blank">Storage Providers</a> (SPs).
-
-With these, the network flow of a Saturn request is:
-
- 1. A browser requests an asset from the nearest L1
- 2. The L1 cache misses to its surrounding swarm of L2s
- 3. L2s cache miss to SPs
-
-After a request is fulfilled -- completely or partially -- the website pays the network in Filecoin for fulfilling the retrieval. And every L1, L2, and SP node that participated in the retrieval is remunerated for their contribution in fulfilling that request.
 
 {/* c:roadmap.title */}
 
@@ -84,38 +105,88 @@ After a request is fulfilled -- completely or partially -- the website pays the 
 
 {/* c:roadmap.step[0] */}
 
-##### Q2 2022 
-Private test network of L1 nodes. Beat IPFS Gateway performance.
+##### Dec 2022 
+Launch public network of L1 nodes. Test L2 nodes in test net.
 
 {/* c:roadmap.step[1] */}
 
-##### Q3 2022 
-Open, public network of L1 nodes. Test network of L2 nodes.
+##### Mar 2023 
+Scale the L1 network. Achieve sub-second TTFB globally for IPFS content.
 
 {/* c:roadmap.step[2] */}
 
-##### Q4 2022
-Connect L1s to L2s and L2s to Storage Providers (SPs), end-to-end.
+##### Jun 2023
+Private L2 beta on main net. L1 nodes will cache miss to L2 nodes.
 
 {/* c:roadmap.step[3] */}
 
-##### Q1 2023 
-Adopt first network-wide Cryptoeconomics model.
+##### Sep 2023
+Launch public network of L2 nodes. L2 nodes will cache miss to Filecoin Storage Providers (SPs).
 
-{/* c:get-involved.title */}
 
-# Get involved
+{/* c:set-up-your-node.title */}
 
-{/* c:get-involved.description */}
+# Set up your node
 
-We're looking for early node operators to run L1 nodes and earn Filecoin when Saturn enter private beta. Do you have server capacity with considerable uplink and storage and want to get in early? If so, please introduce yourself in <a href="https://filecoinproject.slack.com/archives/C03DH0BL02E">#filecoin-saturn</a> on <a href="https://filecoin.io/slack" target="_blank">Filecoin Slack</a>!
+{/* c:set-up-your-node.subtitle */}
 
-{/* c:get-involved.buttons */}
+Earn Filecoin for serving and accelerating Web3 content. The more you serve, the more you earn.
 
-export const getInvolved = [
-    {text: "Join the team", link: "#careers"},
-    {text: "Get in touch", link: "mailto:ansgar@protocol.ai"}
+{/* c:set-up-your-node.requirements.title */}
+
+##### Node Requirements
+
+{/* c:set-up-your-node.requirements.description.title[0] */}
+
+<p className="big-p">Minimum Hardware</p>
+
+{/* c:set-up-your-node.requirements.description[0] */}
+
+- **6 Core CPU** <span className="small-p">(12+ cores recommended)</span>
+- **1TB SSD** <span className="small-p">(4TB+ SSD recommended)</span>
+- **10Gbps upload** <span className="small-p">(10Gbps+ recommended)</span>
+- **32GB RAM** <span className="small-p">(128GB+ recommended)</span>
+
+{/* c:set-up-your-node.requirements.description.title[1] */}
+
+<p className="big-p"><b>Other</b></p>
+
+{/* c:set-up-your-node.requirements.description[1] */}
+
+- **Dedicated Linux server with a public IPv4 address**
+- **Ports 80 and 443 free**
+- **User with sudo privileges**
+- <a target="_blank" href="https://docs.filecoin.io/reference/overview/#wallets-audited">Filecoin Wallet</a>
+
+{/* c:set-up-your-node.requirements.legal.title */}
+
+<p className="big-p">Legal</p>
+
+{/* c:set-up-your-node.requirements.legal.description */}
+
+<a href="/" className="!font-regular" ><span >Rules and requirements</span></a> of node operators 
+
+{/* c:set-up-your-node.description.title */}
+
+### Run your node in 5 minutes
+
+{/* c:set-up-your-node.description.subtitle */}
+
+###### Setup instructions
+
+{/* c:set-up-your-node.description.text */}
+    
+Saturn nodes are neatly packaged <a href="https://www.docker.com/" target="_blank">Docker</a> containers. Set up your node in no time with Docker or our easy-to-use <a href="https://www.ansible.com/" target="_blank">Ansible</a> playbook.
+
+{/* c:set-up-your-node.description.button */}
+
+export const cta = [
+    {text:"Set up & Earn", link: "https://github.com/filecoin-saturn/L1-node#running-a-node"},
 ]
+
+{/* c:set-up-your-node.description.join */}
+
+Questions? Join <a target="_blank" href="https://filecoinproject.slack.com/archives/C03DH0BL02E">#filecoin-saturn</a> for personal help with a smile.
 
 {/* c:careers.intro */}
 
@@ -123,22 +194,51 @@ export const getInvolved = [
 
 {/* c:careers.description */}
 
-The Saturn team is also actively hiring full-stack and distributed systems engineers. Want to build an interplanetary, Web3 CDN?
+The Saturn team is actively hiring full-stack and distributed systems engineers. Want to build an interplanetary, Web3 CDN? We'd love to hear from you.
 
 {/* c:careers.jobs[0] */}
 
-**Sr. Full Stack Engineer**
+Sr. Full Stack Engineer
 
 export const link = "https://docs.google.com/document/d/1YD5nm2Xl_Ou4H0andiUuEAtR9Dkyebg7WHiMKOoJBjw/edit#heading=h.m8cb1y5cszh7"
 
 {/* c:careers.jobs[1] */}
 
-**Sr. Infrastructure Engineer**
+Sr. Infrastructure Engineer
 
 export const link = "https://docs.google.com/document/d/1XVCz1uiI5vKdKRNugwsHp9U5f2L6Zk6A2q-57eAmLno/edit#heading=h.noe02bov1nc3"
 
 {/* c:careers.jobs[2] */}
 
-**Sr. Distributed Systems Engineer**
+Sr. Distributed Systems Engineer
 
 export const link = "https://docs.google.com/document/d/1_HTxZqBLZVNLzXjCx55ZekIO7SWv1gwtigcCe38qQDE/edit#heading=h.m8cb1y5cszh7"
+
+
+{/* c:contact.title */}
+
+# Contact
+
+{/* c:contact.description */}
+
+Interested in Saturn development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.
+
+{/* c:contact.email.title */}
+
+###### Join the community
+
+{/* c:contact.join[0] */}
+
+export const button = {
+    text: "Slack",
+    link: "https://filecoinproject.slack.com/archives/C03DH0BL02E",
+    backgroundImage: "slack-logo.svg",
+}
+
+{/* c:contact.join[1] */}
+
+export const button = {
+    text: "Twitter",
+    link: "https://twitter.com/FilecoinSaturn",
+    backgroundImage: "twitter-logo.svg",
+}

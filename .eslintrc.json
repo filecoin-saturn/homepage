@@ -9,7 +9,15 @@
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "no-undef": "off"
+        "no-undef": "off",
+        "react/no-unknown-property": [
+          2,
+          {
+            "ignore": [
+              "jsx"
+            ]
+          }
+        ]  
       }
     }
   ]

@@ -15,7 +15,7 @@ type WindowContextWrapperProps = {
     setVh?: boolean;
 }
 
-export function WindowContextWrapper({children, debounceMs, setVh}: WindowContextWrapperProps) {
+export default function WindowContextWrapper({children, debounceMs, setVh}: WindowContextWrapperProps) {
     const [dim, setDim] = useState(dimDefault)
     const [urlBarHeight, setUrlBarHeight] = useState(0)
 

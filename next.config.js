@@ -48,6 +48,9 @@ function execute(value, process, callback) {
 module.exports = withPlugins([withTM, withBundleAnalyzer],{
   // Append the default value with md extensions
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   webpack: (config, options) => {
     config.module.rules.push(

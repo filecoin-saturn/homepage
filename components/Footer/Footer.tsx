@@ -1,8 +1,8 @@
 import Button3 from "../Button3/Button3";
-import Button8 from "../Button8/Button8"
 import dynamic from "next/dynamic";
 import { useLayoutEffect } from "react";
 import { useContent } from "../../content/content";
+import Button15 from "../Button15/Button15";
 
 type links = {
     title: string;
@@ -60,7 +60,7 @@ function Footer({links, credits, animation, backdropBlur, contentId}: Props){
                                         {e.links.map((e2, i2) => {
                                             return (
                                                 <div data-gsap="animate" key={i2}>
-                                                    <Button8 backdropBlur={backdropBlur} link={e2.link} text={e2.text} backgroundImage={e2.backgroundImage} />
+                                                    <Button15 backdropBlur={backdropBlur} link={e2.link} text={e2.text} backgroundImage={e2.backgroundImage} />
                                                 </div>
                                             )
                                         })}
