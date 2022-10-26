@@ -46,7 +46,6 @@ module.exports = {
         'sat-grad-blue-green-1-10-fallback-1': "linear-gradient(90deg, rgb(6, 37, 53) 0%, rgb(1, 32, 58) 100%);",
         'sat-grad-blue-green-1-10-fallback-2': "linear-gradient(90deg, rgb(6, 37, 53, 0.6) 0%, rgb(1, 32, 58, 0.6) 100%);",
 
-        // bg-sat-grad-blue-green-1-20-fallback-2
 
 
         'sat-grad-blue-green-1-20': "linear-gradient(90deg, rgba(57, 193, 203, 0.2) 0%, rgba(7, 143, 255, 0.2) 100%)",
