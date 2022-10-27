@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             {'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }'}
           </Script>
           {/* Send click events on data-analytics links to plausible*/}
-          <Script async strategy='afterInteractive' id='plausible-analytics-anchor-script'>
+          <Script async id='plausible-analytics-anchor-script'>
             {`
               let links = document.querySelectorAll("a[data-analytics]");
               for (var i = 0; i < links.length; i++) {
@@ -42,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               }
 
               function handleLinkEvent(event) {
+                  console.log("handling event")
                   var link = event.target;
                   var middle = event.type == "auxclick" && event.which == 2;
                   var click = event.type == "click";
