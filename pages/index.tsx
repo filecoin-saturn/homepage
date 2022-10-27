@@ -104,7 +104,7 @@ const Home: NextPage = () => {
             <img src="hero-background.png" className='w-full'/>
           </div>
         </div>
-        <div id="calculateyourearnings" className='w-full h-0'></div>
+        {/* <div id="calculateyourearnings" className='w-full h-0'></div>
         <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
@@ -126,7 +126,7 @@ const Home: NextPage = () => {
             </div>
             <TotalEarnings contentId="index.calculateyourearnings" ></TotalEarnings>
           </div>
-        </div>
+        </div> */}
         <div id="whatissaturn" className='w-full h-0'></div>
         <div data-io="whatissaturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
