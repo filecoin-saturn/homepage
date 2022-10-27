@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import WindowContextWrapper from '../context/windowContext'
 import FeatureContextWrapper from '../context/featureContext'
 import Script from 'next/script'
-import Head from 'next/head'
 
 
 
