@@ -31,10 +31,10 @@ Saturn is growing rapidly. The earlier you join, the more you’ll earn.
 export const calculatorInformation = [
     {usdText: "USD", filText: "FIL", perMonthText: "Estimated monthly earnings"},
     {label:'<strong>Upload speed (Gbps; </strong>10Gbps minimum<strong>)</strong>' , minValue:1 , maxValue:50, minUsedValue:10 , startValue:10, outputGen: (val, minV, maxV, minP, maxP) => {
-        const logMinV = Math.log(minV)
-        const logMaxV = Math.log(maxV)
+        const logMinV = minV
+        const logMaxV = maxV
         const scale = (logMaxV-logMinV) / (maxP-minP);
-        return Math.exp(logMinV + scale*(val-minP))
+        return logMinV + scale*(val-minP)
     }, outputGenString: (val) => val.toLocaleString(undefined, {maximumFractionDigits: 0})},
     {label:'<strong>Available storage (TB)</strong>' , minValue:1 , maxValue:50 , startValue:4, outputGen: (val, minV, maxV, minP, maxP) => {
         const logMinV = minV
