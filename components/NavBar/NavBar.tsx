@@ -100,7 +100,6 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
         }
     }, [intersecting, scrollToHash])
 
-    console.log(backdropBlur)
 
     return (
         <>
