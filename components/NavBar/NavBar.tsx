@@ -100,6 +100,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
         }
     }, [intersecting, scrollToHash])
 
+
     return (
         <>
             <IntersectionObserverWrapper
@@ -107,7 +108,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                 threshold={[0, 1]}
                 margin="0px 0px 0px 0px"
             />
-            <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:backdrop-blur-2xl supports-blur:bg-white/5 bg-sat-grad-blue-green-1-10-fallback-1` : `bg-sat-grad-blue-green-1-10-fallback-1`}  `}>
+            <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-2xl  bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={langs ?? {text: "en"}} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
                     {menuLinks?.map((link, index) => {
                         const cId = `${contentId}.menuLinkArray[${index}]`
@@ -147,7 +148,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                     })}
                 </Menu>
             </div>
-            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md bg-sat-grad-blue-green-1-10-fallback-1` : `bg-sat-grad-blue-green-1-10-fallback-1`}`}>
+            <div id="navbar" className={`fixed inset-x-0 z-10 rounded-full m-2 md:m-4 ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-md  bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}  `}>
                 <div className="flex justify-between items-center p-1 md:pr-3">
                         <Button3 link="/" replace={true} backdropBlur={backdropBlur} aria={"Move up"} />
                     <div className={`flex items-center lg:hidden mr-1.5 ` }>
@@ -157,7 +158,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                         }} aria="Open menu"/>
                     </div>
                     <div className={`hidden lg:flex md:items-center lg:space-x-16 space-x-4`}>
-                        <ul className="flex lg:-space-x-0.5 xl:space-x-4">
+                        <ul className="flex lg:-space-x-1.5 xl:space-x-4">
                             {navLinks?.map((link, index) => {
                                 const cId = `${contentId}.navLinkArray[${index}]`
                                 const hash = link.href.split("#")[1]

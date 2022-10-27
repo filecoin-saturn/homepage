@@ -49,8 +49,8 @@ export default function Metrics({contentId}: Props) {
             {content.map((postContent: PostContentContent, key: number) => {
                 return (
                     <div key={key} className="first-of-type:mr-4  text-white font-inter min-w-fit flex items-center space-x-1 md:space-x-3 lg:space-x-4 ">
-                        <div className="text-[1.25rem] md:text-4xl lg:text-5xl font-black flex md:space-x-1 lg:space-x-2">
-                            <animated.div className="" >
+                        <div className="text-[1.25rem] md:text-4xl lg:text-5xl font-black flex space-x-0.5 md:space-x-1 lg:space-x-2">
+                            <animated.div className={`${content[key].number.length === 2 ? `w-7 md:w-12 lg:w-[65px]` : `w-10 md:w-[70px] lg:w-[90px]` }`} >
                                 {key === 0 ? styles.x.to(val => Math.floor(val)) : key === 1 ? styles.y.to(val => Math.floor(val)) : styles.z.to(val => Math.floor(val))}  
                             </animated.div>
                             <div>
