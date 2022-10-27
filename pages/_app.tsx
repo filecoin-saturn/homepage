@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               });
             `}
           </Script>
-          <Script strategy='afterInteractive' async data-domain="strn.network" src="https://plausible.io/js/plausible.js"/>
+          <Script strategy='afterInteractive' async data-domain="strn.network" src="https://plausible.io/js/script.outbound-links.js"/>
           <Script strategy='afterInteractive' async id='plausible-analytics'>
             {'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }'}
           </Script>
