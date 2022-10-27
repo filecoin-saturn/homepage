@@ -24,6 +24,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             });
         `}
     </Script> 
+    <Script defer data-domain="strn.network" src="https://plausible.io/js/plausible.js"/>
+
     <FeatureContextWrapper>
       <WindowContextWrapper debounceMs={60} setVh>
         <Component {...pageProps} />
