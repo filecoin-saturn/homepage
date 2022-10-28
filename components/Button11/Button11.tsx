@@ -12,6 +12,7 @@ type Props = {
     replace: boolean,
     disabled?: boolean,
     contentId: string
+    dataAnalytics: string
 }
 
 type ButtonWrapperProps = {
@@ -23,6 +24,7 @@ type ButtonWrapperProps = {
    disabled?: boolean 
    text?: string,
    isActive?: boolean
+   dataAnalytics: string
 }
 
 
@@ -43,8 +45,9 @@ export function ButtonContent({isActive, text}: ButtonContentProps) {
 
 export function ButtonWrapper({...all}: ButtonWrapperProps) {
     const rest: Partial<ButtonWrapperProps> = all
+    const a = all.dataAnalytics
     return rest.type === "next-link" ? (
-        <Link href={rest.link ?? ""} replace={rest.replace}>
+        <Link href={rest.link ?? ""} data-analytics={`${a}`} replace={rest.replace}>
             <a 
             className={`block outline-none rounded-full group relative flex-none ${rest.isActive ? "ring-[5px] ring-sat-blue-3/30" : "ring-transparent"}`}
             onClick={rest.onClick}
@@ -68,9 +71,9 @@ export default function Button11({...all}: Props) {
     const content = useContent(all.contentId)
     const l = rest.link ?? content.href
     const t = rest.text ?? content.title
-
+    const a = content.dataAnalytics
     return (
-        <ButtonWrapper type={rest.type} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} isActive={rest.isActive} >
+        <ButtonWrapper type={rest.type} dataAnalytics={a} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} isActive={rest.isActive} >
             <ButtonContent isActive={rest.isActive} text={t} />
         </ButtonWrapper>
     )

@@ -5,7 +5,7 @@
 Filecoin Saturn is an open-source, community-run Content Delivery Network (CDN) built on Filecoin. Join the network, run a node, and earn Filecoin for accelerating the decentralized web.
 
 export const ctas = [
-    {subtext:"Become a node operator:", text: "Set up & Earn (5 mins)", link: "#setupyournode", dataAnalytics: '"Github Setup Btn Click"'},
+    {subtext:"Become a node operator:", text: "Set up & Earn (5 mins)", link: "#setupyournode", dataAnalytics: '"Become a Node Operator Page Anchor Btn Click"'},
 ]
 
 {/* c:metrics */}
@@ -156,7 +156,7 @@ Earn Filecoin for serving and accelerating Web3 content. The more you serve, the
 - **Dedicated Linux server with a public IPv4 address**
 - **Ports 80 and 443 free**
 - **User with sudo privileges**
-- <a target="_blank" href="https://docs.filecoin.io/reference/overview/#wallets-audited">Filecoin Wallet</a>
+- <a target="_blank" href="https://docs.filecoin.io/reference/overview/#wallets-audited" data-analytics='"FIL Wallet Info Link Click"'>Filecoin Wallet</a>
 
 {/* c:set-up-your-node.requirements.legal.title */}
 
@@ -176,17 +176,17 @@ Earn Filecoin for serving and accelerating Web3 content. The more you serve, the
 
 {/* c:set-up-your-node.description.text */}
     
-Saturn nodes are neatly packaged <a href="https://www.docker.com/" target="_blank">Docker</a> containers. Set up your node in no time with Docker or our easy-to-use <a href="https://www.ansible.com/" target="_blank">Ansible</a> playbook.
+Saturn nodes are neatly packaged <a href="https://www.docker.com/" target="_blank" data-analytics='"Docker Info Link Click"'>Docker</a> containers. Set up your node in no time with Docker or our easy-to-use <a href="https://www.ansible.com/"  data-analytics='"Ansible Info Link Click"' target="_blank">Ansible</a> playbook.
 
 {/* c:set-up-your-node.description.button */}
 
 export const cta = [
-    {text:"Set up & Earn", link: "https://github.com/filecoin-saturn/L1-node#running-a-node"},
+    {text:"Set up & Earn", link: "https://github.com/filecoin-saturn/L1-node#running-a-node", dataAnalytics: '"Github Setup Btn Click"'},
 ]
 
 {/* c:set-up-your-node.description.join */}
 
-Questions? Join <a target="_blank" href="https://filecoinproject.slack.com/archives/C03DH0BL02E">#filecoin-saturn</a> for personal help with a smile.
+Questions? Join <a target="_blank" href="https://filecoinproject.slack.com/archives/C03DH0BL02E" data-analytics='"Slack Setup Help Link Click"'>#filecoin-saturn</a> for personal help with a smile.
 
 {/* c:careers.intro */}
 
@@ -236,6 +236,7 @@ export const button = {
     text: "Slack",
     link: "https://filecoinproject.slack.com/archives/C03DH0BL02E",
     backgroundImage: "slack-logo.svg",
+    dataAnalytics: '"Contact Slack Btn Click"'
 }
 
 {/* c:contact.join[1] */}
@@ -244,4 +245,5 @@ export const button = {
     text: "Twitter",
     link: "https://twitter.com/FilecoinSaturn",
     backgroundImage: "twitter-logo.svg",
+    dataAnalytics: '"Contact Twitter Btn Click"'
 }

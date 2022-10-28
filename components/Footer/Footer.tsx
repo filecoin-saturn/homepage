@@ -10,7 +10,7 @@ type links = {
         text: string;
         link: string;
         backgroundImage: string
-
+        dataAnalytics: string
     }[];
 }[]
 
@@ -60,7 +60,7 @@ function Footer({links, credits, animation, backdropBlur, contentId}: Props){
                                         {e.links.map((e2, i2) => {
                                             return (
                                                 <div data-gsap="animate" key={i2}>
-                                                    <Button15 backdropBlur={backdropBlur} link={e2.link} text={e2.text} backgroundImage={e2.backgroundImage} />
+                                                    <Button15 dataAnalytics={e2.dataAnalytics} backdropBlur={backdropBlur} link={e2.link} text={e2.text} backgroundImage={e2.backgroundImage} />
                                                 </div>
                                             )
                                         })}

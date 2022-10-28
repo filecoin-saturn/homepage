@@ -13,6 +13,7 @@ type Props = {
     disabled?: boolean,
     backdropBlur: boolean,
     contentId: string
+    dataAnalytics: string
     
 }
 
@@ -24,6 +25,7 @@ type ButtonWrapperProps = {
    replace?: boolean,
    disabled?: boolean 
    text?: string
+   dataAnalytics: string
 }
 
 
@@ -45,12 +47,14 @@ export function ButtonContent({isActive, text, backdropBlur}: ButtonContentProps
 
 export function ButtonWrapper({...all}: ButtonWrapperProps) {
     const rest: Partial<ButtonWrapperProps> = all
+    const a = all.dataAnalytics
     return rest.type === "next-link" ? (
         <Link href={rest.link ?? ""} replace={rest.replace}>
             <a 
             className="group outline-none relative flex-none  "
             onClick={rest.onClick}
             aria-label={`navigation ${rest.text}`}
+            data-analytics={`${a}`}
             >
                 {rest.children}
             </a>
@@ -59,6 +63,7 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
         <button disabled={rest.disabled} 
             aria-label={`navigation ${rest.text}`} 
             className="group outline-none relative flex-none"
+            data-analytics={`${a}`}
         >
             {rest.children}
         </button>
@@ -70,8 +75,9 @@ export default function Button7({...all}: Props) {
     const content = useContent(all.contentId)
     const l = rest.link ?? content.href
     const t = rest.text ?? content.title
+    const a = content.dataAnalytics
     return (
-        <ButtonWrapper type={rest.type} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} >
+        <ButtonWrapper dataAnalytics={a} type={rest.type} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} >
             <ButtonContent isActive={rest.isActive} text={t} backdropBlur={rest.backdropBlur}/>
         </ButtonWrapper>
     )

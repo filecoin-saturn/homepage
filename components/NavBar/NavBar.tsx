@@ -18,6 +18,7 @@ type Link = {
     title: string,
     href: string,
     highlight: boolean
+    dataAnalytics: string
 }
 
 type ContentType = {
@@ -125,6 +126,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                         isActive={activeHash.includes(hash)}
                                         type="next-link"
                                         contentId={cId}
+                                        dataAnalytics={link.dataAnalytics}
                                     />
                                 </div>
                                 
@@ -142,6 +144,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                     type="next-link"
                                     backdropBlur={backdropBlur}
                                     contentId={cId}
+                                    dataAnalytics={link.dataAnalytics}
                                 />
                             )
                         }
@@ -172,6 +175,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                                 replace={true}
                                                 isActive={activeHash.includes(hash)}
                                                 contentId={cId}
+                                                dataAnalytics={link.dataAnalytics}
                                             />
                                         </li>
                                     )
@@ -187,6 +191,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                                 backdropBlur={backdropBlur}
                                                 highlight={link.highlight}
                                                 contentId={cId}
+                                                dataAnalytics={link.dataAnalytics}
                                             />
                                         </li>
                                     )

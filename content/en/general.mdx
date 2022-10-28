@@ -2,12 +2,12 @@
 
 export const navLinkArray = [
     // {title: "Calculate your earnings", href: "/#calculateyourearnings", highlight: false },
-    {title: "What is Saturn", href: "/#whatissaturn", highlight: false },
-    {title: "Our vision", href: "/#ourvision", highlight: false },
-    {title: "Roadmap", href: "/#roadmap", highlight: false },
-    {title: "Careers", href: "/#careers", highlight: false },
-    {title: "Contact", href: "/#contact", highlight: false},
-    {title: "Set up your node", href: "/#setupyournode", highlight: true },
+    {title: "What is Saturn", href: "/#whatissaturn", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "What is Saturn"}}' },
+    {title: "Our vision", href: "/#ourvision", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Our vision"}}' },
+    {title: "Roadmap", href: "/#roadmap", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Roadmap"}}' },
+    {title: "Careers", href: "/#careers", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Careers"}}' },
+    {title: "Contact", href: "/#contact", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Contact"}}'},
+    {title: "Set up your node", href: "/#setupyournode", highlight: true, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Set up your node"}}' },
 ]
 
 export const languages = {
@@ -16,12 +16,12 @@ export const languages = {
 
 export const menuLinkArray = [
     // {title: "Calculate your earnings", href: "/#calculateyourearnings", highlight: false },
-    {title: "What is Saturn", href: "/#whatissaturn", highlight: false },
-    {title: "Our vision", href: "/#ourvision", highlight: false },
-    {title: "Roadmap", href: "/#roadmap", highlight: false },
-    {title: "Careers", href: "/#careers", highlight: false },
-    {title: "Contact", href: "/#contact", highlight: false},
-    {title: "Set up your node", href: "/#setupyournode", highlight: true },
+    {title: "What is Saturn", href: "/#whatissaturn", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "What is Saturn"}}' },
+    {title: "Our vision", href: "/#ourvision", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Our vision"}}' },
+    {title: "Roadmap", href: "/#roadmap", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Roadmap"}}' },
+    {title: "Careers", href: "/#careers", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Careers"}}' },
+    {title: "Contact", href: "/#contact", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Contact"}}'},
+    {title: "Set up your node", href: "/#setupyournode", highlight: true, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Set up your node"}}' },
 ]
 
 {/* c:footer */}
@@ -30,15 +30,15 @@ export const links = [
     {
         title: "Learn More",
         links: [
-            {text: "GitHub", link: "https://github.com/filecoin-saturn/L1-node", backgroundImage: "github-logo.svg"},
-            {text: "Notion", link: "https://www.notion.so/pl-strflt/Filecoin-Saturn-efc122f123f344ff8ff0de6071954dba", backgroundImage: "notion-logo.svg"},
+            {text: "GitHub", link: "https://github.com/filecoin-saturn/L1-node", backgroundImage: "github-logo.svg", dataAnalytics: '"Learn More GitHub Btn Click"'},
+            {text: "Notion", link: "https://www.notion.so/pl-strflt/Filecoin-Saturn-efc122f123f344ff8ff0de6071954dba", backgroundImage: "notion-logo.svg", dataAnalytics: '"Learn More Notion Btn Click"'},
         ]
     },
     {
         title: "Reach Out",
         links: [
-            {text: "Slack", link: "https://filecoinproject.slack.com/archives/C03DH0BL02E", backgroundImage: "slack-logo.svg"},
-            {text: "Twitter", link: "https://twitter.com/FilecoinSaturn", backgroundImage: "twitter-logo.svg"}
+            {text: "Slack", link: "https://filecoinproject.slack.com/archives/C03DH0BL02E", backgroundImage: "slack-logo.svg", dataAnalytics: '"Reach Out Slack Button Click"'},
+            {text: "Twitter", link: "https://twitter.com/FilecoinSaturn", backgroundImage: "twitter-logo.svg", dataAnalytics: '"Reach Out Twitter Button Click"'}
         ]
     }
 ]
