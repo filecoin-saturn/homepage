@@ -60,7 +60,7 @@ module.exports = {
         'sat-grad-blue-green-2': "radial-gradient(63.44% 63.44% at 29.7% 70.3%, #0090FF 0%, #39C1CB 100%)",
         'sat-grad-blue-green-3': "radial-gradient(76.79% 76.79% at 89.29% 16.07%, #0090FF 0%, #39C1CB 100%)",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'sat-grad-black-1': "linear-gradient(204.75deg, #001324 38.13%, rgba(0, 19, 36, 0.6) 85.93%);",
+        'sat-grad-black-1': "linear-gradient( rgb(0, 19, 36, 1) 0%, rgb(0, 19, 36, 1) 30%, rgb(0, 19, 36, 0.1) 85%,  rgb(0, 19, 36, 0.1) 100%);",
 
 
         'saturn-logo': "url('/saturn-logo.svg')",

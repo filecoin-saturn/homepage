@@ -22,14 +22,18 @@ export const metrics = [
 
 {/* c:calculateyourearnings.description */}
 
-Have a server? Enter your server's upload speed and available storage below to estimate how much you can earn monthly.
+Have a server? Enter your server's upload speed and available storage below to estimate how much you potentially can earn monthly.
 	
 Saturn is growing rapidly. The earlier you join, the more you’ll earn.
+
+{/* c:calculateyourearnings.footnote */}
+
+*Potential earnings are based on contributions to the network
 
 {/* c:calculateyourearnings.input */}
 
 export const calculatorInformation = [
-    {usdText: "USD", filText: "FIL", perMonthText: "Estimated monthly earnings"},
+    {usdText: "USD", filText: "FIL", perMonthText: "Potential monthly earnings"},
     {label:'<strong>Upload speed (Gbps; </strong>10Gbps minimum<strong>)</strong>' , minValue:1 , maxValue:50, minUsedValue:10 , startValue:10, outputGen: (val, minV, maxV, minP, maxP) => {
         const logMinV = minV
         const logMaxV = maxV
@@ -123,6 +127,10 @@ Private L2 beta on main net. L1 nodes will cache miss to L2 nodes.
 ##### Sep 2023
 Launch public network of L2 nodes. L2 nodes will cache miss to Filecoin Storage Providers (SPs).
 
+
+{/* c:roadmap.footnote */}
+
+*tentative roadmap; roadmap will likely change with progress
 
 {/* c:set-up-your-node.title */}
 
