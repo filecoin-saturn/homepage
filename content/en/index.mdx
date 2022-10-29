@@ -22,18 +22,18 @@ export const metrics = [
 
 {/* c:calculateyourearnings.description */}
 
-Have a server? Enter your server's upload speed and available storage below to estimate how much you potentially can earn monthly.
-	
-Saturn is growing rapidly. The earlier you join, the more you’ll earn.
+Have a server? Enter your server's upload speed and available storage below to estimate how much content it can contribute to the network, and in turn how much you can potentially earn monthly.
+
+Saturn is growing rapidly. The earlier you join, the more you can contribute and the higher your potential earnings.
 
 {/* c:calculateyourearnings.footnote */}
 
-*Potential earnings are based on contributions to the network
+*Potential earnings are based on network contributions. The more you contribute, the more you earn
 
 {/* c:calculateyourearnings.input */}
 
 export const calculatorInformation = [
-    {usdText: "USD", filText: "FIL", perMonthText: "Potential monthly earnings", contributionTxt: "Your potential contribution"},
+    {usdText: "USD", filText: "FIL", perMonthText: "Potential monthly earnings", contributionTxt: "Potential network contribution"},
     {label:'<strong>Upload speed (Gbps; </strong>10Gbps minimum<strong>)</strong>' , minValue:1 , maxValue:50, minUsedValue:10 , startValue:10, outputGen: (val, minV, maxV, minP, maxP) => {
         const logMinV = minV
         const logMaxV = maxV
@@ -130,7 +130,7 @@ Launch public network of L2 nodes. L2 nodes will cache miss to Filecoin Storage 
 
 {/* c:roadmap.footnote */}
 
-*tentative roadmap; roadmap will likely change with progress
+*Roadmap is tentative and subject to change with progress
 
 {/* c:set-up-your-node.title */}
 
