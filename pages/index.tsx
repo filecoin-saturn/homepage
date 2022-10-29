@@ -62,7 +62,8 @@ const Home: NextPage = () => {
       setplayerCols((playerElement.clientWidth / widthToCols).toFixed(0))
       setplayerRows((playerElement.clientHeight / heightToRows).toFixed(0))
     }
-  },[window, setplayerCols, setplayerRows])  
+  },[window, setplayerCols, setplayerRows])
+
   return (
     <>
       <Head>
@@ -78,13 +79,13 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "careers", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "joinus", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full mx-auto relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className=' max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
-              <CustomProse overrides='prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
+              <CustomProse overrides=' prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
               <div data-gsap="animate" className='w-full flex flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-3 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
@@ -95,7 +96,7 @@ const Home: NextPage = () => {
             </div> 
             <Metrics contentId='index.metrics.metrics' />
           </div>
-          <div className='absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]'>
+          <div className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`} >
             <Suspense fallback={null}>
               <DynamicSaturn />
             </Suspense>
@@ -254,28 +255,28 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div id="careers" className='w-full h-0'></div>
-        <div data-io="careers" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="joinus" className='w-full h-0'></div>
+        <div data-io="joinus" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24  '>
               <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm '>
               <CustomProse overrides='prose-h1:my-3.5 prose-h1:sm:my-3 prose-h1:md:my-1'>
-                  <RenderMDXContent contentId='index.careers.intro.default' /> 
+                  <RenderMDXContent contentId='index.join-us.intro.default' /> 
               </CustomProse>
               </div>
               <div>
               <CustomProse overrides='prose-p:my-6 prose-p:mt-3.5 prose-p:mb-[1.125rem] prose-p:sm:mr-1 prose-p:md:mr-0 prose-p:md:mb-[1.4375rem] prose-p:lg:mt-[1.375rem] prose-p:lg:mb-8' >
-                  <RenderMDXContent contentId='index.careers.description.default' /> 
+                  <RenderMDXContent contentId='index.join-us.description.default' /> 
               </CustomProse>
               <div className='flex -mx-1 flex-col space-y-3 md:space-y-[0.9375rem] lg:space-y-[1.1875rem]'>
-                  <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[0]" >
-                    <RenderMDXContent contentId='index.careers.jobs[0].default' />
+                  <Modal3 backdropBlur={features.backdropBlur} contentId="index.join-us.jobs[0]" >
+                    <RenderMDXContent contentId='index.join-us.jobs[0].default' />
                   </Modal3>
-                  <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[1]" >
-                    <RenderMDXContent contentId='index.careers.jobs[1].default' />
+                  <Modal3 backdropBlur={features.backdropBlur} contentId="index.join-us.jobs[1]" >
+                    <RenderMDXContent contentId='index.join-us.jobs[1].default' />
                   </Modal3>
-                  <Modal3 backdropBlur={features.backdropBlur} contentId="index.careers.jobs[2]" >
-                    <RenderMDXContent contentId='index.careers.jobs[2].default' />
+                  <Modal3 backdropBlur={features.backdropBlur} contentId="index.join-us.jobs[2]" >
+                    <RenderMDXContent contentId='index.join-us.jobs[2].default' />
                   </Modal3>
               </div>
               </div>

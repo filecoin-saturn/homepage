@@ -88,9 +88,31 @@ function WithinCanvas() {
 
 export default function Saturn() {
     return (
-        <Canvas camera={{position: [0,0,15], fov:30}}>
-            <WithinCanvas />
-            <AdaptiveDpr />
-        </Canvas>
+        <>
+            <style jsx>
+                {`
+                    div {
+                        width: 100%;
+                        height: 100%;
+                        animation: fade 3s;
+                    }
+
+                    @keyframes fade {
+                        from {
+                            opacity: 0;
+                        }
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                `}
+            </style>
+            <div>
+                <Canvas camera={{position: [0,0,15], fov:30}}>
+                    <WithinCanvas />
+                    <AdaptiveDpr />
+                </Canvas>
+            </div>
+        </>
     )
 }

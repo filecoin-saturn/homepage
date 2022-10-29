@@ -87,9 +87,6 @@ module.exports = {
         'wide-arrow-icon-green': "url('/wide-arrow-icon-green.svg')",
         'filecoin-bg-logo': "url('/filecoin-bg-logo.png')",
 
-
-// 
-
       }, 
       boxShadow: {
         'colored': '0 0 40px #0090FF',
@@ -102,7 +99,20 @@ module.exports = {
         '2.5xl': '20px'
       }
     },
+    animation: {
+      fade: "fadein 6s",
+    },
+    keyframes: {
+      fadein: {
+          from: {opacity: 0},
+          to: {opacity: 1}
+      },
+    }
+    
   },
+
+
+
 
   plugins: [
     plugin(function({ addVariant })
