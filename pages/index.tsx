@@ -108,9 +108,9 @@ const Home: NextPage = () => {
         <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
-          <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-20 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
+          <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-30 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
           </div>
-          <div className='bg-gradient-to-t from-sat-blue-4/10  to-sat-blue-4 opacity-100 w-full h-[120%] -translate-y-[15%] -z-40 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
+          <div className='bg-sat-grad-black-1 opacity-100 w-full h-[120%] -translate-y-[15%] -z-40 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
           <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
             <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24'>
                 <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-[28rem] md:mt-1'>
@@ -125,6 +125,11 @@ const Home: NextPage = () => {
                 </div>
             </div>
             <TotalEarnings contentId="index.calculateyourearnings" ></TotalEarnings>
+            <div className='px-4'>
+              <CustomProse overrides={`prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                <RenderMDXContent contentId='index.calculateyourearnings.footnote.default' /> 
+              </CustomProse>
+            </div>
           </div>
         </div>
         <div id="whatissaturn" className='w-full h-0'></div>
@@ -229,7 +234,7 @@ const Home: NextPage = () => {
         <div data-io="roadmap" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full relative '>
           <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-            <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
+            <div data-gsap="animate-children" className='text-left w-full sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
               <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:w-full lg:max-w-sm '>
                 <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 even:prose-h1:my-0 odd:prose-h1:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
                   <RenderMDXContent contentId='index.roadmap.title.default' />
@@ -242,6 +247,9 @@ const Home: NextPage = () => {
                         <RenderMDXContent contentId='index.roadmap.step[2].default' />  
                         <RenderMDXContent contentId='index.roadmap.step[3].default' />  
                       </ListBigDots>
+                      <CustomProse overrides={`my-12 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                        <RenderMDXContent contentId='index.roadmap.footnote.default' /> 
+                      </CustomProse>
                 </CustomProse>
             </div>
           </div>
