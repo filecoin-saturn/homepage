@@ -90,6 +90,9 @@ module.exports = {
       }, 
       boxShadow: {
         'colored': '0 0 40px #0090FF',
+        'black-sm': '0 0 20px rgb(0 0 0 / 0.2)',
+        'black-md': '0 0 30px rgb(0 0 0 / 0.2)',
+        'black-lg': '0 0 40px rgb(0 0 0 / 0.2)',
         'ellipse': '0 0 70px #0E67FF'
       },
       outlineStyle: {
