@@ -94,12 +94,12 @@ useEffect(() => {
                                 <div className='w-4/5 lg:w-3/4 bg-sat-grad-blue-green-1-30 absolute h-full left-0 -z-10 rounded-2xl md:rounded-3xl overflow-hidden'>
                                     <div style={{width: `${(totalFilEarnings - minContrib) * 100 / (maxContrib - minContrib)}%`}} className={`h-full bg-sat-grad-blue-green-1-40`}></div>
                                 </div>
-                                <div className='translate-y-10 flex space-y-1 self-end flex-col justify-center items-center w-4/5 md:w-3/4 lg:w-full md:rounded-3xl lg:max-w-sm lg:px-16 xl:px-24 md:py-4 lg:py-6 md:h-fit md:space-y-3 lg:space-y-5  bg-sat-blue-3 shadow-black-sm md:shadow-black-md lg:shadow-black-lg rounded-2xl py-4 '>
+                                <div className='translate-y-10 flex space-y-1 self-end flex-col justify-center items-center w-4/5 md:w-3/4 lg:w-full md:rounded-3xl lg:max-w-sm lg:px-16 xl:px-24 md:py-4 lg:py-6 md:h-fit md:space-y-3 lg:space-y-5  bg-sat-blue-3 shadow-black-sm md:shadow-black-md lg:shadow-black-lg rounded-2xl py-4'>
                                     <div className='font-semibold antialiased text-xs md:text-[0.815rem] lg:text-sm'>
                                         {perMonthTxt}
                                     </div>
                                     <div className='flex items-baseline space-x-1 md:space-x-2 lg:space-x-3'>
-                                        <animated.div id="animateusd" className=' text-3xl xs:text-4xl md:text-[2.55rem] lg:text-6xl font-inter font-black antialiased'>{animFinished ? priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) : priceInUsdAnimated.val.to(val => Math.floor(val))}</animated.div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{usdTxt}</div>
+                                        <animated.div id="animateusd" className='text-3xl xs:text-4xl md:text-[2.55rem] lg:text-6xl font-inter font-black antialiased'>{animFinished ? priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) : priceInUsdAnimated.val.to(val => Math.floor(val))}</animated.div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{usdTxt}</div>
                                     </div>
                                     <div className='flex space-x-1 md:space-x-2 items-baseline '>
                                         <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{" "+ totalFilEarnings.toLocaleString(undefined, {maximumFractionDigits: 0}) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg '>{filTxt}</div>
