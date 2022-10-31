@@ -103,7 +103,8 @@ module.exports = {
       }
     },
     animation: {
-      fade: "fadein 6s",
+      fade: "fadein 6s forwards",
+      fadeFast: "fadein 3s forwards",
     },
     keyframes: {
       fadein: {

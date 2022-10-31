@@ -84,7 +84,7 @@ const Home: NextPage = () => {
         <div className=' w-full mx-auto relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
-            <div data-gsap="animate-children" className=' max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
+            <div data-gsap="animate-children" className='font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
               <CustomProse overrides=' prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
@@ -101,7 +101,7 @@ const Home: NextPage = () => {
               <DynamicSaturn />
             </Suspense>
           </div>
-          <div className='absolute opacity-30 -z-30 inset-x-0 bottom-0 rotate-6 -translate-y-1/2 sm:-translate-y-1/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/3 xl:-translate-y-0'>
+          <div className='animate-fadeFast absolute opacity-30 -z-30 inset-x-0 bottom-0 rotate-6 -translate-y-1/2 sm:-translate-y-1/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/3 xl:-translate-y-0'>
             <img src="hero-background.png" className='w-full'/>
           </div>
         </div>
