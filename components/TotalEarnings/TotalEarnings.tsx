@@ -37,7 +37,7 @@ useEffect(() => {
 },[setTotalFILEarnings, firstValue, secondValue, outputContent])
 
 const [currentFilPrice, setCurrentFilPrice] = useState<number>(5)
-const [priceInUsd, setPriceInUsd] = useState<number>()
+const [priceInUsd, setPriceInUsd] = useState<number>(0)
 
 useEffect(() => {
     const earningsInUsd = currentFilPrice * totalFilEarnings
