@@ -92,7 +92,7 @@ useEffect(() => {
     const [browserAndMobile, setBrowserAndMobile ] = useState<boolean>()
 
     useEffect(() => {
-        if(browserName === "Safari"){
+        if(browserName === "Safari" || isMobile){
             setBrowserAndMobile(true)
         }else {
             setBrowserAndMobile(false)
@@ -124,7 +124,7 @@ useEffect(() => {
                                         }
                                     </div>
                                     <div className='flex space-x-1 md:space-x-2 items-baseline relative px-1 py-1 '>
-                                        <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{" "+ priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg lg:px-0.5 '>{usdTxt}</div><a target="_blank" rel="noreferrer" href={superscriptLnk} className='absolute outline-none active:scale-90 rounded-full block focus-visible:outline-white outline outline-1 outline-transparent font-inter font-thin antialiased text-[0.55rem] mt-1.5 md:mt-3 lg:mt-3 md:text-[0.55rem] lg:text-sm top-0 right-0' >{superscriptTxt}</a>
+                                        <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{"$"+ priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg lg:px-0.5 '>{usdTxt}</div><a target="_blank" rel="noreferrer" href={superscriptLnk} className='absolute outline-none active:scale-90 rounded-full block focus-visible:outline-white outline outline-1 outline-transparent font-inter font-thin antialiased text-[0.55rem] mt-1.5 md:mt-3 lg:mt-3 md:text-[0.55rem] lg:text-sm top-0 right-0' >{superscriptTxt}</a>
                                     </div>
                                 </div>
                             </div>
