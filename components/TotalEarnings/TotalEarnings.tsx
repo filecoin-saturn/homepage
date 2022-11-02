@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useContent } from '../../content/content'
 import EarningsCalculator from '../EarningsCalculator/EarningsCalculator'
 import { useSpring, animated } from 'react-spring';
+import { browserName, isMobile } from "react-device-detect";
+
 
 
 type CalculatorProps = {
@@ -87,6 +89,15 @@ useEffect(() => {
         onRest: () => setAnimFinished(true)
     });
     
+    const [browserAndMobile, setBrowserAndMobile ] = useState<boolean>()
+
+    useEffect(() => {
+        if(isMobile && browserName === "Safari"){
+            setBrowserAndMobile(true)
+        }else {
+            setBrowserAndMobile(false)
+        }
+    },[setBrowserAndMobile])
 
     return (
             <>
@@ -103,10 +114,17 @@ useEffect(() => {
                                         {perMonthTxt}
                                     </div>
                                     <div className='flex items-baseline space-x-1 md:space-x-2 lg:space-x-3'>
-                                        <animated.div id="animateusd" className='text-3xl xs:text-4xl md:text-[2.55rem] lg:text-6xl font-inter font-black antialiased'>{animFinished ? totalFilEarnings?.toLocaleString(undefined, {maximumFractionDigits: 0}) : totalFilEarningsAnimated.val.to(val => Math.floor(val))}</animated.div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{filTxt}</div>
+                                        {browserAndMobile ?
+                                            <>
+                                              <div className='text-4xl xs:text-4xl md:text-5xl lg:text-[5rem] mt-2 md:mt-1 font-inter font-black antialiased'>{totalFilEarnings?.toLocaleString(undefined, {maximumFractionDigits: 0})}</div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{filTxt}</div>
+                                            </>
+                                        :   <>
+                                                <animated.div id="animateusd" className='text-4xl xs:text-4xl md:text-5xl lg:text-[5rem] mt-2 md:mt-1 font-inter font-black antialiased'>{animFinished ? totalFilEarnings?.toLocaleString(undefined, {maximumFractionDigits: 0}) : totalFilEarningsAnimated.val.to(val => Math.floor(val))}</animated.div><div className='font-inter antialiased font-bold text-xl md:text-[1.75rem] lg:text-4xl'>{filTxt}</div>
+                                            </>
+                                        }
                                     </div>
                                     <div className='flex space-x-1 md:space-x-2 items-baseline relative px-1 py-1 '>
-                                        <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{" "+ priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg '>{usdTxt}</div><a target="_blank" rel="noreferrer" href={superscriptLnk} className='absolute outline-none active:scale-90 rounded-full block focus-visible:outline-white outline outline-1 outline-transparent font-inter font-thin antialiased text-[0.55rem] mt-1 md:text-[0.815rem] lg:text-sm  top-0 right-0' >{superscriptTxt}</a>
+                                        <div className='text-white antialiased text-base md:text-2xl lg:text-4xl font-black'>{"$"+ priceInUsd?.toLocaleString(undefined, {maximumFractionDigits: 0}) + " "}</div><div className='font-inter antialiased font-semibold text-xs md:text-[0.815rem] lg:text-lg lg:px-0.5 '>{usdTxt}</div><a target="_blank" rel="noreferrer" href={superscriptLnk} className='absolute outline-none active:scale-90 rounded-full block focus-visible:outline-white outline outline-1 outline-transparent font-inter font-thin antialiased text-[0.55rem] mt-1.5 md:mt-3 lg:mt-3 md:text-[0.55rem] lg:text-sm top-0 right-0' >{superscriptTxt}</a>
                                     </div>
                                 </div>
                             </div>
