@@ -92,7 +92,7 @@ export default function EarningsCalculator({content ,label, minValue, minUsedVal
                                 <rect width="1" height="4" transform="translate(0,0)" fill="white"></rect>
                             </pattern>
                             <mask id="mask-stripe">
-                                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)" />
+                                <rect x="0" y="0" width="250%" height="100%" fill="url(#pattern-stripe)" />
                             </mask>  
                         </defs>
                         <rect mask="url(#mask-stripe)" className='fill-sat-blue-3' rx={8} x={0} y={0} width="100%" height={16}></rect>
