@@ -103,9 +103,12 @@ export default function EarningsCalculator({content ,label, minValue, minUsedVal
                             <rect className='fill-sat-blue-3' rx={8} x={0} y={0} width="100%" height={16}></rect>
                         </svg>
                     </div>
-                    <input type="range" value={currentValue}  onChange={(event) => {
-                        setCurrentValue(Number(event.target.value))
-                    }} step={st} min={minUsedVal} max={maxVal} className="absolute cursor-pointer rounded outline-none -inset-y-1 right-0 m-0 [&[type='range']]:appearance-none bg-transparent [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:appearance-none [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-8 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-ms-thumb]:h-5 [&::-ms-thumb]:w-8 [&::-ms-thumb]:appearance-none [&::-ms-thumb]:bg-white [&::-ms-thumb]:rounded-full" style={{left: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem))`}} />
+                    <div className='absolute inset-y-0 right-0' style={{left: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem))`}}>
+                        <input type="range" value={currentValue}  onChange={(event) => {
+                            setCurrentValue(Number(event.target.value))
+                        }} step={st} min={minUsedVal} max={maxVal} className="block w-full h-full cursor-pointer rounded outline-none m-0 [&[type='range']]:appearance-none bg-transparent [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:appearance-none [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-8 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-ms-thumb]:h-4 [&::-ms-thumb]:w-8 [&::-ms-thumb]:border-0 [&::-ms-thumb]:appearance-none [&::-ms-thumb]:bg-white [&::-ms-thumb]:rounded-full" />
+                    </div>
+                    
                 </div>
                 <output ref={grabOutputNumber} className='top-0 left-0 -translate-y-[120%] absolute text-sm md:text-base lg:text-lg font-inter font-black antialiased text-gradient-blue -translate-x-1/2' 
                     style={{left: `calc(${calcRatio(currentValue, minVal, maxVal)} * (100% - 2rem) + 1rem)`}}
