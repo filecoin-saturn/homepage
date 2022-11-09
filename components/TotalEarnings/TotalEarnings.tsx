@@ -92,7 +92,7 @@ useEffect(() => {
     const [browserAndMobile, setBrowserAndMobile ] = useState<boolean>()
 
     useEffect(() => {
-        if(browserName === "Safari"){
+        if(browserName === "Safari" || isMobile){
             setBrowserAndMobile(true)
         }else {
             setBrowserAndMobile(false)
