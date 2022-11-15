@@ -76,36 +76,20 @@ export default function EarningsCalculator({content ,label, minValue, minUsedVal
         <>
             <div className="relative my-12 text-white ">
                 <div className='relative w-full h-4 overflow-hidden'>
-                    <svg className='h-full w-full'>
+                    <svg className='h-full w-full block'>
                         <rect className='fill-white opacity-10' rx={8} x={0} y={0} width="100%" height={16}></rect>
                     </svg>
-                    <svg className='absolute inset-y-0 left-0' style={{width: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem) + 2rem)`}} >
-                        <defs>
-                            <pattern id="pattern" width="16" height="16" patternContentUnits="objectBoundingBox">
-                                <line x1={0} y1={0} x2={16} y2={16} strokeWidth={0.1} className="stroke-sat-blue-3"></line>
-                            </pattern>
-                            <pattern id="pattern-stripe" 
-                                width="4" height="4" 
-                                patternUnits="userSpaceOnUse"
-                                patternTransform="rotate(45)"
-                            >
-                                <rect width="1" height="4" transform="translate(0,0)" fill="white"></rect>
-                            </pattern>
-                            <mask id="mask-stripe">
-                                <rect x="0" y="0" width="250%" height="100%" fill="url(#pattern-stripe)" />
-                            </mask>  
-                        </defs>
-                        <rect mask="url(#mask-stripe)" className='fill-sat-blue-3' rx={8} x={0} y={0} width="100%" height={16}></rect>
-                        <rect className='fill-sat-blue-3 opacity-30' rx={8} x={0} y={0} width="100%" height={16}></rect>
-                    </svg>
+                    <div className='absolute rounded-full inset-y-0 left-0 bg-repeat bg-contain bg-slashes-pattern' style={{width: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem) + 2rem)`}}></div>
                     <div className='absolute inset-y-0 right-0' style={{left: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem))`, width: `calc(${calcRatio(currentValue, minUsedVal, maxVal)} * (100% - 2rem) * (1 - ${calcRatio(minUsedVal, minVal, maxVal)}) + 2rem)`}}>
                         <svg className='w-full h-full'>
                             <rect className='fill-sat-blue-3' rx={8} x={0} y={0} width="100%" height={16}></rect>
                         </svg>
                     </div>
-                    <input type="range" value={currentValue}  onChange={(event) => {
-                        setCurrentValue(Number(event.target.value))
-                    }} step={st} min={minUsedVal} max={maxVal} className="absolute cursor-pointer rounded outline-none -inset-y-1 right-0 m-0 [&[type='range']]:appearance-none bg-transparent [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:appearance-none [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-8 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-ms-thumb]:h-5 [&::-ms-thumb]:w-8 [&::-ms-thumb]:appearance-none [&::-ms-thumb]:bg-white [&::-ms-thumb]:rounded-full" style={{left: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem))`}} />
+                    <div className='absolute inset-y-0 right-0' style={{left: `calc(${calcRatio(minUsedVal, minVal, maxVal)} * (100% - 2rem))`}}>
+                        <input type="range" value={currentValue}  onChange={(event) => {
+                            setCurrentValue(Number(event.target.value))
+                        }} step={st} min={minUsedVal} max={maxVal} className="block w-full h-full cursor-pointer rounded outline-none m-0 [&[type='range']]:appearance-none bg-transparent [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:appearance-none [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-8 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-ms-thumb]:h-4 [&::-ms-thumb]:w-8 [&::-ms-thumb]:border-0 [&::-ms-thumb]:appearance-none [&::-ms-thumb]:bg-white [&::-ms-thumb]:rounded-full" />
+                    </div>
                 </div>
                 <output ref={grabOutputNumber} className='top-0 left-0 -translate-y-[120%] absolute text-sm md:text-base lg:text-lg font-inter font-black antialiased text-gradient-blue -translate-x-1/2' 
                     style={{left: `calc(${calcRatio(currentValue, minVal, maxVal)} * (100% - 2rem) + 1rem)`}}

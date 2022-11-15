@@ -86,7 +86,7 @@ module.exports = {
         'wide-arrow-icon-white': "url('/wide-arrow-icon-white.svg')",
         'wide-arrow-icon-green': "url('/wide-arrow-icon-green.svg')",
         'filecoin-bg-logo': "url('/filecoin-bg-logo.png')",
-
+        'slashes-pattern': "url('/slashes.svg')"
       }, 
       boxShadow: {
         'colored': '0 0 40px #0090FF',
