@@ -20,9 +20,15 @@ type credits = {
     logo: string
 }
 
+type termsOfService = {
+    text: string
+    link: string
+}
+
 type Props = {
     links?: links,
     credits?: credits,
+    termsOfService?: termsOfService,
     animation?: () => () => void
     backdropBlur: boolean,
     contentId: string
@@ -30,10 +36,12 @@ type Props = {
 
 
 
-function Footer({links, credits, animation, backdropBlur, contentId}: Props){
+function Footer({links, credits, termsOfService, animation, backdropBlur, contentId}: Props){
     const content = useContent(contentId)
     const l: links = links ?? content.links
     const c: credits = credits ?? content.credits
+    const terms: termsOfService = termsOfService ?? content.termsOfService
+
     useLayoutEffect(() => {
         if(animation) {
             const cleanup = animation()
@@ -68,7 +76,7 @@ function Footer({links, credits, animation, backdropBlur, contentId}: Props){
                                 )
                             })}
                         </div>
-                        <div className="mt-10 md:mt-0 flex space-x-8 sm:-space-x-0 space-y-0 md:space-y-1  sm:items-stretch sm:flex-1  justify-center ">
+                        <div className="mt-10 md:mt-0 flex flex-col space-x-8 sm:-space-x-0 space-y-0 md:space-y-1  sm:items-stretch sm:flex-1  ">
                             <div data-gsap="animate" className="sm:hidden">
                                 <Button3 backdropBlur={backdropBlur} link="/" aria={"Move up"} />
                             </div>
@@ -82,6 +90,12 @@ function Footer({links, credits, animation, backdropBlur, contentId}: Props){
                                 <div data-gsap="animate" className=" font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
                                     {c.text2}
                                 </div>
+                            </div>
+                            <br/>
+                            <div className="mx-auto w-full max-w-[8rem] md:max-w-[18rem] lg:flex lg:space-x-1 ">
+                                <a href={terms.link} target="_blank" className="hover:underline font-inter font-semibold text-white text-xs md:text-sm md:ml-0 lg:ml-2">
+                                    {terms.text}
+                                </a>
                             </div>
                         </div>
                     </div>
