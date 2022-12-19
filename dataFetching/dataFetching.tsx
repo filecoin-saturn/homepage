@@ -29,7 +29,7 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
         //   "nodeCounts": {
         //      "inactive": 563,
         //      "down": 2,
-        //      "inactive": 8,}
+        //      "inactive": 8}
         //  
         let pops = undefined
         for (const nodeCount of (jsonResponse.nodes || [])) {
