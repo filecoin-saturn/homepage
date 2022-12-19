@@ -66,7 +66,7 @@ We recommend to place most of the code within pages or components, leaving only 
 
 ### Guidelines for deployment
 
-- strn.network is deployed on Fleek.
+- strn.network is deployed on [Fleek](https://fleek.co/).
 - To update strn.network, update this repository's `main` branch.
 - Before pushing the `main` branch to remote make sure to run `npm run build` & `npm run export`. Fix errors in case there are any.
 - If working on another branch, make sure you've pulled the latest version of the `main` branch. If done updating the branch to the latest state, merge the branch into `main` and push to remote.
