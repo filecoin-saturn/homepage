@@ -4,10 +4,7 @@ import EarningsCalculator from '../EarningsCalculator/EarningsCalculator'
 import { useSpring, animated } from 'react-spring';
 import { browserName, isMobile } from "react-device-detect";
 
-
-
 type CalculatorProps = {
-    
     contentId?: string
     usdText?: string
     filText?: string
@@ -15,6 +12,7 @@ type CalculatorProps = {
     superscriptText?: string
     superscriptLink?: string
 }
+
 export default function TotalEarnings({contentId, usdText, filText, perMonthText, superscriptText, superscriptLink}: CalculatorProps) {
 
 // FIL's price in USD. see https://coinmarketcap.com/currencies/filecoin/.
