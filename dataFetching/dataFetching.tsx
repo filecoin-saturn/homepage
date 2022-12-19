@@ -23,7 +23,7 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
         //      {"count":8,"state":"inactive"}]
         //
         // TODO: replace the "nodes" array of objects with a simple
-        // "nodeCounts" object with "state" keys and "count" values
+        // "nodeCounts" object with "state" keys and "count" values,
         // like:
         //
         //   "nodeCounts": {
