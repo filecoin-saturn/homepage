@@ -66,12 +66,11 @@ We recommend to place most of the code within pages or components, leaving only 
 
 ### Guidelines for deployment
 
-- Strn.network is deployed on fleek, under the `main` branch.
-- To update strn.network make sure to update the `main` branch. 
+- strn.network is deployed on Fleek.
+- To update strn.network, update this repository's `main` branch.
 - Before pushing the `main` branch to remote make sure to run `npm run build` & `npm run export`. Fix errors in case there are any.
-- To deploy to strn.network, update and push the `main` branch to remote.
-- If working on another branch, make sure you've pulled the latest version of the `main` branch. If done updating the branch to the latest state, merge the branch into `main` and push to remote. 
-- The page is currently deployed on Fleek, autodeploy is turned off. To get the main branch live it has to be deployed manually on fleek after the updates are pushed to `main`.  
+- If working on another branch, make sure you've pulled the latest version of the `main` branch. If done updating the branch to the latest state, merge the branch into `main` and push to remote.
+- CI/CD auto-deploy for strn.network on Fleek is enabled for the `main` branch, so all updates to this repo's `main` branch should automatically get built and deployed live to strn.network.
 
 ## License
 Dual-licensed under MIT + Apache 2.0
