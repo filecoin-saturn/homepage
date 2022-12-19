@@ -1,5 +1,3 @@
-
-
 export async function getUptoDateMetrics(content : Array<{number: number}>) {
     // use fallback numbers if fetch doesn't receive data after 3 seconds
     const controller = new AbortController();
@@ -22,6 +20,4 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
     }else {
         return [0,0]
     }
-
-    
 }
