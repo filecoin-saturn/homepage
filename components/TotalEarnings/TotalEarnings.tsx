@@ -14,9 +14,15 @@ type CalculatorProps = {
     perMonthText?: string
     superscriptText?: string
     superscriptLink?: string
-
 }
 export default function TotalEarnings({contentId, usdText, filText, perMonthText, superscriptText, superscriptLink}: CalculatorProps) {
+
+// FIL's price in USD. see https://coinmarketcap.com/currencies/filecoin/.
+// this default, fallback price is used when FIL's price can't be
+// dynamically fetched on page load, for whatever reason, and thus should be
+// updated periodically here
+const defaultFilToUsdPrice = 3
+
 const inputContent = useContent(contentId + ".input.calculatorInformation" ?? "")
 const outputContent = useContent(contentId + ".formula.earningsFormula" ?? "")
 const usdTxt = usdText ?? inputContent[0]?.usdText
@@ -32,13 +38,12 @@ const superscriptLnk = superscriptLink ?? inputContent[0].superscriptLink
 const [firstValue, setFirstValue] = useState(inputContent[1].startValue)
 const [secondValue, setSecondValue] = useState(inputContent[2].startValue)
 
-
 const [totalFilEarnings, setTotalFILEarnings] = useState<number>(0)
 useEffect(() => {
     setTotalFILEarnings(outputContent(firstValue, secondValue))
 },[setTotalFILEarnings, firstValue, secondValue, outputContent])
 
-const [currentFilPrice, setCurrentFilPrice] = useState<number>(5)
+const [currentFilPrice, setCurrentFilPrice] = useState<number>(defaultFilToUsdPrice)
 const [priceInUsd, setPriceInUsd] = useState<number>(0)
 
 useEffect(() => {
@@ -49,12 +54,22 @@ useEffect(() => {
 
 useEffect(() => {
     (async function getCurrenFilRate() {
-        const options = {method: 'GET', headers: {accept: ''}};
+        let jsonResponse = undefined
 
-        const response = await fetch('https://api.binance.com/api/v3/avgPrice?symbol=FILUSDT', options)
-        const jsonResponse = await response.json()
-        jsonResponse ? setCurrentFilPrice(jsonResponse.price) : setCurrentFilPrice(5)
+        const url = 'https://api.binance.com/api/v3/avgPrice?symbol=FILUSDT'
+        const options = {method: 'GET', headers: {accept: ''}}
+        try {
+            const response = await fetch(url, options)
+            jsonResponse = await response.json()
+        } catch (err) {
+            jsonResponse = undefined
+            console.error(err)
+            setCurrentFilPrice(defaultFilToUsdPrice)
+        }
 
+        if (jsonResponse !== undefined) {
+            setCurrentFilPrice(jsonResponse.price)
+        }
     })();
   }, []); 
 
