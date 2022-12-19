@@ -14,7 +14,37 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
     const jsonResponse = await response.json()
     if(jsonResponse) {
         clearTimeout(timeOut)
-        const pops = jsonResponse.nodes ? jsonResponse.nodes[0].count : content[0].number
+
+        // Example returned "nodes" value:
+        //
+        //   "nodes":[
+        //      {"count":563,"state":"active"},
+        //      {"count":2,"state":"down"},
+        //      {"count":8,"state":"inactive"}]
+        //
+        // TODO: replace the "nodes" array of objects with a simple
+        // "nodeCounts" object with "state" keys and "count" values
+        // like:
+        //
+        //   "nodeCounts": {
+        //      "inactive": 563,
+        //      "down": 2,
+        //      "inactive": 8,}
+        //  
+        let pops = undefined
+        for (const nodeCount of (jsonResponse.nodes || [])) {
+            if (nodeCount.state === 'active') {
+                pops = nodeCount.count
+                break
+            }
+        }
+        if (pops === undefined && !jsonResponse.nodes) {
+            pops = content[0].number
+        }
+        if (pops === undefined) {
+            pops = 0
+        }
+
         const numRequestsServed = (jsonResponse.metrics[0].numRequests / 1000000) > 100 ? jsonResponse.metrics[0].numRequests / 1000000 : content[1].number
         return [Number(pops.toFixed()), Number(numRequestsServed.toFixed())]
     }else {
