@@ -255,6 +255,8 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        {/* 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section */}
+        {/*
         <div id="joinus" className='w-full h-0'></div>
         <div data-io="joinus" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
@@ -282,6 +284,7 @@ const Home: NextPage = () => {
               </div>
           </div>
         </div>
+        */}
         <div id="contact" className='w-full h-0'></div>
         <div data-io="contact" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full max-w-7xl mx-auto relative'>
