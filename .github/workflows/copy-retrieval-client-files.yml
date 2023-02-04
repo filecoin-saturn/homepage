@@ -1,4 +1,4 @@
-name: Update saturn retrieval client files
+name: Update Saturn browser client files
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -8,22 +8,22 @@ jobs:
   copy-files:
     runs-on: ubuntu-latest
     name: Copy files
-    
+
     steps:
       - name: Checkout saturn webpage repo
         uses: actions/checkout@v3
         with:
           path: ./saturn-page
-  
-      - name: Checkout retrieval client repo
+
+      - name: Checkout browser client repo
         uses: actions/checkout@main
         with:
-          repository: filecoin-project/retrieval-client
-          path: ./retrieval-client
-          
-      - name: Copy all files in filecoin-project/retrieval-client/dist/ to filecoin-saturn/homepage/public
+          repository: filecoin-saturn/browser-client
+          path: ./browser-client
+
+      - name: Copy all files in filecoin-saturn/browser-client/dist/ to filecoin-saturn/homepage/public
         run: |
-          rsync -r ./retrieval-client/dist/* ./saturn-page/public/
+          rsync -r ./browser-client/dist/* ./saturn-page/public/
 
       - name: Commit changed files to saturn homepage repo
         run: |
@@ -31,5 +31,5 @@ jobs:
           git add -A
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git diff-index --quiet HEAD || git commit -m "Replicate files from filecoin-project/retrieval-client/dist/"
+          git diff-index --quiet HEAD || git commit -m "Replicate files from filecoin-saturn/browser-client/dist/"
           git push
