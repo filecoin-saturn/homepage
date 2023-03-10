@@ -19,7 +19,7 @@ export default function TotalEarnings({contentId, usdText, filText, perMonthText
 // this default, fallback price is used when FIL's price can't be
 // dynamically fetched on page load, for whatever reason, and thus should be
 // updated periodically here
-const defaultFilToUsdPrice = 3
+const defaultFilToUsdPrice = 5.4 // updated on 2023-03-10
 
 const inputContent = useContent(contentId + ".input.calculatorInformation" ?? "")
 const outputContent = useContent(contentId + ".formula.earningsFormula" ?? "")
