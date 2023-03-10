@@ -19,6 +19,7 @@ type Link = {
     href: string,
     highlight: boolean
     dataAnalytics: string
+    target?: '_blank' | undefined
 }
 
 type ContentType = {
@@ -139,6 +140,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                         setIsOpen(false)
                                         document.body.style.overflow = "auto"
                                     }}
+                                    target={link.target}
                                     replace={true}
                                     isActive={activeHash.includes(hash)}
                                     type="next-link"
@@ -185,6 +187,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                             <Button5
                                                 key={index} 
                                                 type="next-link"
+                                                target={link.target}
                                                 onClick={() => {setIsOpen(false)}} 
                                                 replace={true}
                                                 isActive={activeHash.includes(hash)} 
