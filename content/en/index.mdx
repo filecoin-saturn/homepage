@@ -40,7 +40,7 @@ export const calculatorInformation = [
         const scale = (logMaxV-logMinV) / (maxP-minP);
         return logMinV + scale*(val-minP)
     }, outputGenString: (val) => val.toLocaleString(undefined, {maximumFractionDigits: 0})},
-    {label:'<strong>Available storage (TB)</strong>' , minValue:1 , maxValue:50 , startValue:4, outputGen: (val, minV, maxV, minP, maxP) => {
+    {label:'<strong>Available storage (TB)</strong>' , minValue: 1 , maxValue: 50 , startValue: 10, outputGen: (val, minV, maxV, minP, maxP) => {
         const logMinV = minV
         const logMaxV = maxV
         const scale = (logMaxV-logMinV) / (maxP-minP);
