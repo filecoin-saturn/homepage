@@ -51,7 +51,8 @@ export const calculatorInformation = [
 {/* c:calculateyourearnings.formula */}
 
 export const earningsFormula = (val1, val2) => {
-    const i = 360000 / 54150
+    const totalFilPaidOutPerYear = 360000  // filecoin
+    const i = totalFilPaidOutPerYear / 54150
     const c = val1 * 60 * 60 * 24 * 30 / 1000
     const r = 0.00013
     const dS = (5 + Math.log(val2)) / (5 + Math.log(4))
