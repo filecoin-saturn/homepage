@@ -66,11 +66,12 @@ We recommend to place most of the code within pages or components, leaving only 
 
 ### Guidelines for deployment
 
-- strn.network is deployed on [Fleek](https://fleek.co/).
-- To update strn.network, update this repository's `main` branch.
+- saturn.tech is deployed on [Fleek](https://fleek.co/).
+- To update saturn.tech, update this repository's `main` branch.
 - Before pushing the `main` branch to remote make sure to run `npm run build` & `npm run export`. Fix errors in case there are any.
 - If working on another branch, make sure you've pulled the latest version of the `main` branch. If done updating the branch to the latest state, merge the branch into `main` and push to remote.
-- CI/CD auto-deploy for strn.network on Fleek is enabled for the `main` branch, so all updates to this repo's `main` branch should automatically get built and deployed live to strn.network.
+- CI/CD auto-deploy for saturn.tech on Fleek is enabled for the `main` branch, so all updates to this repo's `main` branch should automatically get built and deployed live to saturn.tech.
 
 ## License
+
 Dual-licensed under MIT + Apache 2.0
