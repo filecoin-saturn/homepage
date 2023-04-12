@@ -246,7 +246,8 @@ const Home: NextPage = () => {
                         <RenderMDXContent contentId='index.roadmap.step[0].default' />  
                         <RenderMDXContent contentId='index.roadmap.step[1].default' />  
                         <RenderMDXContent contentId='index.roadmap.step[2].default' />  
-                        <RenderMDXContent contentId='index.roadmap.step[3].default' />  
+                        <RenderMDXContent contentId='index.roadmap.step[3].default' />
+                        <RenderMDXContent contentId='index.roadmap.step[4].default' />  
                       </ListBigDots>
                       <CustomProse overrides={`my-2 opacity-50 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
                         <RenderMDXContent contentId='index.roadmap.footnote.default' /> 
