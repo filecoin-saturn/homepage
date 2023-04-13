@@ -56,7 +56,10 @@ export const earningsFormula = (val1, val2) => {
     const c = val1 * 60 * 60 * 24 * 30 / 1000
     const r = 0.00013 // ans: what is this magic number, 0.00013?
     const dS = (5 + Math.log(val2)) / (5 + Math.log(4))
-    return i * (11.25 + r * c) * Math.pow(dS, 2)
+    const scalar = 0.81
+    const earningsPerMoInFil = scalar * (i * (11.25 + r * c) * Math.pow(dS, 2))
+
+    return earningsPerMoInFil
 }
 
 {/* c:what-is-saturn.title */}
