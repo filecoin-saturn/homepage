@@ -14,6 +14,7 @@ type Props = {
     highlight?: boolean,
     contentId: string
     dataAnalytics: string
+    target?: '_blank' | undefined
 }
 
 type ButtonWrapperProps = {
@@ -25,6 +26,8 @@ type ButtonWrapperProps = {
    disabled?: boolean 
    text: string
    dataAnalytics: string
+   target?: '_blank' | undefined
+
 }
 
 
@@ -46,10 +49,11 @@ export function ButtonContent({...all}: ButtonContentProps) {
     )
 }
 
-export function ButtonWrapper({children, type, onClick, replace, link, disabled, text, dataAnalytics}: ButtonWrapperProps) {
+export function ButtonWrapper({children, type, onClick, replace, link, disabled, text, dataAnalytics, target}: ButtonWrapperProps) {
     return type === "next-link" ? (
         <Link href={link ?? ""} replace={replace} >
             <a  onClick={onClick}
+                target={target}
                 className={`group outline-none relative z-20 group disabled:opacity-30 `}
                 aria-label={`navigation ${text}`} 
                 data-analytics={`${dataAnalytics}`}
@@ -64,7 +68,7 @@ export function ButtonWrapper({children, type, onClick, replace, link, disabled,
     )
 }
 
-export default function Button5({type, text, onClick, replace, isActive, backdropBlur, link, disabled, highlight, contentId, dataAnalytics}: Props) {
+export default function Button5({type, text, onClick, replace, isActive, backdropBlur, link, disabled, highlight, contentId, dataAnalytics, target}: Props) {
     const content = useContent(contentId)
     const t = text ?? content.title
     const l = link ?? content.href
@@ -77,7 +81,7 @@ export default function Button5({type, text, onClick, replace, isActive, backdro
                 </div>
             </div>
             <div className="absolute inset-y-0 right-0 ">
-                <ButtonWrapper dataAnalytics={dataAnalytics} type={type} onClick={onClick} replace={replace} link={l} disabled={disabled} text={t} >
+                <ButtonWrapper dataAnalytics={dataAnalytics} type={type} onClick={onClick} replace={replace} link={l} disabled={disabled} text={t} target={target} >
                     <ButtonContent text={t} isActive={isActive} backdropBlur={backdropBlur} highlight={highlight} />
                 </ButtonWrapper>
             </div>

@@ -14,7 +14,7 @@ type Props = {
     backdropBlur: boolean,
     contentId: string
     dataAnalytics: string
-    
+    target?: '_blank' | undefined
 }
 
 type ButtonWrapperProps = {
@@ -26,6 +26,7 @@ type ButtonWrapperProps = {
    disabled?: boolean 
    text?: string
    dataAnalytics: string
+   target?: '_blank' | undefined
 }
 
 
@@ -51,6 +52,7 @@ export function ButtonWrapper({...all}: ButtonWrapperProps) {
     return rest.type === "next-link" ? (
         <Link href={rest.link ?? ""} replace={rest.replace}>
             <a 
+            target={rest.target}
             className="group outline-none relative flex-none  "
             onClick={rest.onClick}
             aria-label={`navigation ${rest.text}`}
@@ -77,7 +79,7 @@ export default function Button7({...all}: Props) {
     const t = rest.text ?? content.title
     const a = content.dataAnalytics
     return (
-        <ButtonWrapper dataAnalytics={a} type={rest.type} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} >
+        <ButtonWrapper dataAnalytics={a} type={rest.type} disabled={rest.disabled} link={l} onClick={rest.onClick} replace={rest.replace} text={t} target={rest.target} >
             <ButtonContent isActive={rest.isActive} text={t} backdropBlur={rest.backdropBlur}/>
         </ButtonWrapper>
     )
