@@ -5,7 +5,7 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
     const timeOut = setTimeout(() => {
         controller.abort()
         return Error("Aborted fetch due to slow connection")
-    }, 3000)
+    }, 10_000)
     const options = {
         method: 'GET',
         signal
