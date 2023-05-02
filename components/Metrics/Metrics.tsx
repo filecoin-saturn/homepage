@@ -4,14 +4,14 @@ import { useContent } from "../../content/content";
 import { getUptoDateMetrics } from "../../dataFetching/dataFetching";
 
 type Props = {
-    contentId: string, 
+    contentId: string,
 }
 
 type PostContentContent = {
         metric: string
         number: string
         unit: string
-    
+
 }
 
 export default function Metrics({contentId}: Props) {
@@ -19,18 +19,18 @@ export default function Metrics({contentId}: Props) {
 
         const styles = useSpring({
             to: useCallback(async (next: <T>(a: T) => void) => {
-             
-            try { 
-            const metrics = await getUptoDateMetrics(content) 
-            
+
+            try {
+            const metrics = await getUptoDateMetrics(content)
+
             await Promise.all(
                 [
                     next({ x: metrics[0], config: { duration: 350 } }),
                     next({ y: metrics[1], config: { duration: 550 } }),
                     next({ z: Number(content[2].number), config: { duration: 650 } })
                 ]
-             )}
-             catch(err){
+             )
+            } catch(err){
                 // fallback from abort controller
              await Promise.all(
                 [
@@ -43,7 +43,7 @@ export default function Metrics({contentId}: Props) {
             ,[content]),
             from: { x: 0, y: 0, z: 0 },
         })
-        
+
     return (
         <div className="flex flex-wrap w-full first-of-type:mr-4 xs:gap-3  md:gap-6 lg:gap-6 max-w-none md:my-8 xl:gap-10 ">
             {content.map((postContent: PostContentContent, key: number) => {
@@ -51,7 +51,7 @@ export default function Metrics({contentId}: Props) {
                     <div key={key} className="first-of-type:mr-4  text-white font-inter min-w-fit flex items-center space-x-1 md:space-x-2 ">
                         <div className="text-[1.25rem] md:text-4xl lg:text-5xl font-black flex space-x-0.5 md:space-x-1 lg:space-x-2">
                             <animated.div className={``} >
-                                {key === 0 ? styles.x.to(val => Math.floor(val)) : key === 1 ? styles.y.to(val => Math.floor(val)) : styles.z.to(val => Math.floor(val))}  
+                                {key === 0 ? styles.x.to(val => Math.floor(val)) : key === 1 ? styles.y.to(val => Math.floor(val)) : styles.z.to(val => Math.floor(val))}
                             </animated.div>
                             <div>
                                 {postContent.unit}
@@ -63,6 +63,6 @@ export default function Metrics({contentId}: Props) {
                     </div>
                 )
             })}
-        </div> 
-    ) 
+        </div>
+    )
 }
