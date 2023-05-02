@@ -16,7 +16,7 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
     url.searchParams.set("startDate", `${Date.now() - pastDay}`);
     url.searchParams.set("endDate", `${Date.now()}`);
 
-    const response = await fetch(url, options)
+    const response = await fetch(url.href, options)
     const jsonResponse = await response.json()
     if(jsonResponse) {
         clearTimeout(timeOut)
