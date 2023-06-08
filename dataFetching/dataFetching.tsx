@@ -45,11 +45,7 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
         }
 
         const numRequestsServedMillion = globalStats.totalRetrievals / 1_000_000
-        const numRequestsServed = numRequestsServedMillion > 100
-            ? numRequestsServedMillion
-            : content[1].number
-
-        return [Number(pops.toFixed()), Number(numRequestsServed.toFixed())]
+        return [Number(pops.toFixed()), Number(numRequestsServedMillion.toFixed())]
     }else {
         return [0,0]
     }
