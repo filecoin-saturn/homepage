@@ -26,7 +26,7 @@ export default function Metrics({contentId}: Props) {
                         [
                             next({ x: metrics[0], config: { duration: 350 } }),
                             next({ y: metrics[1], config: { duration: 550 } }),
-                            next({ z: Number(content[2].number), config: { duration: 650 } })
+                            next({ z: metrics[2], config: { duration: 650 } })
                         ]
                     )
                 } catch(err){
