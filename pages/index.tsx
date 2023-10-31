@@ -185,7 +185,31 @@ const Home: NextPage = () => {
             <PlanCard planName='Enterprise' bandwidthAmount='25TB+' price='Special Pricing'/>
           </div>
         </div>
-        <div id="ourvision" className='w-full h-0'></div>
+
+        <div id="faq" className='w-full h-0'></div>
+        <div data-io="faq" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div className="text-sky-400 font-bold text-center">FAQs</div>
+          <h1 className="text-center mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
+            Frequently Asked Questions
+          </h1>
+          <p className="text-center text-lg text-slate-400 mb-20">
+            Everything you need to know about the product and billing.
+            Can't find the answer you're looking for? Please send us an email.
+          </p>
+          <div className="text-white text-lg">Is there a free trial available?</div>
+          <div className="text-slate-400 mb-4">TODO</div>
+
+          <div className="text-white text-lg">Can I change my plan later?</div>
+          <div className="text-slate-400 mb-4">TODO</div>
+
+          <div className="text-white text-lg">What is your cancellation policy?</div>
+          <div className="text-slate-400 mb-4">TODO</div>
+
+          <div className="text-white text-lg">Can other info be added to an invoice?</div>
+          <div className="text-slate-400 mb-4">TODO</div>
+        </div>
+        {/* <div id="ourvision" className='w-full h-0'></div>
         <div data-io="ourvision" className='w-full h-0 mt-56 md:mt-[24rem]'></div>
         <div className='w-full relative'>
           <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
@@ -241,7 +265,7 @@ const Home: NextPage = () => {
                   </CustomProse>
                 </div>
                 <CustomProse  overrides={`${bigP} ${smallP}
-                prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `} 
+                prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `}
                 overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
                   <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
                   <div className='md:flex md:space-x-16 lg:space-x-16 md:justify-between md:items-start space-y-4 sm:space-y-4 md:space-y-0'>
@@ -281,21 +305,21 @@ const Home: NextPage = () => {
               </div>
               <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
                       <ListBigDots backdropBlur={features.backdropBlur}>
-                        <RenderMDXContent contentId='index.roadmap.step[0].default' />  
-                        <RenderMDXContent contentId='index.roadmap.step[1].default' />  
-                        <RenderMDXContent contentId='index.roadmap.step[2].default' />  
+                        <RenderMDXContent contentId='index.roadmap.step[0].default' />
+                        <RenderMDXContent contentId='index.roadmap.step[1].default' />
+                        <RenderMDXContent contentId='index.roadmap.step[2].default' />
                         <RenderMDXContent contentId='index.roadmap.step[3].default' />
                         <RenderMDXContent contentId='index.roadmap.step[4].default' />
                         <RenderMDXContent contentId='index.roadmap.step[5].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[6].default' />  
+                        <RenderMDXContent contentId='index.roadmap.step[6].default' />
                       </ListBigDots>
                       <CustomProse overrides={`my-2 opacity-50 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                        <RenderMDXContent contentId='index.roadmap.footnote.default' /> 
+                        <RenderMDXContent contentId='index.roadmap.footnote.default' />
                       </CustomProse>
                 </CustomProse>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section */}
         {/*
         <div id="joinus" className='w-full h-0'></div>
@@ -304,12 +328,12 @@ const Home: NextPage = () => {
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24  '>
               <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm '>
               <CustomProse overrides='prose-h1:my-3.5 prose-h1:sm:my-3 prose-h1:md:my-1'>
-                  <RenderMDXContent contentId='index.join-us.intro.default' /> 
+                  <RenderMDXContent contentId='index.join-us.intro.default' />
               </CustomProse>
               </div>
               <div>
               <CustomProse overrides='prose-p:my-6 prose-p:mt-3.5 prose-p:mb-[1.125rem] prose-p:sm:mr-1 prose-p:md:mr-0 prose-p:md:mb-[1.4375rem] prose-p:lg:mt-[1.375rem] prose-p:lg:mb-8' >
-                  <RenderMDXContent contentId='index.join-us.description.default' /> 
+                  <RenderMDXContent contentId='index.join-us.description.default' />
               </CustomProse>
               <div className='flex -mx-1 flex-col space-y-3 md:space-y-[0.9375rem] lg:space-y-[1.1875rem]'>
                   <Modal3 backdropBlur={features.backdropBlur} contentId="index.join-us.jobs[0]" >
