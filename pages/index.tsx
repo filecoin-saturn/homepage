@@ -87,9 +87,9 @@ const Home: NextPage = () => {
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-center h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className='font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
-              <button className='text-white border border-solid border-white rounded-3xl py-2 px-4'>
+              <a href="#how-does-it-work" className='text-white border border-solid border-white rounded-3xl py-2 px-4'>
                 How does it work <span className='text-cyan-500'>🡢</span>
-              </button>
+              </a>
               <CustomProse overridesParent='max-w-none' overrides='max-w-none mr-auto prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
