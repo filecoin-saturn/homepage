@@ -49,7 +49,7 @@ const Home: NextPage = () => {
   const bigP = "[&_.big-p]:text-base [&_.big-p]:text-base [&_.big-p]:md:text-lg [&_.big-p]:lg:text-xl [&_.big-p]:font-black [&_.big-p]:leading-5 [&_.big-p]:lg:leading-6 [&_.big-p]:lg:mb-2  [&_.big-p]:xl:my-3"
   const smallP = "[&_.small-p]:!my-0 [&_.small-p]:!text-xs [&_.small-p]:!leading-3 [&_.small-p]:md:!text-xs [&_.small-p]:lg:!text-base [&_.small-p]:my-0"
 
-  // define player height and width rows 
+  // define player height and width rows
   const window = useWindowContext()
   const [playerCols, setplayerCols] = useState<string>()
   const [playerRows, setplayerRows] = useState<string>()
@@ -79,22 +79,25 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start", "calculateyourearnings" ,"whatissaturn", "ourvision", "roadmap", "setupyournode", "joinus", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start","what-is-saturn", "ourvision", "roadmap", "setupyournode", "joinus", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full mx-auto relative'>
-          <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-left h-full flex flex-col justify-end '>
+          <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-center h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className='font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
-              <CustomProse overrides=' prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-p:lg:w-[50rem] prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
+              <button className='text-white border border-solid border-white rounded-3xl py-2 px-4'>
+                How does it work <span className='text-cyan-500'>🡢</span>
+              </button>
+              <CustomProse overridesParent='max-w-none' overrides='max-w-none mr-auto prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
-              <div data-gsap="animate" className='w-full flex flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-3 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
+              <div data-gsap="animate" className='w-full flex flex-col justify-center xs:flex-row space-y-4 xs:space-y-0 xs:space-x-3 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
                 <Button12 contentId='index.start.ctas[0]' />
               </div>
               <div className='absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'>
-              </div>
-            </div> 
-            <Metrics contentId='index.metrics.metrics' />
+              </div>e
+            </div>
+            {/* <Metrics contentId='index.metrics.metrics' /> */}
           </div>
           <div className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`} >
             <Suspense fallback={null}>
