@@ -108,31 +108,35 @@ const Home: NextPage = () => {
             <img src="hero-background.png" className='w-full'/>
           </div>
         </div>
-        <div id="calculateyourearnings" className='w-full h-0'></div>
-        <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
-          <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
-          <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-30 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
-          </div>
-          <div className='bg-sat-grad-black-1 opacity-100 w-full h-[120%] -translate-y-[15%] -z-40 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
-          <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
-            <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24'>
-                <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-[28rem] md:mt-1'>
-                <CustomProse overrides='prose-h1:sm:leading-[2rem] prose-h1:sm:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0 sm:first-line:[&_h1]:text-base sm:first-line:[&_h1]:font-inter sm:first-line:[&_h1]:font-black sm:first-line:[&_h1]:text-white sm:first-line:[&_h1]:my-2 md:first-line:[&_h1]:my-6 sm:first-line:[&_h1]:text-[1.625rem] md:first-line:[&_h1]:text-4xl lg:first-line:[&_h1]:text-6xl sm:first-line:[&_h1]:leading-tight' >
-                    <RenderMDXContent contentId='index.calculateyourearnings.title.default' />
-                </CustomProse>
-                </div>
-                <div className='sm:mt-1 md:mt-0'>
-                  <CustomProse overrides='prose-p:md:my-2 prose-p:lg:my-4'>
-                    <RenderMDXContent contentId='index.calculateyourearnings.description.default' /> 
-                  </CustomProse>
-                </div>
+
+        <div id="what-is-saturn" className='w-full h-0'></div>
+        <div data-io="what-is-saturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div data-gsap="animate-children" className='text-left my-8 flex flex-wrap justify-center'>
+            <div className='basis-1/2 text-white flex justify-center items-center'>
+              TODO: placeholder img
             </div>
-            <TotalEarnings contentId="index.calculateyourearnings" ></TotalEarnings>
-            <div className='px-4'>
-              <CustomProse overrides={`prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                <RenderMDXContent contentId='index.calculateyourearnings.footnote.default' /> 
-              </CustomProse>
+            <div className="basis-1/2 min-w-[400px]">
+              <div className="text-sky-400 font-bold text-left">What is Saturn</div>
+              <h1 className="text-left mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
+              Revolutionizing Web3 Content Delivery
+              </h1>
+              <div className="text-lg text-slate-400">
+                <p className="mb-4">
+                    Saturn CDN stands as the premier native Web3 CDN, focusing on the rapid acceleration of content-addressed data
+                    on IPFS and Filecoin. Thanks to Saturn, websites and decentralized applications can efficiently serve billions
+                    of users. A standout feature of this accelerated data is its verifiability, ensuring heightened security for users.
+                </p>
+                <p className="mb-4">
+                    The speed and efficiency of Saturn is attributed to its dense, expansive network of trustless and permissionless
+                    nodes. This density, combined with the permissionless nature of the network, ensures users are always in
+                    proximity to a node, resulting in lightning-fast data retrievals and minimal latency.
+                </p>
+                <p className="mb-4">
+                    Driven by crypto-incentives, these nodes consistently deliver traffic with optimal performance.
+                    Ultimately, dApps receive content more swiftly at a lowered cost, while node operators are rewarded in cryptocurrency.
+                </p>
+              </div>
             </div>
           </div>
         </div>
