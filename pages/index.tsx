@@ -20,6 +20,7 @@ import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
 import HowDoesItWorkStep from '../components/HowDoesItWorkStep/HowDoesItWorkStep';
+import PlanCard from '../components/PlanCard/PlanCard';
 import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 import { useWindowContext } from '../context/windowContext'
 
@@ -166,6 +167,22 @@ const Home: NextPage = () => {
             subtitle="Ready to speed up your content-addressable data retrievals."
             steps={['Performant', 'Cost-effective', 'Verifiable']}/>
         </div>
+
+        <div id="pricing" className='w-full h-0'></div>
+        <div data-io="pricing" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div className="text-sky-400 font-bold text-center">Pricing</div>
+          <h1 className="text-center mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
+            Simple, transparent pricing
+          </h1>
+          <p className="text-center text-lg text-slate-400 mb-20">
+            Our pricing options are designed to suit your evolving needs, offering you complete flexibility
+            to start with minimal commitment and providing predictable bundles as your business expands.
+          </p>
+          <div className="flex flex-wrap gap-10 justify-center">
+            <PlanCard planName='Flexible (Pay-as-you-Go)' bandwidthAmount='1TB' price='Free' overagePrice='Excess at $0.01/GB'/>
+            <PlanCard planName='Business' bandwidthAmount='25TB' price='$100/month' overagePrice='Excess at $0.01/GB'/>
+            <PlanCard planName='Enterprise' bandwidthAmount='25TB+' price='Special Pricing'/>
           </div>
         </div>
         <div id="ourvision" className='w-full h-0'></div>
