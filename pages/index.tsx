@@ -19,6 +19,7 @@ import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper
 import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
+import HowDoesItWorkStep from '../components/HowDoesItWorkStep/HowDoesItWorkStep';
 import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 import { useWindowContext } from '../context/windowContext'
 
@@ -140,18 +141,31 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div id="whatissaturn" className='w-full h-0'></div>
-        <div data-io="whatissaturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+
+        <div id="how-does-it-work" className='w-full h-0'></div>
+        <div data-io="how-does-it-work" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
-            <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm '>
-              <CustomProse overrides='prose-h1:sm:my-0 '>
-                <RenderMDXContent contentId='index.what-is-saturn.title.default' />
-              </CustomProse>
-            </div>
-            <CustomProse overrides='lg:mt-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl ' >
-              <RenderMDXContent contentId='index.what-is-saturn.description.default' />
-            </CustomProse>
+          <div className="text-sky-400 font-bold text-center">How does it work</div>
+          <h1 className="text-center mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
+            Accelerate your content-addressable data with the Saturn Web3 CDN
+          </h1>
+          <p className="text-center text-lg text-slate-400 mb-20">
+            Speed up your decentralized applications on IPFS and Filecoin with Saturn. The next generation Web3 CDN
+          </p>
+          <HowDoesItWorkStep
+            title="Create an account"
+            subtitle="Easy to get started. Try out today without any cost."
+            steps={['1 TB free balance per month', 'Flexible pricing as you grow', 'Credit Card payments supported']}/>
+          <HowDoesItWorkStep
+            title="Integrate Saturn"
+            subtitle="A step-by-step guide will assist you with the integration process."
+            steps={['Create Integration', 'Install client', 'Test your integration']}
+            reversed/>
+          <HowDoesItWorkStep
+            title="Accelerate your content"
+            subtitle="Ready to speed up your content-addressable data retrievals."
+            steps={['Performant', 'Cost-effective', 'Verifiable']}/>
+        </div>
           </div>
         </div>
         <div id="ourvision" className='w-full h-0'></div>
