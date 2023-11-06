@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import { useFeatureContext } from '../context/featureContext'
-import Button12 from '../components/Button12/Button12'
+import SignUpButton from '../components/SignUpButton/SignUpButton'
 import RenderMDXContent from '../content/content'
 import NavBar from '../components/NavBar/NavBar'
 import Goals from '../components/Goals/Goals'
@@ -92,7 +92,11 @@ const Home: NextPage = () => {
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
               <div data-gsap="animate" className='mb-12 my-4 md:mt-6 lg:mt-10'>
-                <Button12 contentId='index.start.ctas[0]' />
+                <SignUpButton
+                  text="Sign up for free"
+                  link={process.env.PORTAL_ORIGIN}
+                  target="_blank"
+                  dataAnalytics="'Start now for free Page Anchor Btn Click'"/>
               </div>
               <div className='absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'>
               </div>
