@@ -98,10 +98,9 @@ const Home: NextPage = () => {
           contentId="general.navbar"
         />
 
-        <div id="setupyournode" className='w-full h-0'></div>
-        <div data-io="setupyournode" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="setupyournode" className='mt-[10rem]'></div>
         <div className='w-full max-w-7xl mx-auto relative'>
-          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
+          <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
             <img src="/saturn-node.webp" alt="" className='mix-blend-lighten hidden -z-40 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
             <div data-gsap="animate-children" className='text-left w-full my-8  '>
               <div className=' lg:text-left underline-offset-2  '>
@@ -165,14 +164,14 @@ const Home: NextPage = () => {
             <img src="hero-background.png" className='w-full min-w-[20rem] min-h-[40rem]'/>
           </div>
         </div>
-        <div id="calculateyourearnings" className='w-full h-0'></div>
-        <div data-io="calculateyourearnings" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+
+        <div id="calculateyourearnings" className='mt-[10rem]'></div>
         <div className='w-full mx-auto relative max-w-xl md:max-w-4xl lg:max-w-[70rem] '>
           <div className='w-full absolute h-[115%] md:h-[130%] lg:h-[135%] -z-40 mb-8'>
           <div className='bg-filecoin-bg-logo bg-cover xs:bg-contain lg:bg-contain md:max-w-2xl lg:max-w-3xl xl:max-w-4-xl mx-auto bg-center opacity-30 md:bg-cover blur-md bg-no-repeat h-full -mt-16'></div>
           </div>
           <div className='bg-sat-grad-black-1 opacity-100 w-full h-[120%] -translate-y-[15%] -z-40 mb-4  xs:-translate-y-1/4 md:-translate-y-[15%] md:h-[140%] lg:h-[150%] absolute  '></div>
-          <div className='-mt-20 md:-mt-48 px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
+          <div className='px-4 xs:px-10 md:px-12 max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto '>
             <div data-gsap="animate-children" className='text-left w-full px-2 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24'>
                 <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-[28rem] md:mt-1'>
                 <CustomProse overrides='prose-h1:sm:leading-[2rem] prose-h1:sm:my-0 prose-h1:lg:my-0 prose-h1:xl:my-0 sm:first-line:[&_h1]:text-base sm:first-line:[&_h1]:font-inter sm:first-line:[&_h1]:font-black sm:first-line:[&_h1]:text-white sm:first-line:[&_h1]:my-2 md:first-line:[&_h1]:my-6 sm:first-line:[&_h1]:text-[1.625rem] md:first-line:[&_h1]:text-4xl lg:first-line:[&_h1]:text-6xl sm:first-line:[&_h1]:leading-tight' >
@@ -193,10 +192,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div id="contact" className="w-full h-0"></div>
-        <div data-io="contact" className="w-full h-0 mt-40 md:mt-[24rem]"></div>
+
+        <div id="contact" className="mt-[10rem]"></div>
         <div className="w-full max-w-7xl mx-auto relative">
-          <div className="-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto">
+          <div className="px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto">
             <div
               data-gsap="animate-children"
               className="text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 "

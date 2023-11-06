@@ -115,7 +115,7 @@ const Home: NextPage = () => {
 
         <div id="what-is-saturn" className='mt-[10rem]'></div>
         <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='grid grid-cols-2 gap-10 items-center justify-center my-8 '>
+          <div data-gsap="animate-children" className='grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-10 items-center justify-center my-8 '>
             <img className="" src="/saturn_black_white.svg" alt="saturn_black_white"/>
             <div className="min-w-[400px] text-left">
               <h1 className="mb-8 text-4xl lg:text-5xl text-white mt-4">
@@ -164,7 +164,7 @@ const Home: NextPage = () => {
           <p className="text-center text-lg text-slate-400 mb-20">
             Speed up your decentralized applications on IPFS and Filecoin with Filecoin Saturn. The next generation Web3 CDN.
           </p>
-          <div className="flex flex-wrap justify-center">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-10 justify-center">
             <HowItWorksStep
               title="Create an account"
               subtitle="Easy to get started. Try out today without any cost."
@@ -248,9 +248,9 @@ const Home: NextPage = () => {
           </div>
         </div>
         */}
-        <div id="contact" className=''></div>
+        <div id="contact" className='mt-[10rem]'></div>
         <div className='w-full max-w-7xl mx-auto relative'>
-          <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
             <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
               <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm'>
                 <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">

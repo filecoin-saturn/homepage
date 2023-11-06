@@ -13,7 +13,7 @@ export default function HowItWorksStep({
   reversed = false,
 }: Props) {
   return (
-    <div className={`basis-1/3 min-w-[250px] my-20`}>
+    <div className={`min-w-[250px]`}>
       <div className="flex flex-col text-white">
         <h3 className="text-2xl mb-4">{title}</h3>
         <p className="text-slate-400 mb-4">{subtitle}</p>
