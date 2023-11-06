@@ -2,6 +2,8 @@
 
 const path = require('path');
 
+// Don't use nextjs default env system as it doesn't support staging
+require('dotenv').config({ path: `env/.env.${process.env.APP_ENV || 'development'}` });
 const withPlugins = require('next-compose-plugins');
 const withTM = require('next-transpile-modules')(['three'])
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -48,6 +50,9 @@ function execute(value, process, callback) {
 module.exports = withPlugins([withTM, withBundleAnalyzer],{
   // Append the default value with md extensions
   reactStrictMode: true,
+  env: {
+    PORTAL_ORIGIN : process.env?.PORTAL_ORIGIN
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
