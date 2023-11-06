@@ -6,19 +6,15 @@ type Props = {
   reversed?: boolean;
 };
 
-export default function HowDoesItWorkStep({
+export default function HowItWorksStep({
   title,
   subtitle,
   steps,
   reversed = false,
 }: Props) {
   return (
-    <div
-      className={`flex flex-wrap justify-center my-20 ${
-        reversed ? "flex-row-reverse" : ""
-      }`}
-    >
-      <div className="flex flex-col basis-1/2 min-w-[300px] text-white">
+    <div className={`basis-1/3 min-w-[250px] my-20`}>
+      <div className="flex flex-col text-white">
         <h3 className="text-2xl mb-4">{title}</h3>
         <p className="text-slate-400 mb-4">{subtitle}</p>
         {steps.map((step) => (
@@ -30,15 +26,12 @@ export default function HowDoesItWorkStep({
               <img
                 alt="checkmark"
                 src="check-icon.svg"
-                className="bg-contain bg-no-repeat bg-center h-5 w-5 md:h-6 md:w-6 lg:h-8 lg:w-8"
+                className="bg-contain bg-no-repeat bg-center h-3 w-3 md:h-4 md:w-4 lg:h-6 lg:w-6"
               ></img>
             </div>
             <div>{step}</div>
           </div>
         ))}
-      </div>
-      <div className="flex justify-center items-center basis-1/2 text-white">
-        TODO: placeholder img
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer'
 import { useCallback, useEffect, useState } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import { useFeatureContext } from '../context/featureContext'
@@ -19,7 +20,7 @@ import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper
 import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
 import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
-import HowDoesItWorkStep from '../components/HowDoesItWorkStep/HowDoesItWorkStep';
+import HowItWorksStep from '../components/HowItWorksStep/HowItWorksStep';
 import PlanCard from '../components/PlanCard/PlanCard';
 import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 import { useWindowContext } from '../context/windowContext'
@@ -81,31 +82,28 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start","what-is-saturn", "ourvision", "roadmap", "setupyournode", "joinus", "contact"]} contentId="general.navbar" />
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start","what-is-saturn", "vision", "roadmap", "setupyournode", "joinus", "contact"]} contentId="general.navbar" />
         <div data-io="start" id="start" className='w-full h-0'></div>
         <div className=' w-full mx-auto relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-center h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className='font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
-              <a href="#how-does-it-work" className='text-white border border-solid border-white rounded-3xl py-2 px-4'>
-                How does it work <span className='text-cyan-500'>🡢</span>
-              </a>
               <CustomProse overridesParent='max-w-none' overrides='max-w-none mr-auto prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
                 <RenderMDXContent contentId='index.start.default' />
               </CustomProse>
-              <div data-gsap="animate" className='w-full flex flex-col justify-center xs:flex-row space-y-4 xs:space-y-0 xs:space-x-3 sm:space-x-3 md:space-x-5  lg:space-x-10  mb-12 my-4 md:mt-6 lg:mt-10'>
+              <div data-gsap="animate" className='mb-12 my-4 md:mt-6 lg:mt-10'>
                 <Button12 contentId='index.start.ctas[0]' />
               </div>
               <div className='absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover'>
-              </div>e
+              </div>
             </div>
-            {/* <Metrics contentId='index.metrics.metrics' /> */}
+            <Metrics contentId='index.metrics.metrics' />
           </div>
-          <div className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`} >
+          {/* <div className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`} >
             <Suspense fallback={null}>
               <DynamicSaturn />
             </Suspense>
-          </div>
+          </div> */}
           <div className='animate-fadeFast absolute opacity-30 -z-30 inset-x-0 bottom-0 rotate-6 -translate-y-1/2 sm:-translate-y-1/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/3 xl:-translate-y-0'>
             <img src="hero-background.png" className='w-full'/>
           </div>
@@ -114,14 +112,11 @@ const Home: NextPage = () => {
         <div id="what-is-saturn" className='w-full h-0'></div>
         <div data-io="what-is-saturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div data-gsap="animate-children" className='text-left my-8 flex flex-wrap justify-center'>
-            <div className='basis-1/2 text-white flex justify-center items-center'>
-              TODO: placeholder img
-            </div>
-            <div className="basis-1/2 min-w-[400px]">
-              <div className="text-sky-400 font-bold text-left">What is Saturn</div>
-              <h1 className="text-left mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
-              Revolutionizing Web3 Content Delivery
+          <div data-gsap="animate-children" className='grid grid-cols-2 gap-10 items-center justify-center my-8 '>
+            <img className="" src="/saturn_black_white.svg" alt="saturn_black_white"/>
+            <div className="min-w-[400px] text-left">
+              <h1 className="mb-8 text-4xl lg:text-5xl text-white mt-4">
+                What is Saturn
               </h1>
               <div className="text-lg text-slate-400">
                 <p className="mb-4">
@@ -132,91 +127,23 @@ const Home: NextPage = () => {
                 <p className="mb-4">
                     The speed and efficiency of Saturn is attributed to its dense, expansive network of trustless and permissionless
                     nodes. This density, combined with the permissionless nature of the network, ensures users are always in
-                    proximity to a node, resulting in lightning-fast data retrievals and minimal latency.
-                </p>
-                <p className="mb-4">
-                    Driven by crypto-incentives, these nodes consistently deliver traffic with optimal performance.
-                    Ultimately, dApps receive content more swiftly at a lowered cost, while node operators are rewarded in cryptocurrency.
+                    proximity to a node, resulting in lightning-fast data retrievals and minimal latency. Driven by crypto-incentives,
+                    these nodes consistently deliver traffic with optimal performance. Ultimately, dApps receive content more swiftly
+                    at a lowered cost, while node operators are rewarded in cryptocurrency.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="how-does-it-work" className='w-full h-0'></div>
-        <div data-io="how-does-it-work" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div className="text-sky-400 font-bold text-center">How does it work</div>
-          <h1 className="text-center mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
-            Accelerate your content-addressable data with the Saturn Web3 CDN
-          </h1>
-          <p className="text-center text-lg text-slate-400 mb-20">
-            Speed up your decentralized applications on IPFS and Filecoin with Saturn. The next generation Web3 CDN
-          </p>
-          <HowDoesItWorkStep
-            title="Create an account"
-            subtitle="Easy to get started. Try out today without any cost."
-            steps={['1 TB free balance per month', 'Flexible pricing as you grow', 'Credit Card payments supported']}/>
-          <HowDoesItWorkStep
-            title="Integrate Saturn"
-            subtitle="A step-by-step guide will assist you with the integration process."
-            steps={['Create Integration', 'Install client', 'Test your integration']}
-            reversed/>
-          <HowDoesItWorkStep
-            title="Accelerate your content"
-            subtitle="Ready to speed up your content-addressable data retrievals."
-            steps={['Performant', 'Cost-effective', 'Verifiable']}/>
-        </div>
-
-        <div id="pricing" className='w-full h-0'></div>
-        <div data-io="pricing" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div className="text-sky-400 font-bold text-center">Pricing</div>
-          <h1 className="text-center mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
-            Simple, transparent pricing
-          </h1>
-          <p className="text-center text-lg text-slate-400 mb-20">
-            Our pricing options are designed to suit your evolving needs, offering you complete flexibility
-            to start with minimal commitment and providing predictable bundles as your business expands.
-          </p>
-          <div className="flex flex-wrap gap-10 justify-center">
-            <PlanCard planName='Flexible (Pay-as-you-Go)' bandwidthAmount='1TB' price='Free' overagePrice='Excess at $0.01/GB'/>
-            <PlanCard planName='Business' bandwidthAmount='25TB' price='$100/month' overagePrice='Excess at $0.01/GB'/>
-            <PlanCard planName='Enterprise' bandwidthAmount='25TB+' price='Special Pricing'/>
-          </div>
-        </div>
-
-        <div id="faq" className='w-full h-0'></div>
-        <div data-io="faq" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-          <div className="text-sky-400 font-bold text-center">FAQs</div>
-          <h1 className="text-center mb-8 text-4xl font-bold lg:text-5xl text-white mt-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-center text-lg text-slate-400 mb-20">
-            Everything you need to know about the product and billing.
-            Can't find the answer you're looking for? Please send us an email.
-          </p>
-          <div className="text-white text-lg">Is there a free trial available?</div>
-          <div className="text-slate-400 mb-4">TODO</div>
-
-          <div className="text-white text-lg">Can I change my plan later?</div>
-          <div className="text-slate-400 mb-4">TODO</div>
-
-          <div className="text-white text-lg">What is your cancellation policy?</div>
-          <div className="text-slate-400 mb-4">TODO</div>
-
-          <div className="text-white text-lg">Can other info be added to an invoice?</div>
-          <div className="text-slate-400 mb-4">TODO</div>
-        </div>
-        {/* <div id="ourvision" className='w-full h-0'></div>
-        <div data-io="ourvision" className='w-full h-0 mt-56 md:mt-[24rem]'></div>
+        <div id="vision" className='w-full h-0'></div>
+        <div data-io="vision" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
         <div className='w-full relative'>
           <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
             <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
-              <CustomProse>
-                <RenderMDXContent contentId='index.our-vision.title.default' />
-              </CustomProse>
+              <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
+                Vision
+              </h1>
             </div>
             <div className='px-2 w-full lg:px-0'>
               <Goals backdropBlur={features.backdropBlur} contentId="index.our-vision.content.content"/>
@@ -226,100 +153,72 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div id="setupyournode" className='w-full h-0'></div>
-        <div data-io="setupyournode" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='w-full max-w-7xl mx-auto relative'>
-          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto relative'>
-            <img src="/saturn-node.webp" alt="" className='mix-blend-lighten hidden -z-40 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
-            <div data-gsap="animate-children" className='text-left w-full my-8  '>
-              <div className=' lg:text-left underline-offset-2  '>
-                <CustomProse overrides='prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
-                  <RenderMDXContent contentId='index.set-up-your-node.title.default' />
-                  <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
-                </CustomProse>
-                <div className={`my-8 md:my-14 lg:my-16 xl:my-16 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-8 py-2 md:px-14 md:py-0 lg:px-[3.225rem] lg:-mx-[3.315rem] xl:-mx-20 xl:px-[3.315rem] rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md  bg-sat-grad-blue-green-1-10-fallback-2 ` : `bg-sat-grad-blue-green-1-10-fallback-2 `}`}>
-                  <CustomProse overrides={`max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-5  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:!mb-3 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                    <div className='sm:hidden '>
-                      <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
-                    </div>
-                    <div className='flex flex-col relative sm:flex-row-reverse sm:space-x-reverse sm:space-x-8 md:space-x-reverse md:space-x-14  sm:justify-between w-full'>
-                      <IntersectionObserverWrapper
-                        targetCallbacks={new Map([["player", playerScrollCallback]])}
-                        threshold={[0,1]}
-                        margin="0px 0px 0px 0px"
-                      />
-                      <div id='player' data-io="player" className='p-2 lg:max-w-h-[22rem]  md:p-4 bg-[#121314] rounded-2xl my-4 md:my-8 lg:my-12 md:rounded-3xl overflow-hidden h-80 sm:h-auto w-full sm:w-1/2 [&_.control-bar]:hidden'>
-                        <AsciinemaPlayer className='w-full lg:max-h-[22rem] h-full' src="/filecoin-saturn-setup-2.cast" cols={playerCols} rows={playerRows} idleTimeLimit={3} preload={true} fit="width" speed={1} autoPlay play={playTerminal} />
-                      </div>
-                      <div className='sm:w-1/2 sm:py-3 px-2 md:px-2 md:py-5 md:pb-7 md:pl-3 lg:py-12 xl:py-[3.225rem] xl:pl-5'>
-                        <div className='hidden sm:block'>
-                          <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
-                        </div>
-                        <RenderMDXContent contentId='index.set-up-your-node.description.text.default' />
-                        <Button16 target='_blank' contentId='index.set-up-your-node.description.button.cta[0]' />
-                        <CustomProse overrides='prose-p:!my-4 prose-p:!text-xs prose-p:md:!text-xs prose-p:lg:!text-sm'>
-                          <RenderMDXContent contentId='index.set-up-your-node.description.join.default' />
-                        </CustomProse>
-                      </div>
-                    </div>
-                  </CustomProse>
-                </div>
-                <CustomProse  overrides={`${bigP} ${smallP}
-                prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `}
-                overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
-                  <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
-                  <div className='md:flex md:space-x-16 lg:space-x-16 md:justify-between md:items-start space-y-4 sm:space-y-4 md:space-y-0'>
-                    <div className='grow'>
-                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[0].default' />
-                      <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
-                        <RenderMDXContent contentId='index.set-up-your-node.requirements.description[0].default' />
-                      </BackgroundWrapper>
-                    </div>
-                    <div className='grow'>
-                      <RenderMDXContent contentId='index.set-up-your-node.requirements.description.title[1].default' />
-                      <BackgroundWrapper color='10' backdropBlur={features.backdropBlur}>
-                        <RenderMDXContent contentId='index.set-up-your-node.requirements.description[1].default' />
-                      </BackgroundWrapper>
-                    </div>
-                  </div>
-                </CustomProse>
-              </div>
-            </div>
-          </div>
-          <div className='absolute max-w-6xl -z-50 rotate-0 opacity-60 -translate-x-1/2 sm:translate-x-0 sm:-translate-y-1/4 top-0 md:translate-y-0 lg:-translate-x-1/4 md:translate-x-0 xl:-translate-x-[5%] '>
-            <img src="hero-background.png" className='w-full min-h-[45rem] min-w-[40rem] '/>
-          </div>
-          <div className='absolute -z-50 mix-blend-lighten top-1/2 translate-y-1/4 md:inset-0 rotate-180 sm:-translate-y-0 md:translate-y-[20%] opacity-30 '>
-            <img src="hero-background.png" className='w-full min-w-[20rem] min-h-[40rem]'/>
+
+        <div id="how-it-works" className='w-full h-0'></div>
+        <div data-io="how-it-works" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
+            Accelerate your content-addressable data with the Saturn Web3 CDN
+          </h1>
+          <p className="text-center text-lg text-slate-400 mb-20">
+            Speed up your decentralized applications on IPFS and Filecoin with Filecoin Saturn. The next generation Web3 CDN.
+          </p>
+          <div className="flex flex-wrap justify-center">
+            <HowItWorksStep
+              title="Create an account"
+              subtitle="Easy to get started. Try out today without any cost."
+              steps={['1 TB free balance per month', 'Flexible pricing as you grow', 'Credit Card payments supported']}/>
+            <HowItWorksStep
+              title="Integrate Saturn"
+              subtitle="A step-by-step guide will assist you with the integration process."
+              steps={['Create Integration', 'Install client', 'Test your integration']}/>
+            <HowItWorksStep
+              title="Accelerate your content"
+              subtitle="Ready to speed up your content-addressable data retrievals."
+              steps={['Performant', 'Cost-effective', 'Verifiable']}/>
           </div>
         </div>
+
+        <div id="pricing" className='w-full h-0'></div>
+        <div data-io="pricing" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
+            Simple, transparent pricing
+          </h1>
+          <p className="text-center text-lg text-slate-400 mb-20">
+            Our pricing options are designed to suit your evolving needs, offering you complete flexibility
+            to start with minimal commitment and providing predictable bundles as your business expands.
+          </p>
+          <div className="flex flex-wrap gap-10 justify-center">
+            <PlanCard planName='Flexible plan' bandwidthAmount='1TB' price='Free' overagePrice='Excess at $0.01/GB'/>
+            <PlanCard planName='Business plan' bandwidthAmount='25TB' price='$200/month' overagePrice='Excess at $0.01/GB'/>
+            <PlanCard planName='Enterprise plan' bandwidthAmount='25TB+' price='Special Pricing'/>
+          </div>
+        </div>
+
         <div id="roadmap" className='w-full h-0'></div>
         <div data-io="roadmap" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='w-full relative '>
-          <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
-            <div data-gsap="animate-children" className='text-left w-full sm:flex sm:justify-between sm:space-x-12 md:space-x-12 lg:space-x-24 '>
-              <div className='grow shrink-0 lg:text-right sm:w-28 md:w-72 lg:w-full lg:max-w-sm '>
-                <CustomProse overrides='md:w-full md:max-w-none flex sm:flex-col md:flex-row lg:flex-col xl:flex-row prose-h1:sm:my-0 even:prose-h1:my-0 odd:prose-h1:my-0 sm:even:prose-h1:my-0 sm:even:prose-h1:text-2xl md:even:prose-h1:text-6xl sm:odd:prose-h1:mb-0 sm:odd:prose-h1:mt-2 md:even:prose-h1:my-4 md:odd:prose-h1:my-4 lg:even:prose-h1:my-0 xl:even:prose-h1:my-4'>
-                  <RenderMDXContent contentId='index.roadmap.title.default' />
+        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div className='flex flex-col items-center'>
+            <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
+              Roadmap
+            </h1>
+            <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
+                <ListBigDots backdropBlur={features.backdropBlur}>
+                  <RenderMDXContent contentId='index.roadmap.step[0].default' />
+                  <RenderMDXContent contentId='index.roadmap.step[1].default' />
+                  <RenderMDXContent contentId='index.roadmap.step[2].default' />
+                  <RenderMDXContent contentId='index.roadmap.step[3].default' />
+                  <RenderMDXContent contentId='index.roadmap.step[4].default' />
+                  <RenderMDXContent contentId='index.roadmap.step[5].default' />
+                  <RenderMDXContent contentId='index.roadmap.step[6].default' />
+                </ListBigDots>
+                <CustomProse overrides={`my-2 opacity-50 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                  <RenderMDXContent contentId='index.roadmap.footnote.default' />
                 </CustomProse>
-              </div>
-              <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
-                      <ListBigDots backdropBlur={features.backdropBlur}>
-                        <RenderMDXContent contentId='index.roadmap.step[0].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[1].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[2].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[3].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[4].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[5].default' />
-                        <RenderMDXContent contentId='index.roadmap.step[6].default' />
-                      </ListBigDots>
-                      <CustomProse overrides={`my-2 opacity-50 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
-                        <RenderMDXContent contentId='index.roadmap.footnote.default' />
-                      </CustomProse>
-                </CustomProse>
-            </div>
+              </CustomProse>
           </div>
-        </div> */}
+        </div>
         {/* 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section */}
         {/*
         <div id="joinus" className='w-full h-0'></div>
@@ -356,9 +255,9 @@ const Home: NextPage = () => {
           <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
             <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
               <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm'>
-                <CustomProse overrides='prose-h1:my-3.5 prose-h1:mb-3'>
-                  <RenderMDXContent contentId='index.contact.title.default' />
-                </CustomProse>
+                <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
+                  Get in touch!
+                </h1>
               </div>
               <div className='relative'>
                 <CustomProse overrides='mt-1 mb-4 sm:mt-4 lg:mt-6 lg:mb-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl prose-p:sm:leading-tight' >

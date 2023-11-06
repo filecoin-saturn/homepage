@@ -46,7 +46,7 @@ export default function Metrics({contentId}: Props) {
         })
 
     return (
-        <div className="flex flex-wrap w-full first-of-type:mr-4 xs:gap-3  md:gap-6 lg:gap-6 max-w-none md:my-8 xl:gap-10 ">
+        <div className="flex flex-wrap justify-center w-full first-of-type:mr-4 xs:gap-3  md:gap-6 lg:gap-6 max-w-none md:my-8 xl:gap-10 ">
             {content.map((postContent: PostContentContent, key: number) => {
                 return (
                     <div key={key} className="first-of-type:mr-4  text-white font-inter min-w-fit flex items-center space-x-1 md:space-x-2 ">
