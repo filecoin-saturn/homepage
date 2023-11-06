@@ -95,15 +95,6 @@ const Home: NextPage = () => {
         <NavBar
           languageSwitcher={false}
           backdropBlur={features.backdropBlur}
-          sections={[
-            "start",
-            "what-is-saturn",
-            "vision",
-            "roadmap",
-            "setupyournode",
-            "joinus",
-            "contact",
-          ]}
           contentId="general.navbar"
         />
 

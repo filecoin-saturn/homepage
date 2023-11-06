@@ -15,21 +15,21 @@ export default function IntersectionObserverWrapper({targetCallbacks, threshold,
         }
         const callback = (entries: IntersectionObserverEntry[], observer?: IntersectionObserver) => {
             entries.forEach((entry) => {
-                const attribute = entry.target.getAttribute("data-io")
+                const attribute = entry.target.getAttribute("id")
                 const f = attribute ? targetCallbacks.get(attribute) : undefined
                 if(f) f(entry, observer)
             });
           };
         const observer = new IntersectionObserver(callback, options);
         targetCallbacks.forEach((value, key) => {
-            const targets = document.querySelectorAll(`[data-io="${key}"]`)
+            const targets = document.querySelectorAll(`[id="${key}"]`)
             targets.forEach((target) => {
                 observer.observe(target);
             })
         });
         return () => {
             targetCallbacks.forEach((value, key) => {
-                const targets = document.querySelectorAll(`[data-io="${key}"]`)
+                const targets = document.querySelectorAll(`[id="${key}"]`)
                 targets.forEach((target) => {
                     observer.unobserve(target);
                 })

@@ -82,8 +82,8 @@ const Home: NextPage = () => {
       </Head>
       <div className='mx-auto w-full overflow-hidden relative'>
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
-        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} sections={["start","what-is-saturn", "vision", "roadmap", "setupyournode", "joinus", "contact"]} contentId="general.navbar" />
-        <div data-io="start" id="start" className='w-full h-0'></div>
+        <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} contentId="general.navbar" />
+        <div id="start" className='w-full h-0'></div>
         <div className=' w-full mx-auto relative'>
           <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-center h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
@@ -99,19 +99,18 @@ const Home: NextPage = () => {
             </div>
             <Metrics contentId='index.metrics.metrics' />
           </div>
-          {/* <div className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`} >
+          <div className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`} >
             <Suspense fallback={null}>
               <DynamicSaturn />
             </Suspense>
-          </div> */}
+          </div>
           <div className='animate-fadeFast absolute opacity-30 -z-30 inset-x-0 bottom-0 rotate-6 -translate-y-1/2 sm:-translate-y-1/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/3 xl:-translate-y-0'>
             <img src="hero-background.png" className='w-full'/>
           </div>
         </div>
 
-        <div id="what-is-saturn" className='w-full h-0'></div>
-        <div data-io="what-is-saturn" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div id="what-is-saturn" className='mt-[10rem]'></div>
+        <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='grid grid-cols-2 gap-10 items-center justify-center my-8 '>
             <img className="" src="/saturn_black_white.svg" alt="saturn_black_white"/>
             <div className="min-w-[400px] text-left">
@@ -136,10 +135,9 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div id="vision" className='w-full h-0'></div>
-        <div data-io="vision" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="vision" className='scroll-mt-24 mt-[10rem]'></div>
         <div className='w-full relative'>
-          <div className='-mt-20 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+          <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
             <div data-gsap="animate-children" className='text-left w-full lg:my-12'>
               <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
                 Vision
@@ -154,9 +152,8 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div id="how-it-works" className='w-full h-0'></div>
-        <div data-io="how-it-works" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div id="how-it-works" className='mt-[10rem]'></div>
+        <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
             Accelerate your content-addressable data with the Saturn Web3 CDN
           </h1>
@@ -179,9 +176,8 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div id="pricing" className='w-full h-0'></div>
-        <div data-io="pricing" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div id="pricing" className='scroll-mt-24 mt-[10rem]'></div>
+        <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
             Simple, transparent pricing
           </h1>
@@ -196,9 +192,8 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div id="roadmap" className='w-full h-0'></div>
-        <div data-io="roadmap" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
-        <div className='-mt-8 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
+        <div id="roadmap" className='scroll-mt-24 mt-[10rem]'></div>
+        <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div className='flex flex-col items-center'>
             <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
               Roadmap
@@ -222,7 +217,7 @@ const Home: NextPage = () => {
         {/* 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section */}
         {/*
         <div id="joinus" className='w-full h-0'></div>
-        <div data-io="joinus" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div data-io="joinus" className=''></div>
         <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24  '>
               <div className='grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm '>
@@ -249,8 +244,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         */}
-        <div id="contact" className='w-full h-0'></div>
-        <div data-io="contact" className='w-full h-0 mt-40 md:mt-[24rem]'></div>
+        <div id="contact" className=''></div>
         <div className='w-full max-w-7xl mx-auto relative'>
           <div className='-mt-12 md:-mt-48 px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
             <div data-gsap="animate-children" className='text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 '>
