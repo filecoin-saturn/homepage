@@ -4,7 +4,6 @@ import Footer from '../components/Footer/Footer'
 import { useCallback, useEffect, useState } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import { Suspense } from 'react'
 import { backgroundScrollAnimations } from '../animations/scroll'
 import { useFeatureContext } from '../context/featureContext'
@@ -14,15 +13,9 @@ import NavBar from '../components/NavBar/NavBar'
 import Goals from '../components/Goals/Goals'
 import Metrics from '../components/Metrics/Metrics'
 import ListBigDots from '../components/ListBigDots/ListBigDots'
-import Modal3 from '../components/Modal3/Modal3'
-import Button16 from '../components/Button16/Button16'
-import BackgroundWrapper from '../components/BackgroundWrapper/BackgroundWrapper'
-import TotalEarnings from '../components/TotalEarnings/TotalEarnings'
 import Button17 from '../components/Button17/Button17'
-import AsciinemaPlayer from '../components/AsciinemaPlayer/AsciinemaPlayer';
 import HowItWorksStep from '../components/HowItWorksStep/HowItWorksStep';
 import PlanCard from '../components/PlanCard/PlanCard';
-import IntersectionObserverWrapper from '../components/IntersectionObserverWrapper/IntersectionObserverWrapper'
 import { useWindowContext } from '../context/windowContext'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {

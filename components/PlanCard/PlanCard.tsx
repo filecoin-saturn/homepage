@@ -19,7 +19,11 @@ export default function PlanCard({planName, bandwidthAmount, price, overagePrice
             </>
           )}
         </div>
-        <a className="mt-auto rounded-xl bg-slate-100 text-black hover:bg-sat-blue-3 hover:text-white py-1 px-2 cursor-pointer">
+        <a
+          href={process.env.PORTAL_ORIGIN}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-auto rounded-xl bg-slate-100 text-black hover:bg-sat-blue-3 hover:text-white py-1 px-2 cursor-pointer">
           Get Started
         </a>
       </div>

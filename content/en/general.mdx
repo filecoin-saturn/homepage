@@ -37,7 +37,7 @@ export const navLinkArray = [
   },
   {
     title: "Get Started",
-    href: "/#setupyournode",
+    href: process.env.PORTAL_ORIGIN,
     highlight: true,
     dataAnalytics: '"Nav Btn Click", {"props":{"section": "Get Started"}}',
   },
@@ -46,56 +46,6 @@ export const navLinkArray = [
 export const languages = {
   text: "EN",
 };
-
-export const menuLinkArray = [
-  {
-    title: "What is Saturn",
-    href: "/#what-is-saturn",
-    highlight: false,
-    dataAnalytics: '"Menu Btn Click", {"props":{"section": "What is Saturn"}}',
-  },
-  //{title: "Our vision", href: "/#vision", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Our vision"}}' },
-  {
-    title: "How does it work",
-    href: "/#how-it-works",
-    highlight: false,
-    dataAnalytics:
-      '"Menu Btn Click", {"props":{"section": "How does it work"}}',
-  },
-  {
-    title: "Pricing",
-    href: "/#pricing",
-    highlight: false,
-    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Prices"}}',
-  },
-  {
-    title: "FAQ",
-    href: "/#faq",
-    highlight: false,
-    dataAnalytics: '"Nav Btn Click", {"props":{"section": "FAQ"}}',
-  },
-  {
-    title: "Join us",
-    href: "/#joinus",
-    highlight: false,
-    dataAnalytics: '"Menu Btn Click", {"props":{"section": "Join us"}}',
-  },
-  //{title: "Contact", href: "/#contact", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Contact"}}'},
-  {
-    title: "Docs",
-    href: "https://docs.saturn.tech",
-    target: "_blank",
-    highlight: false,
-    dataAnalytics: '"Menu Btn Click", {"props":{"section": "Docs"}}',
-  },
-  {
-    title: "Set up your node",
-    href: "/#setupyournode",
-    highlight: true,
-    dataAnalytics:
-      '"Menu Btn Click", {"props":{"section": "Set up your node"}}',
-  },
-];
 
 {/* c:footer */}
 

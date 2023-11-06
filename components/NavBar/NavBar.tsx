@@ -23,7 +23,6 @@ type Link = {
 }
 
 type ContentType = {
-    menuLinkArray?: Link[],
     navLinkArray?: Link[],
     languages?: {
         text: string
@@ -36,9 +35,8 @@ type Props = {
     contentId: string
 } & ContentType
 
-function NavBar({menuLinkArray, navLinkArray, languages, backdropBlur, languageSwitcher, contentId}: Props) {
+function NavBar({navLinkArray, languages, backdropBlur, languageSwitcher, contentId}: Props) {
     const content: ContentType = useContent(contentId)
-    const menuLinks = menuLinkArray ?? content.navLinkArray
     const navLinks = navLinkArray ?? content.navLinkArray
     // Strip all leading slashes and hashes
     const scrollIds = navLinks?.map(link => link.href.replace(/\/?#?/, '')) ?? []
@@ -115,7 +113,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, backdropBlur, languageS
             />
             <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-2xl supports-blur:bg-unset bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={langs ?? {text: "en"}} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
-                    {menuLinks?.map((link, index) => {
+                    {navLinks?.map((link, index) => {
                         const cId = `${contentId}.navLinkArray[${index}]`
                         const hash = link.href.split("#")[1]
                         if(link.highlight) {
