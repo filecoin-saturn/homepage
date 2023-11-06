@@ -1,5 +1,5 @@
 {
-  "name": "station-website",
+  "name": "@filecoin-saturn/homepage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
