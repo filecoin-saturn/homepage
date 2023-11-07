@@ -4,7 +4,7 @@ import { useContent } from "../../content/content";
 
 type contentType = Array<{
     image: string,
-    title: string, 
+    title: string,
     text: string,
 }>
 
@@ -32,15 +32,15 @@ function Goals({content, backdropBlur, contentId}: GoalsContent) {
                                 <h5>
                                     {postContent.title}
                                 </h5>
-                                <p >
-                                    {postContent.text}
-                                </p>
                             </CustomProse>
+                            <p className="text-slate-400 text-xl lg:text-2xl">
+                                {postContent.text}
+                            </p>
                         </div>
                     </div>
                 )
             })}
-        </div> 
+        </div>
     )
 }
 export default dynamic(() => Promise.resolve(Goals), {
