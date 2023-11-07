@@ -13,6 +13,7 @@ import TotalEarnings from "../components/TotalEarnings/TotalEarnings";
 import Button17 from "../components/Button17/Button17";
 import AsciinemaPlayer from "../components/AsciinemaPlayer/AsciinemaPlayer";
 import IntersectionObserverWrapper from "../components/IntersectionObserverWrapper/IntersectionObserverWrapper";
+import ContactSection from "../components/ContactSection";
 import { useWindowContext } from "../context/windowContext";
 
 const Home: NextPage = () => {
@@ -192,43 +193,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-
-        <div id="contact" className="mt-[10rem]"></div>
-        <div className="w-full max-w-7xl mx-auto relative">
-          <div className="px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto">
-            <div
-              data-gsap="animate-children"
-              className="text-left w-full my-8 sm:flex sm:space-x-4 md:space-x-8 lg:space-x-24 "
-            >
-              <div className="grow shrink-0 lg:text-right sm:w-48 md:w-72 lg:w-full lg:max-w-sm">
-                <CustomProse overrides="prose-h1:my-3.5 prose-h1:mb-3">
-                  <RenderMDXContent contentId="index.contact.title.default" />
-                </CustomProse>
-              </div>
-              <div className="relative">
-                <CustomProse overrides="mt-1 mb-4 sm:mt-4 lg:mt-6 lg:mb-6 prose-h6:text-base prose-h6:md:text-2xl prose-h6:lg:text-3xl prose-p:sm:leading-tight">
-                  <RenderMDXContent contentId="index.contact.description.default" />
-                </CustomProse>
-                <CustomProse overrides="mt-[1.625rem] mb-[0.625rem] md:mt-[1.3125rem] md:mb-[0.8125rem] lg:mt-[1.375rem] lg:mb-[0.8125rem] prose-p:!font-black prose-h6:sm:text-[1.1875rem] prose-h6:sm:leading-tight prose-h6:md:text-[1.4375rem] prose-h6:md:leading-tight prose-h6:lg:text-[1.4375rem] prose-h6:lg:leading-7">
-                  <RenderMDXContent contentId="index.contact.email.title.default" />
-                </CustomProse>
-                <div className="flex space-x-3 md:space-x-5 lg:space-x-5 -mx-1">
-                  <Button17
-                    backdropBlur={features.backdropBlur}
-                    contentId={"index.contact.join[0].button"}
-                  />
-                  <Button17
-                    backdropBlur={features.backdropBlur}
-                    contentId={"index.contact.join[1].button"}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute -z-50 rotate-45 -translate-x-1/4 inset-0 sm:rotate-[190deg] xs:translate-x-0 xs:translate-y-[10%] md:translate-y-1/2 lg:translate-y-[85%] ">
-            <img src="gray-gradient.webp" className="w-full" />
-          </div>
-        </div>
+        <ContactSection features={features} />
         <Footer
           backdropBlur={features.backdropBlur}
           contentId="general.footer"
