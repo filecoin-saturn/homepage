@@ -78,8 +78,8 @@ const Home: NextPage = () => {
         <div data-gsap="bg" className='fixed -z-50 inset-x-0 -top-1 h-[150%] bg-sat-blue-4 inset-0 '></div>
         <NavBar languageSwitcher={false} backdropBlur={features.backdropBlur} contentId="general.navbar" />
         <div id="start" className='w-full h-0'></div>
-        <div className=' w-full mx-auto relative'>
-          <div className='mx-auto  max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 text-center h-full flex flex-col justify-end '>
+        <div className='w-full mx-auto relative'>
+          <div className='mx-auto max-w-xl xs:px-10 md:max-w-4xl lg:max-w-[70rem] sm:mx-auto px-6 md:px-12 mt-8 sm:mt-0 md:pb-12 h-full flex flex-col justify-end '>
             <div className='max-h-[16.5rem] h-[90vh] min-h-[14rem] md:h-[90vh] md:min-h-[10rem] md:max-h-[20rem] lg:h-[55vh] lg:min-h-[5rem] lg:max-h-[14rem] '></div>
             <div data-gsap="animate-children" className='font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative'>
               <CustomProse overridesParent='max-w-none' overrides='max-w-none mr-auto prose-p:md:!text-xl prose-p:leading-[1.25rem] prose-p:lg:!text-2xl prose-h1:lg:w-[45rem] prose-h1:!my-0 prose-h1:lg:!my-4 prose-p:my-1 '>
@@ -193,23 +193,58 @@ const Home: NextPage = () => {
         <div id="roadmap" className='scroll-mt-24 mt-[10rem]'></div>
         <div className='px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto'>
           <div className='flex flex-col items-center'>
-            <h1 className="text-center mb-8 text-4xl lg:text-5xl text-white mt-4">
+            <h1 className="text-center mb-12 text-4xl lg:text-5xl text-white mt-4">
               Roadmap
             </h1>
-            <CustomProse overrides='my-4 mt-5 md:my-8 lg:my-10 prose-p:my-0 prose-p:md:max-w-xs prose-h5:text-[1.1875rem] prose-h5:md:text-[1.75rem] prose-h5:mb-0.5 prose-h5:md:mb-1.5 prose-p:lg:max-w-none prose-h5:lg:mb-1.5 prose-h5:lg:text-4xl' >
+            <div>
                 <ListBigDots backdropBlur={features.backdropBlur}>
-                  <RenderMDXContent contentId='index.roadmap.step[0].default' />
-                  <RenderMDXContent contentId='index.roadmap.step[1].default' />
-                  <RenderMDXContent contentId='index.roadmap.step[2].default' />
-                  <RenderMDXContent contentId='index.roadmap.step[3].default' />
-                  <RenderMDXContent contentId='index.roadmap.step[4].default' />
-                  <RenderMDXContent contentId='index.roadmap.step[5].default' />
-                  <RenderMDXContent contentId='index.roadmap.step[6].default' />
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">Dec 2022</h5>
+                    <p className="text-slate-400 text-lg">
+                      Launch publicly; anyone can run a Saturn L1 node.
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">Mar 2023</h5>
+                    <p className="text-slate-400 text-lg">
+                      Scale the L1 network. Achieve sub-second TTFB for IPFS content globally.
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">Apr 2023</h5>
+                    <p className="text-slate-400 text-lg">
+                      Open beta test for Saturn customers.
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">May 2023</h5>
+                    <p className="text-slate-400 text-lg">
+                      Saturn node operators receive payouts via FVM smart contract.
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">Jul 2023</h5>
+                    <p className="text-slate-400 text-lg">
+                      Saturn L1 nodes cache miss directly to Filecoin Storage Providers and IPFS.
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">Aug 2023</h5>
+                    <p className="text-slate-400 text-lg">
+                      Launch the <a href="https://explorer.saturn.tech/">Saturn Explorer</a>, a geospatial visualization of the Saturn network.
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <h5 className="text-white text-4xl font-bold">Nov 2023</h5>
+                    <p className="text-slate-400 text-lg">
+                      Launch the Saturn Customer Portal for customers to integrate and accelerate their content with Saturn.
+                    </p>
+                  </div>
                 </ListBigDots>
                 <CustomProse overrides={`my-2 opacity-50 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
                   <RenderMDXContent contentId='index.roadmap.footnote.default' />
                 </CustomProse>
-              </CustomProse>
+              </div>
           </div>
         </div>
         {/* 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section */}
