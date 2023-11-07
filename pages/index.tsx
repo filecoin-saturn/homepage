@@ -17,6 +17,7 @@ import Button17 from '../components/Button17/Button17'
 import HowItWorksStep from '../components/HowItWorksStep/HowItWorksStep';
 import PlanCard from '../components/PlanCard/PlanCard';
 import { useWindowContext } from '../context/windowContext'
+import { SIGN_UP_URL } from '../lib/constants'
 
 const DynamicSaturn = dynamic(() => import('../threejs/components/Saturn/Saturn'), {
   suspense: false,
@@ -87,7 +88,7 @@ const Home: NextPage = () => {
               <div data-gsap="animate" className='mb-12 my-4 md:mt-6 lg:mt-10'>
                 <SignUpButton
                   text="Sign up for free"
-                  link={process.env.PORTAL_ORIGIN}
+                  link={SIGN_UP_URL}
                   target="_blank"
                   dataAnalytics="'Start now for free Page Anchor Btn Click'"/>
               </div>
