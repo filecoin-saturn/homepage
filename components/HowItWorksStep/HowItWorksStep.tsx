@@ -15,8 +15,8 @@ export default function HowItWorksStep({
   return (
     <div className={`min-w-[250px]`}>
       <div className="flex flex-col text-white">
-        <h3 className="text-2xl mb-4">{title}</h3>
-        <p className="text-slate-400 mb-4">{subtitle}</p>
+        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+        <p className="text-slate-400 text-lg mb-4">{subtitle}</p>
         {steps.map((step) => (
           <div className="flex items-center" key={step}>
             <div

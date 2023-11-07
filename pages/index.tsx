@@ -216,7 +216,7 @@ const Home: NextPage = () => {
 
         <div id="how-it-works" className="mt-[10rem]"></div>
         <div className="px-6 xs:px-10 md:px-12 w-full max-w-xl md:max-w-4xl lg:max-w-[70rem] mx-auto">
-          <h1 className="text-center text-white font-inter text-5xl lg:text-6xl font-black mt-4 mb-8">
+          <h1 className="text-center text-white font-inter text-5xl lg:text-6xl font-black mt-4 mb-6">
             Accelerate your content-addressable data with the Saturn Web3 CDN
           </h1>
           <p className="text-center text-slate-400 text-xl lg:text-2xl mb-20">
