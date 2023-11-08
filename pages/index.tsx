@@ -118,7 +118,7 @@ const Home: NextPage = () => {
               className="font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative"
             >
               <h1 className="text-white font-inter text-5xl lg:text-6xl font-black mt-4 mb-8">
-                Filecoin Saturn is revolutionizing Web3 Content Delivery
+                Filecoin Saturn is revolutionizing Web3 content delivery
               </h1>
               <p className="text-slate-400 text-xl lg:text-2xl">
                 Speed up your decentralized applications on IPFS and Filecoin
@@ -165,7 +165,7 @@ const Home: NextPage = () => {
               </h1>
               <div className="text-lg text-slate-400">
                 <p className="mb-4">
-                  Saturn CDN stands as the premier native Web3 CDN, focusing on
+                  Filecoin Saturn is the premier native Web3 CDN, focusing on
                   the rapid acceleration of content-addressed data on IPFS and
                   Filecoin. Thanks to Saturn, websites and decentralized
                   applications can efficiently serve billions of users. A
