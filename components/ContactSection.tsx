@@ -18,14 +18,11 @@ export default function ContactSection({ features }: Props) {
               Get in touch!
             </h1>
             <div className="relative">
-              <p className="text-slate-400 text-xl lg:text-2xl">
+              <p className="text-slate-400 text-xl lg:text-2xl mb-6">
                 Curious about Saturn? Whether you're a potential customer,
                 node provider, or have any questions, we invite you to join
                 our vibrant community and be a part of the conversation!
               </p>
-              <h5 className="text-white text-2xl font-bold my-6">
-                Join the community
-              </h5>
               <div className="flex justify-center gap-10">
                 <Button17
                   backdropBlur={features.backdropBlur}
