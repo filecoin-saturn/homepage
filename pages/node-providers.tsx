@@ -105,12 +105,12 @@ const Home: NextPage = () => {
             <img src="/saturn-node.webp" alt="" className='mix-blend-lighten hidden -z-40 md:block h-60 lg:h-[22rem] xl:h-[27rem] absolute top-0 right-0 translate-x-[40%] lg:translate-x-[45%] lg:-translate-y-[10%] xl:-translate-y-1/4 xl:translate-x-1/2' />
             <div data-gsap="animate-children" className='text-left w-full my-8  '>
               <div className=' lg:text-left underline-offset-2  '>
-                <CustomProse overrides='prose-p:text-slate-400 prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
+                <CustomProse overrides='prose-p:!text-slate-400 prose-h1:my-3.5 prose-p:mt-3.5 prose-h1:sm:my-0 prose-h1:lg:max-w-[60rem] prose-h5:md:my-0 lg:max-w-[60rem] prose-p:md:mb-4 prose-p:lg:mb-8  prose-p:sm:mt-1.5 prose-p:md:mt-3' overridesParent='max-w-[60rem]'>
                   <RenderMDXContent contentId='index.set-up-your-node.title.default' />
                   <RenderMDXContent contentId='index.set-up-your-node.subtitle.default' />
                 </CustomProse>
                 <div className={`my-8 md:my-14 lg:my-16 xl:my-16 -mx-3 xs:-mx-6 xs:px-8 md:-mx-8 px-3 sm:px-8 py-2 md:px-14 md:py-0 lg:px-[3.225rem] lg:-mx-[3.315rem] xl:-mx-20 xl:px-[3.315rem] rounded-2xl md:rounded-3xl ${features.backdropBlur ? ` supports-blur:bg-sat-grad-blue-green-1-10 supports-blur:backdrop-blur-md  bg-sat-grad-blue-green-1-10-fallback-2 ` : `bg-sat-grad-blue-green-1-10-fallback-2 `}`}>
-                  <CustomProse overrides={`prose-p:text-slate-400 max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-5  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:!mb-3 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+                  <CustomProse overrides={`prose-p:!text-slate-400 max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-h1:lg:my-5 prose-h3:lg:!mt-0 prose-h3:xl:!my-0 prose-h3:xl:!mb-5  prose-h3:px-2 prose-h3:sm:px-0 prose-h3:md:!mb-3 prose-h6:md:font-black prose-h6:md:leading-none prose-p:mt-0 prose-p:mb-6 prose-p:md:mb-5 prose-p:md:text-base prose-p:lg:mb-6 prose-p:xl:mb-8 py-6 pt-3 sm:pt-2 sm:pb-3`} overridesParent=' max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
                     <div className='sm:hidden'>
                       <RenderMDXContent contentId='index.set-up-your-node.description.title.default' />
                     </div>
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                     </div>
                   </CustomProse>
                 </div>
-                <CustomProse  overrides={`${bigP} ${smallP} prose-strong:text-slate-400 prose-ul:text-slate-400
+                <CustomProse  overrides={`${bigP} ${smallP} prose-strong:!text-slate-400 prose-ul:!text-slate-400
                  prose-p:my-2 prose-p:md:text-lg prose-p:lg:text-2xl prose-ul:!px-[0.8rem] prose-li:px-0 prose-li:leading-5 prose-li:lg:leading-6 prose-li:my-2 prose-strong:!leading-tight prose-li:lg:my-3 prose-strong:antialiased max-w-xl md:max-w-4xl lg:max-w-[70rem] prose-a:underline-offset-2 prose-strong:sm:text-xs prose-h3:md:!mb-4 `}
                 overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]' >
                   <RenderMDXContent contentId='index.set-up-your-node.requirements.title.default' />
@@ -180,14 +180,14 @@ const Home: NextPage = () => {
                 </CustomProse>
                 </div>
                 <div className='sm:mt-1 md:mt-0'>
-                  <CustomProse overrides='prose-p:text-slate-400 prose-p:md:my-2 prose-p:lg:my-4'>
+                  <CustomProse overrides='prose-p:!text-slate-400 prose-p:md:my-2 prose-p:lg:my-4'>
                     <RenderMDXContent contentId='index.calculateyourearnings.description.default' />
                   </CustomProse>
                 </div>
             </div>
             <TotalEarnings contentId="index.calculateyourearnings" ></TotalEarnings>
             <div className='px-4'>
-              <CustomProse overrides={`prose-p:text-slate-400 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
+              <CustomProse overrides={`prose-p:!text-slate-400 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`} overridesParent='max-w-xl md:max-w-4xl lg:max-w-[70rem]'>
                 <RenderMDXContent contentId='index.calculateyourearnings.footnote.default' />
               </CustomProse>
             </div>
