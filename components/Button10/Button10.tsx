@@ -20,7 +20,7 @@ type ButtonWrapperProps = {
    onClick: () => void
    link: string,
    replace: boolean,
-   disabled?: boolean 
+   disabled?: boolean
    text: string
    dataAnalytics: string
 }
@@ -46,8 +46,9 @@ export function ButtonWrapper({children, type, onClick, replace, link, disabled,
     return type === "next-link" ? (
         <Link href={link ?? ""} replace={replace} >
             <a  onClick={onClick}
+                target="_blank"
                 className={`group outline-none relative z-20 group disabled:opacity-30 `}
-                aria-label={`navigation ${text}`} 
+                aria-label={`navigation ${text}`}
                 data-analytics={`${dataAnalytics}`}
             >
                 {children}

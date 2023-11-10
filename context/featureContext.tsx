@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { getGPUTier } from 'detect-gpu';
 
-type featureType = {
+export type featureType = {
     [key: string]: boolean
 }
 

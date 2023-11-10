@@ -4,7 +4,7 @@ import { useContent } from "../../content/content";
 
 type contentType = Array<{
     image: string,
-    title: string, 
+    title: string,
     text: string,
 }>
 
@@ -28,19 +28,15 @@ function Goals({content, backdropBlur, contentId}: GoalsContent) {
                             <img alt={postContent.title} src={postContent.image} className="bg-contain bg-no-repeat bg-center h-7 w-7 md:h-8 md:w-8 lg:h-10 lg:w-10"></img>
                         </div>
                         <div data-gsap="animate-children" className="odd:place-self-start lg:even:place-self-start max-w-md">
-                            <CustomProse overrides="prose-p:my-0" >
-                                <h5>
-                                    {postContent.title}
-                                </h5>
-                                <p >
-                                    {postContent.text}
-                                </p>
-                            </CustomProse>
+                            <h3 className="text-white text-2xl font-bold mb-4">{postContent.title}</h3>
+                            <p className="text-slate-400 text-xl lg:text-2xl">
+                                {postContent.text}
+                            </p>
                         </div>
                     </div>
                 )
             })}
-        </div> 
+        </div>
     )
 }
 export default dynamic(() => Promise.resolve(Goals), {

@@ -40,7 +40,7 @@ module.exports = {
         'sat-white-30-fallback-2': '#535866',
       },
       backgroundImage: {
-        // gradient colours 
+        // gradient colours
         'unset': "unset;",
         'sat-grad-blue-green-1': "linear-gradient(90deg, #39C1CB 0%, #0090FF 100%);",
         'sat-grad-blue-green-1-10': "linear-gradient(90deg, rgba(57, 193, 203, 0.1) 0%, rgba(7, 143, 255, 0.1) 100%);",
@@ -73,6 +73,7 @@ module.exports = {
         'github-logo': "url('/github-logo.svg')",
         'slack-logo': "url('/slack-logo.svg')",
         'twitter-logo': "url('/twitter-logo.svg')",
+        'x-logo': "url('/x-logo.svg')",
         'heart-logo': "url('/heart-logo.svg')",
         'lightning-logo': "url('/lightning-logo.svg')",
         'multi-peer-logo': "url('/multi-peer-logo.svg')",
@@ -87,7 +88,7 @@ module.exports = {
         'wide-arrow-icon-green': "url('/wide-arrow-icon-green.svg')",
         'filecoin-bg-logo': "url('/filecoin-bg-logo.png')",
         'slashes-pattern': "url('/slashes.svg')"
-      }, 
+      },
       boxShadow: {
         'colored': '0 0 40px #0090FF',
         'black-sm': '0 0 20px rgb(0 0 0 / 0.2)',
@@ -112,7 +113,7 @@ module.exports = {
           to: {opacity: 1}
       },
     }
-    
+
   },
 
 
@@ -126,5 +127,3 @@ module.exports = {
     require('@tailwindcss/typography'),
   ]
 }
-
-

@@ -1,54 +1,98 @@
 {/* c:navbar */}
 
 export const navLinkArray = [
-    {title: "Calculate your earnings", href: "/#calculateyourearnings", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Calculate your Earnings"}}' },
-    {title: "What is Saturn", href: "/#whatissaturn", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "What is Saturn"}}' },
-    //{title: "Our vision", href: "/#ourvision", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Our vision"}}' },
-    {title: "Roadmap", href: "/#roadmap", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Roadmap"}}' },
-    // 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section
-    // {title: "Join us", href: "/#joinus", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Careers"}}' },
-    {title: "Contact", href: "/#contact", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Contact"}}'},
-    {title: "Docs", href: "https://docs.saturn.tech", target: "_blank", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Docs"}}'},
-    {title: "Set up your node", href: "/#setupyournode", highlight: true, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Set up your node"}}' },
-]
+  {
+    title: "Vision",
+    href: "/#vision",
+    highlight: false,
+    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Our vision"}}'
+  },
+  {
+    title: "Pricing",
+    href: "/#pricing",
+    highlight: false,
+    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Pricing"}}',
+  },
+  {
+    title: "Roadmap",
+    href: "/#roadmap",
+    highlight: false,
+    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Roadmap"}}',
+  },
+  {
+    title: "Node Providers",
+    href: "/node-providers",
+    highlight: false,
+    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Node Providers"}}',
+  },
+  // 2023/01/25: saturn hiring currently on pause. hide 'Join Us' jobs section
+  // {title: "Join us", href: "/#joinus", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Careers"}}' },
+  //{title: "Contact", href: "/#contact", highlight: false, dataAnalytics: '"Nav Btn Click", {"props":{"section": "Contact"}}'},
+  {
+    title: "Docs",
+    href: "https://docs.saturn.tech",
+    target: "_blank",
+    highlight: false,
+    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Docs"}}',
+  },
+  {
+    title: "Get Started",
+    href: `${process.env.PORTAL_ORIGIN}/sign-up`,
+    highlight: true,
+    dataAnalytics: '"Nav Btn Click", {"props":{"section": "Get Started"}}',
+  },
+];
 
 export const languages = {
-    text: "EN"
-}
-
-export const menuLinkArray = [
-    {title: "Calculate your earnings", href: "/#calculateyourearnings", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Calculate your Earnings"}}' },
-    {title: "What is Saturn", href: "/#whatissaturn", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "What is Saturn"}}' },
-    //{title: "Our vision", href: "/#ourvision", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Our vision"}}' },
-    {title: "Roadmap", href: "/#roadmap", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Roadmap"}}' },
-    {title: "Join us", href: "/#joinus", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Join us"}}' },
-    {title: "Contact", href: "/#contact", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Contact"}}'},
-    {title: "Docs", href: "https://docs.saturn.tech", target: "_blank", highlight: false, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Docs"}}'},
-    {title: "Set up your node", href: "/#setupyournode", highlight: true, dataAnalytics: '"Menu Btn Click", {"props":{"section": "Set up your node"}}' },
-]
+  text: "EN",
+};
 
 {/* c:footer */}
 
 export const links = [
-    {
-        title: "Learn More",
-        links: [
-            {text: "GitHub", link: "https://github.com/filecoin-saturn/L1-node", backgroundImage: "github-logo.svg", dataAnalytics: '"Learn More GitHub Btn Click"'},
-            {text: "Docs", link: "https://docs.saturn.tech", backgroundImage: "docs-logo.svg", dataAnalytics: '"Learn More Docs Btn Click"'},
-        ]
-    },
-    {
-        title: "Reach Out",
-        links: [
-            {text: "Slack", link: "https://filecoinproject.slack.com/archives/C03DH0BL02E", backgroundImage: "slack-logo.svg", dataAnalytics: '"Reach Out Slack Button Click"'},
-            {text: "Twitter", link: "https://twitter.com/FilecoinSaturn", backgroundImage: "twitter-logo.svg", dataAnalytics: '"Reach Out Twitter Button Click"'}
-        ]
-    }
-]
+  {
+    title: "Learn More",
+    links: [
+      {
+        text: "GitHub",
+        link: "https://github.com/filecoin-saturn/L1-node",
+        backgroundImage: "github-logo.svg",
+        dataAnalytics: '"Learn More GitHub Btn Click"',
+      },
+      {
+        text: "Docs",
+        link: "https://docs.saturn.tech",
+        backgroundImage: "docs-logo.svg",
+        dataAnalytics: '"Learn More Docs Btn Click"',
+      },
+    ],
+  },
+  {
+    title: "Reach Out",
+    links: [
+      {
+        text: "Slack",
+        link: "https://filecoinproject.slack.com/archives/C03DH0BL02E",
+        backgroundImage: "slack-logo.svg",
+        dataAnalytics: '"Reach Out Slack Button Click"',
+      },
+      {
+        text: "X",
+        link: "https://x.com/FilecoinSaturn",
+        backgroundImage: "x-logo.svg",
+        dataAnalytics: '"Reach Out X Button Click"',
+      },
+    ],
+  },
+];
 
-export const credits = {text: "Made with ", logo: "heart-logo.svg", text2: "around the world"}
+export const credits = {
+  text: "Made with ",
+  logo: "heart-logo.svg",
+  text2: "around the world",
+};
 
 export const termsOfService = {
-    text: 'Additional Program Information',
-    link: 'https://tan-pantydraco-e40.notion.site/Saturn-Program-Information-2d820a4aacca4378ba503de30198b3c8'
-}
+  text: "Additional Program Information",
+  link: "https://tan-pantydraco-e40.notion.site/Saturn-Program-Information-2d820a4aacca4378ba503de30198b3c8",
+};

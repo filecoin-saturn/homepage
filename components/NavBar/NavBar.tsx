@@ -23,7 +23,6 @@ type Link = {
 }
 
 type ContentType = {
-    menuLinkArray?: Link[],
     navLinkArray?: Link[],
     languages?: {
         text: string
@@ -31,16 +30,17 @@ type ContentType = {
 }
 
 type Props = {
-    sections: string[]
     backdropBlur: boolean
     languageSwitcher: boolean,
     contentId: string
 } & ContentType
 
-function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur, languageSwitcher, contentId}: Props) {
+function NavBar({navLinkArray, languages, backdropBlur, languageSwitcher, contentId}: Props) {
     const content: ContentType = useContent(contentId)
-    const menuLinks = menuLinkArray ?? content.menuLinkArray
     const navLinks = navLinkArray ?? content.navLinkArray
+    // Strip all leading slashes and hashes
+    const scrollIds = navLinks?.map(link => link.href.replace(/\/?#?/, '')) ?? []
+
     const langs = languages ?? content.languages
     const [isOpen, setIsOpen] = useState(false)
     const path = useRouter()
@@ -73,31 +73,32 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
     },[isOpen])
 
     const scrollCallback = useCallback((entry: IntersectionObserverEntry) => {
-        const entryDataIo = entry.target.getAttribute("data-io") ?? ""
-        const index = intersecting.indexOf(entryDataIo)
+        const entryId = entry.target.getAttribute("id") ?? ""
+        const index = intersecting.indexOf(entryId)
+
         if(entry.isIntersecting) {
             let isHighest = true
             // Add entry to intersecting if not there already
             if(index === -1 ) {
-                setIntersecting(intersecting.concat([entryDataIo]))
+                setIntersecting(intersecting.concat([entryId]))
             }
             // set isHighest to false if there are other intersecting elements that are higher
-            intersecting.forEach((dataIo) => {
-                const element = document.getElementById(dataIo)
-                if(element && dataIo !== entryDataIo && element.getBoundingClientRect().top < entry.boundingClientRect.top) {
+            intersecting.forEach((id) => {
+                const element = document.getElementById(id)
+                if(element && id !== entryId && element.getBoundingClientRect().top < entry.boundingClientRect.top) {
                     isHighest = false
                 }
             })
             // set the hash to the highest element (only when scrollToHash (is "" or equal to entryDataIo))
-            if(isHighest && (scrollToHash === "" || scrollToHash === entryDataIo)) {
+            if(isHighest && (scrollToHash === "" || scrollToHash === entryId)) {
                 setScrollToHash("")
-                setActiveHash(entryDataIo)
-                history.replaceState(null, "", entryDataIo === "start" ? "/" : `#${entryDataIo}`)
+                setActiveHash(entryId)
+                history.replaceState(null, "", entryId === "start" ? "/" : `#${entryId}`)
             }
         } else {
             // remove elements from intersecting that are not intersecting
             if(index > -1) {
-                setIntersecting(intersecting.filter(value => value !== entryDataIo))
+                setIntersecting(intersecting.filter(value => value !== entryId))
             }
         }
     }, [intersecting, scrollToHash])
@@ -106,14 +107,14 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
     return (
         <>
             <IntersectionObserverWrapper
-                targetCallbacks={new Map(sections.map(v => [v, scrollCallback]))}
+                targetCallbacks={new Map(scrollIds.map(v => [v, scrollCallback]))}
                 threshold={[0, 1]}
                 margin="0px 0px 0px 0px"
             />
             <div data-gsap="animate-menu" className={`lg:hidden fixed inset-0 z-20 translate-x-[110%] ${backdropBlur ? `supports-blur:bg-white/5 supports-blur:backdrop-blur-2xl supports-blur:bg-unset bg-sat-grad-blue-green-1-10-fallback-1 ` : `bg-sat-grad-blue-green-1-10-fallback-1`}  `}>
                 <Menu isOpen={isOpen} setIsOpen={setIsOpen} languages={langs ?? {text: "en"}} backdropBlur={backdropBlur} languageSwitcher={languageSwitcher} >
-                    {menuLinks?.map((link, index) => {
-                        const cId = `${contentId}.menuLinkArray[${index}]`
+                    {navLinks?.map((link, index) => {
+                        const cId = `${contentId}.navLinkArray[${index}]`
                         const hash = link.href.split("#")[1]
                         if(link.highlight) {
                             return (
@@ -130,12 +131,12 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                         dataAnalytics={link.dataAnalytics}
                                     />
                                 </div>
-                                
+
                             )
                         } else {
                             return (
                                 <Button7
-                                    key={index} 
+                                    key={index}
                                     onClick={() => {
                                         setIsOpen(false)
                                         document.body.style.overflow = "auto"
@@ -171,9 +172,9 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                     return (
                                         <li key={index}>
                                             <Button10
-                                                key={index} 
+                                                key={index}
                                                 type="next-link"
-                                                onClick={() => {setIsOpen(false)}} 
+                                                onClick={() => {setIsOpen(false)}}
                                                 replace={true}
                                                 isActive={activeHash.includes(hash)}
                                                 contentId={cId}
@@ -185,12 +186,12 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                                     return (
                                         <li key={index}>
                                             <Button5
-                                                key={index} 
+                                                key={index}
                                                 type="next-link"
                                                 target={link.target}
-                                                onClick={() => {setIsOpen(false)}} 
+                                                onClick={() => {setIsOpen(false)}}
                                                 replace={true}
-                                                isActive={activeHash.includes(hash)} 
+                                                isActive={activeHash.includes(hash)}
                                                 backdropBlur={backdropBlur}
                                                 highlight={link.highlight}
                                                 contentId={cId}
@@ -209,7 +210,7 @@ function NavBar({menuLinkArray, navLinkArray, languages, sections, backdropBlur,
                     </div>
                 </div>
             </div>
-            <div data-io="navbar-area" id="navbar-area" className="bg-transparent w-full h-0"></div>  
+            <div data-io="navbar-area" id="navbar-area" className="bg-transparent w-full h-0"></div>
         </>
     )
 }
