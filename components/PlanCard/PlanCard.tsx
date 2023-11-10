@@ -1,3 +1,5 @@
+import { SIGN_UP_URL } from "../../lib/constants";
+
 type Props = {
     planName: string
     bandwidthAmount: string
@@ -20,7 +22,7 @@ export default function PlanCard({planName, bandwidthAmount, price, overagePrice
           )}
         </div>
         <a
-          href={process.env.PORTAL_ORIGIN}
+          href={SIGN_UP_URL}
           target="_blank"
           rel="noreferrer"
           className="mt-auto rounded-xl bg-slate-100 text-black hover:bg-sat-blue-3 hover:text-white py-1 px-2 cursor-pointer">
