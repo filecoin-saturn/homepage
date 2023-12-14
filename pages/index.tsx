@@ -337,6 +337,13 @@ const Home: NextPage = () => {
                     and accelerate their content with Saturn.
                   </p>
                 </div>
+                <div className="mt-1">
+                  <h5 className="text-white text-4xl font-bold">Dec 2023</h5>
+                  <p className="text-slate-400 text-lg">
+                    Private Beta for Websites. Interested? Sign up&nbsp;
+                    <a href="https://tally.so/r/mRo7xp">here</a>!
+                  </p>
+                </div>
               </ListBigDots>
               <CustomProse
                 overrides={`my-2 opacity-50 ml-8 md:ml-12 prose-p:!my-0 prose-p:!text-xs prose-p:!leading-3 prose-p:md:!text-xs prose-p:lg:!text-sm prose-p:my-0 prose-p:max-w-sm prose-p:md:max-w-4xl prose-p:lg:max-w-[70rem] max-w-sm md:max-w-4xl lg:max-w-[70rem]`}
