@@ -10,7 +10,7 @@ export async function getUptoDateMetrics(content : Array<{number: number}>) {
         method: 'GET',
         signal
     };
-    const url = new URL('https://uc2x7t32m6qmbscsljxoauwoae0yeipw.lambda-url.us-west-2.on.aws/?filAddress=all&step=day')
+    const url = new URL('https://rz3fesbvmsl5diqsqyf26codxu0qnolz.lambda-url.us-west-2.on.aws/?filAddress=all&step=day')
 
     const pastDay = 1000 * 60 * 60 * 24
     url.searchParams.set("startDate", `${Date.now() - pastDay}`);
