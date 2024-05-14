@@ -96,7 +96,7 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#ffffff" />
         <meta
           name="description"
-          content="Join the Saturn Network and start earning Filecoin!"
+          content="Filecoin Saturn is revolutionizing Web3 content delivery"
         />
       </Head>
       <div className="mx-auto w-full overflow-hidden relative">
@@ -135,6 +135,14 @@ const Home: NextPage = () => {
               <div className="absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover"></div>
             </div>
             <Metrics contentId="index.metrics.metrics" />
+            <div
+              data-gsap="animate-children"
+              className="font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative"
+            >
+              <p className="text-slate-400 text-lg">
+              Thank you to everyone who has participated as a node provider in the Saturn network. Beginning June 1, 2024, we are transitioning our focus as a team to enhance fast storage and retrievals for Filecoin. Please connect with us on <a href="https://filecoinproject.slack.com/archives/C06SFMDMUAU" className="hover:underline font-inter font-semibold">Filecoin Slack</a> if you have any questions about this exciting new direction.
+              </p>
+            </div>
           </div>
           <div
             className={` absolute -z-20 inset-0 bottom-[30%] md:bottom-[25%] lg:bottom-[25%]`}
