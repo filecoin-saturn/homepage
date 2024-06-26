@@ -10,7 +10,6 @@ import { useFeatureContext } from "../context/featureContext";
 import RenderMDXContent from "../content/content";
 import NavBar from "../components/NavBar/NavBar";
 import Goals from "../components/Goals/Goals";
-import Metrics from "../components/Metrics/Metrics";
 import ListBigDots from "../components/ListBigDots/ListBigDots";
 import HowItWorksStep from "../components/HowItWorksStep/HowItWorksStep";
 import PlanCard from "../components/PlanCard/PlanCard";
@@ -124,7 +123,6 @@ const Home: NextPage = () => {
               </p>
               <div className="absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover"></div>
             </div>
-            <Metrics contentId="index.metrics.metrics" />
             <div
               data-gsap="animate-children"
               className="font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative"
