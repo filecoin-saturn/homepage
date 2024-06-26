@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { backgroundScrollAnimations } from "../animations/scroll";
 import { useFeatureContext } from "../context/featureContext";
-import SignUpButton from "../components/SignUpButton/SignUpButton";
 import RenderMDXContent from "../content/content";
 import NavBar from "../components/NavBar/NavBar";
 import Goals from "../components/Goals/Goals";
@@ -17,7 +16,6 @@ import HowItWorksStep from "../components/HowItWorksStep/HowItWorksStep";
 import PlanCard from "../components/PlanCard/PlanCard";
 import ContactSection from "../components/ContactSection";
 import { useWindowContext } from "../context/windowContext";
-import { SIGN_UP_URL } from "../lib/constants";
 
 const DynamicSaturn = dynamic(
   () => import("../threejs/components/Saturn/Saturn"),
@@ -124,14 +122,6 @@ const Home: NextPage = () => {
                 Speed up your decentralized applications on IPFS and Filecoin
                 with Filecoin Saturn.
               </p>
-              <div data-gsap="animate" className="mb-12 my-4 md:mt-6 lg:mt-10">
-                <SignUpButton
-                  text="Sign up for free"
-                  link={SIGN_UP_URL}
-                  target="_blank"
-                  dataAnalytics="'Start now for free Page Anchor Btn Click'"
-                />
-              </div>
               <div className="absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover"></div>
             </div>
             <Metrics contentId="index.metrics.metrics" />
