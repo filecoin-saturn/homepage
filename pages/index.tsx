@@ -118,8 +118,7 @@ const Home: NextPage = () => {
                 Filecoin Saturn is revolutionizing Web3 content delivery
               </h1>
               <p className="text-slate-400 text-xl lg:text-2xl">
-                Speed up your decentralized applications on IPFS and Filecoin
-                with Filecoin Saturn.
+                Filecoin Saturn revolutionized Web3 content delivery, but now there's a new kid on the block. Check out <a href="https://storacha.network/" className="hover:underline font-inter font-semibold">Storacha</a> for hotter and more decentralized storage!
               </p>
               <div className="absolute -inset-x-[110%] -inset-y-[60%] -z-10 opacity-50 bg-gradient-radial from-black via-transparent to-transparent bg-cover"></div>
             </div>
@@ -128,7 +127,7 @@ const Home: NextPage = () => {
               className="font- max-w-sm xs:max-w-md sm:max-w-md md:max-w-4xl lg:max-w-7xl  mr-auto relative"
             >
               <p className="text-slate-400 text-lg">
-              Thank you to everyone who has participated as a node provider in the Saturn network. Beginning June 1, 2024, we are transitioning our focus as a team to enhance fast storage and retrievals for Filecoin. Please connect with us on <a href="https://filecoinproject.slack.com/archives/C06SFMDMUAU" className="hover:underline font-inter font-semibold">Filecoin Slack</a> if you have any questions about this exciting new direction.
+              Thank you to everyone who has participated as a node provider in the Saturn network. Beginning June 1, 2024, we are transitioning our focus as a team to enhance fast storage and retrievals for Filecoin. 
               </p>
             </div>
           </div>
